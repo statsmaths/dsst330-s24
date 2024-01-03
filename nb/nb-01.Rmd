@@ -1,0 +1,37 @@
+---
+title: "Notebook 01"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+## Practice: Running R Code
+
+In this notebook are some further practice questions to see how well you
+understood the material from today.
+
+In the code block below, make a variable named `fav_number` and set it
+equal to your favorite number. (Note, the quotes are not part of the
+variable name).
+
+```{r, question-01}
+
+```
+
+In the code below, apply the function `log10` to your favorite
+number. (Again, the quotes are not part of the function name).
+
+```{r, question-02}
+
+```
+
+Note that the only point of the exercises here are to familiarize
+you with running code in R, creating variables, and applying functions.
+We will get to more interesting tasks soon!
+
