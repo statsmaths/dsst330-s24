@@ -2,7 +2,7 @@
 #' currently exist locally.
 .update_materials <- function()
 {
-  base <- "https://raw.githubusercontent.com/statsmaths/dsst289-s24/main"
+  base <- "https://raw.githubusercontent.com/statsmaths/dsst330-s24/main"
 
   # what files are available to download?
   today <- as.character(Sys.Date())
