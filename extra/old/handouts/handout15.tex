@@ -1,0 +1,82 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parskip}{12pt}
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Handout 15: Method of Moments}
+
+\vspace*{18pt}
+
+\noindent
+
+Today we explore a general procedures for constructing estimators
+to estimate the parameters of a probability model from observed
+data.
+
+\section*{Method of Moments}
+
+When the random sample one draws from a population is large, it is not
+unreasonable to expect that the characteristics of the population will
+be fairly well approximated by the characteristics of the sample. This
+type of intuition gives us some confidence that the sample mean
+$\bar{X}$
+will be a reliable estimator of the population mean $\mu$ when the
+sample size $n$ is large and, similarly, that the sample proportion
+$p$ will be a reliable estimator of the population proportion
+$p$ when $n$ is large. Taking advantage of the expected
+similarity between a population and the sample drawn from it often lies
+behind the parameter estimation strategy employed. The method of moments
+is an approach to parameter estimation that is motivated by intuition
+such as this. It is a method that produces, under
+mild assumptions, consistent, asymptotically normal estimators of the
+parameters of interest.
+
+The moments of a probability distribution are, as we have discussed,
+defined as:
+\begin{align*}
+\mu_k &= \mathbb{E} X^k
+\end{align*}
+The sample moments are defined similarly:
+\begin{align*}
+m_k &= \frac{1}{n} \sum_{i=1}^n X_i^k.
+\end{align*}
+The method of moments estimators simply solve the following system
+of equations for the first $k$ moments:
+\begin{align*}
+\mu_1(\theta) &= m_1 \\
+\mu_2(\theta) &= m_2 \\
+&\vdots \\
+\mu_k(\theta) &= m_k \\
+\end{align*}
+Where $k$ is set to the number of parameters in the model. They are often
+easy to calculate both theoretically and numerically.
+
+\end{document}
+
+
+
+
+
+
+
+
+

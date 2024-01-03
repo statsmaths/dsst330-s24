@@ -1,0 +1,139 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parskip}{12pt}
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Handout 22: Chebyshev, Markov, CLT}
+
+\vspace*{18pt}
+
+\noindent
+
+We finish the semester today by establishing some convergence results.
+These all have important applications if you continue on in statistics.
+
+\section*{Inequalities}
+
+Chebyshev's inequality is a simple but quite
+useful tool in probability, as it applies to any random variable whose
+variance is finite, and it leads to an immediate proof of a version of a
+famous result called the ``weak law of large numbers'' which gives
+conditions under which the mean of a random sample will converge to the
+mean of the sampled population as the sample size grows large. Another
+reason for the impact of Chebyshev's inequality on Statistics is that it
+showed quite dramatically the utility and relevance of the
+\emph{variance} as a measure of dispersion. At first view, the quantity
+$\sigma$ \textsuperscript{2} seems like a reasonable but somewhat arbitrary
+measure of the ``distance'' of a random variable from its expected
+value. Chebyshev's inequality leaves no doubt that this measure says
+something quite meaningful about the dispersion of a distribution. The
+inequality applies to both theoretical and empirical distributions, that
+is, it can be applied when discussing the probability mass function or
+density of a random variable or a histogram based on discrete or
+continuous data.
+
+\begin{thm}[Chebyshev's Inequality]
+For any random variable $X$ with finite
+mean $\mu$ and variance $\sigma^2$, and for any $\epsilon > 0$:
+\begin{align*}
+\mathbb{P}\left( |X - \mu| > \epsilon \right) \leq \frac{\sigma^2}{\epsilon^2}
+\end{align*}
+\end{thm}
+\textbf{Proof.} We give a proof in the continuous case. The proof of the
+discrete case is similar.
+\begin{align*}
+\sigma^2 &= \mathbb{E} (X - \mu)^2 \\
+&= \int_{\infty}^\infty (x - \mu)^2 f(x) dx \\
+&\geq \int_{\{x: |x - \mu| \geq \epsilon \}} (x - \mu)^2 f(x) dx \\
+&= \int_{\{x: |x - \mu| \geq \epsilon \}} \epsilon^2 f(x) dx \\
+&= \epsilon^2 \cdot \int_{\{x: |x - \mu| \geq \epsilon \}} f(x) dx \\
+&= \epsilon^2 \cdot \mathbb{P} \left( |X - \mu| > \epsilon \right)
+\end{align*}
+Dividing the first and last term of the sequence above by $\epsilon^2$
+yields the result~$\blacksquare$.
+
+A related result that is often useful in its own right is Markov's Inequality.
+
+\begin{thm}[Markov's Inequality]
+For any random variable $X$ and for any $a > 0$,
+\begin{align*}
+\mathbb{P} (|X| \geq a) &\leq \frac{\mathbb{E}|X|}{a}.
+\end{align*}
+\end{thm}
+\textbf{Proof.} Consider the indicator function of the event
+$\{|X| \geq a \}$, that is, the function $I_{[a, \infty)}(|X|)$.
+For any value of $a$, including $a > 0$ (the case
+of interest), we have that:
+\begin{align*}
+a \cdot I_{[a, \infty)}(|X|) \leq |X|.
+\end{align*}
+Taking the expected value of both sides, it follows that:
+\begin{align*}
+a \cdot \mathbb{P}(|X| \geq a) \leq \mathbb{E}|X|.
+\end{align*}
+An inequality that can be rewritten, by dividing by a, as the desired
+result~$\blacksquare$.
+
+Chebyshev's inequality turns out to be a very useful tool in studying
+questions concerning the convergence of a sequence of random variables
+$\{X_n\}$ to a fixed constant. Such questions are of
+particular interest in applications in which an unknown parameter is
+estimated from data. To formalize this, we need a definition of
+convergence in the context of random variables.
+
+\begin{mydef}[Convergence in Probability]
+Let $\{X_i, i = 1, 2, \ldots \}$ be a sequence of random variables.
+Then $X_n$ is said to converge in probability to a constant $c$,
+denoted $X_n \xrightarrow{p} c$, if for any $\epsilon > 0$:
+\begin{align*}
+P\left( |X_n - c| \geq \epsilon \right) \rightarrow 0 \, \text{as} \, n \rightarrow \infty.
+\end{align*}
+\end{mydef}
+
+From this definition, we can now prove a version of the law of large
+numbers.
+
+\begin{thm}[The Weak Law of Large Numbers]
+Let $X_1, X_2, \ldots \iid  F$, where $F$ is a distribution
+with finite mean $mu$ and variance $\sigma^2$. Let $\bar{X}_n$ be
+the mean of the first $n$ random variables. Then $\bar{X}_n \xrightarrow{p} \mu$
+as $n \rightarrow \infty$.
+\end{thm}
+\textbf{Proof.} By Chebyshev's inequality:
+\begin{align*}
+P\left( |X_n - c| \geq \epsilon \right) &\leq \frac{\sigma^2_{\bar{X}}}{\epsilon^2} \\
+&= \frac{\sigma^2}{n \epsilon^2}
+\end{align*}
+And clearly the last term limits to $0$ as $n \rightarrow \infty$, completing
+the result.
+
+\end{document}
+
+
+
+
+
+
+
+
+

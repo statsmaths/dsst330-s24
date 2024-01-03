@@ -1,0 +1,118 @@
+\documentclass{beamer}
+
+\title{Classical Inference II}
+\author{Taylor Arnold}
+\date{2024-01-01}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\iid}{\overset{\mathrm{i.i.d.}}{\sim}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Sample Variance}
+
+As review, the variance of a random variable is defined as:
+\begin{align*}
+\V [X] &= \E [X - \E X]^2
+\end{align*}
+The sample variance is given by the following:
+\begin{align*}
+S^2 &= \frac{1}{n - 1} \sum_i (X_i - \bar{X})^2
+\end{align*}
+Notice that it roughly corresponds to replacing the expected values with
+averages over the data, though we have used an $(n-1)$ in the front rather
+than $n$. We will see where this comes from shortly.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Chi-Squared}
+
+Today's notes depend on understanding the chi-squared distribution. To start, let's
+give a constructive definition of the chi-squared distribution.
+Let $Z_1, \ldots, Z_n \iid N(0, 1)$ and:
+\begin{align*}
+Y = \sum_i Z_i^2.
+\end{align*}
+Then, we see that $Y$ is a well-defined random variable that depends only on the 
+value $n$. We call the distribution of $Y$ a \alert{chi-squared distribution}. This
+family has one parameter, here $n$, which is called it's degrees of freedom.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Chi-Squared}
+
+Let's re-derive some of the basic properties of the chi-squared distribution that 
+will be useful for our analysis. Let $Z \sim N(0, 1)$ and $X = |Z|$. If we set
+$Y = Z^2$, then, $Y$ has a chi-squared distribution with $1$ degree of freedom. 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Chi-Squared}
+
+Q1. Use the change of variable formula to compute the density of $Y$. You can start
+with the fact that $X$ has the following density:
+\begin{align*}
+f_X(x) &= \frac{\sqrt{2}}{\sqrt{\pi}} \cdot e^{-\frac{1}{2}x^2}.
+\end{align*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Chi-Squared}
+
+Q2. Show that the chi-squared with one degree of freedom is just a specific form of
+the Gamma distribution. 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Chi-Squared}
+
+Putting this together, we see that the chi-squared is equivalent to...
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Independence}
+
+It can be shown that the sample mean $\bar{X}$ and the sample variance $S^2$
+are independent random variables. We will accept this without proof as the
+derivation is fairly long and technical. I have a scan from a textbook of
+the full proof for anyone who would like to see it.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Distribution of Sample Variance}
+
+
+
+\end{frame}
+
+
+
+
+\end{document}

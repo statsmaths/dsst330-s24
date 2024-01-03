@@ -1,0 +1,88 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parskip}{12pt}
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Handout 18: Z-Scores}
+
+\vspace*{6pt}
+
+\noindent
+
+We have mentioned that there is no closed form solution for
+computing the following integral for arbitrary values $a$ and $b$:
+\begin{align*}
+\frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \int_{a}^{b} e^{-\frac{1}{2}(x - \mu)^2}
+\end{align*}
+This integral come from taking $X \sim N(\mu, \sigma^2)$, and
+finding the probability:
+\begin{align*}
+\mathbb{P}\left[ a \leq X \leq b \right].
+\end{align*}
+Given the important of the normal distribution, it seems that
+we should have a way of approximating such probabilities. The
+solution is to calculate a $Z$ score, which is a centered and
+standardized version of random variable:
+\begin{align*}
+Z &= \frac{X - \mu}{\sigma}
+\end{align*}
+Notice that then we have $Z \sim N(0, 1)$. If we want to find
+the probability that $X$ is between $a$ and $b$, we can write
+this is terms of Z:
+\begin{align*}
+\mathbb{P} \left[ a \leq X \leq b  \right]
+&= \mathbb{P} \left[ a - \mu \leq X - \mu \leq b - \mu  \right] \\
+&= \mathbb{P} \left[ \frac{a - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{b - \mu}{\sigma}  \right] \\
+&= \mathbb{P} \left[ \frac{a - \mu}{\sigma} \leq Z \leq \frac{b - \mu}{\sigma}  \right] \\
+&= \mathbb{P} \left[ Z \leq \frac{b - \mu}{\sigma} \right] - \mathbb{P} \left[ Z \leq \frac{a - \mu}{\sigma} \right]
+\end{align*}
+So, we could calculate the probability that a normally distribution
+variable $X$ is between two extremes as long as we had a table giving
+the probability that $Z$ is less than any particular $\alpha$. A table
+of such values is called a \textbf{Z-table}. These usually only include
+values for a positive $\alpha$, as negative values can be inferred by
+symmetry. Such a table is included in this handout and will given on
+the final two exams.
+
+Two particularly important scores are:
+\begin{align*}
+\mathbb{P}\left[ Z \leq 1.96 \right] \approx 0.9750 = 1 - 0.05/2 \\
+\mathbb{P}\left[ Z \leq 2.56 \right] \approx 0.9948 = 1 - 0.01/2 \\
+\end{align*}
+Which yield what we refer to as tail bounds:
+\begin{align*}
+\mathbb{P}\left[ |Z| \geq 1.96 \right] \approx 0.05 \\
+\mathbb{P}\left[ |Z| \leq 2.56 \right] \approx 0.01 \\
+\end{align*}
+
+\includegraphics[width=1.2\textwidth]{img/ztab.jpg}
+
+\end{document}
+
+
+
+
+
+
+
+
+

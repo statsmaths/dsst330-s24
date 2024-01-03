@@ -1,0 +1,72 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Handout 21: Coins and Helicopters}
+
+\vspace*{18pt}
+
+\noindent
+Each table has been given a bent coin and a paper helicopter.
+Your goal is to estimate (a) the probability that the coin comes
+up heads and (b) the time it takes the helicopter to hit the
+ground once released. Starting with the coin, repeat all of the
+steps below.
+
+\textbf{1.} Describe a reasonable probability model to describe
+the random process.
+
+\textbf{2.} Calculate or look up from past worksheets the MME
+for your probability model's parameters.
+
+\textbf{3.} Calculate or look up from past worksheets the MLE
+for your probability model's parameters.
+
+\textbf{4.} Construct a reasonable prior distribution (hopefully
+one that we know how to calculate the posterior from given your
+likelihood). Decide on reasonable hyperparameters for the prior.
+Calculate or look up from past worksheets the Bayes estimator.
+
+\textbf{5.} Run 3 experiments and record the data. Make sure the
+same person does the flipping or releasing to keep it consistent.
+
+\textbf{6.} Compute all three estimators for the first 3 data points.
+
+\textbf{7.} Compute a confidence interval for mean after the first
+5 data points.
+
+\textbf{8.} Run 17 (coin) / 7 (helicopter) additional random trials.
+
+\textbf{9.} Update your three estimators and the confidence interval.
+
+\textbf{10.} You should notice that the CI gets smaller and that the
+three estimators are closer together after the second round of
+experiments.
+
+\end{document}
+
+
+
+
+
+
+
+
+

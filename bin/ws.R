@@ -57,7 +57,7 @@ for (ar in args)
            "", "\\vspace*{18pt}", "", "", unlist(qs1),
            "", "\\end{document}")
   write_lines(out, file.path("ws", f1))
-  system(sprintf("cd ws; Rxelatex %s", f1))
+  system(sprintf("cd ws; Rpdflatex %s", f1))
 
   # make the solutions
   as1 <- map(as, function(u) {
@@ -71,5 +71,5 @@ for (ar in args)
            "", "\\end{document}")
   out <- out[!stri_detect(out, fixed = "%NOSOLUTIONS")]
   write_lines(out, file.path("stage/sl-stage", f2))
-  system(sprintf("cd stage/sl-stage; Rxelatex %s", f2))  
+  system(sprintf("cd stage/sl-stage; Rpdflatex %s", f2))  
 }

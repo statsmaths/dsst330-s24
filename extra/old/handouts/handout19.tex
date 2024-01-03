@@ -1,0 +1,89 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parskip}{12pt}
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Handout 19: Confidence Intervals}
+
+\vspace*{18pt}
+
+\noindent
+
+Over the past few classes we have discussed properties that make
+for good estimators $\widehat{\theta}$ of some unknown parameter
+$\theta$. These are often called \textit{point estimators} as they
+specify the single best guess (i.e., a point) for $\theta$. Today
+we will discuss providing a range of guesses for a parameter value;
+this is called a \textit{confidence interval}. Confidence intervals
+make probabilistic guarantees about how likely it is that $\theta$
+is contained in the predicted interval. That is:
+\begin{align*}
+\mathbb{P} \left[ \widehat{\theta}_{lower} \leq \theta \leq \widehat{\theta}_{upper} \right] \geq 1 - \alpha
+\end{align*}
+For some reasonable $\alpha$ near $0$.
+
+Suppose that $X_1, X_2, \ldots, X_n \iid F$ with a finite
+mean $\mu$ and finite variance $\sigma^2$. Consider
+the following statistic:
+\begin{align*}
+t &= \frac{\bar{X} - \mu}{s / \sqrt{n}}
+\end{align*}
+Where, as before,
+\begin{align*}
+s &= \frac{1}{n-1} \sum_{i=1}^n (X_i - (\bar{X}))^2.
+\end{align*}
+In this case we know by the central limit theorem that $t$
+is asymptotically distributed as $N(0,1)$.\footnote{Because the
+distribution does not depend on the parameter of interest, $\mu$,
+we say that it $t$ a pivot statistic.}
+Define $z_{\alpha}$ as the $\alpha$ cutoff for the
+standard normal distribution,
+\begin{align*}
+\alpha &= \int_{z_\alpha}^\infty \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} dx,
+\end{align*}
+We then have:
+\begin{align*}
+\mathbb{P} \left( -z_{\alpha/2} \leq \frac{\bar{X} - \mu}{s / \sqrt{n}} \leq z_{\alpha/2} \right) &\approx 1 - \alpha.
+\end{align*}
+Which can be re-written as:
+\begin{align*}
+\mathbb{P} \left( \bar{X} - (s / \sqrt{n}) z_{\alpha/2} \leq \mu \leq \bar{X} +(s / \sqrt{n}) z_{\alpha/2} \right) &\approx 1 - \alpha
+\end{align*}
+Or, even as:
+\begin{align*}
+\bar{X} \pm \frac{s}{\sqrt{n}} \cdot z_{\alpha/2}
+\end{align*}
+This particular case is important because we can use it without knowing
+the exact distribution family that $X$ is drawn from. Therefore, we can
+use this formula to approximately capture the mean from any sample taken
+independently from a distribution with finite variance.
+
+\end{document}
+
+
+
+
+
+
+
+
+

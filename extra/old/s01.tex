@@ -1,0 +1,157 @@
+\documentclass{beamer}
+
+\title{Classical Inference I}
+\author{Taylor Arnold}
+\date{2024-01-01}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\iid}{\overset{\mathrm{i.i.d.}}{\sim}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Random Sample}
+
+We work with a random sample of size $n$, that is
+
+\begin{align*}
+X_1, \ldots, X_n &\iid G
+\end{align*}
+
+Where 
+
+\begin{align*}
+\E \left[ X_j \right] &= \mu, \\
+\V \left[ X_j \right] &= \sigma^2.
+\end{align*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set.seed(1L); x <- sort(round(rnorm(16, mean = 2, sd = 3), 1))
+% clipr::write_clip(paste(x, collapse = ", "))
+% mean(x)
+\begin{frame}[fragile]
+\frametitle{Potato Diet}
+
+\begin{verbatim}
+    -4.6, -0.5, -0.5, 0.1, 0.1, 1.1, 1.9, 2.6, 3,
+          3.2, 3.5, 3.7, 4.2, 5.4, 6.5, 6.8
+\end{verbatim}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Sample Mean}
+
+\begin{align*}
+\bar{X} &= \frac{1}{n} \times \left[X_1 + \cdots + X_n \right] \\
+&= \frac{1}{n} \times \sum_i X_i \\
+\end{align*}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Sample Mean: Expected Value}
+
+Q1. What is the expected value of the sample mean? \pause
+
+\begin{align*}
+\E \bar{X} &= \E \left[ \frac{1}{n} \times \sum_i X_i \right] \\
+&= \frac{1}{n} \times \E \left[ \sum_i X_i \right] \\
+&= \frac{1}{n} \times \left[ \sum_i \E X_i \right] \\
+&= \frac{1}{n} \times \left[ \sum_i \mu \right] \\
+&= \frac{1}{n} \times n \cdot \mu = \mu.
+\end{align*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Sample Mean: Variance}
+
+Q2. What is the variance of the sample mean? \pause
+
+\begin{align*}
+\V \bar{X} &= \V \left[ \frac{1}{n} \times \sum_i X_i \right] \\
+&= \frac{1}{n^2} \times \V \left[ \sum_i X_i \right] \\
+&= \frac{1}{n^2} \times \left[ \sum_i \V X_i \right] \\
+&= \frac{1}{n^2} \times \left[ \sum_i \sigma^2 \right] \\
+&= \frac{1}{n^2} \times n \cdot \sigma^2 = \frac{\sigma^2}{n}.
+\end{align*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Sample Mean: Distribution}
+
+If $G$ is normal, then $\bar{X}$ is normal. Otherwise, we can
+approximate the sample mean as a normal using the Central Limit Theorem (CLT).
+So, let's assume that:
+\begin{align*}
+\bar{X} \sim N(\mu, \sigma^2 / n).
+\end{align*}
+\pause Consider $Z \sim N(0, 1)$. We (should) know that we can now write:
+\begin{align*}
+\bar{X} = \mu + Z \cdot \sqrt{\sigma^2 / n}.
+\end{align*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Standard Normal}
+
+Recall that:
+\begin{align*}
+\Prob \left[ |Z| > 2.58 \right] \approx 0.01
+\end{align*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Standard Normal}
+
+From which we can see that:
+\begin{align*}
+\Prob \left[ \left|\frac{\bar{X} - \mu}{\sqrt{\sigma^2 / n}} \right| > 2.58 \right] &\approx 0.01 \\
+\Prob \left[ |\bar{X} - \mu| > 2.58 \cdot \sqrt{\sigma^2 / n} \right] &\approx 0.01
+\end{align*}
+Or, in other words, there is a 99\% chance that:
+\begin{align*}
+\bar{X} - 2.58 \cdot \sqrt{\sigma^2 / n} \leq \mu \leq \bar{X} + 2.58 \cdot \sqrt{\sigma^2 / n}
+\end{align*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Back to the Potato Diet}
+
+The sample mean from our data is $\bar{x} = 2.28$ and $n = 16$.
+\begin{align*}
+2.28 - 2.58 \cdot \sqrt{3^2 / 16} \leq &\mu \leq 2.28 + 2.58 \cdot \sqrt{3^2 / 16} \\
+2.28 - 2.58 \cdot 3/4 \leq &\mu \leq 2.28 + 2.58 \cdot 3/4 \\
+0.345 \leq &\mu \leq 4.215.
+\end{align*}
+
+\end{frame}
+
+\end{document}
