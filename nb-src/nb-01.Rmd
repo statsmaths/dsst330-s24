@@ -126,7 +126,7 @@ We can take the mean of these with the same `mean` function that
 we used above. Try that in the code below:
 
 ```{r, question-02}
-
+mean(x)
 ```
 
 Compare your results with another student. You will see that 
@@ -187,7 +187,7 @@ Now, create a histogram and overlay the expected normal
 distribution. This may require looking up the properties of the
 random variable.
 
-```{r}
+```{r, question-04}
 hist(xbar, breaks = 50, probability = TRUE, col = "white")
 curve(dnorm(x, 0.6 / 2.6, 1/5 * sqrt((0.6 * 2) / (2.6^2 * (3.6)))),
       from = min(xbar), to = max(xbar), add = TRUE, col = "red")
