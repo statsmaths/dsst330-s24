@@ -4,8 +4,8 @@ library(stringi)
 args <- commandArgs(trailingOnly = TRUE)
 
 if (args[1] == "ALL") {
-  files <- dir("ho-src")
-  files <- files[stri_sub(files, 1, 2) == "ho"]
+  files <- dir("ws-src")
+  files <- files[stri_sub(files, 1, 2) == "ws"]
   files <- as.numeric(stri_sub(files, 4, 5))
   args <- files
 }

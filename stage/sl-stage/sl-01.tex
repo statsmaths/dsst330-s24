@@ -10,8 +10,15 @@
 \newtheorem{mydef}{Definition}
 \newtheorem{thm}{Theorem}
 
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
 \newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
-\newcommand{\iid}{\overset{\mathrm{i.i.d.}}{\sim}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -49,11 +56,27 @@ sample mean $\bar{X}$?\footnote{
   the result.
 } Does this imply that $\bar{X}$ is an unbiased estimator of $\mu_X$?
 
-\textit{Solution:} NA
+\textit{Solution:} We have:
+\begin{align*}
+\E \bar{X} &= \E \left[ \frac{1}{n} \times \sum_{i=1}^n X_i \right] \\
+&= \frac{1}{n} \times \E \left[ \sum_{i=1}^n X_i \right] \\
+&= \frac{1}{n} \times \left[ \sum_{i=1}^n \E X_i \right] \\
+&= \frac{1}{n} \times \left[ \sum_{i=1}^n \mu_X \right] \\
+&= \frac{1}{n} \times n \cdot \mu_X = \mu_X.
+\end{align*}
+So by the definition of unbiased, $\bar{X}$ is an unbiased estimator of $\mu_X$.
 
 \textbf{3}. Using the same set-up as the previous question, what is $Var(\bar{X})$?
 
-\textit{Solution:} NA
+\textit{Solution:} We have:
+\begin{align*}
+\V [\bar{X}] &= \V \left[ \frac{1}{n} \times \sum_{i=1}^n X_i \right] \\
+&= \frac{1}{n^2} \times \V \left[ \sum_{i=1}^n X_i \right] \\
+&= \frac{1}{n^2} \times \left[ \sum_{i=1}^n \V X_i \right] \\
+&= \frac{1}{n^2} \times \left[ \sum_{i=1}^n \sigma_X^2 \right] \\
+&= \frac{1}{n^2} \times n \cdot \sigma_X^2 = \frac{\sigma_X^2}{n}.
+\end{align*}
+As given on the handout.
 
 \textbf{4}. Let $Y$ be a random variable with mean $m$ and variance $v$. Chebyshev's
 Inequality tells us that if for any $a > 0$,
@@ -62,7 +85,16 @@ Inequality tells us that if for any $a > 0$,
 \end{align*}
 Use this result to show that $\bar{X}$ is a consistent estimator of $\mu_X$.
 
-\textit{Solution:} NA
+\textit{Solution:} Apply Chebyshev's inequality with $Y = \bar{X}$ and $a = \epsilon$, to get
+that for any $\epsilon$ we have (using the two previous results):
+\begin{align*}
+\mathbb{P}[ |\bar{X} - \mu_X| \geq \epsilon] \leq \frac{\sigma_X^2}{\epsilon^2 n}.
+\end{align*}
+Since $\epsilon$ and $\sigma_X^2$ are assumed to be fixed, we have that:
+\begin{align*}
+\lim_{n\rightarrow \infty} \mathbb{P}[ |\bar{X} - \mu_X| \geq \epsilon] = 0.
+\end{align*}
+By definition, then, $\bar{X}$ is a consistent estimator of $\mu_X$.
 
 \textbf{5}. Assume that $\mathcal{G}$ has a normal distribution. Define the following:
 \begin{align*}
@@ -70,7 +102,24 @@ Z &= \frac{\mu_X - \bar{X}}{\sqrt{\sigma_X^2 / n}}
 \end{align*}
 What is the distribution of Z?
 
-\textit{Solution:} NA
+\textit{Solution:} We see that $Z$ is a scaled version of a normal distribution, and therefore
+$Z$ must also be normal. All that is left is to determine its mean and variance.
+These are:
+\begin{align*}
+\E Z &= \E \left[ \frac{\mu_X - \bar{X}}{\sqrt{\sigma_X^2 / n}} \right] \\
+&= \frac{\mu_X - \E\bar{X}}{\sqrt{\sigma_X^2 / n}} \\
+&= \frac{\mu_X - \mu_X}{\sqrt{\sigma_X^2 / n}} \\
+&= 0.
+\end{align*}
+And 
+\begin{align*}
+\V Z &= \V \left[ \frac{\mu_X - \bar{X}}{\sqrt{\sigma_X^2 / n}} \right] \\
+&= \V \left[ \frac{\bar{X}}{\sqrt{\sigma_X^2 / n}} \right] \\
+&= \frac{1}{\sqrt{\sigma_X^2 / n}} \times \V \bar{X} \\
+&= \frac{\frac{\sigma_X^2}{n}}{\sqrt{\sigma_X^2 / n}} \\
+&= 1.
+\end{align*}
+So, $Z \sim N(0, 1)$, a standard normal.
 
 
 \end{document}
