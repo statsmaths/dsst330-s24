@@ -1,0 +1,105 @@
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\geometry{landscape, margin=1cm}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancyplain}
+\fancyhf{}
+\lfoot{}
+\rfoot{}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+
+{\LARGE Table of Distributions}
+
+\vspace*{18pt}
+
+\noindent
+The following table provides the notation, support,
+density, mean, variance, moment generating function 
+and the R function to produce a random sample for all
+of the main distributions we will need. Those in the
+first block are discrete distributions and the second
+set are continuous distributions. The first argument
+of each R function is the number of samples to draw.
+There are also (using the normal as an example) the
+following variants  with the same parameters:
+\texttt{dnorm} (pmf/pdf), \texttt{pnorm} (cdf), and
+\texttt{qnorm} (inverse cdf). The support of the 
+parameters are as follows: $p \in [0, 1]$;
+$k, d_1, d_2 \in \{1, 2, \ldots \}$;
+$\alpha, \beta, \gamma, \lambda, \sigma^2 \in (0, \infty)$;
+and $\mu \in \mathbb{R}$.
+
+\vspace*{18pt}
+
+\begin{center}
+ \renewcommand{\arraystretch}{1.8}
+\begin{tabular}{l||c|c|c|c|c|c|c}
+\textbf{Dist.} & \textbf{Notation} & \textbf{Support} & \textbf{PMF/PDF} & \textbf{Mean} & \textbf{Variance} & \textbf{MGF} & \textbf{R Code} \\
+\hline \hline
+Bernoulli & $Bernoulli(p)$ & $x \in \{0, 1\}$ & $p^x (1 - p)^{1 - x}$ & $p$ & $p(1 - p)$ & $(1 - p + pe^t)$ & \texttt{rbinom(, 1, prob = p)} \\ \hline
+Binomial & $Bin(n, p)$ & $x \in \{0, \ldots, n\}$ & $\binom{n}{x} p^x (1 - p)^{n - x}$ &  $np$ & $np(1 - p)$ & $(1 - p + pe^t)^n$ & \texttt{rbinom(, size = n, prob = p)} \\ \hline
+Geometric & $Geom(p)$ & $x \in \{1, 2, \ldots\}$ & $(1-p)^{x-1}p$ & $1/p$ & $(1 - p) / p^2$ & $\frac{pe^t}{1 - (1-p)e^t}$ & \texttt{rgeom(, prob = p) - 1} \\ \hline
+N. Binomial & $NB(k, p)$ & $x \in \{k, k + 1, \ldots\}$ & $\binom{x - 1}{k - 1} (1-p)^{x-k} p^{k}$ & $k/p$  & $k (1 - p) / p^2$ & $\left(\frac{pe^t}{1 - (1-p)e^t} \right)^{k}$ & \texttt{rnbinom(, size = n, prob = p) - n} \\ \hline
+Poisson & $Poisson(\lambda)$ & $x \in \{0, 1, \ldots\}$ & $\frac{\lambda^x e^{-\lambda}}{x!}$ & $\lambda$ & $\lambda$ & $e^{\lambda(e^t - 1)}$ & \texttt{rpois(, lambda = lambda)} \\ \hline \hline
+Exponential & $Exp(\lambda)$ & $x \in [0, \infty)$ & $\lambda e^{-\lambda x}$ & $\lambda^{-1}$ & $\lambda^{-2}$ & $\frac{\lambda}{\lambda - t}$ & \texttt{rexp(, rate = lambda)} \\ \hline
+Gamma & $Gamma(\alpha, \beta)$ & $x \in [0, \infty)$ & $\frac{1}{\Gamma(\alpha) \beta^\alpha}\cdot x^{\alpha - 1} e^{-x/\beta}$ & $\alpha \beta$ & $\alpha \beta^2$ & $\left( 1 - \beta t \right)^{-\alpha}$ & \texttt{rgamma(, shape = a, scale = b)} \\ \hline
+Beta & $Beta(\alpha, \beta)$ & $x \in [0, 1]$ & $\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \cdot x^{\alpha -1} (1-x)^{\beta - 1}$ & $\frac{\alpha}{\alpha + \beta}$ & $\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ & $\cdot$ & \texttt{rbeta(, shape1 = a, shape2 = b)} \\ \hline
+Uniform & $U(a, b)$ & $x \in [a, b]$ & $(b - a)^{-1}$ & $\frac{1}{2}(b-a)$ & $\frac{1}{12}(b-a)^{2}$ & $\cdot$ & \texttt{runif(, min = a, max = b)} \\ \hline
+Normal & $N(\mu, \sigma^2)$ & $x \in \mathbb{R}$ & $\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{1}{2\sigma^2}(x - \mu)^2}$ & $\mu$ & $\sigma^2$ & $\exp\{\mu t + \frac{1}{2} \sigma^2 t^2 \}$ & \texttt{rnorm(, mean = mu, sd = sqrt(s2))} \\ \hline
+Chi-squared & $\chi^2(k)$ & $x \in [0, \infty)$ & $\frac{1}{2^{k/2}\Gamma(k/2)}$ $x^{k/2 - 1} e^{-x/2}$ & $k$ & $2k$ & $(1- 2t)^{-k/2}$ & \texttt{rchisq(, df = k)} \\ \hline
+Student-T & $t(k)$ & $x \in \mathbb{R}$ & $\cdot$  & 0 & k / (k - 2) & $\cdot$ & \texttt{rt(, df = k)} \\ \hline
+F-Dist. & $F(d_1, d_2)$ & $x \in [0, \infty)$ & $\cdot$ & $\frac{d_2}{d_2 - 1}$ & $\cdot$ & $\cdot$ & \texttt{rf(, df1 = d1, df2 = d2)} \\ \hline
+Cauchy & $C(\gamma)$ & $x \in [0, \infty)$ & $\frac{1}{\pi/\gamma(1 + (x/\gamma)^2)}$ & und. & und. & und. & \texttt{rcauchy(, scale = gamma)}
+\end{tabular}
+\end{center}
+
+% \newpage
+
+% \noindent
+% Below, are the MLE, MME and Bayesian estimators for several of
+% these families of distributions. Some cases are missing when there
+% is either no closed form solution or only a complex formula that
+% we did not cover.
+
+% \vspace*{18pt}
+
+% \begin{center}
+%  \renewcommand{\arraystretch}{1.8}
+% \begin{tabular}{l||c|c|c|c}
+% Distribution & MME & MLE & Prior & Posterior  \\
+% \hline \hline
+% Bernoulli & $\widehat{p} = \bar{X}$ & $\widehat{p} = \bar{X}$ & $p \sim Beta(\alpha, \beta)$ & $p|X \sim Beta(\alpha + \sum_i X_i, \beta + \sum_i (1 - X_i))$ \\ \hline
+% Geometric & $\widehat{p} = \bar{X}^{-1}$ & $\widehat{p} = \bar{X}^{-1}$ & $p \sim Beta(\alpha, \beta)$ & $p|X \sim Beta(\alpha + n, \beta + \sum_i X_i)$     \\ \hline
+% Poisson & $\widehat{\lambda} = \bar{X}$ &  $\widehat{\lambda} = \bar{X}$ & $\lambda \sim Gamma(\alpha, \beta)$ & $\lambda | X \sim Gamma(\alpha + \sum_i X_i, \beta / (n\beta + 1))$ \\ \hline
+% Uniform & $\widehat{a} = \bar{X} - \sqrt{3} s$ & $\widehat{a} = \min_i X_i$ & \\
+% & $\widehat{b} = \bar{X} + \sqrt{3} s$ & $\widehat{b} = \max_i X_i$ & \\ \hline
+% Gamma & $\widehat{\alpha} = \bar{X}^2 / s^2$ & & \\
+%  & $\widehat{\beta} = s^2 / \bar{X}$ & & \\ \hline
+% Normal & $\widehat{\mu} = \bar{X}$ & $\widehat{\mu} = \bar{X}$ &  \\
+% & $\widehat{\sigma^2} = s^2$ & $\widehat{\sigma^2} = \frac{1}{n} (X_i - \bar{X})^2$ &
+% \end{tabular}
+% \end{center}
+
+
+
+
+\end{document}
+
