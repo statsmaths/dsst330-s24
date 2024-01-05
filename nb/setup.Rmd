@@ -12,7 +12,8 @@ Click the two green play buttons to start the installation.
 install.packages(
   pkgs = c(
     "tidyverse", "ggrepel", "jsonlite", "lubridate", "readxl",
-    "remotes", "knitr", "rmarkdown", 
+    "remotes", "knitr", "rmarkdown", "googlesheets4", "simpleboot",
+    "gamlss", "MCMCpack"
   ),
   quiet = TRUE,
   dependencies = TRUE,

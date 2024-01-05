@@ -2,7 +2,7 @@
 # Settings and functions for working with the class notes and assignements
 # Note that this file will be overwritten. Do not modify directly!
 #
-# Date: 26 November 2024
+# Date: 05 January 2024
 
 #############################################################################
 # load a few required packages; others will be referenced with :: and :::
@@ -10,10 +10,6 @@ suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(ggrepel))
 suppressPackageStartupMessages(library(stringi))
 suppressPackageStartupMessages(library(lubridate))
-suppressPackageStartupMessages(library(sf))
-suppressPackageStartupMessages(library(hms))
-suppressPackageStartupMessages(library(RcppRoll))
-suppressPackageStartupMessages(library(broom))
 
 #############################################################################
 # some standard settings
@@ -32,16 +28,6 @@ options(readr.show_col_types = FALSE)
 options(ggrepel.max.overlaps = Inf)
 options(sparse.colnames = TRUE)
 options(lubridate.week.start = 1)
-
-#############################################################################
-# spatial functions
-sm_centroid <- function(data) {
-  suppressWarnings({ z <- st_coordinates(st_centroid(data)) })
-  return(tibble(lon = z[,1], lat = z[,2]))
-}
-spatial_join <- function(...) {
-  return(st_as_sf(as_tibble(st_join(...))))
-}
 
 #############################################################################
 # change default parameter in the arrange function
