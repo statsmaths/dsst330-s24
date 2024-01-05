@@ -1,0 +1,137 @@
+ ---
+title: "Notebook 02"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+## Computing the Sample Variance
+
+Let's read the Premier League heights data into R again
+(we will use this on and off for the next few weeks):
+
+```{r}
+pl <- read_csv("../data/premier_league.csv")
+pl <- filter(pl, !is.na(height))
+pl
+```
+
+Last time we used the `mean` function to get the sample mean.
+R also has a function `var` to get the sample variance. Below,
+compute the sample variance of the heights of the players in the
+dataset:
+
+```{r, question-01}
+
+```
+
+This should be an unbiased estimate of the variance of the 
+underlying distribution that the data are sampled from. As
+mentioned last time, understanding what that means in practical
+terms in this example can be a bit difficult.
+
+## Simulation of Chi-Squared
+
+Let's do a simulation to see that the distribution of S^2 does
+appear to be a chi-squared with n-1 degrees of freedom. Changing
+a few things from our code from last time, we see can simulate
+the distribution of the sample variance with the following code:
+
+```{r}
+N <- 100000
+s2 <- rep(0, N)
+for (j in seq_along(s2))
+{
+  x <- rnorm(n = 25, mean = 3, sd = sqrt(2))
+  s2[j] <- var(x)
+}
+```
+
+We know that a scaled version of `s2` should have a chi-squared
+distribution with (25-1) degrees of freedom. Let's see if that
+holds here:
+
+```{r}
+y <- (25 - 1) * s2 / 2
+
+hist(y, breaks = 50, probability = TRUE, col = "white")
+curve(dchisq(x, df = 24),
+      from = min(y), to = max(y), add = TRUE, col = "red")
+```
+
+Hopefully the answer is yes! Let's see how well this works for
+another distribution. Below, re-run the simulation with a 
+standard uniform from 0 to 1.
+
+```{r, question-02}
+
+```
+
+Now, create a histogram and overlay the expected chi-squared 
+distribution. Make sure that you plug in the correct variance
+of the distribution when creating the variable `y`.
+
+```{r, question-03}
+
+```
+
+You will see that the distribution is not, in this case, a 
+perfect match. So, keep in mind that the CLT needs to be used
+with caution when applied to non-normal data as it does not
+imply that the normal results immediately work for all other
+cases. We need to be careful about the assumptions and what we
+are measuring.
+
+## Simulation of Student's t-Distribution
+
+We finish by quickly simulating Student's t-Distribution. Here 
+is a random simulation of an independent standard normal divided
+by a scaled chi-squared:
+
+```{r}
+N <- 100000
+tstat <- rep(0, N)
+for (j in seq_along(tstat))
+{
+  z <- rnorm(n = 1, mean = 0, sd = 1)
+  c2 <- rchisq(n = 1, df = 10)
+  tstat[j] <- z / sqrt(c2 / 10)
+}
+```
+
+And here is the distribution compared to Student's
+t-Distribution:
+
+```{r}
+hist(tstat, breaks = 50, probability = TRUE, col = "white")
+curve(dt(x, df = 10),
+      from = min(tstat), to = max(tstat), add = TRUE, col = "red")
+```
+
+We can also directly compare the t-Distribution to the normal
+distribution. Here is a plot of the densities with 10 degrees
+of freedom:
+
+```{r}
+plot(1, type="n", xlab="", ylab="", xlim=c(-3, 3), ylim=c(0, 0.4))
+curve(dt(x, df = 10),
+      from = min(tstat), to = max(tstat), add = TRUE, col = "salmon")
+curve(dnorm(x, mean = 0, sd = 1),
+      from = min(tstat), to = max(tstat), add = TRUE, col = "olivedrab")
+```
+
+Copy the code above in the block below and change the degrees of
+freedom. See what happens when it is very low (1 or 2). How many
+degrees of freedom do you need in order to no longer see a
+difference between the curves?
+
+```{r, question-04}
+
+```
+

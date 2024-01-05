@@ -1,0 +1,90 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 02}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Assume that $\mathcal{G}$ is a normal distribution. What is the distribution
+of the following quantity from the sample mean $\bar{X}$ from a random sample
+with $n$ observations?
+\begin{align*}
+\left[\frac{\bar{X} - \mu_X}{\sigma_X / \sqrt{n}} \right]^2.
+\end{align*}
+This should be a short answer based on what you derived last time.
+
+\textbf{2}. Now, let's consider the following quantity, which we will temporarily
+give a name of $Y$ (it's not a quantity we need often, so there is not
+a standard symbol for it):
+\begin{align*}
+Y &= \frac{1}{\sigma_X^2} \times \sum_i \left[ X_i - \mu_X \right]^2 
+\end{align*}
+What is the distribution of $Y$?
+
+\textbf{3}. The quantity $Y$ looks similar to $S_X^2$. We will use a common trick to
+get $Y$ in terms of $S_X^2$: adding and subtracting the quantity $\bar{X}$
+inside of the terms inside the sum. We can put the constant factor in later,
+and so let's start with the following equality:
+\begin{align*}
+\sum_i \left[ X_i - \mu_X \right]^2 &= \sum_i \left[ X_i - \bar{X} + \bar{X} - \mu_X \right]^2  \\
+&= \sum_i \left[ (X_i - \bar{X}) + (\bar{X} - \mu_X) \right]^2 
+\end{align*}
+Make sure that you see why this is valid! Starting with the
+formula above, distribute the square. You should have three different summation
+terms. Simplify by showing that the cross-term (the one with the $2$ in it) is
+zero and another one of the terms is a constant in terms of the index $i$. The
+third term should look similar to $S_X^2$. This is somewhat tricky. Make sure
+you check the anwer before moving on.
+
+\textbf{4}. Divide both sides of your previous answer by $\sigma_X^2$. You
+should have one term on the left and two on the right. Make one of the terms
+on the right look like quantity in question 1.
+
+\textbf{5}. Using the previous set of results, what is the distribution of
+the following quantity?
+\begin{align*}
+\frac{1}{\sigma_X^2} \sum_i (X_i - \bar{X})^2 &= \frac{(n-1) S_X^2}{\sigma_X^2}
+\end{align*}
+
+\textbf{6}. From probability theory, we have that the expected value of a random variable with
+a chi-squared distribution with $k$ degrees of freedom is $k$. Its variance is $2k$.
+Take the expected value of the quantity from the previous question and
+simplify to get the expected value of $S_X^2$. You should see that $S_X^2$ is
+an unbiased estimator of $\sigma_X^2$.
+
+\textbf{7}. Take the
+variance of the quantity you started with in the previous question and simplify
+to get the variance of $S_X^2$.
+
+
+\end{document}
