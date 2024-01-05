@@ -11,27 +11,189 @@ output:
 source("../funs/funs.R")
 ```
 
-## Practice: Running R Code
+## Using R
 
-In this notebook are some further practice questions to see how well you
-understood the material from today.
+We will be using R and RMarkdown this semester to both apply the 
+statistical models that we learn to data and to run simulations
+that support our theoretical results. If you have never used R
+before that is completely fine! There's a little bit of a
+learning curve, but we are mostly either use only relatively
+simple code or run code where I have already done the difficult
+work for you. Let's see a few examples of how R works here before
+moving on to today's material.
 
-In the code block below, make a variable named `fav_number` and set it
-equal to your favorite number. (Note, the quotes are not part of the
-variable name).
+The text on a white background (like this!) is just plain text
+that you can freely edit. Text that is on a grey background,
+like the one below, is actual code. You can run it by clicking on
+the green "play" button in the upper right-hand corner of the 
+box. Everything here can be edited. Fill in your favorite number
+below and then run the following code to create a new variable
+with your number attached to it:
 
-```{r, question-01}
+```{r}
 fav_number <- 8
 ```
 
-In the code below, apply the function `log10` to your favorite
-number. (Again, the quotes are not part of the function name).
+You should notice that your new variable shows up in the 
+Environment tab in the upper right-hand corner of the RStudio
+window. I will do my best to explain new R concepts when they
+first arise. But, please ask questions in class about anything
+you want to know more about!
 
-```{r, question-02}
-log10(fav_number)
+## Taking the Mean
+
+In the notes today we looked at taking the sample mean of a
+dataset. Let's read in a dataset where we can take the mean of
+one of the variable. Here, we have the code to read in a dataset
+of the heights and birth-dates of players on rosters from the
+2023/2024 Premier League season. A few heights are missing, and
+we remove these before continuing:
+
+```{r}
+pl <- read_csv("../data/premier_league.csv")
+pl <- filter(pl, !is.na(height))
+pl
 ```
 
-Note that the only point of the exercises here are to familiarize
-you with running code in R, creating variables, and applying functions.
-We will get to more interesting tasks soon!
+The variable `pl` contains the entire dataset. In order to 
+access a specific column of the data, we use the dataset name
+followed by a dollar sign and the name of the column of interest.
+So, to get the heights, we would do `pl$height`. R has the 
+function `mean()` that takes the sample mean of a set of numbers.
+Below, we put these together to get the sample mean of the player
+heights. The results are in centimeters.
 
+```{r}
+mean(pl$height)
+```
+
+How can we see this in terms of the random sampling that we have
+in our theoretical notes? Well, that's actually a bit complex 
+and philosophical. In a sense, we are not sampling from something
+but rather observing the entire league. The easiest way to think
+about this is to imagine that we are observing one set of players
+that was generated be some complex genetic and social
+interactions that led to these particular players being in the
+Premier League during the 2023/2024 season. The number above
+is an estimate of what the average height would be if we ran
+back time and produced many different versions of our current
+world. Yes, that's why I say that this gets quickly
+philosophical! We will talk more about this throughout the 
+semester.
+
+We can take a mean of a specific part of the dataset by selecting
+only some of the heights. For example, here is the code to
+only select heights from the "AFC Bournemouth" team:
+
+```{r}
+mean(pl$height[pl$team == "AFC Bournemouth"])
+```
+
+Here are all of the teams in the dataset:
+
+```{r}
+table(pl$team)
+```
+In the code block below, find the average height of another 
+team of your choosing.
+
+```{r, question-01}
+mean(pl$height[pl$team == "Chelsea FC"])
+```
+
+Think about how does this compare to the heights of the league
+as a whole  and the AFC Bournemouth team specifically. Could 
+you think of a way of characterizing the magnitude of these
+differences?
+
+## Simulation
+
+Now, let's see how we can use R to simulate the relationships
+between different random variables. We were able to derive some
+of these theoretically. The simulations help to verify that our
+calculations are correct and to help build further intuition.
+
+The code below uses the `rnorm` function to generate a set of
+25 samples from a normal distribution with mean 3 and standard
+deviation 1.
+
+```{r}
+x <- rnorm(n = 25, mean = 3, sd = 1)
+x
+```
+
+We can take the mean of these with the same `mean` function that
+we used above. Try that in the code below:
+
+```{r, question-02}
+
+```
+
+Compare your results with another student. You will see that 
+your results are not exactly the same because you have different
+random samples (in contrast, the means of the heights in the
+previous section should have been exactly the same). 
+
+We want to show that the distribution of the sample mean in this
+case appears to follow a normal distribution with mean 3 and
+variance 1 / n = 1/25. In order to do this we need to repeat the
+previous simulation a large number of times and store the sample
+mean each iteration. Here is the code to do that using a for
+loop:
+
+```{r}
+N <- 100000
+xbar <- rep(0, N)
+for (j in seq_along(xbar))
+{
+  x <- rnorm(n = 25, mean = 3, sd = 1)
+  xbar[j] <- mean(x)
+}
+```
+
+Then, in order to see the simulated distribution, we can draw
+a histogram with a curve on top of it. Note that R uses the
+standard deviation to parameterize the normal distribution, so
+we will use the square root of the expected variance: 1/5).
+
+```{r}
+hist(xbar, breaks = 50, probability = TRUE, col = "white")
+curve(dnorm(x, 3, 1/5),
+      from = min(xbar), to = max(xbar), add = TRUE, col = "red")
+```
+
+You should notice that the red line approximately follows the
+empirical distribution given by the histogram. 
+
+The central limit theorem says that we should have a similar
+result for any sampling distribution with a finite mean and
+finite variance. In the code below, run another simulation for
+the sample mean of 25 i.i.d. samples. But this time, use a 
+different distribution. Some options are: `runif`, `rbeta`, 
+and `rgamma`. You may need to look up the parameter names for
+the distribution.
+
+```{r, question-03}
+N <- 100000
+xbar <- rep(0, N)
+for (j in seq_along(xbar))
+{
+  x <- rbeta(n = 25, shape1 = 0.6, shape2 = 2)
+  xbar[j] <- mean(x)
+}
+```
+
+Now, create a histogram and overlay the expected normal
+distribution. This may require looking up the properties of the
+random variable.
+
+```{r}
+hist(xbar, breaks = 50, probability = TRUE, col = "white")
+curve(dnorm(x, 0.6 / 2.6, 1/5 * sqrt((0.6 * 2) / (2.6^2 * (3.6)))),
+      from = min(xbar), to = max(xbar), add = TRUE, col = "red")
+```
+
+If you have some extra time, see if reducing the sample size to
+a smaller number begins to show the non-normality of the sample
+mean. You should see that you can get some skew with smaller 
+samples, but the CLT kicks in extremely fast.

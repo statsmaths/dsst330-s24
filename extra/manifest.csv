@@ -1,6 +1,7 @@
 path,date
 "funs/funs.R","2024-01-01"
 "nb/notebook01.Rmd","2024-01-01"
+"data/premier_league.csv","2024-01-01"
 "nb/notebook02.Rmd","2024-01-24"
 "nb/notebook03.Rmd","2024-01-29"
 "nb/notebook04.Rmd","2024-01-31"
