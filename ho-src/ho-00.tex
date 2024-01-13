@@ -1,0 +1,155 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\newtheorem{mydef}{Definition}[section]
+\newtheorem{thm}{Theorem}[section]
+\setcounter{section}{1}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\justify
+
+{\LARGE Probability Theory Review}
+
+\vspace*{18pt}
+
+\noindent
+This handout includes a review of concepts from probability theory
+that we will make use of this semester. Along with the distribution
+handout, these should cover (almost) everything you need to know 
+for DSST330. Note that only the information in the
+random variables sections below will be actively used in the first
+unit of the course, so focus on reviewing that section for now.
+
+\vspace*{18pt}
+
+\noindent
+\underline{PROBABILITY SPACES} \\
+A \textbf{probability function} $\Prob$ defined over a set $S$ called the
+\textbf{sample space} associates a number between $0$ and $1$ to subsets
+$A \subset S$, known as \textbf{events}, with the following properties:
+\begin{enumerate}
+\item $\Prob[S] = 1$.
+\item For every pair of events $A$ and $B$ such that $A \cap B = \emptyset$,
+called \textbf{mutually exclusive} events, we have:
+\begin{align*}
+\Prob \left( A \cup B \right) = \mathbb{P}A + \mathbb{P}B.
+\end{align*}
+\end{enumerate}
+The pair $(S, \mathbb{P})$ is called a probability space.
+
+Let $A$ and $B$ be events from a sample space $S$ such that 
+$\mathbb{P}(B) > 0$. The \textbf{conditional probability} of A given B
+is written $\mathbb{P}(A | B)$ and defined as:
+\begin{align*}
+\mathbb{P}(A | B) &= \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}.
+\end{align*}
+A set of events are called \textbf{(mutually) independent} if the
+probability of their intersection is equal to the product of their
+individual probabilities. In particular, two events $A$ and $B$ are
+independent if $\mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot \mathbb{P}(B)$.
+
+\vspace*{18pt}
+
+\noindent
+\underline{RANDOM VARIABLES} \\
+A \textbf{random variable} $X$ is a mapping from a sample space into the
+real numbers.\footnote{
+  We could write a random variable as $f(s)$ or $X(s)$, but almost
+  always avoid the function notation in favor of capital letters.
+} We can describe a random variable through the \textbf{cumulative
+distribution function (cdf)}, given by: 
+\begin{align*}
+F_X(x) &= \mathbb{P}[ X \leq x ], \quad x \in \mathbb{R}.
+\end{align*}
+If the cdf is a step function, we say that $X$ is a discrete
+random variable. We say that $X$ is a continuous random variable if the
+cdf is continuous. For a discrete random variable we can
+define the \textbf{probability mass function (pmf)} $p_X(x)$ by:
+\begin{align*}
+p_X(x) &= \mathbb{P}[ X = x ].
+\end{align*}
+We can drop the subscript when it is clear what random variable we are
+writing the mass function for.
+For a continuous random variable, we instead define the
+\textbf{probability density function (pdf)} $f_X(x)$ as the derivative
+of the cdf. Through the fundamental theorem of calculus we have:
+\begin{align*}
+\mathbb{P}[ a \leq X \leq b] = \int_{a}^b f_X(x) dx.
+\end{align*}
+Usually, we define random variables by providing their pmf or pdf.\footnote{
+  A table of common families of distributions is linked to at the top of 
+  the course website. Typically, we denote the pdf/cdf of a random variable
+  by indicating which family and with which parameters a random variable
+  comes from. For example, $X \sim N(0, 1)$ would indicate that
+  $f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}x^2}$.
+}
+
+The \textbf{expected value} $\E[X]$ of a discrete random variable $X$ is
+defined by the pmf as:
+\begin{align*}
+\mathbb{E}[ X ] &= \sum_{x} x \cdot p_X(x) = \sum_{x} x \cdot \mathbb{P}[ x = X ],
+\end{align*}
+For a continuous random variable, we define the expected value as:
+\begin{align*}
+\mathbb{E} X &= \int_{-\infty}^{\infty} x \cdot f_X(x) \, \, dx.
+\end{align*}
+The \textbf{variance} $\V[X]$ of a random variable $X$ is given by the
+expected squared distance away from the expected value: 
+$\E[(X - \E X)^2]$.
+
+For any random variable $X$ and constants $a$ and $b$, we have that:
+\begin{align*}
+\E[a X + b] &= a \cdot \E [X] + b, \quad \V[a X + b] = a^2 \cdot \V[X].
+\end{align*}
+For two random variables $X$ and $Y$, we also have that
+$\E[X + Y] = \E[X] + \E[Y]$. The variance of the sum is equal to the sum
+of the variances if the random variables are independent, a concept defined
+in the following section.
+
+\vspace*{18pt}
+
+\noindent
+\underline{JOINT DISTRIBUTIONS} \\
+Let $X_1, \ldots, X_n$ be a sequence of $n$ random variables defined
+over the same sample space $S$. We can define the \textbf{joint probability
+density function} as a function $f$ such that:
+\begin{align*}
+\Prob [(a_1 \leq X_1 \leq b_1) \cap \cdots \cap (a_n \leq X_n \leq b_n)]
+&= \int_{a_1}^{b_1} \cdots \int_{a_n}^{b_n} f(x_1, \ldots, x_n) \, \, dx_1 \cdots dx_n.
+\end{align*}
+We say that the sequence of random variables is \textbf{independent}
+if we have the following factorization for all values of $x_i$:
+\begin{align*}
+f(x_1, \ldots, x_n) &= f_{X_1}(x_1) \cdots f_{X_n}(x_n).
+\end{align*}
+Similarly, we have the following definition of a \textbf{conditional probability
+density function} for two random variables $X$ and $Y$:
+\begin{align*}
+f_{X|Y} (x, y) &= \frac{f(x, y)}{f_Y(y)}
+\end{align*}
+While we will work with sets of independent random variables starting
+in the first week of the class, we will not make deep use of these
+joint distributions until the second unit.
+
+
+\end{document}
+

@@ -8,6 +8,7 @@
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{fancyhdr}
+\usepackage{multicol}
 
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancyplain}
@@ -15,17 +16,19 @@
 \lfoot{}
 \rfoot{}
 
-\newtheorem{mydef}{Definition}
-\newtheorem{thm}{Theorem}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
-
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
 
 \begin{document}
 
-
+\noindent
 {\LARGE Table of Distributions}
 
 \vspace*{18pt}
@@ -47,7 +50,7 @@ $k, d_1, d_2 \in \{1, 2, \ldots \}$;
 $\alpha, \beta, \gamma, \lambda, \sigma^2 \in (0, \infty)$;
 and $\mu \in \mathbb{R}$.
 
-\vspace*{18pt}
+\vspace*{0pt}
 
 \begin{center}
  \renewcommand{\arraystretch}{1.8}
@@ -70,6 +73,23 @@ F-Dist. & $F(d_1, d_2)$ & $x \in [0, \infty)$ & $\cdot$ & $\frac{d_2}{d_2 - 1}$ 
 Cauchy & $C(\gamma)$ & $x \in [0, \infty)$ & $\frac{1}{\pi/\gamma(1 + (x/\gamma)^2)}$ & und. & und. & und. & \texttt{rcauchy(, scale = gamma)}
 \end{tabular}
 \end{center}
+
+\noindent
+\underline{DERVIED DISTRIBUTIONS}
+
+\begin{multicols}{2}
+\begin{itemize}\setlength\itemsep{0em}
+    \item If $X \sim N(\mu, \sigma^2)$ then $a X + b \sim N(a\mu + b, a^2 \sigma^2)$ for $a \neq 0$.
+    \item If $X_1, \ldots X_n$ are independent normals, then $\sum_i X_i \sim N(\cdot, \cdot)$.
+    \item A sum of i.i.d. r.v.s with finite variances will be approximately normal (CLT).
+    \item If $Z_1, \ldots Z_n \iid N(0, 1)$ then $\sum_i Z_i^2 \sim \chi^2(n)$.
+    \item If $X \sim \chi^2(k_1)$ and $Y \sim \chi^2(k_2)$ are independent, then $X + Y \sim \chi^2(k_1 + k_2)$.
+    \item If $Z \sim N(0, 1)$ and $C \sim \chi_2(k)$ are independent, then $Z / \sqrt{C / k} \sim t(k)$.
+    \item If $T \sim t(k)$ then $T$ will be approximately $N(0, 1)$ for large $k$.
+    \item If $C_1 \sim \chi^2(k_1)$ and $C_2 \sim \chi^2(k_2)$ are independent, then
+      $\frac{C_1 / k_1}{C_2 / k_2} \sim F(k_1, k_2)$.
+\end{itemize}
+\end{multicols}
 
 % \newpage
 
