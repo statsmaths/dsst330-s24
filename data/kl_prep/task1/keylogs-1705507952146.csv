@@ -1,0 +1,2545 @@
+time,type,key,key_code,alt_key,ctrl_key,meta_key,shift_key,is_repeat,range_start,range_end
+7605,click,,,false,false,false,false,false,0,0
+17580.000000000004,down,Shift,ShiftLeft,false,false,false,true,false,0,0
+17614,down,F,KeyF,false,false,false,true,false,0,0
+17565,input,"F",insertText,false,false,false,false,false,1,1
+17691,up,Shift,ShiftLeft,false,false,false,false,false,1,1
+17706,up,f,KeyF,false,false,false,false,false,1,1
+17766,down,a,KeyA,false,false,false,false,false,1,1
+17717,input,"a",insertText,false,false,false,false,false,2,2
+17882,down,r,KeyR,false,false,false,false,false,2,2
+17832,input,"r",insertText,false,false,false,false,false,3,3
+17902,up,a,KeyA,false,false,false,false,false,3,3
+17958.000000000004,down," ",Space,false,false,false,false,false,3,3
+17909,input," ",insertText,false,false,false,false,false,4,4
+17970,up,r,KeyR,false,false,false,false,false,4,4
+18030,up," ",Space,false,false,false,false,false,4,4
+18404,down,o,KeyO,false,false,false,false,false,4,4
+18355,input,"o",insertText,false,false,false,false,false,5,5
+18504,down,u,KeyU,false,false,false,false,false,5,5
+18455.000000000004,input,"u",insertText,false,false,false,false,false,6,6
+18560,up,o,KeyO,false,false,false,false,false,6,6
+18596,up,u,KeyU,false,false,false,false,false,6,6
+18614,down,t,KeyT,false,false,false,false,false,6,6
+18564,input,"t",insertText,false,false,false,false,false,7,7
+18649,up,t,KeyT,false,false,false,false,false,7,7
+18701,down," ",Space,false,false,false,false,false,7,7
+18652,input," ",insertText,false,false,false,false,false,8,8
+18765,up," ",Space,false,false,false,false,false,8,8
+18826,down,i,KeyI,false,false,false,false,false,8,8
+18778,input,"i",insertText,false,false,false,false,false,9,9
+18906,down,n,KeyN,false,false,false,false,false,9,9
+18858,input,"n",insertText,false,false,false,false,false,10,10
+18978,up,i,KeyI,false,false,false,false,false,10,10
+18986,down," ",Space,false,false,false,false,false,10,10
+18935,input," ",insertText,false,false,false,false,false,11,11
+19026,up,n,KeyN,false,false,false,false,false,11,11
+19058,down,t,KeyT,false,false,false,false,false,11,11
+19008,input,"t",insertText,false,false,false,false,false,12,12
+19111,down,h,KeyH,false,false,false,false,false,12,12
+19061,input,"h",insertText,false,false,false,false,false,13,13
+19111,up," ",Space,false,false,false,false,false,13,13
+19170,up,t,KeyT,false,false,false,false,false,13,13
+19202,up,h,KeyH,false,false,false,false,false,13,13
+19222,down,e,KeyE,false,false,false,false,false,13,13
+19174,input,"e",insertText,false,false,false,false,false,14,14
+19302,down," ",Space,false,false,false,false,false,14,14
+19254,input," ",insertText,false,false,false,false,false,15,15
+19310,up,e,KeyE,false,false,false,false,false,15,15
+19358,up," ",Space,false,false,false,false,false,15,15
+19609,down,u,KeyU,false,false,false,false,false,15,15
+19558,input,"u",insertText,false,false,false,false,false,16,16
+19724,up,u,KeyU,false,false,false,false,false,16,16
+19732,down,n,KeyN,false,false,false,false,false,16,16
+19682.000000000004,input,"n",insertText,false,false,false,false,false,17,17
+19840,up,n,KeyN,false,false,false,false,false,17,17
+19889,down,c,KeyC,false,false,false,false,false,17,17
+19840,input,"c",insertText,false,false,false,false,false,18,18
+19941,down,h,KeyH,false,false,false,false,false,18,18
+19892,input,"h",insertText,false,false,false,false,false,19,19
+19953,up,c,KeyC,false,false,false,false,false,19,19
+20037,up,h,KeyH,false,false,false,false,false,19,19
+20041,down,a,KeyA,false,false,false,false,false,19,19
+19990.000000000004,input,"a",insertText,false,false,false,false,false,20,20
+20133,down,r,KeyR,false,false,false,false,false,20,20
+20084,input,"r",insertText,false,false,false,false,false,21,21
+20161,up,a,KeyA,false,false,false,false,false,21,21
+20213,up,r,KeyR,false,false,false,false,false,21,21
+20308,down,t,KeyT,false,false,false,false,false,21,21
+20259,input,"t",insertText,false,false,false,false,false,22,22
+20384,up,t,KeyT,false,false,false,false,false,22,22
+20465,down,e,KeyE,false,false,false,false,false,22,22
+20416,input,"e",insertText,false,false,false,false,false,23,23
+20581,down,d,KeyD,false,false,false,false,false,23,23
+20531,input,"d",insertText,false,false,false,false,false,24,24
+20645,up,e,KeyE,false,false,false,false,false,24,24
+20685,down," ",Space,false,false,false,false,false,24,24
+20636,input," ",insertText,false,false,false,false,false,25,25
+20700,up,d,KeyD,false,false,false,false,false,25,25
+20776,up," ",Space,false,false,false,false,false,25,25
+21060,down,b,KeyB,false,false,false,false,false,25,25
+21012,input,"b",insertText,false,false,false,false,false,26,26
+21124,up,b,KeyB,false,false,false,false,false,26,26
+21157,down,a,KeyA,false,false,false,false,false,26,26
+21108,input,"a",insertText,false,false,false,false,false,27,27
+21277,down,c,KeyC,false,false,false,false,false,27,27
+21228,input,"c",insertText,false,false,false,false,false,28,28
+21309,up,a,KeyA,false,false,false,false,false,28,28
+21333.000000000004,down,k,KeyK,false,false,false,false,false,28,28
+21285,input,"k",insertText,false,false,false,false,false,29,29
+21373,up,c,KeyC,false,false,false,false,false,29,29
+21449,up,k,KeyK,false,false,false,false,false,29,29
+21542,down,w,KeyW,false,false,false,false,false,29,29
+21494,input,"w",insertText,false,false,false,false,false,30,30
+21626,up,w,KeyW,false,false,false,false,false,30,30
+21730,down,a,KeyA,false,false,false,false,false,30,30
+21681,input,"a",insertText,false,false,false,false,false,31,31
+21803,up,a,KeyA,false,false,false,false,false,31,31
+21869,down,t,KeyT,false,false,false,false,false,31,31
+21820,input,"t",insertText,false,false,false,false,false,32,32
+21945,up,t,KeyT,false,false,false,false,false,32,32
+22016,down,e,KeyE,false,false,false,false,false,32,32
+21967,input,"e",insertText,false,false,false,false,false,33,33
+22088,down,r,KeyR,false,false,false,false,false,33,33
+22039,input,"r",insertText,false,false,false,false,false,34,34
+22152,up,e,KeyE,false,false,false,false,false,34,34
+22172,up,r,KeyR,false,false,false,false,false,34,34
+22242,down,s,KeyS,false,false,false,false,false,34,34
+22194,input,"s",insertText,false,false,false,false,false,35,35
+22370,down," ",Space,false,false,false,false,false,35,35
+22322,input," ",insertText,false,false,false,false,false,36,36
+22382,up,s,KeyS,false,false,false,false,false,36,36
+22438,up," ",Space,false,false,false,false,false,36,36
+22670,down,o,KeyO,false,false,false,false,false,36,36
+22621.000000000004,input,"o",insertText,false,false,false,false,false,37,37
+22745,up,o,KeyO,false,false,false,false,false,37,37
+22784,down,f,KeyF,false,false,false,false,false,37,37
+22736,input,"f",insertText,false,false,false,false,false,38,38
+22868.000000000004,up,f,KeyF,false,false,false,false,false,38,38
+22872,down," ",Space,false,false,false,false,false,38,38
+22822,input," ",insertText,false,false,false,false,false,39,39
+22924,up," ",Space,false,false,false,false,false,39,39
+22957,down,t,KeyT,false,false,false,false,false,39,39
+22908,input,"t",insertText,false,false,false,false,false,40,40
+23010,down,h,KeyH,false,false,false,false,false,40,40
+22960,input,"h",insertText,false,false,false,false,false,41,41
+23062,up,t,KeyT,false,false,false,false,false,41,41
+23086.000000000004,down,e,KeyE,false,false,false,false,false,41,41
+23037,input,"e",insertText,false,false,false,false,false,42,42
+23102,up,h,KeyH,false,false,false,false,false,42,42
+23141,down," ",Space,false,false,false,false,false,42,42
+23092,input," ",insertText,false,false,false,false,false,43,43
+23194,up,e,KeyE,false,false,false,false,false,43,43
+23218,up," ",Space,false,false,false,false,false,43,43
+23346,down,u,KeyU,false,false,false,false,false,43,43
+23297,input,"u",insertText,false,false,false,false,false,44,44
+23398,down,n,KeyN,false,false,false,false,false,44,44
+23349,input,"n",insertText,false,false,false,false,false,45,45
+23462,up,u,KeyU,false,false,false,false,false,45,45
+23522.000000000004,up,n,KeyN,false,false,false,false,false,45,45
+23655,down,f,KeyF,false,false,false,false,false,45,45
+23606,input,"f",insertText,false,false,false,false,false,46,46
+23719,up,f,KeyF,false,false,false,false,false,46,46
+23803,down,a,KeyA,false,false,false,false,false,46,46
+23754,input,"a",insertText,false,false,false,false,false,47,47
+23895,up,a,KeyA,false,false,false,false,false,47,47
+24167,down,Backspace,Backspace,false,false,false,false,false,47,47
+24119,input,"",deleteContentBackward,false,false,false,false,false,46,46
+24211.000000000004,up,Backspace,Backspace,false,false,false,false,false,46,46
+24292,down,Backspace,Backspace,false,false,false,false,false,46,46
+24242,input,"",deleteContentBackward,false,false,false,false,false,45,45
+24348,up,Backspace,Backspace,false,false,false,false,false,45,45
+24864,down,f,KeyF,false,false,false,false,false,45,45
+24814,input,"f",insertText,false,false,false,false,false,46,46
+24920,up,f,KeyF,false,false,false,false,false,46,46
+25084,down,a,KeyA,false,false,false,false,false,46,46
+25035,input,"a",insertText,false,false,false,false,false,47,47
+25196,down,s,KeyS,false,false,false,false,false,47,47
+25147.000000000004,input,"s",insertText,false,false,false,false,false,48,48
+25240.000000000004,up,a,KeyA,false,false,false,false,false,48,48
+25308,up,s,KeyS,false,false,false,false,false,48,48
+25402,down,h,KeyH,false,false,false,false,false,48,48
+25353,input,"h",insertText,false,false,false,false,false,49,49
+25489,up,h,KeyH,false,false,false,false,false,49,49
+25612.000000000004,down,i,KeyI,false,false,false,false,false,49,49
+25563,input,"i",insertText,false,false,false,false,false,50,50
+25699,up,i,KeyI,false,false,false,false,false,50,50
+25815,down,o,KeyO,false,false,false,false,false,50,50
+25766,input,"o",insertText,false,false,false,false,false,51,51
+25871.000000000004,down,n,KeyN,false,false,false,false,false,51,51
+25822,input,"n",insertText,false,false,false,false,false,52,52
+25935.000000000004,up,o,KeyO,false,false,false,false,false,52,52
+25959,up,n,KeyN,false,false,false,false,false,52,52
+25985,down,a,KeyA,false,false,false,false,false,52,52
+25936,input,"a",insertText,false,false,false,false,false,53,53
+26053,down,b,KeyB,false,false,false,false,false,53,53
+26004,input,"b",insertText,false,false,false,false,false,54,54
+26073,up,a,KeyA,false,false,false,false,false,54,54
+26133,up,b,KeyB,false,false,false,false,false,54,54
+26183,down,l,KeyL,false,false,false,false,false,54,54
+26132,input,"l",insertText,false,false,false,false,false,55,55
+26291,up,l,KeyL,false,false,false,false,false,55,55
+26295,down,e,KeyE,false,false,false,false,false,55,55
+26244,input,"e",insertText,false,false,false,false,false,56,56
+26363,down," ",Space,false,false,false,false,false,56,56
+26314,input," ",insertText,false,false,false,false,false,57,57
+26379,up,e,KeyE,false,false,false,false,false,57,57
+26435.000000000004,up," ",Space,false,false,false,false,false,57,57
+26548,down,n,KeyN,false,false,false,false,false,57,57
+26499,input,"n",insertText,false,false,false,false,false,58,58
+26551.000000000004,down,e,KeyE,false,false,false,false,false,58,58
+26503,input,"e",insertText,false,false,false,false,false,59,59
+26592.000000000004,up,n,KeyN,false,false,false,false,false,59,59
+26651,up,e,KeyE,false,false,false,false,false,59,59
+26764,down,d,KeyD,false,false,false,false,false,59,59
+26715,input,"d",insertText,false,false,false,false,false,60,60
+26840,down," ",Space,false,false,false,false,false,60,60
+26791,input," ",insertText,false,false,false,false,false,61,61
+26852,up,d,KeyD,false,false,false,false,false,61,61
+26888,up," ",Space,false,false,false,false,false,61,61
+26952,down,o,KeyO,false,false,false,false,false,61,61
+26903.000000000004,input,"o",insertText,false,false,false,false,false,62,62
+27000,down,f,KeyF,false,false,false,false,false,62,62
+26951,input,"f",insertText,false,false,false,false,false,63,63
+27036,up,o,KeyO,false,false,false,false,false,63,63
+27051.000000000004,up,f,KeyF,false,false,false,false,false,63,63
+27108,down," ",Space,false,false,false,false,false,63,63
+27059,input," ",insertText,false,false,false,false,false,64,64
+27156,down,t,KeyT,false,false,false,false,false,64,64
+27107,input,"t",insertText,false,false,false,false,false,65,65
+27171,up," ",Space,false,false,false,false,false,65,65
+27248,up,t,KeyT,false,false,false,false,false,65,65
+27451,down,Backspace,Backspace,false,false,false,false,false,65,65
+27402,input,"",deleteContentBackward,false,false,false,false,false,64,64
+27499.000000000004,up,Backspace,Backspace,false,false,false,false,false,64,64
+27563,down,Backspace,Backspace,false,false,false,false,false,64,64
+27514,input,"",deleteContentBackward,false,false,false,false,false,63,63
+27603,up,Backspace,Backspace,false,false,false,false,false,63,63
+27663,down,Backspace,Backspace,false,false,false,false,false,63,63
+27615.000000000004,input,"",deleteContentBackward,false,false,false,false,false,62,62
+27707,up,Backspace,Backspace,false,false,false,false,false,62,62
+27788,down,Backspace,Backspace,false,false,false,false,false,62,62
+27739,input,"",deleteContentBackward,false,false,false,false,false,61,61
+27820,up,Backspace,Backspace,false,false,false,false,false,61,61
+27896,down,Backspace,Backspace,false,false,false,false,false,61,61
+27847,input,"",deleteContentBackward,false,false,false,false,false,60,60
+27928,up,Backspace,Backspace,false,false,false,false,false,60,60
+28009,down,Backspace,Backspace,false,false,false,false,false,60,60
+27959,input,"",deleteContentBackward,false,false,false,false,false,59,59
+28040,up,Backspace,Backspace,false,false,false,false,false,59,59
+28120,down,Backspace,Backspace,false,false,false,false,false,59,59
+28071,input,"",deleteContentBackward,false,false,false,false,false,58,58
+28172,up,Backspace,Backspace,false,false,false,false,false,58,58
+28225,down,Backspace,Backspace,false,false,false,false,false,58,58
+28176.000000000004,input,"",deleteContentBackward,false,false,false,false,false,57,57
+28293,up,Backspace,Backspace,false,false,false,false,false,57,57
+28345,down,e,KeyE,false,false,false,false,false,57,57
+28295,input,"e",insertText,false,false,false,false,false,58,58
+28421,down,n,KeyN,false,false,false,false,false,58,58
+28373,input,"n",insertText,false,false,false,false,false,59,59
+28425,up,e,KeyE,false,false,false,false,false,59,59
+28501,up,n,KeyN,false,false,false,false,false,59,59
+28539,down,d,KeyD,false,false,false,false,false,59,59
+28490.000000000004,input,"d",insertText,false,false,false,false,false,60,60
+28579,down," ",Space,false,false,false,false,false,60,60
+28530,input," ",insertText,false,false,false,false,false,61,61
+28631,up,d,KeyD,false,false,false,false,false,61,61
+28634,up," ",Space,false,false,false,false,false,61,61
+28703,down,o,KeyO,false,false,false,false,false,61,61
+28654,input,"o",insertText,false,false,false,false,false,62,62
+28763,down,f,KeyF,false,false,false,false,false,62,62
+28714.000000000004,input,"f",insertText,false,false,false,false,false,63,63
+28779,up,o,KeyO,false,false,false,false,false,63,63
+28823,up,f,KeyF,false,false,false,false,false,63,63
+28842.000000000004,down," ",Space,false,false,false,false,false,63,63
+28793,input," ",insertText,false,false,false,false,false,64,64
+28919,up," ",Space,false,false,false,false,false,64,64
+28943,down,t,KeyT,false,false,false,false,false,64,64
+28894.000000000004,input,"t",insertText,false,false,false,false,false,65,65
+29000,down,h,KeyH,false,false,false,false,false,65,65
+28952,input,"h",insertText,false,false,false,false,false,66,66
+29079,up,h,KeyH,false,false,false,false,false,66,66
+29083.000000000004,down,e,KeyE,false,false,false,false,false,66,66
+29032,input,"e",insertText,false,false,false,false,false,67,67
+29091,up,t,KeyT,false,false,false,false,false,67,67
+29143,down," ",Space,false,false,false,false,false,67,67
+29095,input," ",insertText,false,false,false,false,false,68,68
+29159,up,e,KeyE,false,false,false,false,false,68,68
+29223,up," ",Space,false,false,false,false,false,68,68
+29315,down,w,KeyW,false,false,false,false,false,68,68
+29266,input,"w",insertText,false,false,false,false,false,69,69
+29391,down,e,KeyE,false,false,false,false,false,69,69
+29342.000000000004,input,"e",insertText,false,false,false,false,false,70,70
+29455.000000000004,up,w,KeyW,false,false,false,false,false,70,70
+29471,up,e,KeyE,false,false,false,false,false,70,70
+29797,down,s,KeyS,false,false,false,false,false,70,70
+29748,input,"s",insertText,false,false,false,false,false,71,71
+29880,up,s,KeyS,false,false,false,false,false,71,71
+30000,down,t,KeyT,false,false,false,false,false,71,71
+29951,input,"t",insertText,false,false,false,false,false,72,72
+30052,up,t,KeyT,false,false,false,false,false,72,72
+30125,down,e,KeyE,false,false,false,false,false,72,72
+30076,input,"e",insertText,false,false,false,false,false,73,73
+30186,down,r,KeyR,false,false,false,false,false,73,73
+30137,input,"r",insertText,false,false,false,false,false,74,74
+30222,up,e,KeyE,false,false,false,false,false,74,74
+30270,down,n,KeyN,false,false,false,false,false,74,74
+30220,input,"n",insertText,false,false,false,false,false,75,75
+30270,up,r,KeyR,false,false,false,false,false,75,75
+30334,up,n,KeyN,false,false,false,false,false,75,75
+30357,down," ",Space,false,false,false,false,false,75,75
+30308,input," ",insertText,false,false,false,false,false,76,76
+30437,up," ",Space,false,false,false,false,false,76,76
+30532,down,s,KeyS,false,false,false,false,false,76,76
+30482,input,"s",insertText,false,false,false,false,false,77,77
+30616,up,s,KeyS,false,false,false,false,false,77,77
+30620,down,p,KeyP,false,false,false,false,false,77,77
+30569,input,"p",insertText,false,false,false,false,false,78,78
+30724,down,i,KeyI,false,false,false,false,false,78,78
+30675,input,"i",insertText,false,false,false,false,false,79,79
+30760,up,p,KeyP,false,false,false,false,false,79,79
+30812,down,t,KeyT,false,false,false,false,false,79,79
+30763,input,"t",insertText,false,false,false,false,false,80,80
+30840,up,i,KeyI,false,false,false,false,false,80,80
+30864,up,t,KeyT,false,false,false,false,false,80,80
+30985,down,a,KeyA,false,false,false,false,false,80,80
+30936,input,"a",insertText,false,false,false,false,false,81,81
+31053,down,l,KeyL,false,false,false,false,false,81,81
+31003,input,"l",insertText,false,false,false,false,false,82,82
+31096,up,a,KeyA,false,false,false,false,false,82,82
+31108,down," ",Space,false,false,false,false,false,82,82
+31058,input," ",insertText,false,false,false,false,false,83,83
+31144.000000000004,up,l,KeyL,false,false,false,false,false,83,83
+31201,up," ",Space,false,false,false,false,false,83,83
+31409,down,Backspace,Backspace,false,false,false,false,false,83,83
+31361,input,"",deleteContentBackward,false,false,false,false,false,82,82
+31461.000000000004,up,Backspace,Backspace,false,false,false,false,false,82,82
+31522.000000000004,down,Backspace,Backspace,false,false,false,false,false,82,82
+31473,input,"",deleteContentBackward,false,false,false,false,false,81,81
+31582,up,Backspace,Backspace,false,false,false,false,false,81,81
+31640,down,Backspace,Backspace,false,false,false,false,false,81,81
+31591,input,"",deleteContentBackward,false,false,false,false,false,80,80
+31688.000000000004,up,Backspace,Backspace,false,false,false,false,false,80,80
+31763,down,Backspace,Backspace,false,false,false,false,false,80,80
+31714.000000000004,input,"",deleteContentBackward,false,false,false,false,false,79,79
+31838,up,Backspace,Backspace,false,false,false,false,false,79,79
+32165,down,r,KeyR,false,false,false,false,false,79,79
+32116.999999999996,input,"r",insertText,false,false,false,false,false,80,80
+32221.000000000004,up,r,KeyR,false,false,false,false,false,80,80
+32349.000000000004,down,a,KeyA,false,false,false,false,false,80,80
+32299.999999999996,input,"a",insertText,false,false,false,false,false,81,81
+32421,down,l,KeyL,false,false,false,false,false,81,81
+32372,input,"l",insertText,false,false,false,false,false,82,82
+32453.000000000004,up,a,KeyA,false,false,false,false,false,82,82
+32477.000000000004,down," ",Space,false,false,false,false,false,82,82
+32427.999999999996,input," ",insertText,false,false,false,false,false,83,83
+32493.000000000004,up,l,KeyL,false,false,false,false,false,83,83
+32557.000000000004,up," ",Space,false,false,false,false,false,83,83
+32587.000000000004,down,a,KeyA,false,false,false,false,false,83,83
+32538.000000000004,input,"a",insertText,false,false,false,false,false,84,84
+32703.000000000004,up,a,KeyA,false,false,false,false,false,84,84
+32746.000000000004,down,r,KeyR,false,false,false,false,false,84,84
+32697.000000000004,input,"r",insertText,false,false,false,false,false,85,85
+32850,up,r,KeyR,false,false,false,false,false,85,85
+32903,down,m,KeyM,false,false,false,false,false,85,85
+32852.00000000001,input,"m",insertText,false,false,false,false,false,86,86
+32975,up,m,KeyM,false,false,false,false,false,86,86
+33095,down," ",Space,false,false,false,false,false,86,86
+33046,input," ",insertText,false,false,false,false,false,87,87
+33163.00000000001,up," ",Space,false,false,false,false,false,87,87
+33385,down,o,KeyO,false,false,false,false,false,87,87
+33336,input,"o",insertText,false,false,false,false,false,88,88
+33461,up,o,KeyO,false,false,false,false,false,88,88
+33506,down,f,KeyF,false,false,false,false,false,88,88
+33457,input,"f",insertText,false,false,false,false,false,89,89
+33565,up,f,KeyF,false,false,false,false,false,89,89
+33621,down," ",Space,false,false,false,false,false,89,89
+33572,input," ",insertText,false,false,false,false,false,90,90
+33689,down,t,KeyT,false,false,false,false,false,90,90
+33640,input,"t",insertText,false,false,false,false,false,91,91
+33721,up," ",Space,false,false,false,false,false,91,91
+33801,up,t,KeyT,false,false,false,false,false,91,91
+33833,down,h,KeyH,false,false,false,false,false,91,91
+33783,input,"h",insertText,false,false,false,false,false,92,92
+33848,down,e,KeyE,false,false,false,false,false,92,92
+33798,input,"e",insertText,false,false,false,false,false,93,93
+33897,up,h,KeyH,false,false,false,false,false,93,93
+33949,down," ",Space,false,false,false,false,false,93,93
+33900,input," ",insertText,false,false,false,false,false,94,94
+33952,up,e,KeyE,false,false,false,false,false,94,94
+34009,up," ",Space,false,false,false,false,false,94,94
+34235,down,Shift,ShiftLeft,false,false,false,true,false,94,94
+34427,up,Shift,ShiftLeft,false,false,false,false,false,94,94
+34541.00000000001,down,a,KeyA,false,false,false,false,false,94,94
+34491,input,"a",insertText,false,false,false,false,false,95,95
+34617,up,a,KeyA,false,false,false,false,false,95,95
+34643,down,l,KeyL,false,false,false,false,false,95,95
+34594,input,"l",insertText,false,false,false,false,false,96,96
+34711,down,a,KeyA,false,false,false,false,false,96,96
+34663.00000000001,input,"a",insertText,false,false,false,false,false,97,97
+34735,up,l,KeyL,false,false,false,false,false,97,97
+34791.00000000001,up,a,KeyA,false,false,false,false,false,97,97
+35179,down,x,KeyX,false,false,false,false,false,97,97
+35131,input,"x",insertText,false,false,false,false,false,98,98
+35238,up,x,KeyX,false,false,false,false,false,98,98
+35256,down,y,KeyY,false,false,false,false,false,98,98
+35207,input,"y",insertText,false,false,false,false,false,99,99
+35349.00000000001,up,y,KeyY,false,false,false,false,false,99,99
+35494,down," ",Space,false,false,false,false,false,99,99
+35445,input," ",insertText,false,false,false,false,false,100,100
+35566,up," ",Space,false,false,false,false,false,100,100
+35781,down,l,KeyL,false,false,false,false,false,100,100
+35733.00000000001,input,"l",insertText,false,false,false,false,false,101,101
+35841,up,l,KeyL,false,false,false,false,false,101,101
+35941,down,i,KeyI,false,false,false,false,false,101,101
+35891,input,"i",insertText,false,false,false,false,false,102,102
+36029,up,i,KeyI,false,false,false,false,false,102,102
+36036,down,e,KeyE,false,false,false,false,false,102,102
+35987,input,"e",insertText,false,false,false,false,false,103,103
+36105.00000000001,up,e,KeyE,false,false,false,false,false,103,103
+36197,down,s,KeyS,false,false,false,false,false,103,103
+36148,input,"s",insertText,false,false,false,false,false,104,104
+36257,down," ",Space,false,false,false,false,false,104,104
+36208,input," ",insertText,false,false,false,false,false,105,105
+36265,up,s,KeyS,false,false,false,false,false,105,105
+36321,up," ",Space,false,false,false,false,false,105,105
+36409,down,a,KeyA,false,false,false,false,false,105,105
+36360,input,"a",insertText,false,false,false,false,false,106,106
+36517,down," ",Space,false,false,false,false,false,106,106
+36468,input," ",insertText,false,false,false,false,false,107,107
+36521,up,a,KeyA,false,false,false,false,false,107,107
+36578,up," ",Space,false,false,false,false,false,107,107
+36740,down,s,KeyS,false,false,false,false,false,107,107
+36691,input,"s",insertText,false,false,false,false,false,108,108
+36808,up,s,KeyS,false,false,false,false,false,108,108
+36830,down,m,KeyM,false,false,false,false,false,108,108
+36782,input,"m",insertText,false,false,false,false,false,109,109
+36910.00000000001,up,m,KeyM,false,false,false,false,false,109,109
+36943,down,a,KeyA,false,false,false,false,false,109,109
+36894,input,"a",insertText,false,false,false,false,false,110,110
+37019,up,a,KeyA,false,false,false,false,false,110,110
+37022,down,l,KeyL,false,false,false,false,false,110,110
+36972,input,"l",insertText,false,false,false,false,false,111,111
+37083,up,l,KeyL,false,false,false,false,false,111,111
+37168,down,l,KeyL,false,false,false,false,false,111,111
+37119,input,"l",insertText,false,false,false,false,false,112,112
+37240,down," ",Space,false,false,false,false,false,112,112
+37191,input," ",insertText,false,false,false,false,false,113,113
+37247,up,l,KeyL,false,false,false,false,false,113,113
+37316,up," ",Space,false,false,false,false,false,113,113
+37429,down,u,KeyU,false,false,false,false,false,113,113
+37380,input,"u",insertText,false,false,false,false,false,114,114
+37498,down,n,KeyN,false,false,false,false,false,114,114
+37449,input,"n",insertText,false,false,false,false,false,115,115
+37578,up,u,KeyU,false,false,false,false,false,115,115
+37625,up,n,KeyN,false,false,false,false,false,115,115
+37633,down,r,KeyR,false,false,false,false,false,115,115
+37584,input,"r",insertText,false,false,false,false,false,116,116
+37709,down,e,KeyE,false,false,false,false,false,116,116
+37660.00000000001,input,"e",insertText,false,false,false,false,false,117,117
+37758,up,r,KeyR,false,false,false,false,false,117,117
+37821,up,e,KeyE,false,false,false,false,false,117,117
+37849.00000000001,down,g,KeyG,false,false,false,false,false,117,117
+37800.00000000001,input,"g",insertText,false,false,false,false,false,118,118
+37944,up,g,KeyG,false,false,false,false,false,118,118
+37964,down,a,KeyA,false,false,false,false,false,118,118
+37914,input,"a",insertText,false,false,false,false,false,119,119
+38041.00000000001,up,a,KeyA,false,false,false,false,false,119,119
+38059,down,r,KeyR,false,false,false,false,false,119,119
+38010,input,"r",insertText,false,false,false,false,false,120,120
+38139,up,r,KeyR,false,false,false,false,false,120,120
+38255,down,d,KeyD,false,false,false,false,false,120,120
+38206,input,"d",insertText,false,false,false,false,false,121,121
+38359,up,d,KeyD,false,false,false,false,false,121,121
+38387,down,e,KeyE,false,false,false,false,false,121,121
+38338,input,"e",insertText,false,false,false,false,false,122,122
+38523,down,d,KeyD,false,false,false,false,false,122,122
+38474.00000000001,input,"d",insertText,false,false,false,false,false,123,123
+38575,up,e,KeyE,false,false,false,false,false,123,123
+38587,down," ",Space,false,false,false,false,false,123,123
+38538.00000000001,input," ",insertText,false,false,false,false,false,124,124
+38599.00000000001,up,d,KeyD,false,false,false,false,false,124,124
+38691,up," ",Space,false,false,false,false,false,124,124
+38829,down,y,KeyY,false,false,false,false,false,124,124
+38779,input,"y",insertText,false,false,false,false,false,125,125
+38902,up,y,KeyY,false,false,false,false,false,125,125
+38970,down,e,KeyE,false,false,false,false,false,125,125
+38921,input,"e",insertText,false,false,false,false,false,126,126
+39054,up,e,KeyE,false,false,false,false,false,126,126
+39083,down,l,KeyL,false,false,false,false,false,126,126
+39034,input,"l",insertText,false,false,false,false,false,127,127
+39123,up,l,KeyL,false,false,false,false,false,127,127
+39197,down,l,KeyL,false,false,false,false,false,127,127
+39148,input,"l",insertText,false,false,false,false,false,128,128
+39260,up,l,KeyL,false,false,false,false,false,128,128
+39333,down,o,KeyO,false,false,false,false,false,128,128
+39284,input,"o",insertText,false,false,false,false,false,129,129
+39393,up,o,KeyO,false,false,false,false,false,129,129
+39405,down,w,KeyW,false,false,false,false,false,129,129
+39356,input,"w",insertText,false,false,false,false,false,130,130
+39481,down," ",Space,false,false,false,false,false,130,130
+39432,input," ",insertText,false,false,false,false,false,131,131
+39489.00000000001,up,w,KeyW,false,false,false,false,false,131,131
+39573,up," ",Space,false,false,false,false,false,131,131
+39643,down,s,KeyS,false,false,false,false,false,131,131
+39593,input,"s",insertText,false,false,false,false,false,132,132
+39720,down,u,KeyU,false,false,false,false,false,132,132
+39670,input,"u",insertText,false,false,false,false,false,133,133
+39743,up,s,KeyS,false,false,false,false,false,133,133
+39795,down,n,KeyN,false,false,false,false,false,133,133
+39750,input,"n",insertText,false,false,false,false,false,134,134
+39835,up,u,KeyU,false,false,false,false,false,134,134
+39887,up,n,KeyN,false,false,false,false,false,134,134
+40045,down,.,Period,false,false,false,false,false,134,134
+39996,input,".",insertText,false,false,false,false,false,135,135
+40149,up,.,Period,false,false,false,false,false,135,135
+40201,down," ",Space,false,false,false,false,false,135,135
+40152,input," ",insertText,false,false,false,false,false,136,136
+40253,up," ",Space,false,false,false,false,false,136,136
+40436,down,Enter,Enter,false,false,false,false,false,136,136
+40387,input,"",insertLineBreak,false,false,false,false,false,137,137
+40492,up,Enter,Enter,false,false,false,false,false,137,137
+40555,down,Enter,Enter,false,false,false,false,false,137,137
+40506,input,"",insertLineBreak,false,false,false,false,false,138,138
+40627,up,Enter,Enter,false,false,false,false,false,138,138
+40762,down,Shift,ShiftLeft,false,false,false,true,false,138,138
+40810,down,O,KeyO,false,false,false,true,false,138,138
+40761,input,"O",insertText,false,false,false,false,false,139,139
+40866,up,Shift,ShiftLeft,false,false,false,false,false,139,139
+40882,up,o,KeyO,false,false,false,false,false,139,139
+41218,down,b,KeyB,false,false,false,false,false,139,139
+41169.00000000001,input,"b",insertText,false,false,false,false,false,140,140
+41253,up,b,KeyB,false,false,false,false,false,140,140
+41496,down,Backspace,Backspace,false,false,false,false,false,140,140
+41447,input,"",deleteContentBackward,false,false,false,false,false,139,139
+41520,up,Backspace,Backspace,false,false,false,false,false,139,139
+41589,down,r,KeyR,false,false,false,false,false,139,139
+41540,input,"r",insertText,false,false,false,false,false,140,140
+41671,down,b,KeyB,false,false,false,false,false,140,140
+41622,input,"b",insertText,false,false,false,false,false,141,141
+41671,up,r,KeyR,false,false,false,false,false,141,141
+41703,up,b,KeyB,false,false,false,false,false,141,141
+41785.00000000001,down,i,KeyI,false,false,false,false,false,141,141
+41736.00000000001,input,"i",insertText,false,false,false,false,false,142,142
+41873,up,i,KeyI,false,false,false,false,false,142,142
+41890,down,t,KeyT,false,false,false,false,false,142,142
+41841,input,"t",insertText,false,false,false,false,false,143,143
+41967,up,t,KeyT,false,false,false,false,false,143,143
+41987,down,i,KeyI,false,false,false,false,false,143,143
+41939,input,"i",insertText,false,false,false,false,false,144,144
+42059,down,n,KeyN,false,false,false,false,false,144,144
+42010,input,"n",insertText,false,false,false,false,false,145,145
+42107,up,i,KeyI,false,false,false,false,false,145,145
+42159,up,n,KeyN,false,false,false,false,false,145,145
+42191,down,g,KeyG,false,false,false,false,false,145,145
+42141,input,"g",insertText,false,false,false,false,false,146,146
+42239.00000000001,up,g,KeyG,false,false,false,false,false,146,146
+42250,down," ",Space,false,false,false,false,false,146,146
+42201,input," ",insertText,false,false,false,false,false,147,147
+42339,up," ",Space,false,false,false,false,false,147,147
+42389,down,t,KeyT,false,false,false,false,false,147,147
+42340,input,"t",insertText,false,false,false,false,false,148,148
+42484,down,h,KeyH,false,false,false,false,false,148,148
+42435,input,"h",insertText,false,false,false,false,false,149,149
+42500,up,t,KeyT,false,false,false,false,false,149,149
+42537,up,h,KeyH,false,false,false,false,false,149,149
+42670,down,i,KeyI,false,false,false,false,false,149,149
+42621,input,"i",insertText,false,false,false,false,false,150,150
+42742.00000000001,up,i,KeyI,false,false,false,false,false,150,150
+42783,down,s,KeyS,false,false,false,false,false,150,150
+42734,input,"s",insertText,false,false,false,false,false,151,151
+42848,down," ",Space,false,false,false,false,false,151,151
+42798,input," ",insertText,false,false,false,false,false,152,152
+42851,up,s,KeyS,false,false,false,false,false,152,152
+42911,up," ",Space,false,false,false,false,false,152,152
+42949,down,a,KeyA,false,false,false,false,false,152,152
+42900,input,"a",insertText,false,false,false,false,false,153,153
+43001,up,a,KeyA,false,false,false,false,false,153,153
+43118,down,t,KeyT,false,false,false,false,false,153,153
+43069,input,"t",insertText,false,false,false,false,false,154,154
+43210,up,t,KeyT,false,false,false,false,false,154,154
+43218,down," ",Space,false,false,false,false,false,154,154
+43168,input," ",insertText,false,false,false,false,false,155,155
+43279,up," ",Space,false,false,false,false,false,155,155
+43346,down,a,KeyA,false,false,false,false,false,155,155
+43297.00000000001,input,"a",insertText,false,false,false,false,false,156,156
+43389,down," ",Space,false,false,false,false,false,156,156
+43340,input," ",insertText,false,false,false,false,false,157,157
+43437,up,a,KeyA,false,false,false,false,false,157,157
+43465,up," ",Space,false,false,false,false,false,157,157
+43805,down,d,KeyD,false,false,false,false,false,157,157
+43756,input,"d",insertText,false,false,false,false,false,158,158
+43893,up,d,KeyD,false,false,false,false,false,158,158
+43912,down,i,KeyI,false,false,false,false,false,158,158
+43864.00000000001,input,"i",insertText,false,false,false,false,false,159,159
+43984,up,i,KeyI,false,false,false,false,false,159,159
+44020,down,s,KeyS,false,false,false,false,false,159,159
+43972,input,"s",insertText,false,false,false,false,false,160,160
+44080,up,s,KeyS,false,false,false,false,false,160,160
+44200,down,t,KeyT,false,false,false,false,false,160,160
+44151,input,"t",insertText,false,false,false,false,false,161,161
+44276,up,t,KeyT,false,false,false,false,false,161,161
+44370,down,a,KeyA,false,false,false,false,false,161,161
+44321,input,"a",insertText,false,false,false,false,false,162,162
+44450,up,a,KeyA,false,false,false,false,false,162,162
+44498,down,n,KeyN,false,false,false,false,false,162,162
+44448,input,"n",insertText,false,false,false,false,false,163,163
+44582,up,n,KeyN,false,false,false,false,false,163,163
+44613,down,c,KeyC,false,false,false,false,false,163,163
+44564,input,"c",insertText,false,false,false,false,false,164,164
+44685,down,e,KeyE,false,false,false,false,false,164,164
+44636,input,"e",insertText,false,false,false,false,false,165,165
+44721,up,c,KeyC,false,false,false,false,false,165,165
+44776,down," ",Space,false,false,false,false,false,165,165
+44727.00000000001,input," ",insertText,false,false,false,false,false,166,166
+44781,up,e,KeyE,false,false,false,false,false,166,166
+44825,up," ",Space,false,false,false,false,false,166,166
+44899,down,o,KeyO,false,false,false,false,false,166,166
+44850,input,"o",insertText,false,false,false,false,false,167,167
+44935,down,f,KeyF,false,false,false,false,false,167,167
+44885,input,"f",insertText,false,false,false,false,false,168,168
+44979,up,o,KeyO,false,false,false,false,false,168,168
+45015,up,f,KeyF,false,false,false,false,false,168,168
+45062,down," ",Space,false,false,false,false,false,168,168
+45012,input," ",insertText,false,false,false,false,false,169,169
+45106,up," ",Space,false,false,false,false,false,169,169
+45202,down,r,KeyR,false,false,false,false,false,169,169
+45153,input,"r",insertText,false,false,false,false,false,170,170
+45290,down,o,KeyO,false,false,false,false,false,170,170
+45241,input,"o",insertText,false,false,false,false,false,171,171
+45294.00000000001,up,r,KeyR,false,false,false,false,false,171,171
+45366,down,u,KeyU,false,false,false,false,false,171,171
+45317,input,"u",insertText,false,false,false,false,false,172,172
+45414,up,o,KeyO,false,false,false,false,false,172,172
+45450,up,u,KeyU,false,false,false,false,false,172,172
+45498,down,g,KeyG,false,false,false,false,false,172,172
+45449,input,"g",insertText,false,false,false,false,false,173,173
+45562,down,h,KeyH,false,false,false,false,false,173,173
+45513,input,"h",insertText,false,false,false,false,false,174,174
+45573,up,g,KeyG,false,false,false,false,false,174,174
+45646,up,h,KeyH,false,false,false,false,false,174,174
+45740,down,l,KeyL,false,false,false,false,false,174,174
+45692,input,"l",insertText,false,false,false,false,false,175,175
+45829,up,l,KeyL,false,false,false,false,false,175,175
+45863,down,y,KeyY,false,false,false,false,false,175,175
+45814,input,"y",insertText,false,false,false,false,false,176,176
+45919.00000000001,up,y,KeyY,false,false,false,false,false,176,176
+45943,down," ",Space,false,false,false,false,false,176,176
+45894,input," ",insertText,false,false,false,false,false,177,177
+46004,up," ",Space,false,false,false,false,false,177,177
+46575,down,n,KeyN,false,false,false,false,false,177,177
+46526,input,"n",insertText,false,false,false,false,false,178,178
+46679,up,n,KeyN,false,false,false,false,false,178,178
+46819,down,i,KeyI,false,false,false,false,false,178,178
+46767,input,"i",insertText,false,false,false,false,false,179,179
+46850,down,n,KeyN,false,false,false,false,false,179,179
+46799,input,"n",insertText,false,false,false,false,false,180,180
+46875,up,i,KeyI,false,false,false,false,false,180,180
+46947,up,n,KeyN,false,false,false,false,false,180,180
+46987,down,e,KeyE,false,false,false,false,false,180,180
+46938,input,"e",insertText,false,false,false,false,false,181,181
+47079,up,e,KeyE,false,false,false,false,false,181,181
+47146,down,t,KeyT,false,false,false,false,false,181,181
+47095,input,"t",insertText,false,false,false,false,false,182,182
+47238,up,t,KeyT,false,false,false,false,false,182,182
+47445,down,y,KeyY,false,false,false,false,false,182,182
+47397,input,"y",insertText,false,false,false,false,false,183,183
+47523,up,y,KeyY,false,false,false,false,false,183,183
+47927,down,-,Minus,false,false,false,false,false,183,183
+47879,input,"-",insertText,false,false,false,false,false,184,184
+47996,up,-,Minus,false,false,false,false,false,184,184
+48110,down,t,KeyT,false,false,false,false,false,184,184
+48060,input,"t",insertText,false,false,false,false,false,185,185
+48190,up,t,KeyT,false,false,false,false,false,185,185
+48328,down,w,KeyW,false,false,false,false,false,185,185
+48279,input,"w",insertText,false,false,false,false,false,186,186
+48392,down,o,KeyO,false,false,false,false,false,186,186
+48343,input,"o",insertText,false,false,false,false,false,187,187
+48428.00000000001,up,w,KeyW,false,false,false,false,false,187,187
+48460,up,o,KeyO,false,false,false,false,false,187,187
+48468,down," ",Space,false,false,false,false,false,187,187
+48418,input," ",insertText,false,false,false,false,false,188,188
+48560,up," ",Space,false,false,false,false,false,188,188
+48598,down,m,KeyM,false,false,false,false,false,188,188
+48549,input,"m",insertText,false,false,false,false,false,189,189
+48666.00000000001,up,m,KeyM,false,false,false,false,false,189,189
+48783,down,i,KeyI,false,false,false,false,false,189,189
+48735,input,"i",insertText,false,false,false,false,false,190,190
+48828,up,i,KeyI,false,false,false,false,false,190,190
+48942,down,l,KeyL,false,false,false,false,false,190,190
+48893,input,"l",insertText,false,false,false,false,false,191,191
+48982,up,l,KeyL,false,false,false,false,false,191,191
+49057,down,l,KeyL,false,false,false,false,false,191,191
+49008,input,"l",insertText,false,false,false,false,false,192,192
+49121,up,l,KeyL,false,false,false,false,false,192,192
+49227.00000000001,down,i,KeyI,false,false,false,false,false,192,192
+49179,input,"i",insertText,false,false,false,false,false,193,193
+49283,up,i,KeyI,false,false,false,false,false,193,193
+49391,down,o,KeyO,false,false,false,false,false,193,193
+49342,input,"o",insertText,false,false,false,false,false,194,194
+49455,down,n,KeyN,false,false,false,false,false,194,194
+49406,input,"n",insertText,false,false,false,false,false,195,195
+49491,up,o,KeyO,false,false,false,false,false,195,195
+49519,up,n,KeyN,false,false,false,false,false,195,195
+49538.00000000001,down," ",Space,false,false,false,false,false,195,195
+49489.00000000001,input," ",insertText,false,false,false,false,false,196,196
+49618,up," ",Space,false,false,false,false,false,196,196
+49630,down,m,KeyM,false,false,false,false,false,196,196
+49579,input,"m",insertText,false,false,false,false,false,197,197
+49706,up,m,KeyM,false,false,false,false,false,197,197
+49809,down,i,KeyI,false,false,false,false,false,197,197
+49760,input,"i",insertText,false,false,false,false,false,198,198
+49869,up,i,KeyI,false,false,false,false,false,198,198
+49973,down,l,KeyL,false,false,false,false,false,198,198
+49924,input,"l",insertText,false,false,false,false,false,199,199
+50041.00000000001,up,l,KeyL,false,false,false,false,false,199,199
+50049,down,e,KeyE,false,false,false,false,false,199,199
+50000,input,"e",insertText,false,false,false,false,false,200,200
+50105.00000000001,up,e,KeyE,false,false,false,false,false,200,200
+50215,down,s,KeyS,false,false,false,false,false,200,200
+50165,input,"s",insertText,false,false,false,false,false,201,201
+50272,down," ",Space,false,false,false,false,false,201,201
+50223,input," ",insertText,false,false,false,false,false,202,202
+50291.00000000001,up,s,KeyS,false,false,false,false,false,202,202
+50331,up," ",Space,false,false,false,false,false,202,202
+50420,down,i,KeyI,false,false,false,false,false,202,202
+50371,input,"i",insertText,false,false,false,false,false,203,203
+50476,down,s,KeyS,false,false,false,false,false,203,203
+50427,input,"s",insertText,false,false,false,false,false,204,204
+50484,up,i,KeyI,false,false,false,false,false,204,204
+50560,up,s,KeyS,false,false,false,false,false,204,204
+50572,down," ",Space,false,false,false,false,false,204,204
+50522,input," ",insertText,false,false,false,false,false,205,205
+50632,up," ",Space,false,false,false,false,false,205,205
+50720,down,a,KeyA,false,false,false,false,false,205,205
+50671,input,"a",insertText,false,false,false,false,false,206,206
+50748,down,n,KeyN,false,false,false,false,false,206,206
+50699,input,"n",insertText,false,false,false,false,false,207,207
+50784,up,a,KeyA,false,false,false,false,false,207,207
+50796,up,n,KeyN,false,false,false,false,false,207,207
+50886,down," ",Space,false,false,false,false,false,207,207
+50837,input," ",insertText,false,false,false,false,false,208,208
+50953,up," ",Space,false,false,false,false,false,208,208
+51177,down,u,KeyU,false,false,false,false,false,208,208
+51128,input,"u",insertText,false,false,false,false,false,209,209
+51245.00000000001,up,u,KeyU,false,false,false,false,false,209,209
+51415,down,t,KeyT,false,false,false,false,false,209,209
+51366,input,"t",insertText,false,false,false,false,false,210,210
+51458,up,t,KeyT,false,false,false,false,false,210,210
+51539,down,t,KeyT,false,false,false,false,false,210,210
+51490,input,"t",insertText,false,false,false,false,false,211,211
+51587,up,t,KeyT,false,false,false,false,false,211,211
+51666.00000000001,down,e,KeyE,false,false,false,false,false,211,211
+51617.00000000001,input,"e",insertText,false,false,false,false,false,212,212
+51722,down,r,KeyR,false,false,false,false,false,212,212
+51673,input,"r",insertText,false,false,false,false,false,213,213
+51774,up,e,KeyE,false,false,false,false,false,213,213
+51814,up,r,KeyR,false,false,false,false,false,213,213
+51848,down,l,KeyL,false,false,false,false,false,213,213
+51799,input,"l",insertText,false,false,false,false,false,214,214
+51908,up,l,KeyL,false,false,false,false,false,214,214
+51943,down,y,KeyY,false,false,false,false,false,214,214
+51893,input,"y",insertText,false,false,false,false,false,215,215
+52019,up,y,KeyY,false,false,false,false,false,215,215
+52027,down," ",Space,false,false,false,false,false,215,215
+51976,input," ",insertText,false,false,false,false,false,216,216
+52099.00000000001,up," ",Space,false,false,false,false,false,216,216
+52220,down,i,KeyI,false,false,false,false,false,216,216
+52171,input,"i",insertText,false,false,false,false,false,217,217
+52272,down,n,KeyN,false,false,false,false,false,217,217
+52222,input,"n",insertText,false,false,false,false,false,218,218
+52352.00000000001,up,i,KeyI,false,false,false,false,false,218,218
+52412,up,n,KeyN,false,false,false,false,false,218,218
+52545,down,s,KeyS,false,false,false,false,false,218,218
+52497,input,"s",insertText,false,false,false,false,false,219,219
+52601,down,i,KeyI,false,false,false,false,false,219,219
+52552,input,"i",insertText,false,false,false,false,false,220,220
+52625,up,s,KeyS,false,false,false,false,false,220,220
+52701,up,i,KeyI,false,false,false,false,false,220,220
+52719,down,g,KeyG,false,false,false,false,false,220,220
+52670,input,"g",insertText,false,false,false,false,false,221,221
+52791.00000000001,up,g,KeyG,false,false,false,false,false,221,221
+52831,down,n,KeyN,false,false,false,false,false,221,221
+52782,input,"n",insertText,false,false,false,false,false,222,222
+52891,up,n,KeyN,false,false,false,false,false,222,222
+52974.00000000001,down,i,KeyI,false,false,false,false,false,222,222
+52925.00000000001,input,"i",insertText,false,false,false,false,false,223,223
+53070,up,i,KeyI,false,false,false,false,false,223,223
+53172.00000000001,down,f,KeyF,false,false,false,false,false,223,223
+53122,input,"f",insertText,false,false,false,false,false,224,224
+53248.00000000001,up,f,KeyF,false,false,false,false,false,224,224
+53457,down,i,KeyI,false,false,false,false,false,224,224
+53408,input,"i",insertText,false,false,false,false,false,225,225
+53541.00000000001,up,i,KeyI,false,false,false,false,false,225,225
+53578,down,c,KeyC,false,false,false,false,false,225,225
+53529,input,"c",insertText,false,false,false,false,false,226,226
+53618,up,c,KeyC,false,false,false,false,false,226,226
+53723,down,a,KeyA,false,false,false,false,false,226,226
+53674,input,"a",insertText,false,false,false,false,false,227,227
+53775,up,a,KeyA,false,false,false,false,false,227,227
+53831,down,n,KeyN,false,false,false,false,false,227,227
+53782,input,"n",insertText,false,false,false,false,false,228,228
+53887,up,n,KeyN,false,false,false,false,false,228,228
+53912,down,t,KeyT,false,false,false,false,false,228,228
+53863,input,"t",insertText,false,false,false,false,false,229,229
+53992.00000000001,up,t,KeyT,false,false,false,false,false,229,229
+54182,down," ",Space,false,false,false,false,false,229,229
+54133,input," ",insertText,false,false,false,false,false,230,230
+54270,up," ",Space,false,false,false,false,false,230,230
+54535.00000000001,down,l,KeyL,false,false,false,false,false,230,230
+54485,input,"l",insertText,false,false,false,false,false,231,231
+54607,up,l,KeyL,false,false,false,false,false,231,231
+54699,down,i,KeyI,false,false,false,false,false,231,231
+54649,input,"i",insertText,false,false,false,false,false,232,232
+54759,down,t,KeyT,false,false,false,false,false,232,232
+54709,input,"t",insertText,false,false,false,false,false,233,233
+54774,up,i,KeyI,false,false,false,false,false,233,233
+54818,up,t,KeyT,false,false,false,false,false,233,233
+54879,down,t,KeyT,false,false,false,false,false,233,233
+54830,input,"t",insertText,false,false,false,false,false,234,234
+54967,down,l,KeyL,false,false,false,false,false,234,234
+54918,input,"l",insertText,false,false,false,false,false,235,235
+54967,up,t,KeyT,false,false,false,false,false,235,235
+55023,up,l,KeyL,false,false,false,false,false,235,235
+55056.00000000001,down,e,KeyE,false,false,false,false,false,235,235
+55007,input,"e",insertText,false,false,false,false,false,236,236
+55137,down," ",Space,false,false,false,false,false,236,236
+55087,input," ",insertText,false,false,false,false,false,237,237
+55165,up,e,KeyE,false,false,false,false,false,237,237
+55192,up," ",Space,false,false,false,false,false,237,237
+55290,down,b,KeyB,false,false,false,false,false,237,237
+55241,input,"b",insertText,false,false,false,false,false,238,238
+55335,up,b,KeyB,false,false,false,false,false,238,238
+55433,down,l,KeyL,false,false,false,false,false,238,238
+55384,input,"l",insertText,false,false,false,false,false,239,239
+55529,down,u,KeyU,false,false,false,false,false,239,239
+55479,input,"u",insertText,false,false,false,false,false,240,240
+55593,up,l,KeyL,false,false,false,false,false,240,240
+55637,up,u,KeyU,false,false,false,false,false,240,240
+55709,down,e,KeyE,false,false,false,false,false,240,240
+55660.00000000001,input,"e",insertText,false,false,false,false,false,241,241
+55753,down," ",Space,false,false,false,false,false,241,241
+55704,input," ",insertText,false,false,false,false,false,242,242
+55778,up,e,KeyE,false,false,false,false,false,242,242
+55825,up," ",Space,false,false,false,false,false,242,242
+55940,down,g,KeyG,false,false,false,false,false,242,242
+55891,input,"g",insertText,false,false,false,false,false,243,243
+56025,up,g,KeyG,false,false,false,false,false,243,243
+56068,down,r,KeyR,false,false,false,false,false,243,243
+56019,input,"r",insertText,false,false,false,false,false,244,244
+56116,up,r,KeyR,false,false,false,false,false,244,244
+56256,down,e,KeyE,false,false,false,false,false,244,244
+56206,input,"e",insertText,false,false,false,false,false,245,245
+56296,up,e,KeyE,false,false,false,false,false,245,245
+56381,down,e,KeyE,false,false,false,false,false,245,245
+56332,input,"e",insertText,false,false,false,false,false,246,246
+56461,down,n,KeyN,false,false,false,false,false,246,246
+56412,input,"n",insertText,false,false,false,false,false,247,247
+56472,up,e,KeyE,false,false,false,false,false,247,247
+56525,up,n,KeyN,false,false,false,false,false,247,247
+56626,down," ",Space,false,false,false,false,false,247,247
+56577,input," ",insertText,false,false,false,false,false,248,248
+56658,up," ",Space,false,false,false,false,false,248,248
+56819,down,p,KeyP,false,false,false,false,false,248,248
+56769,input,"p",insertText,false,false,false,false,false,249,249
+56886,down,l,KeyL,false,false,false,false,false,249,249
+56836,input,"l",insertText,false,false,false,false,false,250,250
+56955,up,p,KeyP,false,false,false,false,false,250,250
+56986.00000000001,down,a,KeyA,false,false,false,false,false,250,250
+56938,input,"a",insertText,false,false,false,false,false,251,251
+56994,up,l,KeyL,false,false,false,false,false,251,251
+57090,up,a,KeyA,false,false,false,false,false,251,251
+57123.00000000001,down,n,KeyN,false,false,false,false,false,251,251
+57074,input,"n",insertText,false,false,false,false,false,252,252
+57191,up,n,KeyN,false,false,false,false,false,252,252
+57213,down,e,KeyE,false,false,false,false,false,252,252
+57164,input,"e",insertText,false,false,false,false,false,253,253
+57317,down,t,KeyT,false,false,false,false,false,253,253
+57267,input,"t",insertText,false,false,false,false,false,254,254
+57341,up,e,KeyE,false,false,false,false,false,254,254
+57405,up,t,KeyT,false,false,false,false,false,254,254
+57417,down," ",Space,false,false,false,false,false,254,254
+57367.00000000001,input," ",insertText,false,false,false,false,false,255,255
+57497,up," ",Space,false,false,false,false,false,255,255
+58175.00000000001,down,w,KeyW,false,false,false,false,false,255,255
+58126,input,"w",insertText,false,false,false,false,false,256,256
+58239.00000000001,down,h,KeyH,false,false,false,false,false,256,256
+58188,input,"h",insertText,false,false,false,false,false,257,257
+58275,up,w,KeyW,false,false,false,false,false,257,257
+58307,up,h,KeyH,false,false,false,false,false,257,257
+58394,down,o,KeyO,false,false,false,false,false,257,257
+58345,input,"o",insertText,false,false,false,false,false,258,258
+58462,down,r,KeyR,false,false,false,false,false,258,258
+58413.00000000001,input,"r",insertText,false,false,false,false,false,259,259
+58470,up,o,KeyO,false,false,false,false,false,259,259
+58563,up,r,KeyR,false,false,false,false,false,259,259
+58758,down,Backspace,Backspace,false,false,false,false,false,259,259
+58709,input,"",deleteContentBackward,false,false,false,false,false,258,258
+58849.00000000001,up,Backspace,Backspace,false,false,false,false,false,258,258
+58877,down,s,KeyS,false,false,false,false,false,258,258
+58828,input,"s",insertText,false,false,false,false,false,259,259
+58965,down,e,KeyE,false,false,false,false,false,259,259
+58916.00000000001,input,"e",insertText,false,false,false,false,false,260,260
+59025,up,s,KeyS,false,false,false,false,false,260,260
+59025,down," ",Space,false,false,false,false,false,260,260
+58977.00000000001,input," ",insertText,false,false,false,false,false,261,261
+59061,up,e,KeyE,false,false,false,false,false,261,261
+59109,up," ",Space,false,false,false,false,false,261,261
+59229,down,a,KeyA,false,false,false,false,false,261,261
+59179,input,"a",insertText,false,false,false,false,false,262,262
+59289,up,a,KeyA,false,false,false,false,false,262,262
+59325,down,p,KeyP,false,false,false,false,false,262,262
+59276,input,"p",insertText,false,false,false,false,false,263,263
+59413.00000000001,up,p,KeyP,false,false,false,false,false,263,263
+59469,down,e,KeyE,false,false,false,false,false,263,263
+59420,input,"e",insertText,false,false,false,false,false,264,264
+59521,up,e,KeyE,false,false,false,false,false,264,264
+60198,down,=,Equal,false,false,false,false,false,264,264
+60149,input,"=",insertText,false,false,false,false,false,265,265
+60229,up,=,Equal,false,false,false,false,false,265,265
+60900,down,Backspace,Backspace,false,false,false,false,false,265,265
+60851,input,"",deleteContentBackward,false,false,false,false,false,264,264
+60988,up,Backspace,Backspace,false,false,false,false,false,264,264
+61118,down,-,Minus,false,false,false,false,false,264,264
+61069,input,"-",insertText,false,false,false,false,false,265,265
+61230.00000000001,up,-,Minus,false,false,false,false,false,265,265
+61262,down,d,KeyD,false,false,false,false,false,265,265
+61213,input,"d",insertText,false,false,false,false,false,266,266
+61394,up,d,KeyD,false,false,false,false,false,266,266
+61480.00000000001,down,e,KeyE,false,false,false,false,false,266,266
+61431.00000000001,input,"e",insertText,false,false,false,false,false,267,267
+61588,up,e,KeyE,false,false,false,false,false,267,267
+61707,down,s,KeyS,false,false,false,false,false,267,267
+61658,input,"s",insertText,false,false,false,false,false,268,268
+61791.00000000001,up,s,KeyS,false,false,false,false,false,268,268
+61883,down,c,KeyC,false,false,false,false,false,268,268
+61834,input,"c",insertText,false,false,false,false,false,269,269
+61951,up,c,KeyC,false,false,false,false,false,269,269
+62068,down,e,KeyE,false,false,false,false,false,269,269
+62019,input,"e",insertText,false,false,false,false,false,270,270
+62127,up,e,KeyE,false,false,false,false,false,270,270
+62244,down,n,KeyN,false,false,false,false,false,270,270
+62195,input,"n",insertText,false,false,false,false,false,271,271
+62352.00000000001,up,n,KeyN,false,false,false,false,false,271,271
+62551,down,d,KeyD,false,false,false,false,false,271,271
+62501.00000000001,input,"d",insertText,false,false,false,false,false,272,272
+62646,up,d,KeyD,false,false,false,false,false,272,272
+62703,down,e,KeyE,false,false,false,false,false,272,272
+62654,input,"e",insertText,false,false,false,false,false,273,273
+62827,down,d,KeyD,false,false,false,false,false,273,273
+62778,input,"d",insertText,false,false,false,false,false,274,274
+62863,up,e,KeyE,false,false,false,false,false,274,274
+62903,up,d,KeyD,false,false,false,false,false,274,274
+62911,down," ",Space,false,false,false,false,false,274,274
+62861.00000000001,input," ",insertText,false,false,false,false,false,275,275
+63003,up," ",Space,false,false,false,false,false,275,275
+63486.00000000001,down,l,KeyL,false,false,false,false,false,275,275
+63437.00000000001,input,"l",insertText,false,false,false,false,false,276,276
+63541.00000000001,up,l,KeyL,false,false,false,false,false,276,276
+63646,down,i,KeyI,false,false,false,false,false,276,276
+63597,input,"i",insertText,false,false,false,false,false,277,277
+63718,up,i,KeyI,false,false,false,false,false,277,277
+63722,down,f,KeyF,false,false,false,false,false,277,277
+63671,input,"f",insertText,false,false,false,false,false,278,278
+63822,up,f,KeyF,false,false,false,false,false,278,278
+63839,down," ",Space,false,false,false,false,false,278,278
+63790,input," ",insertText,false,false,false,false,false,279,279
+63907,up," ",Space,false,false,false,false,false,279,279
+63925.00000000001,down,f,KeyF,false,false,false,false,false,279,279
+63876.00000000001,input,"f",insertText,false,false,false,false,false,280,280
+64001.00000000001,up,f,KeyF,false,false,false,false,false,280,280
+64283,down,Backspace,Backspace,false,false,false,false,false,280,280
+64233.00000000001,input,"",deleteContentBackward,false,false,false,false,false,279,279
+64335.00000000001,up,Backspace,Backspace,false,false,false,false,false,279,279
+64399,down,Backspace,Backspace,false,false,false,false,false,279,279
+64349.99999999999,input,"",deleteContentBackward,false,false,false,false,false,278,278
+64474.99999999999,up,Backspace,Backspace,false,false,false,false,false,278,278
+64483.00000000001,down,e,KeyE,false,false,false,false,false,278,278
+64432,input,"e",insertText,false,false,false,false,false,279,279
+64563,up,e,KeyE,false,false,false,false,false,279,279
+64597.00000000001,down," ",Space,false,false,false,false,false,279,279
+64549.00000000001,input," ",insertText,false,false,false,false,false,280,280
+64665.00000000001,up," ",Space,false,false,false,false,false,280,280
+64677.00000000001,down,f,KeyF,false,false,false,false,false,280,280
+64626.00000000001,input,"f",insertText,false,false,false,false,false,281,281
+64748.99999999999,up,f,KeyF,false,false,false,false,false,281,281
+64748.99999999999,down,o,KeyO,false,false,false,false,false,281,281
+64701.00000000001,input,"o",insertText,false,false,false,false,false,282,282
+64829.00000000001,up,o,KeyO,false,false,false,false,false,282,282
+64870.00000000001,down,r,KeyR,false,false,false,false,false,282,282
+64820.00000000001,input,"r",insertText,false,false,false,false,false,283,283
+64938,up,r,KeyR,false,false,false,false,false,283,283
+64949,down,m,KeyM,false,false,false,false,false,283,283
+64900.00000000001,input,"m",insertText,false,false,false,false,false,284,284
+65038,up,m,KeyM,false,false,false,false,false,284,284
+65084,down,s,KeyS,false,false,false,false,false,284,284
+65035,input,"s",insertText,false,false,false,false,false,285,285
+65176,up,s,KeyS,false,false,false,false,false,285,285
+65202,down," ",Space,false,false,false,false,false,285,285
+65153.00000000001,input," ",insertText,false,false,false,false,false,286,286
+65269.99999999999,up," ",Space,false,false,false,false,false,286,286
+65595,down,a,KeyA,false,false,false,false,false,286,286
+65545,input,"a",insertText,false,false,false,false,false,287,287
+65682,up,a,KeyA,false,false,false,false,false,287,287
+65774,down,r,KeyR,false,false,false,false,false,287,287
+65722.00000000001,input,"r",insertText,false,false,false,false,false,288,288
+65846,down,e,KeyE,false,false,false,false,false,288,288
+65797,input,"e",insertText,false,false,false,false,false,289,289
+65906,up,r,KeyR,false,false,false,false,false,289,289
+65946,down," ",Space,false,false,false,false,false,289,289
+65897,input," ",insertText,false,false,false,false,false,290,290
+65962,up,e,KeyE,false,false,false,false,false,290,290
+65998,up," ",Space,false,false,false,false,false,290,290
+66045,down,s,KeyS,false,false,false,false,false,290,290
+65995,input,"s",insertText,false,false,false,false,false,291,291
+66117,up,s,KeyS,false,false,false,false,false,291,291
+66121,down,o,KeyO,false,false,false,false,false,291,291
+66069,input,"o",insertText,false,false,false,false,false,292,292
+66177,down," ",Space,false,false,false,false,false,292,292
+66127,input," ",insertText,false,false,false,false,false,293,293
+66201.00000000001,up,o,KeyO,false,false,false,false,false,293,293
+66269,up," ",Space,false,false,false,false,false,293,293
+66324,down,a,KeyA,false,false,false,false,false,293,293
+66275,input,"a",insertText,false,false,false,false,false,294,294
+66428,up,a,KeyA,false,false,false,false,false,294,294
+66448.00000000001,down,m,KeyM,false,false,false,false,false,294,294
+66399,input,"m",insertText,false,false,false,false,false,295,295
+66524,up,m,KeyM,false,false,false,false,false,295,295
+66541,down,a,KeyA,false,false,false,false,false,295,295
+66492,input,"a",insertText,false,false,false,false,false,296,296
+66634,up,a,KeyA,false,false,false,false,false,296,296
+67327,down,z,KeyZ,false,false,false,false,false,296,296
+67277,input,"z",insertText,false,false,false,false,false,297,297
+67435,up,z,KeyZ,false,false,false,false,false,297,297
+67577,down,i,KeyI,false,false,false,false,false,297,297
+67528,input,"i",insertText,false,false,false,false,false,298,298
+67653,down,n,KeyN,false,false,false,false,false,298,298
+67604,input,"n",insertText,false,false,false,false,false,299,299
+67693,up,i,KeyI,false,false,false,false,false,299,299
+67713.00000000001,down,g,KeyG,false,false,false,false,false,299,299
+67663,input,"g",insertText,false,false,false,false,false,300,300
+67745,up,n,KeyN,false,false,false,false,false,300,300
+67769,up,g,KeyG,false,false,false,false,false,300,300
+67835.00000000001,down,l,KeyL,false,false,false,false,false,300,300
+67786,input,"l",insertText,false,false,false,false,false,301,301
+67919,up,l,KeyL,false,false,false,false,false,301,301
+67937,down,y,KeyY,false,false,false,false,false,301,301
+67888,input,"y",insertText,false,false,false,false,false,302,302
+67997,up,y,KeyY,false,false,false,false,false,302,302
+68017,down," ",Space,false,false,false,false,false,302,302
+67968,input," ",insertText,false,false,false,false,false,303,303
+68097.00000000001,up," ",Space,false,false,false,false,false,303,303
+68259,down,p,KeyP,false,false,false,false,false,303,303
+68210.00000000001,input,"p",insertText,false,false,false,false,false,304,304
+68342,up,p,KeyP,false,false,false,false,false,304,304
+68454.00000000001,down,r,KeyR,false,false,false,false,false,304,304
+68405,input,"r",insertText,false,false,false,false,false,305,305
+68518,up,r,KeyR,false,false,false,false,false,305,305
+68535,down,i,KeyI,false,false,false,false,false,305,305
+68486,input,"i",insertText,false,false,false,false,false,306,306
+68615,down,m,KeyM,false,false,false,false,false,306,306
+68566,input,"m",insertText,false,false,false,false,false,307,307
+68659,up,i,KeyI,false,false,false,false,false,307,307
+68715,up,m,KeyM,false,false,false,false,false,307,307
+68788,down,i,KeyI,false,false,false,false,false,307,307
+68738,input,"i",insertText,false,false,false,false,false,308,308
+68879,up,i,KeyI,false,false,false,false,false,308,308
+68883,down,t,KeyT,false,false,false,false,false,308,308
+68832.00000000001,input,"t",insertText,false,false,false,false,false,309,309
+68955,up,t,KeyT,false,false,false,false,false,309,309
+69036,down,i,KeyI,false,false,false,false,false,309,309
+68987,input,"i",insertText,false,false,false,false,false,310,310
+69120,up,i,KeyI,false,false,false,false,false,310,310
+69284,down,v,KeyV,false,false,false,false,false,310,310
+69235,input,"v",insertText,false,false,false,false,false,311,311
+69385,up,v,KeyV,false,false,false,false,false,311,311
+69450,down,e,KeyE,false,false,false,false,false,311,311
+69400,input,"e",insertText,false,false,false,false,false,312,312
+69530,down," ",Space,false,false,false,false,false,312,312
+69480,input," ",insertText,false,false,false,false,false,313,313
+69542,up,e,KeyE,false,false,false,false,false,313,313
+69606,up," ",Space,false,false,false,false,false,313,313
+69658,down,t,KeyT,false,false,false,false,false,313,313
+69608,input,"t",insertText,false,false,false,false,false,314,314
+69721,down,h,KeyH,false,false,false,false,false,314,314
+69672,input,"h",insertText,false,false,false,false,false,315,315
+69729,up,t,KeyT,false,false,false,false,false,315,315
+69817,up,h,KeyH,false,false,false,false,false,315,315
+69841.00000000001,down,a,KeyA,false,false,false,false,false,315,315
+69792,input,"a",insertText,false,false,false,false,false,316,316
+69921,up,a,KeyA,false,false,false,false,false,316,316
+69976,down,t,KeyT,false,false,false,false,false,316,316
+69927,input,"t",insertText,false,false,false,false,false,317,317
+70014,down," ",Space,false,false,false,false,false,317,317
+69966.00000000001,input," ",insertText,false,false,false,false,false,318,318
+70040,up,t,KeyT,false,false,false,false,false,318,318
+70084,up," ",Space,false,false,false,false,false,318,318
+70133,down,t,KeyT,false,false,false,false,false,318,318
+70084,input,"t",insertText,false,false,false,false,false,319,319
+70177,down,h,KeyH,false,false,false,false,false,319,319
+70127,input,"h",insertText,false,false,false,false,false,320,320
+70201.00000000001,up,t,KeyT,false,false,false,false,false,320,320
+70262,up,h,KeyH,false,false,false,false,false,320,320
+70283,down,e,KeyE,false,false,false,false,false,320,320
+70234,input,"e",insertText,false,false,false,false,false,321,321
+70367,down,y,KeyY,false,false,false,false,false,321,321
+70318,input,"y",insertText,false,false,false,false,false,322,322
+70375,up,e,KeyE,false,false,false,false,false,322,322
+70435,down," ",Space,false,false,false,false,false,322,322
+70386,input," ",insertText,false,false,false,false,false,323,323
+70483,up,y,KeyY,false,false,false,false,false,323,323
+70520,up," ",Space,false,false,false,false,false,323,323
+70826.00000000001,down,s,KeyS,false,false,false,false,false,323,323
+70777,input,"s",insertText,false,false,false,false,false,324,324
+70906,up,s,KeyS,false,false,false,false,false,324,324
+71016,down,t,KeyT,false,false,false,false,false,324,324
+70967,input,"t",insertText,false,false,false,false,false,325,325
+71067,down,i,KeyI,false,false,false,false,false,325,325
+71018,input,"i",insertText,false,false,false,false,false,326,326
+71087,up,t,KeyT,false,false,false,false,false,326,326
+71127,up,i,KeyI,false,false,false,false,false,326,326
+71238,down,l,KeyL,false,false,false,false,false,326,326
+71189,input,"l",insertText,false,false,false,false,false,327,327
+71290,up,l,KeyL,false,false,false,false,false,327,327
+71345,down,l,KeyL,false,false,false,false,false,327,327
+71296,input,"l",insertText,false,false,false,false,false,328,328
+71437,down," ",Space,false,false,false,false,false,328,328
+71388,input," ",insertText,false,false,false,false,false,329,329
+71445.00000000001,up,l,KeyL,false,false,false,false,false,329,329
+71490,down,t,KeyT,false,false,false,false,false,329,329
+71441,input,"t",insertText,false,false,false,false,false,330,330
+71509,up," ",Space,false,false,false,false,false,330,330
+71581,down,h,KeyH,false,false,false,false,false,330,330
+71532,input,"h",insertText,false,false,false,false,false,331,331
+71602,up,t,KeyT,false,false,false,false,false,331,331
+71667,up,h,KeyH,false,false,false,false,false,331,331
+71734,down,i,KeyI,false,false,false,false,false,331,331
+71684,input,"i",insertText,false,false,false,false,false,332,332
+71797,down,n,KeyN,false,false,false,false,false,332,332
+71747,input,"n",insertText,false,false,false,false,false,333,333
+71805,up,i,KeyI,false,false,false,false,false,333,333
+71894,up,n,KeyN,false,false,false,false,false,333,333
+71970,down,k,KeyK,false,false,false,false,false,333,333
+71921,input,"k",insertText,false,false,false,false,false,334,334
+72098,down," ",Space,false,false,false,false,false,334,334
+72049,input," ",insertText,false,false,false,false,false,335,335
+72106,up,k,KeyK,false,false,false,false,false,335,335
+72174,up," ",Space,false,false,false,false,false,335,335
+72501,down,d,KeyD,false,false,false,false,false,335,335
+72451.00000000001,input,"d",insertText,false,false,false,false,false,336,336
+72565,up,d,KeyD,false,false,false,false,false,336,336
+72589,down,i,KeyI,false,false,false,false,false,336,336
+72539,input,"i",insertText,false,false,false,false,false,337,337
+72661,up,i,KeyI,false,false,false,false,false,337,337
+72687,down,g,KeyG,false,false,false,false,false,337,337
+72638,input,"g",insertText,false,false,false,false,false,338,338
+72747,up,g,KeyG,false,false,false,false,false,338,338
+72775,down,i,KeyI,false,false,false,false,false,338,338
+72726,input,"i",insertText,false,false,false,false,false,339,339
+72847.00000000001,up,i,KeyI,false,false,false,false,false,339,339
+72873,down,t,KeyT,false,false,false,false,false,339,339
+72824,input,"t",insertText,false,false,false,false,false,340,340
+72941,up,t,KeyT,false,false,false,false,false,340,340
+73073.00000000001,down,a,KeyA,false,false,false,false,false,340,340
+73024,input,"a",insertText,false,false,false,false,false,341,341
+73137,down,l,KeyL,false,false,false,false,false,341,341
+73088.00000000001,input,"l",insertText,false,false,false,false,false,342,342
+73153,up,a,KeyA,false,false,false,false,false,342,342
+73213.00000000001,down," ",Space,false,false,false,false,false,342,342
+73164,input," ",insertText,false,false,false,false,false,343,343
+73241,up,l,KeyL,false,false,false,false,false,343,343
+73333,down,w,KeyW,false,false,false,false,false,343,343
+73284,input,"w",insertText,false,false,false,false,false,344,344
+73357,up," ",Space,false,false,false,false,false,344,344
+73417,up,w,KeyW,false,false,false,false,false,344,344
+73536,down,a,KeyA,false,false,false,false,false,344,344
+73487,input,"a",insertText,false,false,false,false,false,345,345
+73564,up,a,KeyA,false,false,false,false,false,345,345
+73632,down,t,KeyT,false,false,false,false,false,345,345
+73582.00000000001,input,"t",insertText,false,false,false,false,false,346,346
+73711,up,t,KeyT,false,false,false,false,false,346,346
+73843,down,c,KeyC,false,false,false,false,false,346,346
+73794,input,"c",insertText,false,false,false,false,false,347,347
+73911,up,c,KeyC,false,false,false,false,false,347,347
+73928,down,h,KeyH,false,false,false,false,false,347,347
+73879,input,"h",insertText,false,false,false,false,false,348,348
+74016,up,h,KeyH,false,false,false,false,false,348,348
+74044,down,e,KeyE,false,false,false,false,false,348,348
+73994,input,"e",insertText,false,false,false,false,false,349,349
+74116,up,e,KeyE,false,false,false,false,false,349,349
+74228.00000000001,down,s,KeyS,false,false,false,false,false,349,349
+74179,input,"s",insertText,false,false,false,false,false,350,350
+74280,down," ",Space,false,false,false,false,false,350,350
+74230,input," ",insertText,false,false,false,false,false,351,351
+74292,up,s,KeyS,false,false,false,false,false,351,351
+74364,up," ",Space,false,false,false,false,false,351,351
+74372,down,a,KeyA,false,false,false,false,false,351,351
+74321,input,"a",insertText,false,false,false,false,false,352,352
+74448.00000000001,up,a,KeyA,false,false,false,false,false,352,352
+74480,down,r,KeyR,false,false,false,false,false,352,352
+74431,input,"r",insertText,false,false,false,false,false,353,353
+74588.00000000001,down,e,KeyE,false,false,false,false,false,353,353
+74539,input,"e",insertText,false,false,false,false,false,354,354
+74628,up,r,KeyR,false,false,false,false,false,354,354
+74640,down," ",Space,false,false,false,false,false,354,354
+74590,input," ",insertText,false,false,false,false,false,355,355
+74672,up,e,KeyE,false,false,false,false,false,355,355
+74736,up," ",Space,false,false,false,false,false,355,355
+74887,down,a,KeyA,false,false,false,false,false,355,355
+74837,input,"a",insertText,false,false,false,false,false,356,356
+74970,down," ",Space,false,false,false,false,false,356,356
+74921,input," ",insertText,false,false,false,false,false,357,357
+75010,up,a,KeyA,false,false,false,false,false,357,357
+75022,up," ",Space,false,false,false,false,false,357,357
+75246,down,p,KeyP,false,false,false,false,false,357,357
+75197,input,"p",insertText,false,false,false,false,false,358,358
+75322,up,p,KeyP,false,false,false,false,false,358,358
+75362,down,r,KeyR,false,false,false,false,false,358,358
+75312,input,"r",insertText,false,false,false,false,false,359,359
+75442,down,e,KeyE,false,false,false,false,false,359,359
+75393,input,"e",insertText,false,false,false,false,false,360,360
+75466.00000000001,up,r,KeyR,false,false,false,false,false,360,360
+75550,up,e,KeyE,false,false,false,false,false,360,360
+75647,down,t,KeyT,false,false,false,false,false,360,360
+75597.00000000001,input,"t",insertText,false,false,false,false,false,361,361
+75703,up,t,KeyT,false,false,false,false,false,361,361
+75772,down,t,KeyT,false,false,false,false,false,361,361
+75723,input,"t",insertText,false,false,false,false,false,362,362
+75844.00000000001,up,t,KeyT,false,false,false,false,false,362,362
+75926,down,y,KeyY,false,false,false,false,false,362,362
+75877,input,"y",insertText,false,false,false,false,false,363,363
+75982,down," ",Space,false,false,false,false,false,363,363
+75933,input," ",insertText,false,false,false,false,false,364,364
+76022,up,y,KeyY,false,false,false,false,false,364,364
+76030,up," ",Space,false,false,false,false,false,364,364
+76130,down,n,KeyN,false,false,false,false,false,364,364
+76080,input,"n",insertText,false,false,false,false,false,365,365
+76185,down,e,KeyE,false,false,false,false,false,365,365
+76136,input,"e",insertText,false,false,false,false,false,366,366
+76205,up,n,KeyN,false,false,false,false,false,366,366
+76249,up,e,KeyE,false,false,false,false,false,366,366
+76361,down,a,KeyA,false,false,false,false,false,366,366
+76312,input,"a",insertText,false,false,false,false,false,367,367
+76426,up,a,KeyA,false,false,false,false,false,367,367
+76499,down,t,KeyT,false,false,false,false,false,367,367
+76450,input,"t",insertText,false,false,false,false,false,368,368
+76567,down," ",Space,false,false,false,false,false,368,368
+76518,input," ",insertText,false,false,false,false,false,369,369
+76579.00000000001,up,t,KeyT,false,false,false,false,false,369,369
+76639,up," ",Space,false,false,false,false,false,369,369
+76740,down,i,KeyI,false,false,false,false,false,369,369
+76690,input,"i",insertText,false,false,false,false,false,370,370
+76843,up,i,KeyI,false,false,false,false,false,370,370
+76847.00000000001,down,d,KeyD,false,false,false,false,false,370,370
+76796,input,"d",insertText,false,false,false,false,false,371,371
+76919,down,e,KeyE,false,false,false,false,false,371,371
+76870,input,"e",insertText,false,false,false,false,false,372,372
+76975.00000000001,up,d,KeyD,false,false,false,false,false,372,372
+77012,up,e,KeyE,false,false,false,false,false,372,372
+77087,down,a,KeyA,false,false,false,false,false,372,372
+77038,input,"a",insertText,false,false,false,false,false,373,373
+77155,down,.,Period,false,false,false,false,false,373,373
+77106,input,".",insertText,false,false,false,false,false,374,374
+77191,up,a,KeyA,false,false,false,false,false,374,374
+77239,down," ",Space,false,false,false,false,false,374,374
+77189,input," ",insertText,false,false,false,false,false,375,375
+77259,up,.,Period,false,false,false,false,false,375,375
+77311,up," ",Space,false,false,false,false,false,375,375
+77608,down,Enter,Enter,false,false,false,false,false,375,375
+77559,input,"",insertLineBreak,false,false,false,false,false,376,376
+77680,up,Enter,Enter,false,false,false,false,false,376,376
+77736,down,Enter,Enter,false,false,false,false,false,376,376
+77687,input,"",insertLineBreak,false,false,false,false,false,377,377
+77836,up,Enter,Enter,false,false,false,false,false,377,377
+77929,down,Shift,ShiftLeft,false,false,false,true,false,377,377
+78049,down,T,KeyT,false,false,false,true,false,377,377
+77999,input,"T",insertText,false,false,false,false,false,378,378
+78077,up,Shift,ShiftLeft,false,false,false,false,false,378,378
+78128,down,h,KeyH,false,false,false,false,false,378,378
+78079.00000000001,input,"h",insertText,false,false,false,false,false,379,379
+78137,up,t,KeyT,false,false,false,false,false,379,379
+78197,up,h,KeyH,false,false,false,false,false,379,379
+78270,down,i,KeyI,false,false,false,false,false,379,379
+78221,input,"i",insertText,false,false,false,false,false,380,380
+78322,down,s,KeyS,false,false,false,false,false,380,380
+78273,input,"s",insertText,false,false,false,false,false,381,381
+78330,up,i,KeyI,false,false,false,false,false,381,381
+78423,up,s,KeyS,false,false,false,false,false,381,381
+78423,down," ",Space,false,false,false,false,false,381,381
+78374,input," ",insertText,false,false,false,false,false,382,382
+78470,up," ",Space,false,false,false,false,false,382,382
+78612,down,p,KeyP,false,false,false,false,false,382,382
+78563,input,"p",insertText,false,false,false,false,false,383,383
+78684,down,l,KeyL,false,false,false,false,false,383,383
+78634,input,"l",insertText,false,false,false,false,false,384,384
+78720,up,p,KeyP,false,false,false,false,false,384,384
+78748,up,l,KeyL,false,false,false,false,false,384,384
+78778,down,a,KeyA,false,false,false,false,false,384,384
+78728.00000000001,input,"a",insertText,false,false,false,false,false,385,385
+78826.00000000001,up,a,KeyA,false,false,false,false,false,385,385
+78866,down,n,KeyN,false,false,false,false,false,385,385
+78817,input,"n",insertText,false,false,false,false,false,386,386
+78930,up,n,KeyN,false,false,false,false,false,386,386
+78952,down,e,KeyE,false,false,false,false,false,386,386
+78902,input,"e",insertText,false,false,false,false,false,387,387
+79060,down,t,KeyT,false,false,false,false,false,387,387
+79010,input,"t",insertText,false,false,false,false,false,388,388
+79088.00000000001,up,e,KeyE,false,false,false,false,false,388,388
+79088.00000000001,down," ",Space,false,false,false,false,false,388,388
+79038,input," ",insertText,false,false,false,false,false,389,389
+79140,up,t,KeyT,false,false,false,false,false,389,389
+79152,up," ",Space,false,false,false,false,false,389,389
+79266,down,h,KeyH,false,false,false,false,false,389,389
+79217,input,"h",insertText,false,false,false,false,false,390,390
+79335.00000000001,down,a,KeyA,false,false,false,false,false,390,390
+79285,input,"a",insertText,false,false,false,false,false,391,391
+79370,up,h,KeyH,false,false,false,false,false,391,391
+79406,down,s,KeyS,false,false,false,false,false,391,391
+79357,input,"s",insertText,false,false,false,false,false,392,392
+79455,up,a,KeyA,false,false,false,false,false,392,392
+79535,up,s,KeyS,false,false,false,false,false,392,392
+79698.00000000001,down,",",Comma,false,false,false,false,false,392,392
+79649,input,",",insertText,false,false,false,false,false,393,393
+79798,up,",",Comma,false,false,false,false,false,393,393
+79806,down," ",Space,false,false,false,false,false,393,393
+79755,input," ",insertText,false,false,false,false,false,394,394
+79898,up," ",Space,false,false,false,false,false,394,394
+79925,down,o,KeyO,false,false,false,false,false,394,394
+79875,input,"o",insertText,false,false,false,false,false,395,395
+80005,up,o,KeyO,false,false,false,false,false,395,395
+80008,down,r,KeyR,false,false,false,false,false,395,395
+79957.00000000001,input,"r",insertText,false,false,false,false,false,396,396
+80076.00000000001,up,r,KeyR,false,false,false,false,false,396,396
+80170,down," ",Space,false,false,false,false,false,396,396
+80118,input," ",insertText,false,false,false,false,false,397,397
+80230,up," ",Space,false,false,false,false,false,397,397
+80477,down,r,KeyR,false,false,false,false,false,397,397
+80428,input,"r",insertText,false,false,false,false,false,398,398
+80541,up,r,KeyR,false,false,false,false,false,398,398
+80645,down,a,KeyA,false,false,false,false,false,398,398
+80596,input,"a",insertText,false,false,false,false,false,399,399
+80717,up,a,KeyA,false,false,false,false,false,399,399
+80807,down,t,KeyT,false,false,false,false,false,399,399
+80757,input,"t",insertText,false,false,false,false,false,400,400
+80871,up,t,KeyT,false,false,false,false,false,400,400
+80896,down,h,KeyH,false,false,false,false,false,400,400
+80847.00000000001,input,"h",insertText,false,false,false,false,false,401,401
+80984,up,h,KeyH,false,false,false,false,false,401,401
+81002,down,t,KeyT,false,false,false,false,false,401,401
+80953,input,"t",insertText,false,false,false,false,false,402,402
+81082.00000000001,up,t,KeyT,false,false,false,false,false,402,402
+81143,down,e,KeyE,false,false,false,false,false,402,402
+81092,input,"e",insertText,false,false,false,false,false,403,403
+81255,up,e,KeyE,false,false,false,false,false,403,403
+81358,down," ",Space,false,false,false,false,false,403,403
+81309,input," ",insertText,false,false,false,false,false,404,404
+81431,up," ",Space,false,false,false,false,false,404,404
+81762,down,Backspace,Backspace,false,false,false,false,false,404,404
+81712,input,"",deleteContentBackward,false,false,false,false,false,403,403
+81801,up,Backspace,Backspace,false,false,false,false,false,403,403
+81869,down,Backspace,Backspace,false,false,false,false,false,403,403
+81820.00000000001,input,"",deleteContentBackward,false,false,false,false,false,402,402
+81921,up,Backspace,Backspace,false,false,false,false,false,402,402
+81992,down,Backspace,Backspace,false,false,false,false,false,402,402
+81942,input,"",deleteContentBackward,false,false,false,false,false,401,401
+82024,up,Backspace,Backspace,false,false,false,false,false,401,401
+82108,down,Backspace,Backspace,false,false,false,false,false,401,401
+82059,input,"",deleteContentBackward,false,false,false,false,false,400,400
+82132,up,Backspace,Backspace,false,false,false,false,false,400,400
+82666,down,h,KeyH,false,false,false,false,false,400,400
+82616,input,"h",insertText,false,false,false,false,false,401,401
+82750,up,h,KeyH,false,false,false,false,false,401,401
+82848,down,e,KeyE,false,false,false,false,false,401,401
+82799,input,"e",insertText,false,false,false,false,false,402,402
+82916,down,r,KeyR,false,false,false,false,false,402,402
+82867,input,"r",insertText,false,false,false,false,false,403,403
+82988,up,e,KeyE,false,false,false,false,false,403,403
+83012,down," ",Space,false,false,false,false,false,403,403
+82963.00000000001,input," ",insertText,false,false,false,false,false,404,404
+83028,up,r,KeyR,false,false,false,false,false,404,404
+83068,up," ",Space,false,false,false,false,false,404,404
+83304,down,d,KeyD,false,false,false,false,false,404,404
+83255,input,"d",insertText,false,false,false,false,false,405,405
+83348,up,d,KeyD,false,false,false,false,false,405,405
+83681,down,h,KeyH,false,false,false,false,false,405,405
+83631,input,"h",insertText,false,false,false,false,false,406,406
+83772,up,h,KeyH,false,false,false,false,false,406,406
+83802,down,a,KeyA,false,false,false,false,false,406,406
+83751,input,"a",insertText,false,false,false,false,false,407,407
+83874,down,d,KeyD,false,false,false,false,false,407,407
+83825,input,"d",insertText,false,false,false,false,false,408,408
+83930,up,a,KeyA,false,false,false,false,false,408,408
+83974,up,d,KeyD,false,false,false,false,false,408,408
+83974,down,",",Comma,false,false,false,false,false,408,408
+83925,input,",",insertText,false,false,false,false,false,409,409
+84110,down," ",Space,false,false,false,false,false,409,409
+84060,input," ",insertText,false,false,false,false,false,410,410
+84114,up,",",Comma,false,false,false,false,false,410,410
+84174,up," ",Space,false,false,false,false,false,410,410
+84388,down,Backspace,Backspace,false,false,false,false,false,410,410
+84338.00000000001,input,"",deleteContentBackward,false,false,false,false,false,409,409
+84444,up,Backspace,Backspace,false,false,false,false,false,409,409
+84514,down,Backspace,Backspace,false,false,false,false,false,409,409
+84465,input,"",deleteContentBackward,false,false,false,false,false,408,408
+84554,up,Backspace,Backspace,false,false,false,false,false,408,408
+84617,down,Backspace,Backspace,false,false,false,false,false,408,408
+84569,input,"",deleteContentBackward,false,false,false,false,false,407,407
+84661,up,Backspace,Backspace,false,false,false,false,false,407,407
+84732,down,Backspace,Backspace,false,false,false,false,false,407,407
+84682,input,"",deleteContentBackward,false,false,false,false,false,406,406
+84784,up,Backspace,Backspace,false,false,false,false,false,406,406
+84861,down,Backspace,Backspace,false,false,false,false,false,406,406
+84811,input,"",deleteContentBackward,false,false,false,false,false,405,405
+84892,up,Backspace,Backspace,false,false,false,false,false,405,405
+84966.00000000001,down,Backspace,Backspace,false,false,false,false,false,405,405
+84916,input,"",deleteContentBackward,false,false,false,false,false,404,404
+85038,up,Backspace,Backspace,false,false,false,false,false,404,404
+85179,down,h,KeyH,false,false,false,false,false,404,404
+85130,input,"h",insertText,false,false,false,false,false,405,405
+85267,up,h,KeyH,false,false,false,false,false,405,405
+85271,down,a,KeyA,false,false,false,false,false,405,405
+85219.00000000001,input,"a",insertText,false,false,false,false,false,406,406
+85335.00000000001,down,d,KeyD,false,false,false,false,false,406,406
+85285,input,"d",insertText,false,false,false,false,false,407,407
+85399,up,a,KeyA,false,false,false,false,false,407,407
+85467,up,d,KeyD,false,false,false,false,false,407,407
+85471,down,",",Comma,false,false,false,false,false,407,407
+85420,input,",",insertText,false,false,false,false,false,408,408
+85591.00000000001,down," ",Space,false,false,false,false,false,408,408
+85542,input," ",insertText,false,false,false,false,false,409,409
+85611,up,",",Comma,false,false,false,false,false,409,409
+85667,up," ",Space,false,false,false,false,false,409,409
+85727,down,a,KeyA,false,false,false,false,false,409,409
+85676,input,"a",insertText,false,false,false,false,false,410,410
+85815,down," ",Space,false,false,false,false,false,410,410
+85765,input," ",insertText,false,false,false,false,false,411,411
+85851,up,a,KeyA,false,false,false,false,false,411,411
+85863,up," ",Space,false,false,false,false,false,411,411
+85987,down,p,KeyP,false,false,false,false,false,411,411
+85938,input,"p",insertText,false,false,false,false,false,412,412
+86063,up,p,KeyP,false,false,false,false,false,412,412
+86117,down,r,KeyR,false,false,false,false,false,412,412
+86068,input,"r",insertText,false,false,false,false,false,413,413
+86181,down,o,KeyO,false,false,false,false,false,413,413
+86132,input,"o",insertText,false,false,false,false,false,414,414
+86185,up,r,KeyR,false,false,false,false,false,414,414
+86273,up,o,KeyO,false,false,false,false,false,414,414
+86429,down,l,KeyL,false,false,false,false,false,414,414
+86379,input,"l",insertText,false,false,false,false,false,415,415
+86505,up,l,KeyL,false,false,false,false,false,415,415
+86746,down,Backspace,Backspace,false,false,false,false,false,415,415
+86697,input,"",deleteContentBackward,false,false,false,false,false,414,414
+86818,up,Backspace,Backspace,false,false,false,false,false,414,414
+87162,down,b,KeyB,false,false,false,false,false,414,414
+87112,input,"b",insertText,false,false,false,false,false,415,415
+87221,up,b,KeyB,false,false,false,false,false,415,415
+87265,down,l,KeyL,false,false,false,false,false,415,415
+87215,input,"l",insertText,false,false,false,false,false,416,416
+87341.00000000001,up,l,KeyL,false,false,false,false,false,416,416
+87405,down,e,KeyE,false,false,false,false,false,416,416
+87355,input,"e",insertText,false,false,false,false,false,417,417
+87476,down,m,KeyM,false,false,false,false,false,417,417
+87425,input,"m",insertText,false,false,false,false,false,418,418
+87489,up,e,KeyE,false,false,false,false,false,418,418
+87553,up,m,KeyM,false,false,false,false,false,418,418
+87643,down,",",Comma,false,false,false,false,false,418,418
+87592,input,",",insertText,false,false,false,false,false,419,419
+87762,down," ",Space,false,false,false,false,false,419,419
+87713.00000000001,input," ",insertText,false,false,false,false,false,420,420
+87766,up,",",Comma,false,false,false,false,false,420,420
+87834,up," ",Space,false,false,false,false,false,420,420
+87896,down,w,KeyW,false,false,false,false,false,420,420
+87846,input,"w",insertText,false,false,false,false,false,421,421
+87956,up,w,KeyW,false,false,false,false,false,421,421
+87976,down,h,KeyH,false,false,false,false,false,421,421
+87926,input,"h",insertText,false,false,false,false,false,422,422
+88041,up,h,KeyH,false,false,false,false,false,422,422
+88094.00000000001,down,i,KeyI,false,false,false,false,false,422,422
+88044,input,"i",insertText,false,false,false,false,false,423,423
+88174,up,i,KeyI,false,false,false,false,false,423,423
+88178,down,c,KeyC,false,false,false,false,false,423,423
+88126,input,"c",insertText,false,false,false,false,false,424,424
+88254,up,c,KeyC,false,false,false,false,false,424,424
+88286,down,h,KeyH,false,false,false,false,false,424,424
+88237,input,"h",insertText,false,false,false,false,false,425,425
+88339,down," ",Space,false,false,false,false,false,425,425
+88290,input," ",insertText,false,false,false,false,false,426,426
+88355,up,h,KeyH,false,false,false,false,false,426,426
+88455,down,w,KeyW,false,false,false,false,false,426,426
+88405,input,"w",insertText,false,false,false,false,false,427,427
+88462,up," ",Space,false,false,false,false,false,427,427
+88522,up,w,KeyW,false,false,false,false,false,427,427
+88716.00000000001,down,a,KeyA,false,false,false,false,false,427,427
+88667,input,"a",insertText,false,false,false,false,false,428,428
+88732,down,s,KeyS,false,false,false,false,false,428,428
+88681,input,"s",insertText,false,false,false,false,false,429,429
+88800,up,a,KeyA,false,false,false,false,false,429,429
+88856.00000000001,up,s,KeyS,false,false,false,false,false,429,429
+88860,down," ",Space,false,false,false,false,false,429,429
+88808,input," ",insertText,false,false,false,false,false,430,430
+88936,up," ",Space,false,false,false,false,false,430,430
+88988,down,t,KeyT,false,false,false,false,false,430,430
+88939,input,"t",insertText,false,false,false,false,false,431,431
+89064,up,t,KeyT,false,false,false,false,false,431,431
+89068,down,h,KeyH,false,false,false,false,false,431,431
+89017,input,"h",insertText,false,false,false,false,false,432,432
+89149,up,h,KeyH,false,false,false,false,false,432,432
+89184,down,i,KeyI,false,false,false,false,false,432,432
+89134,input,"i",insertText,false,false,false,false,false,433,433
+89268,down,s,KeyS,false,false,false,false,false,433,433
+89218,input,"s",insertText,false,false,false,false,false,434,434
+89275,up,i,KeyI,false,false,false,false,false,434,434
+89351,up,s,KeyS,false,false,false,false,false,434,434
+89569,down,Shift,ShiftLeft,false,false,false,true,false,434,434
+89641,down,:,Semicolon,false,false,false,true,false,434,434
+89592,input,":",insertText,false,false,false,false,false,435,435
+89717,up,Shift,ShiftLeft,false,false,false,false,false,435,435
+89745,up,;,Semicolon,false,false,false,false,false,435,435
+89749,down," ",Space,false,false,false,false,false,435,435
+89698.00000000001,input," ",insertText,false,false,false,false,false,436,436
+89833,up," ",Space,false,false,false,false,false,436,436
+90355,down,t,KeyT,false,false,false,false,false,436,436
+90306,input,"t",insertText,false,false,false,false,false,437,437
+90423,up,t,KeyT,false,false,false,false,false,437,437
+90626,down,Backspace,Backspace,false,false,false,false,false,437,437
+90576.00000000001,input,"",deleteContentBackward,false,false,false,false,false,436,436
+90690,up,Backspace,Backspace,false,false,false,false,false,436,436
+90806,down,m,KeyM,false,false,false,false,false,436,436
+90757,input,"m",insertText,false,false,false,false,false,437,437
+90882,up,m,KeyM,false,false,false,false,false,437,437
+90968,down,o,KeyO,false,false,false,false,false,437,437
+90919,input,"o",insertText,false,false,false,false,false,438,438
+91004,down,s,KeyS,false,false,false,false,false,438,438
+90955,input,"s",insertText,false,false,false,false,false,439,439
+91044,up,o,KeyO,false,false,false,false,false,439,439
+91060,up,s,KeyS,false,false,false,false,false,439,439
+91116,down,t,KeyT,false,false,false,false,false,439,439
+91066,input,"t",insertText,false,false,false,false,false,440,440
+91167,down," ",Space,false,false,false,false,false,440,440
+91118,input," ",insertText,false,false,false,false,false,441,441
+91199,up,t,KeyT,false,false,false,false,false,441,441
+91231.00000000001,up," ",Space,false,false,false,false,false,441,441
+91353.00000000001,down,p,KeyP,false,false,false,false,false,441,441
+91304,input,"p",insertText,false,false,false,false,false,442,442
+91425,up,p,KeyP,false,false,false,false,false,442,442
+91489,down,e,KeyE,false,false,false,false,false,442,442
+91440,input,"e",insertText,false,false,false,false,false,443,443
+91517,down,o,KeyO,false,false,false,false,false,443,443
+91467,input,"o",insertText,false,false,false,false,false,444,444
+91561,up,e,KeyE,false,false,false,false,false,444,444
+91581,up,o,KeyO,false,false,false,false,false,444,444
+91705,down,p,KeyP,false,false,false,false,false,444,444
+91655,input,"p",insertText,false,false,false,false,false,445,445
+91797,down,l,KeyL,false,false,false,false,false,445,445
+91747,input,"l",insertText,false,false,false,false,false,446,446
+91841.00000000001,up,p,KeyP,false,false,false,false,false,446,446
+91889,up,l,KeyL,false,false,false,false,false,446,446
+91949,down,e,KeyE,false,false,false,false,false,446,446
+91900,input,"e",insertText,false,false,false,false,false,447,447
+92021,down," ",Space,false,false,false,false,false,447,447
+91972.00000000001,input," ",insertText,false,false,false,false,false,448,448
+92029,up,e,KeyE,false,false,false,false,false,448,448
+92065,up," ",Space,false,false,false,false,false,448,448
+92144,down,o,KeyO,false,false,false,false,false,448,448
+92095,input,"o",insertText,false,false,false,false,false,449,449
+92241,down,n,KeyN,false,false,false,false,false,449,449
+92190,input,"n",insertText,false,false,false,false,false,450,450
+92268,up,o,KeyO,false,false,false,false,false,450,450
+92272,down," ",Space,false,false,false,false,false,450,450
+92221,input," ",insertText,false,false,false,false,false,451,451
+92321,up,n,KeyN,false,false,false,false,false,451,451
+92377,up," ",Space,false,false,false,false,false,451,451
+92436,down,i,KeyI,false,false,false,false,false,451,451
+92387,input,"i",insertText,false,false,false,false,false,452,452
+92508,up,i,KeyI,false,false,false,false,false,452,452
+92520,down,t,KeyT,false,false,false,false,false,452,452
+92469.00000000001,input,"t",insertText,false,false,false,false,false,453,453
+92592,up,t,KeyT,false,false,false,false,false,453,453
+92612.00000000001,down," ",Space,false,false,false,false,false,453,453
+92562,input," ",insertText,false,false,false,false,false,454,454
+92688,up," ",Space,false,false,false,false,false,454,454
+92743,down,w,KeyW,false,false,false,false,false,454,454
+92695.00000000001,input,"w",insertText,false,false,false,false,false,455,455
+92819,down,e,KeyE,false,false,false,false,false,455,455
+92769,input,"e",insertText,false,false,false,false,false,456,456
+92847.00000000001,up,w,KeyW,false,false,false,false,false,456,456
+92911,up,e,KeyE,false,false,false,false,false,456,456
+93011,down,r,KeyR,false,false,false,false,false,456,456
+92962,input,"r",insertText,false,false,false,false,false,457,457
+93091.00000000001,down,e,KeyE,false,false,false,false,false,457,457
+93041,input,"e",insertText,false,false,false,false,false,458,458
+93135,up,r,KeyR,false,false,false,false,false,458,458
+93199,down," ",Space,false,false,false,false,false,458,458
+93150,input," ",insertText,false,false,false,false,false,459,459
+93259,up,e,KeyE,false,false,false,false,false,459,459
+93267,up," ",Space,false,false,false,false,false,459,459
+93393,down,u,KeyU,false,false,false,false,false,459,459
+93344.00000000001,input,"u",insertText,false,false,false,false,false,460,460
+93450,down,n,KeyN,false,false,false,false,false,460,460
+93400,input,"n",insertText,false,false,false,false,false,461,461
+93497,up,u,KeyU,false,false,false,false,false,461,461
+93521,up,n,KeyN,false,false,false,false,false,461,461
+93642,down,h,KeyH,false,false,false,false,false,461,461
+93593,input,"h",insertText,false,false,false,false,false,462,462
+93706,up,h,KeyH,false,false,false,false,false,462,462
+93750,down,a,KeyA,false,false,false,false,false,462,462
+93699,input,"a",insertText,false,false,false,false,false,463,463
+93810,up,a,KeyA,false,false,false,false,false,463,463
+93827,down,p,KeyP,false,false,false,false,false,463,463
+93778,input,"p",insertText,false,false,false,false,false,464,464
+93888,up,p,KeyP,false,false,false,false,false,464,464
+93946,down,p,KeyP,false,false,false,false,false,464,464
+93897,input,"p",insertText,false,false,false,false,false,465,465
+94014,up,p,KeyP,false,false,false,false,false,465,465
+94026,down,y,KeyY,false,false,false,false,false,465,465
+93976,input,"y",insertText,false,false,false,false,false,466,466
+94098,up,y,KeyY,false,false,false,false,false,466,466
+94142,down," ",Space,false,false,false,false,false,466,466
+94092,input," ",insertText,false,false,false,false,false,467,467
+94226,up," ",Space,false,false,false,false,false,467,467
+95069,down,f,KeyF,false,false,false,false,false,467,467
+95019,input,"f",insertText,false,false,false,false,false,468,468
+95149,down,o,KeyO,false,false,false,false,false,468,468
+95100.00000000001,input,"o",insertText,false,false,false,false,false,469,469
+95153,up,f,KeyF,false,false,false,false,false,469,469
+95225.00000000001,up,o,KeyO,false,false,false,false,false,469,469
+95256,down,r,KeyR,false,false,false,false,false,469,469
+95205,input,"r",insertText,false,false,false,false,false,470,470
+95316,down," ",Space,false,false,false,false,false,470,470
+95266,input," ",insertText,false,false,false,false,false,471,471
+95323.00000000001,up,r,KeyR,false,false,false,false,false,471,471
+95376,up," ",Space,false,false,false,false,false,471,471
+95532,down,p,KeyP,false,false,false,false,false,471,471
+95482,input,"p",insertText,false,false,false,false,false,472,472
+95632,up,p,KeyP,false,false,false,false,false,472,472
+95661,down,r,KeyR,false,false,false,false,false,472,472
+95610,input,"r",insertText,false,false,false,false,false,473,473
+95745,down,e,KeyE,false,false,false,false,false,473,473
+95695.00000000001,input,"e",insertText,false,false,false,false,false,474,474
+95785,up,r,KeyR,false,false,false,false,false,474,474
+95865.00000000001,up,e,KeyE,false,false,false,false,false,474,474
+96098,down,t,KeyT,false,false,false,false,false,474,474
+96048,input,"t",insertText,false,false,false,false,false,475,475
+96182,up,t,KeyT,false,false,false,false,false,475,475
+96227,down,t,KeyT,false,false,false,false,false,475,475
+96177,input,"t",insertText,false,false,false,false,false,476,476
+96327,up,t,KeyT,false,false,false,false,false,476,476
+97260,down,y,KeyY,false,false,false,false,false,476,476
+97210.00000000001,input,"y",insertText,false,false,false,false,false,477,477
+97320.00000000001,up,y,KeyY,false,false,false,false,false,477,477
+97323.00000000001,down," ",Space,false,false,false,false,false,477,477
+97272,input," ",insertText,false,false,false,false,false,478,478
+97396,up," ",Space,false,false,false,false,false,478,478
+97508,down,m,KeyM,false,false,false,false,false,478,478
+97458,input,"m",insertText,false,false,false,false,false,479,479
+97580,up,m,KeyM,false,false,false,false,false,479,479
+97696,down,u,KeyU,false,false,false,false,false,479,479
+97647,input,"u",insertText,false,false,false,false,false,480,480
+97792,up,u,KeyU,false,false,false,false,false,480,480
+97804,down,c,KeyC,false,false,false,false,false,480,480
+97755,input,"c",insertText,false,false,false,false,false,481,481
+97880,up,c,KeyC,false,false,false,false,false,481,481
+97888,down,h,KeyH,false,false,false,false,false,481,481
+97838.00000000001,input,"h",insertText,false,false,false,false,false,482,482
+97972.00000000001,up,h,KeyH,false,false,false,false,false,482,482
+97972.00000000001,down," ",Space,false,false,false,false,false,482,482
+97923,input," ",insertText,false,false,false,false,false,483,483
+98092,down,o,KeyO,false,false,false,false,false,483,483
+98043,input,"o",insertText,false,false,false,false,false,484,484
+98128,up," ",Space,false,false,false,false,false,484,484
+98152,down,f,KeyF,false,false,false,false,false,484,484
+98103.00000000001,input,"f",insertText,false,false,false,false,false,485,485
+98156,up,o,KeyO,false,false,false,false,false,485,485
+98208,up,f,KeyF,false,false,false,false,false,485,485
+98253,down," ",Space,false,false,false,false,false,485,485
+98203,input," ",insertText,false,false,false,false,false,486,486
+98317,down,t,KeyT,false,false,false,false,false,486,486
+98268,input,"t",insertText,false,false,false,false,false,487,487
+98317,up," ",Space,false,false,false,false,false,487,487
+98373,down,h,KeyH,false,false,false,false,false,487,487
+98324,input,"h",insertText,false,false,false,false,false,488,488
+98429,up,t,KeyT,false,false,false,false,false,488,488
+98465,down,e,KeyE,false,false,false,false,false,488,488
+98414,input,"e",insertText,false,false,false,false,false,489,489
+98497,up,h,KeyH,false,false,false,false,false,489,489
+98497,down," ",Space,false,false,false,false,false,489,489
+98448.00000000001,input," ",insertText,false,false,false,false,false,490,490
+98545,up,e,KeyE,false,false,false,false,false,490,490
+98593,up," ",Space,false,false,false,false,false,490,490
+98616,down,t,KeyT,false,false,false,false,false,490,490
+98566,input,"t",insertText,false,false,false,false,false,491,491
+98707.00000000001,up,t,KeyT,false,false,false,false,false,491,491
+98741,down,i,KeyI,false,false,false,false,false,491,491
+98691,input,"i",insertText,false,false,false,false,false,492,492
+98793,down,m,KeyM,false,false,false,false,false,492,492
+98743,input,"m",insertText,false,false,false,false,false,493,493
+98805,up,i,KeyI,false,false,false,false,false,493,493
+98929,up,m,KeyM,false,false,false,false,false,493,493
+98979,down,e,KeyE,false,false,false,false,false,493,493
+98929,input,"e",insertText,false,false,false,false,false,494,494
+99063,up,e,KeyE,false,false,false,false,false,494,494
+99233,down,",",Comma,false,false,false,false,false,494,494
+99184,input,",",insertText,false,false,false,false,false,495,495
+99353.00000000001,up,",",Comma,false,false,false,false,false,495,495
+99365.00000000001,down," ",Space,false,false,false,false,false,495,495
+99314,input," ",insertText,false,false,false,false,false,496,496
+99433,up," ",Space,false,false,false,false,false,496,496
+99576.00000000001,down,Shift,ShiftLeft,false,false,false,true,false,496,496
+99664,down,M,KeyM,false,false,false,true,false,496,496
+99613,input,"M",insertText,false,false,false,false,false,497,497
+99688,up,Shift,ShiftLeft,false,false,false,false,false,497,497
+99724,up,m,KeyM,false,false,false,false,false,497,497
+99801,down,a,KeyA,false,false,false,false,false,497,497
+99751,input,"a",insertText,false,false,false,false,false,498,498
+99865.00000000001,down,n,KeyN,false,false,false,false,false,498,498
+99815,input,"n",insertText,false,false,false,false,false,499,499
+99877,up,a,KeyA,false,false,false,false,false,499,499
+99929,up,n,KeyN,false,false,false,false,false,499,499
+100005,down,y,KeyY,false,false,false,false,false,499,499
+99955,input,"y",insertText,false,false,false,false,false,500,500
+100089,up,y,KeyY,false,false,false,false,false,500,500
+100097.00000000001,down," ",Space,false,false,false,false,false,500,500
+100046,input," ",insertText,false,false,false,false,false,501,501
+100141,up," ",Space,false,false,false,false,false,501,501
+100402,down,Backspace,Backspace,false,false,false,false,false,501,501
+100352,input,"",deleteContentBackward,false,false,false,false,false,500,500
+100457.00000000001,up,Backspace,Backspace,false,false,false,false,false,500,500
+100519,down,Backspace,Backspace,false,false,false,false,false,500,500
+100470,input,"",deleteContentBackward,false,false,false,false,false,499,499
+100555,up,Backspace,Backspace,false,false,false,false,false,499,499
+100617,down,Backspace,Backspace,false,false,false,false,false,499,499
+100567,input,"",deleteContentBackward,false,false,false,false,false,498,498
+100657,up,Backspace,Backspace,false,false,false,false,false,498,498
+100725.00000000001,down,Backspace,Backspace,false,false,false,false,false,498,498
+100676,input,"",deleteContentBackward,false,false,false,false,false,497,497
+100773,up,Backspace,Backspace,false,false,false,false,false,497,497
+100847.00000000001,down,Backspace,Backspace,false,false,false,false,false,497,497
+100797,input,"",deleteContentBackward,false,false,false,false,false,496,496
+100891,up,Backspace,Backspace,false,false,false,false,false,496,496
+100956,down,Backspace,Backspace,false,false,false,false,false,496,496
+100907,input,"",deleteContentBackward,false,false,false,false,false,495,495
+101008,up,Backspace,Backspace,false,false,false,false,false,495,495
+101064,down,Backspace,Backspace,false,false,false,false,false,495,495
+101014,input,"",deleteContentBackward,false,false,false,false,false,494,494
+101128,up,Backspace,Backspace,false,false,false,false,false,494,494
+101485,down,.,Period,false,false,false,false,false,494,494
+101435,input,".",insertText,false,false,false,false,false,495,495
+101573.00000000001,up,.,Period,false,false,false,false,false,495,495
+101798,down," ",Space,false,false,false,false,false,495,495
+101748,input," ",insertText,false,false,false,false,false,496,496
+101858,up," ",Space,false,false,false,false,false,496,496
+101945.00000000001,down,Shift,ShiftLeft,false,false,false,true,false,496,496
+102017,down,M,KeyM,false,false,false,true,false,496,496
+101967,input,"M",insertText,false,false,false,false,false,497,497
+102061,up,Shift,ShiftLeft,false,false,false,false,false,497,497
+102089,up,m,KeyM,false,false,false,false,false,497,497
+102136,down,a,KeyA,false,false,false,false,false,497,497
+102086,input,"a",insertText,false,false,false,false,false,498,498
+102232,down,n,KeyN,false,false,false,false,false,498,498
+102182,input,"n",insertText,false,false,false,false,false,499,499
+102239,up,a,KeyA,false,false,false,false,false,499,499
+102292,up,n,KeyN,false,false,false,false,false,499,499
+102389,down,y,KeyY,false,false,false,false,false,499,499
+102339,input,"y",insertText,false,false,false,false,false,500,500
+102437,down," ",Space,false,false,false,false,false,500,500
+102387,input," ",insertText,false,false,false,false,false,501,501
+102441,up,y,KeyY,false,false,false,false,false,501,501
+102485,up," ",Space,false,false,false,false,false,501,501
+102707.00000000001,down,s,KeyS,false,false,false,false,false,501,501
+102656,input,"s",insertText,false,false,false,false,false,502,502
+102735,down,o,KeyO,false,false,false,false,false,502,502
+102686,input,"o",insertText,false,false,false,false,false,503,503
+102775,up,s,KeyS,false,false,false,false,false,503,503
+102811,up,o,KeyO,false,false,false,false,false,503,503
+102852,down,l,KeyL,false,false,false,false,false,503,503
+102803,input,"l",insertText,false,false,false,false,false,504,504
+102928,up,l,KeyL,false,false,false,false,false,504,504
+103031,down,i,KeyI,false,false,false,false,false,504,504
+102981.00000000001,input,"i",insertText,false,false,false,false,false,505,505
+103146,up,i,KeyI,false,false,false,false,false,505,505
+103158,down,t,KeyT,false,false,false,false,false,505,505
+103108,input,"t",insertText,false,false,false,false,false,506,506
+103226,up,t,KeyT,false,false,false,false,false,506,506
+103248,down,i,KeyI,false,false,false,false,false,506,506
+103198.00000000001,input,"i",insertText,false,false,false,false,false,507,507
+103312,up,i,KeyI,false,false,false,false,false,507,507
+103437,down,o,KeyO,false,false,false,false,false,507,507
+103387,input,"o",insertText,false,false,false,false,false,508,508
+103493.00000000001,up,o,KeyO,false,false,false,false,false,508,508
+103690,down,Backspace,Backspace,false,false,false,false,false,508,508
+103640,input,"",deleteContentBackward,false,false,false,false,false,507,507
+103733,up,Backspace,Backspace,false,false,false,false,false,507,507
+103803,down,Backspace,Backspace,false,false,false,false,false,507,507
+103753,input,"",deleteContentBackward,false,false,false,false,false,506,506
+103851,up,Backspace,Backspace,false,false,false,false,false,506,506
+103921,down,Backspace,Backspace,false,false,false,false,false,506,506
+103871,input,"",deleteContentBackward,false,false,false,false,false,505,505
+103961,up,Backspace,Backspace,false,false,false,false,false,505,505
+104035,down,Backspace,Backspace,false,false,false,false,false,505,505
+103986,input,"",deleteContentBackward,false,false,false,false,false,504,504
+104083,up,Backspace,Backspace,false,false,false,false,false,504,504
+104473,down,u,KeyU,false,false,false,false,false,504,504
+104424,input,"u",insertText,false,false,false,false,false,505,505
+104565,up,u,KeyU,false,false,false,false,false,505,505
+104601,down,t,KeyT,false,false,false,false,false,505,505
+104551,input,"t",insertText,false,false,false,false,false,506,506
+104653,up,t,KeyT,false,false,false,false,false,506,506
+104705,down,i,KeyI,false,false,false,false,false,506,506
+104656,input,"i",insertText,false,false,false,false,false,507,507
+104769,up,i,KeyI,false,false,false,false,false,507,507
+104878,down,o,KeyO,false,false,false,false,false,507,507
+104828,input,"o",insertText,false,false,false,false,false,508,508
+104942,down,n,KeyN,false,false,false,false,false,508,508
+104893,input,"n",insertText,false,false,false,false,false,509,509
+104982,up,o,KeyO,false,false,false,false,false,509,509
+105014,down,s,KeyS,false,false,false,false,false,509,509
+104965,input,"s",insertText,false,false,false,false,false,510,510
+105018,up,n,KeyN,false,false,false,false,false,510,510
+105102,up,s,KeyS,false,false,false,false,false,510,510
+107746.00000000001,down," ",Space,false,false,false,false,false,510,510
+107694,input," ",insertText,false,false,false,false,false,511,511
+107850.00000000001,up," ",Space,false,false,false,false,false,511,511
+107934,down,w,KeyW,false,false,false,false,false,511,511
+107881,input,"w",insertText,false,false,false,false,false,512,512
+108061,down,e,KeyE,false,false,false,false,false,512,512
+108009,input,"e",insertText,false,false,false,false,false,513,513
+108082.00000000001,up,w,KeyW,false,false,false,false,false,513,513
+108158,up,e,KeyE,false,false,false,false,false,513,513
+108267,down,r,KeyR,false,false,false,false,false,513,513
+108217,input,"r",insertText,false,false,false,false,false,514,514
+108351,down,e,KeyE,false,false,false,false,false,514,514
+108301,input,"e",insertText,false,false,false,false,false,515,515
+108387,up,r,KeyR,false,false,false,false,false,515,515
+108439,down," ",Space,false,false,false,false,false,515,515
+108389,input," ",insertText,false,false,false,false,false,516,516
+108470,up,e,KeyE,false,false,false,false,false,516,516
+108503,up," ",Space,false,false,false,false,false,516,516
+108592,down,s,KeyS,false,false,false,false,false,516,516
+108542,input,"s",insertText,false,false,false,false,false,517,517
+108665,up,s,KeyS,false,false,false,false,false,517,517
+108665,down,u,KeyU,false,false,false,false,false,517,517
+108616,input,"u",insertText,false,false,false,false,false,518,518
+108737.00000000001,up,u,KeyU,false,false,false,false,false,518,518
+108836,down,g,KeyG,false,false,false,false,false,518,518
+108786,input,"g",insertText,false,false,false,false,false,519,519
+108888,up,g,KeyG,false,false,false,false,false,519,519
+108952,down,g,KeyG,false,false,false,false,false,519,519
+108903,input,"g",insertText,false,false,false,false,false,520,520
+109012,down,e,KeyE,false,false,false,false,false,520,520
+108963.00000000001,input,"e",insertText,false,false,false,false,false,521,521
+109040,up,g,KeyG,false,false,false,false,false,521,521
+109101,up,e,KeyE,false,false,false,false,false,521,521
+109209,down,s,KeyS,false,false,false,false,false,521,521
+109159,input,"s",insertText,false,false,false,false,false,522,522
+109329.00000000001,up,s,KeyS,false,false,false,false,false,522,522
+109357,down,t,KeyT,false,false,false,false,false,522,522
+109308,input,"t",insertText,false,false,false,false,false,523,523
+109439,up,t,KeyT,false,false,false,false,false,523,523
+109517,down,e,KeyE,false,false,false,false,false,523,523
+109467,input,"e",insertText,false,false,false,false,false,524,524
+109685,up,e,KeyE,false,false,false,false,false,524,524
+109692,down," ",Space,false,false,false,false,false,524,524
+109641,input," ",insertText,false,false,false,false,false,525,525
+109737.00000000001,up," ",Space,false,false,false,false,false,525,525
+110126,down,f,KeyF,false,false,false,false,false,525,525
+110076.00000000001,input,"f",insertText,false,false,false,false,false,526,526
+110190,up,f,KeyF,false,false,false,false,false,526,526
+110220,down,o,KeyO,false,false,false,false,false,526,526
+110171,input,"o",insertText,false,false,false,false,false,527,527
+110264,up,o,KeyO,false,false,false,false,false,527,527
+110459,down,Backspace,Backspace,false,false,false,false,false,527,527
+110409,input,"",deleteContentBackward,false,false,false,false,false,526,526
+110510,up,Backspace,Backspace,false,false,false,false,false,526,526
+110588.00000000001,down,Backspace,Backspace,false,false,false,false,false,526,526
+110538,input,"",deleteContentBackward,false,false,false,false,false,525,525
+110603.00000000001,up,Backspace,Backspace,false,false,false,false,false,525,525
+110674,down,Backspace,Backspace,false,false,false,false,false,525,525
+110625,input,"",deleteContentBackward,false,false,false,false,false,524,524
+110742,up,Backspace,Backspace,false,false,false,false,false,524,524
+111041,down,d,KeyD,false,false,false,false,false,524,524
+110991,input,"d",insertText,false,false,false,false,false,525,525
+111105,up,d,KeyD,false,false,false,false,false,525,525
+111108,down," ",Space,false,false,false,false,false,525,525
+111057,input," ",insertText,false,false,false,false,false,526,526
+111169,up," ",Space,false,false,false,false,false,526,526
+111238,down,f,KeyF,false,false,false,false,false,526,526
+111189,input,"f",insertText,false,false,false,false,false,527,527
+111298,down,o,KeyO,false,false,false,false,false,527,527
+111248,input,"o",insertText,false,false,false,false,false,528,528
+111306,up,f,KeyF,false,false,false,false,false,528,528
+111374,up,o,KeyO,false,false,false,false,false,528,528
+111411,down,r,KeyR,false,false,false,false,false,528,528
+111361,input,"r",insertText,false,false,false,false,false,529,529
+111472.00000000001,up,r,KeyR,false,false,false,false,false,529,529
+111472.00000000001,down," ",Space,false,false,false,false,false,529,529
+111423,input," ",insertText,false,false,false,false,false,530,530
+111532,up," ",Space,false,false,false,false,false,530,530
+111566,down,t,KeyT,false,false,false,false,false,530,530
+111515,input,"t",insertText,false,false,false,false,false,531,531
+111638,up,t,KeyT,false,false,false,false,false,531,531
+111650,down,h,KeyH,false,false,false,false,false,531,531
+111600.00000000001,input,"h",insertText,false,false,false,false,false,532,532
+111719.00000000001,up,h,KeyH,false,false,false,false,false,532,532
+111767,down,i,KeyI,false,false,false,false,false,532,532
+111717,input,"i",insertText,false,false,false,false,false,533,533
+111839,up,i,KeyI,false,false,false,false,false,533,533
+111839,down,s,KeyS,false,false,false,false,false,533,533
+111790,input,"s",insertText,false,false,false,false,false,534,534
+111915,down," ",Space,false,false,false,false,false,534,534
+111865.00000000001,input," ",insertText,false,false,false,false,false,535,535
+111919,up,s,KeyS,false,false,false,false,false,535,535
+111979,up," ",Space,false,false,false,false,false,535,535
+112093,down,p,KeyP,false,false,false,false,false,535,535
+112043,input,"p",insertText,false,false,false,false,false,536,536
+112144,down,r,KeyR,false,false,false,false,false,536,536
+112094.00000000001,input,"r",insertText,false,false,false,false,false,537,537
+112156,up,p,KeyP,false,false,false,false,false,537,537
+112208,up,r,KeyR,false,false,false,false,false,537,537
+112250,down,o,KeyO,false,false,false,false,false,537,537
+112200,input,"o",insertText,false,false,false,false,false,538,538
+112334,up,o,KeyO,false,false,false,false,false,538,538
+112341.00000000001,down,v,KeyV,false,false,false,false,false,538,538
+112290,input,"v",insertText,false,false,false,false,false,539,539
+112365.00000000001,up,v,KeyV,false,false,false,false,false,539,539
+112442,down,l,KeyL,false,false,false,false,false,539,539
+112392,input,"l",insertText,false,false,false,false,false,540,540
+112538,up,l,KeyL,false,false,false,false,false,540,540
+112633,down,e,KeyE,false,false,false,false,false,540,540
+112583,input,"e",insertText,false,false,false,false,false,541,541
+112717,up,e,KeyE,false,false,false,false,false,541,541
+112736,down,m,KeyM,false,false,false,false,false,541,541
+112686,input,"m",insertText,false,false,false,false,false,542,542
+112804,up,m,KeyM,false,false,false,false,false,542,542
+113199,down,Backspace,Backspace,false,false,false,false,false,542,542
+113149,input,"",deleteContentBackward,false,false,false,false,false,541,541
+113254,up,Backspace,Backspace,false,false,false,false,false,541,541
+113324,down,Backspace,Backspace,false,false,false,false,false,541,541
+113274,input,"",deleteContentBackward,false,false,false,false,false,540,540
+113364,up,Backspace,Backspace,false,false,false,false,false,540,540
+113437,down,Backspace,Backspace,false,false,false,false,false,540,540
+113388,input,"",deleteContentBackward,false,false,false,false,false,539,539
+113485,up,Backspace,Backspace,false,false,false,false,false,539,539
+113553,down,Backspace,Backspace,false,false,false,false,false,539,539
+113503,input,"",deleteContentBackward,false,false,false,false,false,538,538
+113617,up,Backspace,Backspace,false,false,false,false,false,538,538
+113645,down,b,KeyB,false,false,false,false,false,538,538
+113595,input,"b",insertText,false,false,false,false,false,539,539
+113714,up,b,KeyB,false,false,false,false,false,539,539
+113830,down,l,KeyL,false,false,false,false,false,539,539
+113780,input,"l",insertText,false,false,false,false,false,540,540
+113837,down,e,KeyE,false,false,false,false,false,540,540
+113785,input,"e",insertText,false,false,false,false,false,541,541
+113898,up,e,KeyE,false,false,false,false,false,541,541
+113914,up,l,KeyL,false,false,false,false,false,541,541
+114582.00000000001,down,m,KeyM,false,false,false,false,false,541,541
+114532,input,"m",insertText,false,false,false,false,false,542,542
+114662,up,m,KeyM,false,false,false,false,false,542,542
+115088.00000000001,down,",",Comma,false,false,false,false,false,542,542
+115038,input,",",insertText,false,false,false,false,false,543,543
+115192,up,",",Comma,false,false,false,false,false,543,543
+115196,down," ",Space,false,false,false,false,false,543,543
+115144,input," ",insertText,false,false,false,false,false,544,544
+115296,up," ",Space,false,false,false,false,false,544,544
+115322,down,b,KeyB,false,false,false,false,false,544,544
+115272,input,"b",insertText,false,false,false,false,false,545,545
+115398,up,b,KeyB,false,false,false,false,false,545,545
+115471,down,u,KeyU,false,false,false,false,false,545,545
+115422,input,"u",insertText,false,false,false,false,false,546,546
+115547,up,u,KeyU,false,false,false,false,false,546,546
+115658,down," ",Space,false,false,false,false,false,546,546
+115608,input," ",insertText,false,false,false,false,false,547,547
+115681,up," ",Space,false,false,false,false,false,547,547
+115728.00000000001,down,t,KeyT,false,false,false,false,false,547,547
+115678,input,"t",insertText,false,false,false,false,false,548,548
+115800,up,t,KeyT,false,false,false,false,false,548,548
+116165,down,Backspace,Backspace,false,false,false,false,false,548,548
+116115.00000000001,input,"",deleteContentBackward,false,false,false,false,false,547,547
+116213.00000000001,up,Backspace,Backspace,false,false,false,false,false,547,547
+116270,down,Backspace,Backspace,false,false,false,false,false,547,547
+116220,input,"",deleteContentBackward,false,false,false,false,false,546,546
+116318,up,Backspace,Backspace,false,false,false,false,false,546,546
+116330,down,t,KeyT,false,false,false,false,false,546,546
+116279,input,"t",insertText,false,false,false,false,false,547,547
+116403,up,t,KeyT,false,false,false,false,false,547,547
+116439,down," ",Space,false,false,false,false,false,547,547
+116389,input," ",insertText,false,false,false,false,false,548,548
+116502,up," ",Space,false,false,false,false,false,548,548
+116623,down,m,KeyM,false,false,false,false,false,548,548
+116573.00000000001,input,"m",insertText,false,false,false,false,false,549,549
+116691,up,m,KeyM,false,false,false,false,false,549,549
+116775,down,o,KeyO,false,false,false,false,false,549,549
+116725.00000000001,input,"o",insertText,false,false,false,false,false,550,550
+116802,down,s,KeyS,false,false,false,false,false,550,550
+116751,input,"s",insertText,false,false,false,false,false,551,551
+116875,up,o,KeyO,false,false,false,false,false,551,551
+116910,up,s,KeyS,false,false,false,false,false,551,551
+116944,down,t,KeyT,false,false,false,false,false,551,551
+116894,input,"t",insertText,false,false,false,false,false,552,552
+117041,up,t,KeyT,false,false,false,false,false,552,552
+117041,down," ",Space,false,false,false,false,false,552,552
+116992,input," ",insertText,false,false,false,false,false,553,553
+117088.00000000001,up," ",Space,false,false,false,false,false,553,553
+117163,down,o,KeyO,false,false,false,false,false,553,553
+117113,input,"o",insertText,false,false,false,false,false,554,554
+117227,down,f,KeyF,false,false,false,false,false,554,554
+117177,input,"f",insertText,false,false,false,false,false,555,555
+117259,up,o,KeyO,false,false,false,false,false,555,555
+117295,up,f,KeyF,false,false,false,false,false,555,555
+117354,down," ",Space,false,false,false,false,false,555,555
+117304,input," ",insertText,false,false,false,false,false,556,556
+117410,down,t,KeyT,false,false,false,false,false,556,556
+117360,input,"t",insertText,false,false,false,false,false,557,557
+117414,up," ",Space,false,false,false,false,false,557,557
+117494,down,h,KeyH,false,false,false,false,false,557,557
+117444,input,"h",insertText,false,false,false,false,false,558,558
+117522,up,t,KeyT,false,false,false,false,false,558,558
+117602,down,e,KeyE,false,false,false,false,false,558,558
+117552,input,"e",insertText,false,false,false,false,false,559,559
+117614,up,h,KeyH,false,false,false,false,false,559,559
+117719.00000000001,up,e,KeyE,false,false,false,false,false,559,559
+117828,down,s,KeyS,false,false,false,false,false,559,559
+117778,input,"s",insertText,false,false,false,false,false,560,560
+117924,up,s,KeyS,false,false,false,false,false,560,560
+118031,down,e,KeyE,false,false,false,false,false,560,560
+117982,input,"e",insertText,false,false,false,false,false,561,561
+118107,up,e,KeyE,false,false,false,false,false,561,561
+118115.00000000001,down," ",Space,false,false,false,false,false,561,561
+118063,input," ",insertText,false,false,false,false,false,562,562
+118171,up," ",Space,false,false,false,false,false,562,562
+118441,down,w,KeyW,false,false,false,false,false,562,562
+118391,input,"w",insertText,false,false,false,false,false,563,563
+118513,down,e,KeyE,false,false,false,false,false,563,563
+118463.00000000001,input,"e",insertText,false,false,false,false,false,564,564
+118565,up,w,KeyW,false,false,false,false,false,564,564
+118597.00000000001,up,e,KeyE,false,false,false,false,false,564,564
+118705,down,r,KeyR,false,false,false,false,false,564,564
+118655,input,"r",insertText,false,false,false,false,false,565,565
+118777,down,e,KeyE,false,false,false,false,false,565,565
+118726,input,"e",insertText,false,false,false,false,false,566,566
+118845,up,r,KeyR,false,false,false,false,false,566,566
+118885,down," ",Space,false,false,false,false,false,566,566
+118835.00000000001,input," ",insertText,false,false,false,false,false,567,567
+118921,up,e,KeyE,false,false,false,false,false,567,567
+118937,up," ",Space,false,false,false,false,false,567,567
+119062,down,l,KeyL,false,false,false,false,false,567,567
+119012,input,"l",insertText,false,false,false,false,false,568,568
+119134,down,a,KeyA,false,false,false,false,false,568,568
+119084,input,"a",insertText,false,false,false,false,false,569,569
+119166,up,a,KeyA,false,false,false,false,false,569,569
+119166,up,l,KeyL,false,false,false,false,false,569,569
+119211,down,r,KeyR,false,false,false,false,false,569,569
+119161,input,"r",insertText,false,false,false,false,false,570,570
+119295,up,r,KeyR,false,false,false,false,false,570,570
+119339,down,g,KeyG,false,false,false,false,false,570,570
+119289,input,"g",insertText,false,false,false,false,false,571,571
+119423,up,g,KeyG,false,false,false,false,false,571,571
+119435,down,e,KeyE,false,false,false,false,false,571,571
+119384,input,"e",insertText,false,false,false,false,false,572,572
+119535,up,e,KeyE,false,false,false,false,false,572,572
+119581,down,l,KeyL,false,false,false,false,false,572,572
+119530,input,"l",insertText,false,false,false,false,false,573,573
+119681,up,l,KeyL,false,false,false,false,false,573,573
+119681,down,y,KeyY,false,false,false,false,false,573,573
+119631,input,"y",insertText,false,false,false,false,false,574,574
+119753,up,y,KeyY,false,false,false,false,false,574,574
+119825,down," ",Space,false,false,false,false,false,574,574
+119775,input," ",insertText,false,false,false,false,false,575,575
+119933,up," ",Space,false,false,false,false,false,575,575
+120450,down,c,KeyC,false,false,false,false,false,575,575
+120399,input,"c",insertText,false,false,false,false,false,576,576
+120518,up,c,KeyC,false,false,false,false,false,576,576
+120535,down,o,KeyO,false,false,false,false,false,576,576
+120483,input,"o",insertText,false,false,false,false,false,577,577
+120604,down,n,KeyN,false,false,false,false,false,577,577
+120554,input,"n",insertText,false,false,false,false,false,578,578
+120648,up,o,KeyO,false,false,false,false,false,578,578
+120684,down,c,KeyC,false,false,false,false,false,578,578
+120634,input,"c",insertText,false,false,false,false,false,579,579
+120704.00000000001,up,n,KeyN,false,false,false,false,false,579,579
+120748,up,c,KeyC,false,false,false,false,false,579,579
+120887,down,e,KeyE,false,false,false,false,false,579,579
+120837,input,"e",insertText,false,false,false,false,false,580,580
+120967,down,r,KeyR,false,false,false,false,false,580,580
+120915,input,"r",insertText,false,false,false,false,false,581,581
+121019,up,e,KeyE,false,false,false,false,false,581,581
+121067,down,n,KeyN,false,false,false,false,false,581,581
+121016,input,"n",insertText,false,false,false,false,false,582,582
+121083,up,r,KeyR,false,false,false,false,false,582,582
+121151,up,n,KeyN,false,false,false,false,false,582,582
+121200,down,e,KeyE,false,false,false,false,false,582,582
+121150,input,"e",insertText,false,false,false,false,false,583,583
+121267,down,d,KeyD,false,false,false,false,false,583,583
+121217,input,"d",insertText,false,false,false,false,false,584,584
+121355,up,e,KeyE,false,false,false,false,false,584,584
+121367,down," ",Space,false,false,false,false,false,584,584
+121316,input," ",insertText,false,false,false,false,false,585,585
+121419,up,d,KeyD,false,false,false,false,false,585,585
+121443,up," ",Space,false,false,false,false,false,585,585
+122451.00000000001,down,w,KeyW,false,false,false,false,false,585,585
+122402,input,"w",insertText,false,false,false,false,false,586,586
+122535,down,i,KeyI,false,false,false,false,false,586,586
+122485,input,"i",insertText,false,false,false,false,false,587,587
+122539,up,w,KeyW,false,false,false,false,false,587,587
+122612.00000000001,up,i,KeyI,false,false,false,false,false,587,587
+122619,down,t,KeyT,false,false,false,false,false,587,587
+122567,input,"t",insertText,false,false,false,false,false,588,588
+122711,down,h,KeyH,false,false,false,false,false,588,588
+122661,input,"h",insertText,false,false,false,false,false,589,589
+122732,up,t,KeyT,false,false,false,false,false,589,589
+122759,down," ",Space,false,false,false,false,false,589,589
+122708,input," ",insertText,false,false,false,false,false,590,590
+122787,up,h,KeyH,false,false,false,false,false,590,590
+122864,down,t,KeyT,false,false,false,false,false,590,590
+122813,input,"t",insertText,false,false,false,false,false,591,591
+122883,up," ",Space,false,false,false,false,false,591,591
+122907,down,h,KeyH,false,false,false,false,false,591,591
+122857,input,"h",insertText,false,false,false,false,false,592,592
+122963.00000000001,up,h,KeyH,false,false,false,false,false,592,592
+122967,up,t,KeyT,false,false,false,false,false,592,592
+123052,down,e,KeyE,false,false,false,false,false,592,592
+123002.00000000001,input,"e",insertText,false,false,false,false,false,593,593
+123064,down," ",Space,false,false,false,false,false,593,593
+123012,input," ",insertText,false,false,false,false,false,594,594
+123124.00000000001,up,e,KeyE,false,false,false,false,false,594,594
+123136,up," ",Space,false,false,false,false,false,594,594
+123274,down,m,KeyM,false,false,false,false,false,594,594
+123224,input,"m",insertText,false,false,false,false,false,595,595
+123341.00000000001,up,m,KeyM,false,false,false,false,false,595,595
+123424,down,o,KeyO,false,false,false,false,false,595,595
+123374.00000000001,input,"o",insertText,false,false,false,false,false,596,596
+123467,down,v,KeyV,false,false,false,false,false,596,596
+123417,input,"v",insertText,false,false,false,false,false,597,597
+123524,up,o,KeyO,false,false,false,false,false,597,597
+123536,up,v,KeyV,false,false,false,false,false,597,597
+123656,down,e,KeyE,false,false,false,false,false,597,597
+123606.00000000001,input,"e",insertText,false,false,false,false,false,598,598
+123704.00000000001,up,e,KeyE,false,false,false,false,false,598,598
+123715,down,m,KeyM,false,false,false,false,false,598,598
+123664,input,"m",insertText,false,false,false,false,false,599,599
+123764,up,m,KeyM,false,false,false,false,false,599,599
+123808,down,e,KeyE,false,false,false,false,false,599,599
+123758,input,"e",insertText,false,false,false,false,false,600,600
+123880.00000000001,up,e,KeyE,false,false,false,false,false,600,600
+123884,down,n,KeyN,false,false,false,false,false,600,600
+123832.00000000001,input,"n",insertText,false,false,false,false,false,601,601
+123944,up,n,KeyN,false,false,false,false,false,601,601
+123983,down,t,KeyT,false,false,false,false,false,601,601
+123934,input,"t",insertText,false,false,false,false,false,602,602
+124059,up,t,KeyT,false,false,false,false,false,602,602
+124164,down,s,KeyS,false,false,false,false,false,602,602
+124112.00000000001,input,"s",insertText,false,false,false,false,false,603,603
+124252.00000000001,down," ",Space,false,false,false,false,false,603,603
+124202,input," ",insertText,false,false,false,false,false,604,604
+124260,up,s,KeyS,false,false,false,false,false,604,604
+124312,up," ",Space,false,false,false,false,false,604,604
+124456,down,o,KeyO,false,false,false,false,false,604,604
+124406,input,"o",insertText,false,false,false,false,false,605,605
+124544,up,o,KeyO,false,false,false,false,false,605,605
+124579.00000000001,down,f,KeyF,false,false,false,false,false,605,605
+124529,input,"f",insertText,false,false,false,false,false,606,606
+124658,up,f,KeyF,false,false,false,false,false,606,606
+124693,down," ",Space,false,false,false,false,false,606,606
+124643,input," ",insertText,false,false,false,false,false,607,607
+124770,up," ",Space,false,false,false,false,false,607,607
+124777,down,t,KeyT,false,false,false,false,false,607,607
+124726,input,"t",insertText,false,false,false,false,false,608,608
+124834,up,t,KeyT,false,false,false,false,false,608,608
+125063,down,Backspace,Backspace,false,false,false,false,false,608,608
+125014,input,"",deleteContentBackward,false,false,false,false,false,607,607
+125119,up,Backspace,Backspace,false,false,false,false,false,607,607
+125172,down,s,KeyS,false,false,false,false,false,607,607
+125122,input,"s",insertText,false,false,false,false,false,608,608
+125248,up,s,KeyS,false,false,false,false,false,608,608
+125255.00000000001,down,m,KeyM,false,false,false,false,false,608,608
+125205,input,"m",insertText,false,false,false,false,false,609,609
+125331,up,m,KeyM,false,false,false,false,false,609,609
+125366,down,a,KeyA,false,false,false,false,false,609,609
+125316,input,"a",insertText,false,false,false,false,false,610,610
+125438,up,a,KeyA,false,false,false,false,false,610,610
+125441,down,l,KeyL,false,false,false,false,false,610,610
+125390,input,"l",insertText,false,false,false,false,false,611,611
+125502.00000000001,up,l,KeyL,false,false,false,false,false,611,611
+125562,down,l,KeyL,false,false,false,false,false,611,611
+125512,input,"l",insertText,false,false,false,false,false,612,612
+125622,down," ",Space,false,false,false,false,false,612,612
+125572,input," ",insertText,false,false,false,false,false,613,613
+125662,up,l,KeyL,false,false,false,false,false,613,613
+125698.00000000001,up," ",Space,false,false,false,false,false,613,613
+125926,down,g,KeyG,false,false,false,false,false,613,613
+125877.00000000001,input,"g",insertText,false,false,false,false,false,614,614
+126014,up,g,KeyG,false,false,false,false,false,614,614
+126033,down,r,KeyR,false,false,false,false,false,614,614
+125982,input,"r",insertText,false,false,false,false,false,615,615
+126113,up,r,KeyR,false,false,false,false,false,615,615
+126200,down,e,KeyE,false,false,false,false,false,615,615
+126150,input,"e",insertText,false,false,false,false,false,616,616
+126257,up,e,KeyE,false,false,false,false,false,616,616
+126334,down,e,KeyE,false,false,false,false,false,616,616
+126284,input,"e",insertText,false,false,false,false,false,617,617
+126402,up,e,KeyE,false,false,false,false,false,617,617
+126402,down,n,KeyN,false,false,false,false,false,617,617
+126353.00000000001,input,"n",insertText,false,false,false,false,false,618,618
+126514,up,n,KeyN,false,false,false,false,false,618,618
+126518,down," ",Space,false,false,false,false,false,618,618
+126466.00000000001,input," ",insertText,false,false,false,false,false,619,619
+126586,up," ",Space,false,false,false,false,false,619,619
+126949,down,p,KeyP,false,false,false,false,false,619,619
+126900,input,"p",insertText,false,false,false,false,false,620,620
+127017,up,p,KeyP,false,false,false,false,false,620,620
+127123,down,i,KeyI,false,false,false,false,false,620,620
+127074,input,"i",insertText,false,false,false,false,false,621,621
+127207.00000000001,down,e,KeyE,false,false,false,false,false,621,621
+127157,input,"e",insertText,false,false,false,false,false,622,622
+127219.00000000001,up,i,KeyI,false,false,false,false,false,622,622
+127275,up,e,KeyE,false,false,false,false,false,622,622
+127427,down,c,KeyC,false,false,false,false,false,622,622
+127377.00000000001,input,"c",insertText,false,false,false,false,false,623,623
+127551,up,c,KeyC,false,false,false,false,false,623,623
+127782,down,e,KeyE,false,false,false,false,false,623,623
+127733,input,"e",insertText,false,false,false,false,false,624,624
+127854,up,e,KeyE,false,false,false,false,false,624,624
+128187.00000000001,down,s,KeyS,false,false,false,false,false,624,624
+128137,input,"s",insertText,false,false,false,false,false,625,625
+128282.00000000001,down," ",Space,false,false,false,false,false,625,625
+128233,input," ",insertText,false,false,false,false,false,626,626
+128289.99999999999,up,s,KeyS,false,false,false,false,false,626,626
+128334,up," ",Space,false,false,false,false,false,626,626
+128418,down,o,KeyO,false,false,false,false,false,626,626
+128368,input,"o",insertText,false,false,false,false,false,627,627
+128470,down,f,KeyF,false,false,false,false,false,627,627
+128420.00000000001,input,"f",insertText,false,false,false,false,false,628,628
+128497.99999999999,up,o,KeyO,false,false,false,false,false,628,628
+128554,up,f,KeyF,false,false,false,false,false,628,628
+128586.00000000001,down," ",Space,false,false,false,false,false,628,628
+128536,input," ",insertText,false,false,false,false,false,629,629
+128650,up," ",Space,false,false,false,false,false,629,629
+128757,down,p,KeyP,false,false,false,false,false,629,629
+128707,input,"p",insertText,false,false,false,false,false,630,630
+128872.00000000001,down,a,KeyA,false,false,false,false,false,630,630
+128820,input,"a",insertText,false,false,false,false,false,631,631
+128872.00000000001,up,p,KeyP,false,false,false,false,false,631,631
+128961.00000000001,up,a,KeyA,false,false,false,false,false,631,631
+129033.00000000001,down,p,KeyP,false,false,false,false,false,631,631
+128983,input,"p",insertText,false,false,false,false,false,632,632
+129121.00000000001,up,p,KeyP,false,false,false,false,false,632,632
+129133.00000000001,down,e,KeyE,false,false,false,false,false,632,632
+129082,input,"e",insertText,false,false,false,false,false,633,633
+129237,down,r,KeyR,false,false,false,false,false,633,633
+129187.00000000001,input,"r",insertText,false,false,false,false,false,634,634
+129297,up,e,KeyE,false,false,false,false,false,634,634
+129336.99999999999,up,r,KeyR,false,false,false,false,false,634,634
+129444.00000000001,down,",",Comma,false,false,false,false,false,634,634
+129394,input,",",insertText,false,false,false,false,false,635,635
+129556.00000000001,up,",",Comma,false,false,false,false,false,635,635
+129563.00000000001,down," ",Space,false,false,false,false,false,635,635
+129512,input," ",insertText,false,false,false,false,false,636,636
+129656,up," ",Space,false,false,false,false,false,636,636
+129880,down,w,KeyW,false,false,false,false,false,636,636
+129830.00000000001,input,"w",insertText,false,false,false,false,false,637,637
+129952,up,w,KeyW,false,false,false,false,false,637,637
+129959,down,h,KeyH,false,false,false,false,false,637,637
+129907.00000000001,input,"h",insertText,false,false,false,false,false,638,638
+130032.00000000001,up,h,KeyH,false,false,false,false,false,638,638
+130110.00000000001,down,i,KeyI,false,false,false,false,false,638,638
+130060,input,"i",insertText,false,false,false,false,false,639,639
+130166,down,c,KeyC,false,false,false,false,false,639,639
+130116.00000000001,input,"c",insertText,false,false,false,false,false,640,640
+130198.00000000001,up,i,KeyI,false,false,false,false,false,640,640
+130234.00000000001,down,h,KeyH,false,false,false,false,false,640,640
+130184,input,"h",insertText,false,false,false,false,false,641,641
+130246.00000000001,up,c,KeyC,false,false,false,false,false,641,641
+130322,up,h,KeyH,false,false,false,false,false,641,641
+130342.99999999999,down," ",Space,false,false,false,false,false,641,641
+130293,input," ",insertText,false,false,false,false,false,642,642
+130387,down,i,KeyI,false,false,false,false,false,642,642
+130336.00000000001,input,"i",insertText,false,false,false,false,false,643,643
+130423,up," ",Space,false,false,false,false,false,643,643
+130459,up,i,KeyI,false,false,false,false,false,643,643
+130467.00000000001,down,s,KeyS,false,false,false,false,false,643,643
+130416,input,"s",insertText,false,false,false,false,false,644,644
+130567,down," ",Space,false,false,false,false,false,644,644
+130517,input," ",insertText,false,false,false,false,false,645,645
+130610.99999999999,up,s,KeyS,false,false,false,false,false,645,645
+130627.00000000001,up," ",Space,false,false,false,false,false,645,645
+130743,down,o,KeyO,false,false,false,false,false,645,645
+130692,input,"o",insertText,false,false,false,false,false,646,646
+130842.99999999999,up,o,KeyO,false,false,false,false,false,646,646
+130869,down,d,KeyD,false,false,false,false,false,646,646
+130819.00000000001,input,"d",insertText,false,false,false,false,false,647,647
+130904,up,d,KeyD,false,false,false,false,false,647,647
+130996.00000000001,down,d,KeyD,false,false,false,false,false,647,647
+130946,input,"d",insertText,false,false,false,false,false,648,648
+131076,up,d,KeyD,false,false,false,false,false,648,648
+131109,down," ",Space,false,false,false,false,false,648,648
+131059,input," ",insertText,false,false,false,false,false,649,649
+131164.00000000003,up," ",Space,false,false,false,false,false,649,649
+131254,down,b,KeyB,false,false,false,false,false,649,649
+131203,input,"b",insertText,false,false,false,false,false,650,650
+131257,down,e,KeyE,false,false,false,false,false,650,650
+131206,input,"e",insertText,false,false,false,false,false,651,651
+131325,up,e,KeyE,false,false,false,false,false,651,651
+131349,up,b,KeyB,false,false,false,false,false,651,651
+131447,down,c,KeyC,false,false,false,false,false,651,651
+131398,input,"c",insertText,false,false,false,false,false,652,652
+131527.00000000003,up,c,KeyC,false,false,false,false,false,652,652
+131598,down,a,KeyA,false,false,false,false,false,652,652
+131547,input,"a",insertText,false,false,false,false,false,653,653
+131726,down,u,KeyU,false,false,false,false,false,653,653
+131676.00000000003,input,"u",insertText,false,false,false,false,false,654,654
+131731,down,s,KeyS,false,false,false,false,false,654,654
+131679,input,"s",insertText,false,false,false,false,false,655,655
+131741,up,a,KeyA,false,false,false,false,false,655,655
+131814,up,u,KeyU,false,false,false,false,false,655,655
+131862,up,s,KeyS,false,false,false,false,false,655,655
+131978,down,e,KeyE,false,false,false,false,false,655,655
+131929,input,"e",insertText,false,false,false,false,false,656,656
+132051.00000000003,down," ",Space,false,false,false,false,false,656,656
+132001,input," ",insertText,false,false,false,false,false,657,657
+132086,up,e,KeyE,false,false,false,false,false,657,657
+132126,up," ",Space,false,false,false,false,false,657,657
+132154,down,t,KeyT,false,false,false,false,false,657,657
+132104,input,"t",insertText,false,false,false,false,false,658,658
+132234,up,t,KeyT,false,false,false,false,false,658,658
+132445,down,Backspace,Backspace,false,false,false,false,false,658,658
+132396.00000000003,input,"",deleteContentBackward,false,false,false,false,false,657,657
+132501,up,Backspace,Backspace,false,false,false,false,false,657,657
+132628,down,o,KeyO,false,false,false,false,false,657,657
+132577,input,"o",insertText,false,false,false,false,false,658,658
+132728,down,n,KeyN,false,false,false,false,false,658,658
+132678,input,"n",insertText,false,false,false,false,false,659,659
+132763,down," ",Space,false,false,false,false,false,659,659
+132711,input," ",insertText,false,false,false,false,false,660,660
+132776,up,o,KeyO,false,false,false,false,false,660,660
+132816,up,n,KeyN,false,false,false,false,false,660,660
+132824,down,t,KeyT,false,false,false,false,false,660,660
+132773,input,"t",insertText,false,false,false,false,false,661,661
+132872,up," ",Space,false,false,false,false,false,661,661
+132928,down,h,KeyH,false,false,false,false,false,661,661
+132878,input,"h",insertText,false,false,false,false,false,662,662
+132928,up,t,KeyT,false,false,false,false,false,662,662
+132992,up,h,KeyH,false,false,false,false,false,662,662
+133000,down,e,KeyE,false,false,false,false,false,662,662
+132948,input,"e",insertText,false,false,false,false,false,663,663
+133080,up,e,KeyE,false,false,false,false,false,663,663
+133084,down," ",Space,false,false,false,false,false,663,663
+133031,input," ",insertText,false,false,false,false,false,664,664
+133140.00000000003,up," ",Space,false,false,false,false,false,664,664
+133181,down,w,KeyW,false,false,false,false,false,664,664
+133131,input,"w",insertText,false,false,false,false,false,665,665
+133237,down,h,KeyH,false,false,false,false,false,665,665
+133187,input,"h",insertText,false,false,false,false,false,666,666
+133269,up,w,KeyW,false,false,false,false,false,666,666
+133317,up,h,KeyH,false,false,false,false,false,666,666
+133365,down,o,KeyO,false,false,false,false,false,666,666
+133314,input,"o",insertText,false,false,false,false,false,667,667
+133444.00000000003,up,o,KeyO,false,false,false,false,false,667,667
+133517,down,l,KeyL,false,false,false,false,false,667,667
+133467,input,"l",insertText,false,false,false,false,false,668,668
+133589,up,l,KeyL,false,false,false,false,false,668,668
+133615,down,e,KeyE,false,false,false,false,false,668,668
+133564,input,"e",insertText,false,false,false,false,false,669,669
+133659,down," ",Space,false,false,false,false,false,669,669
+133609,input," ",insertText,false,false,false,false,false,670,670
+133699,up,e,KeyE,false,false,false,false,false,670,670
+133731,up," ",Space,false,false,false,false,false,670,670
+135453,down,i,KeyI,false,false,false,false,false,670,670
+135403,input,"i",insertText,false,false,false,false,false,671,671
+135548,up,i,KeyI,false,false,false,false,false,671,671
+135613,down,t,KeyT,false,false,false,false,false,671,671
+135561,input,"t",insertText,false,false,false,false,false,672,672
+135700,down," ",Space,false,false,false,false,false,672,672
+135650,input," ",insertText,false,false,false,false,false,673,673
+135716,up,t,KeyT,false,false,false,false,false,673,673
+135772,up," ",Space,false,false,false,false,false,673,673
+135832,down,w,KeyW,false,false,false,false,false,673,673
+135782,input,"w",insertText,false,false,false,false,false,674,674
+135895,up,w,KeyW,false,false,false,false,false,674,674
+135985,down,a,KeyA,false,false,false,false,false,674,674
+135935,input,"a",insertText,false,false,false,false,false,675,675
+136021.00000000003,down,s,KeyS,false,false,false,false,false,675,675
+135971,input,"s",insertText,false,false,false,false,false,676,676
+136097,up,a,KeyA,false,false,false,false,false,676,676
+136105,down,n,KeyN,false,false,false,false,false,676,676
+136055,input,"n",insertText,false,false,false,false,false,677,677
+136133,up,s,KeyS,false,false,false,false,false,677,677
+136181,up,n,KeyN,false,false,false,false,false,677,677
+136534,down,"'",Quote,false,false,false,false,false,677,677
+136484,input,"'",insertText,false,false,false,false,false,678,678
+136618,up,"'",Quote,false,false,false,false,false,678,678
+136668,down,t,KeyT,false,false,false,false,false,678,678
+136618,input,"t",insertText,false,false,false,false,false,679,679
+136736,up,t,KeyT,false,false,false,false,false,679,679
+136744,down," ",Space,false,false,false,false,false,679,679
+136692,input," ",insertText,false,false,false,false,false,680,680
+136820,up," ",Space,false,false,false,false,false,680,680
+136837,down,t,KeyT,false,false,false,false,false,680,680
+136787,input,"t",insertText,false,false,false,false,false,681,681
+136905,down,h,KeyH,false,false,false,false,false,681,681
+136855,input,"h",insertText,false,false,false,false,false,682,682
+136917,up,t,KeyT,false,false,false,false,false,682,682
+136969,up,h,KeyH,false,false,false,false,false,682,682
+137001,down,e,KeyE,false,false,false,false,false,682,682
+136951,input,"e",insertText,false,false,false,false,false,683,683
+137052,down," ",Space,false,false,false,false,false,683,683
+137002,input," ",insertText,false,false,false,false,false,684,684
+137108,up,e,KeyE,false,false,false,false,false,684,684
+137120,up," ",Space,false,false,false,false,false,684,684
+137677,down,s,KeyS,false,false,false,false,false,684,684
+137626,input,"s",insertText,false,false,false,false,false,685,685
+137746,down,m,KeyM,false,false,false,false,false,685,685
+137696,input,"m",insertText,false,false,false,false,false,686,686
+137757,up,s,KeyS,false,false,false,false,false,686,686
+137810,up,m,KeyM,false,false,false,false,false,686,686
+137866,down,a,KeyA,false,false,false,false,false,686,686
+137815,input,"a",insertText,false,false,false,false,false,687,687
+137950.00000000003,down,l,KeyL,false,false,false,false,false,687,687
+137900,input,"l",insertText,false,false,false,false,false,688,688
+137953,up,a,KeyA,false,false,false,false,false,688,688
+137990,up,l,KeyL,false,false,false,false,false,688,688
+138066,down,l,KeyL,false,false,false,false,false,688,688
+138016,input,"l",insertText,false,false,false,false,false,689,689
+138154,up,l,KeyL,false,false,false,false,false,689,689
+138266,down," ",Space,false,false,false,false,false,689,689
+138216,input," ",insertText,false,false,false,false,false,690,690
+138317,up," ",Space,false,false,false,false,false,690,690
+138926.00000000003,down,g,KeyG,false,false,false,false,false,690,690
+138877,input,"g",insertText,false,false,false,false,false,691,691
+138994,up,g,KeyG,false,false,false,false,false,691,691
+139145,down,r,KeyR,false,false,false,false,false,691,691
+139095,input,"r",insertText,false,false,false,false,false,692,692
+139188.00000000003,up,r,KeyR,false,false,false,false,false,692,692
+139287,down,e,KeyE,false,false,false,false,false,692,692
+139236,input,"e",insertText,false,false,false,false,false,693,693
+139343,up,e,KeyE,false,false,false,false,false,693,693
+139415,down,e,KeyE,false,false,false,false,false,693,693
+139365,input,"e",insertText,false,false,false,false,false,694,694
+139458,down,n,KeyN,false,false,false,false,false,694,694
+139407,input,"n",insertText,false,false,false,false,false,695,695
+139510,up,e,KeyE,false,false,false,false,false,695,695
+139510,up,n,KeyN,false,false,false,false,false,695,695
+139607,down," ",Space,false,false,false,false,false,695,695
+139556,input," ",insertText,false,false,false,false,false,696,696
+139654,up," ",Space,false,false,false,false,false,696,696
+139833,down,p,KeyP,false,false,false,false,false,696,696
+139783.00000000003,input,"p",insertText,false,false,false,false,false,697,697
+139876,up,p,KeyP,false,false,false,false,false,697,697
+139979,down,i,KeyI,false,false,false,false,false,697,697
+139928,input,"i",insertText,false,false,false,false,false,698,698
+140076,up,i,KeyI,false,false,false,false,false,698,698
+140079,down,e,KeyE,false,false,false,false,false,698,698
+140027.00000000003,input,"e",insertText,false,false,false,false,false,699,699
+140167,up,e,KeyE,false,false,false,false,false,699,699
+140263,down,c,KeyC,false,false,false,false,false,699,699
+140213,input,"c",insertText,false,false,false,false,false,700,700
+140378,up,c,KeyC,false,false,false,false,false,700,700
+140456,down,e,KeyE,false,false,false,false,false,700,700
+140406,input,"e",insertText,false,false,false,false,false,701,701
+140552,up,e,KeyE,false,false,false,false,false,701,701
+140681,down,s,KeyS,false,false,false,false,false,701,701
+140628,input,"s",insertText,false,false,false,false,false,702,702
+140773,up,s,KeyS,false,false,false,false,false,702,702
+140849,down," ",Space,false,false,false,false,false,702,702
+140799,input," ",insertText,false,false,false,false,false,703,703
+140925,up," ",Space,false,false,false,false,false,703,703
+141051.00000000003,down,o,KeyO,false,false,false,false,false,703,703
+141001,input,"o",insertText,false,false,false,false,false,704,704
+141126,up,o,KeyO,false,false,false,false,false,704,704
+141130,down,f,KeyF,false,false,false,false,false,704,704
+141078,input,"f",insertText,false,false,false,false,false,705,705
+141226,up,f,KeyF,false,false,false,false,false,705,705
+141230,down," ",Space,false,false,false,false,false,705,705
+141178,input," ",insertText,false,false,false,false,false,706,706
+141286,up," ",Space,false,false,false,false,false,706,706
+141554,down,[,BracketLeft,false,false,false,false,false,706,706
+141505,input,"[",insertText,false,false,false,false,false,707,707
+141642,up,[,BracketLeft,false,false,false,false,false,707,707
+141699,down,a,KeyA,false,false,false,false,false,707,707
+141649,input,"a",insertText,false,false,false,false,false,708,708
+141779,down,p,KeyP,false,false,false,false,false,708,708
+141728,input,"p",insertText,false,false,false,false,false,709,709
+141786,up,a,KeyA,false,false,false,false,false,709,709
+141862,up,p,KeyP,false,false,false,false,false,709,709
+142116,down,Backspace,Backspace,false,false,false,false,false,709,709
+142066,input,"",deleteContentBackward,false,false,false,false,false,708,708
+142160,up,Backspace,Backspace,false,false,false,false,false,708,708
+142236,down,Backspace,Backspace,false,false,false,false,false,708,708
+142186,input,"",deleteContentBackward,false,false,false,false,false,707,707
+142284,up,Backspace,Backspace,false,false,false,false,false,707,707
+142360,down,Backspace,Backspace,false,false,false,false,false,707,707
+142310,input,"",deleteContentBackward,false,false,false,false,false,706,706
+142412,up,Backspace,Backspace,false,false,false,false,false,706,706
+142536,down,p,KeyP,false,false,false,false,false,706,706
+142486,input,"p",insertText,false,false,false,false,false,707,707
+142624,up,p,KeyP,false,false,false,false,false,707,707
+142641,down,a,KeyA,false,false,false,false,false,707,707
+142591,input,"a",insertText,false,false,false,false,false,708,708
+142713,up,a,KeyA,false,false,false,false,false,708,708
+142725,down,p,KeyP,false,false,false,false,false,708,708
+142675,input,"p",insertText,false,false,false,false,false,709,709
+142813.00000000003,up,p,KeyP,false,false,false,false,false,709,709
+142831,down,e,KeyE,false,false,false,false,false,709,709
+142780,input,"e",insertText,false,false,false,false,false,710,710
+142898,down,r,KeyR,false,false,false,false,false,710,710
+142848,input,"r",insertText,false,false,false,false,false,711,711
+142970,up,e,KeyE,false,false,false,false,false,711,711
+142994,up,r,KeyR,false,false,false,false,false,711,711
+142998,down," ",Space,false,false,false,false,false,711,711
+142946,input," ",insertText,false,false,false,false,false,712,712
+143062,up," ",Space,false,false,false,false,false,712,712
+143212,down,t,KeyT,false,false,false,false,false,712,712
+143162,input,"t",insertText,false,false,false,false,false,713,713
+143276,up,t,KeyT,false,false,false,false,false,713,713
+143284,down,h,KeyH,false,false,false,false,false,713,713
+143233,input,"h",insertText,false,false,false,false,false,714,714
+143367,up,h,KeyH,false,false,false,false,false,714,714
+143420.00000000003,down,a,KeyA,false,false,false,false,false,714,714
+143370,input,"a",insertText,false,false,false,false,false,715,715
+143488,up,a,KeyA,false,false,false,false,false,715,715
+143556,down,t,KeyT,false,false,false,false,false,715,715
+143505,input,"t",insertText,false,false,false,false,false,716,716
+143632,down," ",Space,false,false,false,false,false,716,716
+143582,input," ",insertText,false,false,false,false,false,717,717
+143636,up,t,KeyT,false,false,false,false,false,717,717
+143684,up," ",Space,false,false,false,false,false,717,717
+143769,down,w,KeyW,false,false,false,false,false,717,717
+143719,input,"w",insertText,false,false,false,false,false,718,718
+143865,down,e,KeyE,false,false,false,false,false,718,718
+143815,input,"e",insertText,false,false,false,false,false,719,719
+143885,up,w,KeyW,false,false,false,false,false,719,719
+143929,up,e,KeyE,false,false,false,false,false,719,719
+144042,down,r,KeyR,false,false,false,false,false,719,719
+143993,input,"r",insertText,false,false,false,false,false,720,720
+144107,down,e,KeyE,false,false,false,false,false,720,720
+144057.00000000003,input,"e",insertText,false,false,false,false,false,721,721
+144166,up,r,KeyR,false,false,false,false,false,721,721
+144166,down," ",Space,false,false,false,false,false,721,721
+144117,input," ",insertText,false,false,false,false,false,722,722
+144226,up," ",Space,false,false,false,false,false,722,722
+144254,up,e,KeyE,false,false,false,false,false,722,722
+144368,down,u,KeyU,false,false,false,false,false,722,722
+144318,input,"u",insertText,false,false,false,false,false,723,723
+144484,down,n,KeyN,false,false,false,false,false,723,723
+144434,input,"n",insertText,false,false,false,false,false,724,724
+144492,up,u,KeyU,false,false,false,false,false,724,724
+144505,up,n,KeyN,false,false,false,false,false,724,724
+144643,down,h,KeyH,false,false,false,false,false,724,724
+144593,input,"h",insertText,false,false,false,false,false,725,725
+144723,up,h,KeyH,false,false,false,false,false,725,725
+144740,down,a,KeyA,false,false,false,false,false,725,725
+144689,input,"a",insertText,false,false,false,false,false,726,726
+144808,up,a,KeyA,false,false,false,false,false,726,726
+145415,down,p,KeyP,false,false,false,false,false,726,726
+145365,input,"p",insertText,false,false,false,false,false,727,727
+145463,up,p,KeyP,false,false,false,false,false,727,727
+145520,down,p,KeyP,false,false,false,false,false,727,727
+145470,input,"p",insertText,false,false,false,false,false,728,728
+145592,up,p,KeyP,false,false,false,false,false,728,728
+145640.00000000003,down,y,KeyY,false,false,false,false,false,728,728
+145589,input,"y",insertText,false,false,false,false,false,729,729
+145691,up,y,KeyY,false,false,false,false,false,729,729
+145725,down,.,Period,false,false,false,false,false,729,729
+145675,input,".",insertText,false,false,false,false,false,730,730
+145825.00000000003,up,.,Period,false,false,false,false,false,730,730
+145869,down," ",Space,false,false,false,false,false,730,730
+145819.00000000003,input," ",insertText,false,false,false,false,false,731,731
+145913,up," ",Space,false,false,false,false,false,731,731
