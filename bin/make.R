@@ -39,7 +39,7 @@ for (k in seq_along(these))
   }
 }
 
-these <- which((td >= avail) & (types == 'pg'))
+these <- which((td >= avail) & (types == 'nb'))
 for (k in seq_along(these))
 {
   pout <- xml_attr(links[these[k]], "href")
