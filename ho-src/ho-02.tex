@@ -52,41 +52,42 @@ random variables.\footnote{
   }
 As suggested by the name, the sample variance can be used as a good
 point estimator for the population variance. On the worksheet, we will
-show that it is an unbiased and consistent estimator of the population
-variance.
+show that it is an unbiased estimator of the population variance.
+We will also find its exact distribution when $\mathcal{G}$ is normally
+distributed.
 
-If $\mathcal{G}$ is a normal distribution, then we can show that the
-sample variance has distribution equal to a scaled chi-squared
-distribution.\footnote{
-  Recall that a chi-squared with $k$ degrees of freedom results from
-  taking $k$ independent random variables with standard normal distributions,
-  squaring them, and taking their sum.
-}
-Specifically, we have:
-\begin{align*}
-\frac{(n-1)S^2_X}{\sigma_X^2} \sim \chi^2(n-1).
-\end{align*}
-This will allow us to derive the mean and variance of the sample variance
-statistic.
+% If $\mathcal{G}$ is a normal distribution, then we can show that the
+% sample variance has distribution equal to a scaled chi-squared
+% distribution.\footnote{
+%   Recall that a chi-squared with $k$ degrees of freedom results from
+%   taking $k$ independent random variables with standard normal distributions,
+%   squaring them, and taking their sum.
+% }
+% Specifically, we have:
+% \begin{align*}
+% \frac{(n-1)S^2_X}{\sigma_X^2} \sim \chi^2(n-1).
+% \end{align*}
+% This will allow us to derive the mean and variance of the sample variance
+% statistic.
 
-\vspace*{24pt}
+% \vspace*{24pt}
 
-\noindent
-Assume that we have two independent random variables: $Z \sim N(0, 1)$ and
-$C \sim \chi^2(k)$. Then, define the following ratio between the two random
-variables:
-\begin{align*}
-T &= \frac{Z}{\sqrt{C / k}}.
-\end{align*} 
-It should be clear that this random variable has a well defined distribution that
-depends only on the degrees of freedom $k$ of the chi-squared distribution. The
-distribution is called \textbf{Student's t-distribution} with $k$ degrees of freedom,
-which is denoted by $t(k)$. As we will motivate on today's worksheet, the t-distribution
-has a mean of zero, is symmetric around the origin, and will be limit to a standard
-normal as the degrees of freedom limits to infinity. We will see next time how the
-t-distribution allows us to combine information about the sample mean (which has a
-scaled standard normal distribution) and the sample variance (which has a scaled
-chi-squared distribution).
+% \noindent
+% Assume that we have two independent random variables: $Z \sim N(0, 1)$ and
+% $C \sim \chi^2(k)$. Then, define the following ratio between the two random
+% variables:
+% \begin{align*}
+% T &= \frac{Z}{\sqrt{C / k}}.
+% \end{align*} 
+% It should be clear that this random variable has a well defined distribution that
+% depends only on the degrees of freedom $k$ of the chi-squared distribution. The
+% distribution is called \textbf{Student's t-distribution} with $k$ degrees of freedom,
+% which is denoted by $t(k)$. As we will motivate on today's worksheet, the t-distribution
+% has a mean of zero, is symmetric around the origin, and will be limit to a standard
+% normal as the degrees of freedom limits to infinity. We will see next time how the
+% t-distribution allows us to combine information about the sample mean (which has a
+% scaled standard normal distribution) and the sample variance (which has a scaled
+% chi-squared distribution).
 
 \end{document}
 

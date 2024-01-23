@@ -1,9 +1,106 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
-Assume that $\mathcal{G}$ is a normal distribution. What is the distribution
-of the following quantity from the sample mean $\bar{X}$ from a random sample
-with $n$ observations?
+Assume we have a random sample of size $n = 5$ with the following data:
+$x_1 = -2$, $x_2 = -1$, $x_3 = 0$, $x_4 = 1$, $x_5 = 2$. What is the observered
+sample variance $s^2$? 
+\footnote{
+  I tried to pick numbers to make the arithmetic easy to do. 
+}
+
+% SOLUTION
+
+The mean of the data is clearly zero since the data are symetric around the
+origin. So:
+\begin{align*}
+s^2 &= \frac{1}{5 - 1} \cdot \left[(-2)^2 + (-1)^2 + (0)^2 + (1)^2 + (2)^2 \right] \\
+&= \frac{1}{4} \cdot \left[10 \right] = 5/2 = 2.5 \\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION
+
+We are going to see two different ways to manipulate the formula for the 
+sample variance. One is important for showing its general properties and
+the other is important for showing the properties under normality. To start,
+take the formula for $S^2_X$ and expand the square term. This will lead to
+three different terms under the summation. Distribute the sum term and
+try to simplify as much as possible. \textbf{Check with me to make sure
+you have the full solution before continuing.}
+
+% SOLUTION
+
+We have the following based entirely on an algebraic manipulation of the
+quantity, pulling out constants from the summation
+\begin{align*}
+S^2_X &= \frac{1}{n-1} \sum_{i=1}^n \left[X_i - \bar{X} \right]^2 \\
+&= \frac{1}{n-1} \sum_{i=1}^n \left[X_i^2 + \bar{X}^2 - 2 X_i \bar{X} \right] \\
+&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + \sum_{i=1}^n \bar{X}^2 - \sum_{i=1}^n 2 X_i \bar{X} \right]^2 \\
+&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + n \cdot \bar{X}^2 - 2 \bar{X} \sum_{i=1}^n X_i \right]^2
+\end{align*}
+Now, from the definition of $\bar{X}$, we see that $\sum_i X_i = n \bar{X}$.
+This gives:
+\begin{align*}
+S^2_X &= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + n \cdot \bar{X}^2 - 2 \bar{X} \cdot n \cdot \bar{X} \right]^2 \\
+&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 - n \bar{X}^2 \right]^2
+\end{align*}
+That is the form that we need for the next step.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION
+
+What is the quantity $\mathbb{E}[X_i^2]$ in terms of the parameters $\mu_X$ and
+$\sigma_X^2$? What is the quantity $\mathbb{E}[\bar{X}^2]$ Hint: You should be
+able to use the variance formula $Var(Y) = \mathbb{E}Y^2 - [\mathbb{E}Y]^2$
+to get this quickly from the setup of the problem.
+
+% SOLUTION
+
+Using the hint, we see that we have:
+\begin{align*}
+Var(X_i) &= \mathbb{E}X_i^2 - [\mathbb{E}X_i]^2 \\
+\sigma_X^2 &= \mathbb{E}X_i^2 - \mu_X^2 \\
+\mathbb{E}X_i^2 &= \sigma_X^2 - \mu_X^2.
+\end{align*}
+Similarly:
+\begin{align*}
+Var(\bar{X}) &= \mathbb{E}\bar{X}^2 - [\mathbb{E}\bar{X}]^2 \\
+\frac{\sigma_X^2}{n}  &= \mathbb{E}\bar{X}^2 - \mu_X^2 \\
+\mathbb{E}\bar{X}^2 &= \frac{\sigma_X^2}{n} - \mu_X^2.
+\end{align*}
+We will use these results in the next question.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION
+
+Compute $\mathbb{E}S_X^2$, starting with the results from the previous two
+questions. What is the bias of $S_X^2$ as an estimator of $\sigma_X^2$?
+
+% SOLUTION
+
+Taking the expected value of quantity from before, and pushing the expectation
+through all of the constants, we have:
+\begin{align*}
+\mathbb{E} S^2_X &= \frac{1}{n-1} \left[ \sum_{i=1}^n \mathbb{E} [X_i^2] - n \mathbb{E}[\bar{X}^2] \right]^2
+\end{align*}
+Plugging in the previous question and simplifying, we have:
+\begin{align*}
+\mathbb{E} S^2_X &= \frac{1}{n-1} \left[ \sum_{i=1}^n \left[ \sigma_X^2 - \mu_X^2 \right] -
+  n \left[ \frac{\sigma_X^2}{n} - \mu_X^2 \right] \right]^2 \\
+&= \frac{1}{n-1} \left[ n \cdot \left[ \sigma_X^2 - \mu_X^2 \right] -
+  n \left[ \frac{\sigma_X^2}{n} - \mu_X^2 \right] \right]^2 \\
+&= \frac{1}{n-1} \left[ n \sigma_X^2 - n \mu_X^2 - \sigma_X^2 + n \mu_X^2  \right]^2 \\
+&= \frac{1}{n-1} \left[ (n-1) \sigma_X^2 \right]^2 \\
+&= \sigma_X^2.
+\end{align*}
+Therefore, the statistic $S_X^2$ is an unbiased estimator of $\sigma_X^2$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION
+
+Now, let's assume that $\mathcal{G}$ is a normal distribution. What is the
+distribution of the following quantity from the sample mean $\bar{X}$ from a
+random sample with $n$ observations?
 \begin{align*}
 \left[\frac{\bar{X} - \mu_X}{\sigma_X / \sqrt{n}} \right]^2.
 \end{align*}
@@ -49,8 +146,8 @@ Make sure that you see why this is valid! Starting with the
 formula above, distribute the square. You should have three different summation
 terms. Simplify by showing that the cross-term (the one with the $2$ in it) is
 zero and another one of the terms is a constant in terms of the index $i$. The
-third term should look similar to $S_X^2$. This is somewhat tricky. Make sure
-you check the anwer before moving on.
+third term should look similar to $S_X^2$. \textbf{Check with me to make sure
+you have the full solution before continuing.}
 
 % SOLUTION
 
@@ -111,8 +208,9 @@ as required).
 From probability theory, we have that the expected value of a random variable with
 a chi-squared distribution with $k$ degrees of freedom is $k$. Its variance is $2k$.
 Take the expected value of the quantity from the previous question and
-simplify to get the expected value of $S_X^2$. You should see that $S_X^2$ is
-an unbiased estimator of $\sigma_X^2$.
+simplify to get the expected value of $S_X^2$. You should see again that $S_X^2$ is
+an unbiased estimator of $\sigma_X^2$, which we already proved in the general case
+above.
 
 % SOLUTION
 
@@ -129,9 +227,13 @@ return to in the next unit.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
-Take the
-variance of the quantity you started with in the previous question and simplify
-to get the variance of $S_X^2$.
+Take the variance of the quantity you started with in the previous question and
+simplify to get the variance of $S_X^2$.\footnote{
+  I won't make you go through the steps again, but you should be able to see
+  quickly from the result for $|bar{X}$ that any unbiased estimator that has
+  a variance that limits to zero as $n\rightarrow\infty$ will be consistent
+  by the application of Chebyshev's Inequality.
+}
 
 % SOLUTION
 
