@@ -1,0 +1,93 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 03 (Solutions)}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Let $X_1, \ldots, X_n \sim N(\mu_X, \sigma_X^2)$ be a random sample. Using
+the results from the handout, construct a pivot statistic $T$ as a function
+of $\bar{X}$, $S_X^2$, $\mu_X$, and $\sigma_X^2$ that has a distribution of
+$t(n-1)$. Do not simplify.
+
+\textit{Solution:} TODO
+
+\textbf{2}. Simplify the form of the $T$ statistic. It should no longer have any
+$\sigma_X^2$ terms (in fact this is the whole point of this specific form). 
+Try to write the solution with $(\mu - \bar{X})$ in the numerator and
+everything else in the denominator.
+
+\textit{Solution:} TODO
+
+\textbf{3}. Let $t_\alpha(k)$ be the tail probability of a T-distribution with $k$
+degrees of freedom, just as we had with $z_\alpha$ on the handout. Following
+the same procedure with the example on the handout, construct a confidence
+interval with confidence level $(1 - \alpha)$ for $\mu_X$. Write the solution
+as $\bar{X} \pm \Delta$ for some $\Delta$.
+
+\textit{Solution:} TODO
+
+\textbf{4}. % qt(1 - 0.01/2, df = 24)
+% 2.797 * sqrt(6/24)
+
+We will go back to the story about the fish. Say we sample $25$ fish and
+have a sample mean of $12.1$ centimeters and a sample variance of $6$
+centimeters squared. Given that $t_{0.01/2}(24)$ is approximately equal
+to $2.797$, derive the confidence interval for the mean.
+
+\textit{Solution:} We have:
+\begin{align*}
+12.1 &\pm \left[ 2.797 \cdot \sqrt{\frac{6}{24}} \right] \\
+12.1 &\pm 1.3985
+\end{align*}
+
+\textbf{5}. Let $C_k \sim \chi^2(k)$ for every integer $k$. Use Chebychev's Inequality to show
+that for any $\epsilon > 0$, we have:
+\begin{align*}
+\lim_{k \rightarrow \infty} \mathbb{P} \left[ |C_k/k - 1| \geq \epsilon \right] = 0
+\end{align*}
+In this case we say that $C_k$ limits in probability to 1, written as
+$C_k \rightarrow_P 1$.
+
+\textit{Solution:} TODO
+
+\textbf{6}. Let $Y_n \rightarrow_P y$ for a constant $y$, $f$ is a real-valued function that
+is invertable around the neighborhood of $y$, and $X$ is another random variable.
+Then, Slutsky's Theorem says that $g(Y_n) \cdot X$ limits in probability to
+$g(y) \cdot X$. Use this to show that the $T$ distribution limits to the standard
+normal as the degrees of freedom limit to infinity.
+
+\textit{Solution:} TODO
+
+
+\end{document}
