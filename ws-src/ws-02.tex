@@ -35,14 +35,14 @@ quantity, pulling out constants from the summation
 \begin{align*}
 S^2_X &= \frac{1}{n-1} \sum_{i=1}^n \left[X_i - \bar{X} \right]^2 \\
 &= \frac{1}{n-1} \sum_{i=1}^n \left[X_i^2 + \bar{X}^2 - 2 X_i \bar{X} \right] \\
-&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + \sum_{i=1}^n \bar{X}^2 - \sum_{i=1}^n 2 X_i \bar{X} \right]^2 \\
-&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + n \cdot \bar{X}^2 - 2 \bar{X} \sum_{i=1}^n X_i \right]^2
+&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + \sum_{i=1}^n \bar{X}^2 - \sum_{i=1}^n 2 X_i \bar{X} \right] \\
+&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + n \cdot \bar{X}^2 - 2 \bar{X} \sum_{i=1}^n X_i \right]
 \end{align*}
 Now, from the definition of $\bar{X}$, we see that $\sum_i X_i = n \bar{X}$.
 This gives:
 \begin{align*}
-S^2_X &= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + n \cdot \bar{X}^2 - 2 \bar{X} \cdot n \cdot \bar{X} \right]^2 \\
-&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 - n \bar{X}^2 \right]^2
+S^2_X &= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 + n \cdot \bar{X}^2 - 2 \bar{X} \cdot n \cdot \bar{X} \right] \\
+&= \frac{1}{n-1} \left[ \sum_{i=1}^n X_i^2 - n \bar{X}^2 \right]
 \end{align*}
 That is the form that we need for the next step.
 
