@@ -1,0 +1,147 @@
+ ---
+title: "Notebook 03"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+## Read Data into R
+
+```{r}
+kl <- read_csv("../data/keylog.csv")
+kl$key[is.na(kl$key)] <- " "
+kl
+```
+
+```{r}
+filter(kl, id == "A", task == "2")
+```
+
+```{r}
+kl |>
+  filter(task == 1) |>
+  ggplot(aes(x = duration)) +
+    geom_histogram(color = "black", fill = "white", bins = 30)
+```
+
+```{r}
+kl |>
+  filter(task == 1) |>
+  ggplot(aes(x = gap1)) +
+    geom_histogram(color = "black", fill = "white", bins = 30)
+```
+
+```{r}
+kl |>
+  filter(task == 1) |>
+  filter(gap1 < 1000) |>
+  ggplot(aes(x = gap1)) +
+    geom_histogram(color = "black", fill = "white", bins = 30)
+```
+
+```{r}
+kl |>
+  filter(task == 1) |>
+  filter(gap2 < 1000) |>
+  ggplot(aes(x = gap1)) +
+    geom_histogram(color = "black", fill = "white", bins = 30)
+```
+
+## Confidence Interval for Duration
+
+```{r}
+mean(kl$duration)
+```
+
+```{r}
+tval <- qt(1 - 0.01/2, df = nrow(kl))
+tval
+```
+
+```{r}
+mean(kl$duration) - tval * sqrt(var(kl$duration) / (nrow(kl) - 1))
+```
+
+```{r}
+mean(kl$duration) + tval * sqrt(var(kl$duration) / (nrow(kl) - 1))
+```
+
+```{r}
+t.test(kl$duration, conf.level = 0.99)
+```
+
+```{r}
+t.test(kl$gap1, conf.level = 0.99)
+```
+
+```{r}
+t.test(kl$gap1[kl$gap1 < 1000], conf.level = 0.99)
+```
+
+## Confidence Interval for the Variance
+
+```{r}
+var(kl$duration)
+```
+
+```{r}
+tval1 <- qchisq(1 - 0.01/2, df = nrow(kl))
+tval1
+```
+
+```{r}
+tval2 <- qchisq(0.01/2, df = nrow(kl))
+tval2
+```
+
+```{r}
+var(kl$duration) * (nrow(kl) - 1) / tval1
+```
+
+```{r}
+var(kl$duration) * (nrow(kl) - 1) / tval2
+```
+
+```{r}
+sqrt(c(var(kl$duration) * (nrow(kl) - 1) / tval1,
+       var(kl$duration) * (nrow(kl) - 1) / tval2))
+```
+
+## Confidence Interval for Two Tasks
+
+```{r}
+df <- kl |>
+  group_by(id, task) |>
+  summarize(y = mean(gap2, na.rm = TRUE)) |>
+  ungroup() |>
+  pivot_wider(names_from = task, values_from = y, names_prefix = "task") |>
+  mutate(diff = task2 - task1)
+df
+```
+
+```{r}
+t.test(df$diff, conf.level = 0.99)
+```
+
+```{r}
+df <- kl |>
+  group_by(id, task) |>
+  filter(gap2 < 1000) |>
+  summarize(y = mean(gap2, na.rm = TRUE)) |>
+  ungroup() |>
+  pivot_wider(names_from = task, values_from = y, names_prefix = "task") |>
+  mutate(diff = task2 - task1)
+df
+```
+
+```{r}
+t.test(df$diff, conf.level = 0.99)
+```
+
+

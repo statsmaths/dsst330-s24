@@ -48,8 +48,8 @@ df <- df |>
 
 # some sanity checks
 t.test(
-  df$gap1[df$task == 1 & df$key == " "],
-  df$gap1[df$task == 1 & df$key != " "]
+  df$gap1[df$task == 1 & df$key == " " & df$gap1 < 1000],
+  df$gap1[df$task == 1 & df$key != " " & df$gap1 < 1000]
 )
 
 write_csv(df, "../keylog.csv")
@@ -77,9 +77,24 @@ df_word <- df |>
     type = if_else(type %in% c(",", "."), type, "word"),
     type = if_else(type == ",", "comma", type),
     type = if_else(type == ".", "fullstop", type)
-  )
+  ) |>
+  ungroup()
+
+t.test(
+  df_word$gap_after[df_word$type == "fullstop" & df_word$gap_after < 1000],
+  df_word$gap_after[df_word$type == "word" & df_word$gap_after < 1000]
+)
 
 
 write_csv(df_word, "../keylog_word.csv")
+
+
+
+cor.test(df_word$nchar, df_word$duration)
+
+summary(lm(duration ~ id, data = df_word))
+summary(aov(duration ~ id, data = df_word))
+
+
 
 
