@@ -8,7 +8,7 @@
 
 \newtheorem{mydef}{Definition}[section]
 \newtheorem{thm}{Theorem}[section]
-\setcounter{section}{4}
+\setcounter{section}{6}
 
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
@@ -27,108 +27,64 @@
 
 \justify
 
-{\LARGE Handout 04: Hypothesis Testing}
+{\LARGE Handout 04: Asymptotic T Statistic}
 
 \vspace*{18pt}
 
 \noindent
-An hypothesis test is a way of establishing whether a random sample
-offers support for a particular conclusion about the population 
-distribution $\mathcal{G}$. The mechanics of hypothesis testing are
-similar to those confidence intervals, but the interpretation and
-terminology differs. For an hypothesis test, we start with a
-\textbf{null hypothesis} $H_0$ and see if the data support rejecting
-this baseline assumption in favor of an \textbf{alternative hypothesis}
-$H_A$. A common example is to have a null hypothesis in which some unknown
-parameter $\theta$ is assumed to be zero and we want to see if the data 
-support the alternative hypothesis that $\theta \neq 0$.
+Last time, we have derived a confidence interval using the
+T-distribution for estimation of the mean of a population
+distribution that we know to be normal (but do not know the
+mean or variance). Today, we will apply this technique to
+some actual data in R. But, in general, real data is never
+perfectly normal. So, why is the approach still valid? Let's
+see!
 
-In its formal specification, to do an hypothesis test we first select
-a \textbf{significant level} $(1-\alpha)$ and construct an event $R$,
-called a \textbf{rejection region}, such that $\Prob[R^2 | H_0] \leq \alpha$.
-If we then observe some data and $R$ occurs, we \textbf{reject} the
-null hypothesis in favor of the alternative. Otherwise, we \textbf{retain}
-(or fail to reject) the null hypothesis. The goal is to create a rejection
-region that has a much higher probability of occuring under the alternative
-hypothesis than it does under the null.
-
-The standard approach to creating a rejection region is to start with a
-pivot, plug in the parameters of the null distribution, and then form a
-\textbf{test statistic} with a known distribution under $H_0$. Then, we
-can create something similar to a confidence interval around the test
-statistic and use the complement of that as the rejection region. Let's
-see an example! Assume that you have a random sample from a normal 
-distribution with unknown mean and unknown variance. We will do an 
-hypothesis test with $H_0: \mu = 1$ and $H_A: \mu \neq 1$. We form a
-test statistic $T$ using the pivot quantity that we saw last time, but
-with $\mu$ replaced with the null hypothesis of $1$:\footnote{
-  I have reversed the numerator from the previous notes to follow
-  the standard convention that a positive $T$ corresponds to a mean
-  higher than the null hypothesis. Due to the symmetry of the
-  t-distribution, $T$ still has the same t-distribution either way.
-}
-\begin{align*}
-T &= \frac{\bar{X} - 1}{\sqrt{S_X^2 / n}} 
-\end{align*}
-The rejection region $R$ is given by the following event:
-\begin{align*}
-R &= \left\{ t_{\alpha/2} \leq T \leq t_{1 - \alpha/2} \right\}^{c}.
-\end{align*}
-Due to the way it is defined, this will have the desired property that
-$\Prob[R|H_0] \leq 1 - \alpha$. A common shorthand for the rejection
-region is to call the quantity $t_{1 - \alpha/2}$ a \textbf{critical value},
-and then simply reject the null hypothesis if the (absolue value) of the
-test statistic exceeds the critical value. Hypothesis test procedures
-are oftened named based on the distribution of the test statistic.\footnote{
-  This is not an ideal convention because many different tests can have
-  the same test statistic distribution. The naming convention causes constant
-  confusion. We can talk more about ways to mitigate these issues in your own
-  work.
-}
-Here, we have derived what is called the \textbf{one-sample T-test}. 
-
-There is another related way of doing hypothesis testing that, at least
-initially, forgoes the language about rejecting or retaining the null 
-hypothesis. Instead of having a fixed critical value, we could ask the
-question: what is the smallest value of $\alpha$ such that corresponding
-test statistic would be equal to (or greater than) the critical value? 
-This quantity is called a \textbf{p-value}. A p-value is usually the 
-form that statsitical software will report the results of an hypothesis
-test and is increasingly the way that results are communicated through.
-Note that we can recover the concept of statistical significance by 
-simply checking the p-value is less than the significant level. If it
-is, we have a statistically significant result and would reject the null
-hypothesis in favor of the alternative hypothesis.
-
-\vspace*{36pt}
+\vspace*{24pt}
 
 \noindent
-We have already fully derived the one-sample T-test. On today's worksheet,
-we will introduce the \textbf{two-sample T-test}. The setup and
-final results are repeated here for easy reference. Consider observing
-two different random samples from two potentially different underlying
-distributions. We will write this as $X_1, \ldots, X_n \iid \mathcal{G}_X$ and
-$Y_1, \ldots, Y_m \iid \mathcal{G}_Y$. We will assume that both
-$\mathcal{G}_X$ and $\mathcal{G}_Y$ are normal and that they have a shared
-common (but unknown) variance $\sigma^2$. We want to produce an hypothesis
-test that the difference in means $\theta = \mu_X - \mu_Y$ is equal to some
-fixed value $\theta_0$ (typically zero). First, we define the pooled sample
-variance as follows: 
+First, let's define $k_X$ to be a constant given by a scaled
+version of the fourth-central moment of the population distribution:
 \begin{align*}
-S_p^2 &= \frac{(n-1) S_X^2 + (m - 1) S_Y^2}{n + m - 2} \sim \chi^2(n + m - 2).
+k_X &= \V \left[ \frac{X_i - \mu_X}{\sigma_X} \right]^2.
 \end{align*}
-Then, the following is a valid pivot:
+Will will assume that $k_X$ is finite. Then, in the limit of large
+$n$, the following chain of relationships:\footnote{
+  We write $\xrightarrow[\mathcal{P}]{}$ to indicate convergence
+  in probability, and $\xrightarrow[\mathcal{D}]{}$ to indicate
+  an asymptotic distribution.
+}
 \begin{align*}
-T &= \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_Y)}{S_p \cdot \sqrt{\frac{1}{n} + \frac{1}{m}}} \sim T(n + m - 2).
+\frac{S_X^2}{\sigma_X^2} &= \frac{1}{n-1} \sum_i \left[ \frac{X_i - \bar{X}}{\sigma_X} \right]^2
+\xrightarrow[\mathcal{P}]{}  \frac{1}{n} \sum_i \left[ \frac{X_i - \mu_X}{\sigma_X} \right]^2
+\xrightarrow[\mathcal{D}]{} N(1, \frac{k_X}{n}) \xrightarrow[\mathcal{P}]{} 1.
 \end{align*}
-With the null value of $\theta$ plugged in, we get a valid test statistic.
-The corresponding confidence inverval for the difference means is:
+We will not go into the spectic proof details here, partially
+because part of the proof requires some functional analysis. At
+the same time, each of the steps should seem fairly intuitive.
+And the second limit is just a straightforward application of
+the central limit theorem.
+
+Now, plugging this into the formula for the $T$ statistic, we have:
 \begin{align*}
-(\bar{X} - \bar{Y}) \pm t_{1 - \alpha/2} \cdot \sqrt{\frac{S_p^2}{\frac{1}{n} + \frac{1}{m}}}
+T &= \frac{\frac{\mu_X - \bar{X}}{\sqrt{\sigma_X^2 / n}}}{\sqrt{\frac{(n-1)S^2_X}{\sigma_X^2 \cdot (n-1)}}}
+= \frac{\frac{\mu_X - \bar{X}}{\sqrt{\sigma_X^2 / n}}}{\sqrt{\frac{S^2_X}{\sigma_X^2}}}
+\xrightarrow[\mathcal{D}]{} \frac{N(0, 1)}{1} = N(0, 1).
 \end{align*}
-The central limit theorem can be used to extend this result to the case where
-the distributions are not normal. In R, we will see a variant that further extends
-this to the situation where the groups have different variances.
+The numerator is just a straightforward application of the central
+limit theorem to $\bar{X}$; the denominator comes from the chain of
+relationships above. We can combine them in the ``natural'' way that
+you might assume due to a result called \textbf{Slutsky's Theorem}. 
+
+\vspace*{24pt}
+
+\noindent
+We also derived a confidence interval for the variance. A similar 
+argument for the first part shows that for a large enough $n$, we
+can approximate $\frac{S_X^2}{\sigma_X^2}$. So, the result we have
+will eventually work for any distribution because the chi-squared
+distribution starts to limit to the normal as the degrees of freedom
+becomes sufficently large.
 
 \end{document}
 
