@@ -1,0 +1,60 @@
+ ---
+title: "Notebook 06"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+## Read Data into R
+
+Let's do something a lot more interesting. Run the following code
+to read in a cleaned version of the keylogging data that we 
+created during the first week of the semester. There is a little
+extra code to deal with some missing data. NOTE: If you get an
+error, go to the top of the notebook and run the very first 
+chunk to load in all the R packages that we need.
+
+```{r}
+kl <- read_csv("../data/keylog.csv")
+kl$key[is.na(kl$key)] <- " "
+kl
+```
+
+## Confidence Interval for Two Tasks
+
+```{r}
+df <- kl |>
+  group_by(id, task) |>
+  summarize(y = mean(gap2, na.rm = TRUE)) |>
+  ungroup() |>
+  pivot_wider(names_from = task, values_from = y, names_prefix = "task") |>
+  mutate(diff = task2 - task1)
+df
+```
+
+```{r}
+t.test(df$diff, conf.level = 0.99)
+```
+
+```{r}
+df <- kl |>
+  group_by(id, task) |>
+  filter(gap2 < 1000) |>
+  summarize(y = mean(gap2, na.rm = TRUE)) |>
+  ungroup() |>
+  pivot_wider(names_from = task, values_from = y, names_prefix = "task") |>
+  mutate(diff = task2 - task1)
+df
+```
+
+```{r}
+t.test(df$diff, conf.level = 0.99)
+```
+
+

@@ -1,5 +1,5 @@
  ---
-title: "Notebook 03"
+title: "Notebook 04"
 output:
   html_document:
     theme: simplex
@@ -11,7 +11,80 @@ output:
 source("../funs/funs.R")
 ```
 
+This is the first time we have actually used R this semester. In
+case this is your first time with it, I've tried to keep the 
+notebook nice and short so that you can take your time and ask
+a lot of questions about what's going on. The text that is here
+on a white background is just plain text. You can write (almost)
+anything you want here and it should not cause any trouble. The
+actual R code is written on parts of the document that are shown
+behind a grey background. We can run this code and see the
+results. For example the code below takes the square root of the
+number 100. You can run it by hitting the green triangle in the
+upper-right corner of the grey box.
+
+```{r}
+sqrt(100)
+```
+
+The output should show up below the code when you run it.
+Wondering what the number one in square brackets is? It's just 
+counting the number of outputs (this is the "1st" and only
+output). We can also use R to create variables by assigning 
+objects to names using the arrow operator `<-`. (note: the back
+quotes that you see here always indicate that the things inside
+of it is a command that you can run in R). For example, here
+is the code to create a variane called `temp` with the value of
+2.4
+
+```{r}
+temp <- 2.4
+```
+
+You could now, after running the code there, use the variable
+`temp` in any other code that you write. R has a large number 
+of function that we can use to manipulate data. This includes
+everything from simple mathematical functions such as the `sqrt`
+you saw above to complex statistical models, which we will see
+later in this document.
+
+I won't give a full complete introduction to the entire R
+language here, but let's see one more important thing: the pipe
+operator. This is the symbol `|>` (you may also see it written
+equivalently as `%>%`). It passes the output of one line of code
+to the next line. So, for example, this code takes the square
+root of temp and then applies the sin function to the output
+(for no reason other than just to show the idea of the pipe):
+
+```{r}
+temp |>
+  sqrt() |>
+  sin()
+```
+
+For every notebook in this class, you should run all of the code
+that I have given you in code chunks that look like those above.
+You will also see some chunks like the following that are empty
+and have a question number at the top. For these, you need to
+type in your own code to answer the preceeding question and then
+run it. So, let's start. Below, apply the three following
+functions in order to the number stored in `temp`: (1) the `log`,
+(2) the square root, and (3) the `tan` function. 
+
+```{r, question-01}
+
+```
+
+Again, no reason to do this other than to practice.
+
 ## Read Data into R
+
+Let's do something a lot more interesting. Run the following code
+to read in a cleaned version of the keylogging data that we 
+created during the first week of the semester. There is a little
+extra code to deal with some missing data. NOTE: If you get an
+error, go to the top of the notebook and run the very first 
+chunk to load in all the R packages that we need.
 
 ```{r}
 kl <- read_csv("../data/keylog.csv")
@@ -19,9 +92,42 @@ kl$key[is.na(kl$key)] <- " "
 kl
 ```
 
+The dataset here consists of each each key that was typed by
+each student. The column **id** is an anonomized code for each
+student; the **task** tells us whether this is the copy task (1)
+or the free-write task (2); **time** is a timestamp in
+milliseconds from the time the window was opened; **duration** 
+is the amount of time the key way held down for in milliseconds;
+**key** is the output of hitting the key; **gap1** is the time
+from this key being pressed to the time the next key is pushed,
+and **gap2** is the time from this key being released and the
+next key being pressed. 
+
+Take a few moments to scroll through the day and note that you
+can see (more or less) the text by reading down the **key** 
+column. I have remove backspaces and other special characters,
+so it will not be a perfect match.
+
+We can use the `filter` function to take a subset of our dataset.
+Here, for example, is the data from the second task for student
+"A".
+
 ```{r}
-filter(kl, id == "A", task == "2")
+kl |>
+  filter(id == "A", task == "2")
 ```
+
+In the code below, select your own data. Scroll through and
+make sure that this is the correct data. If not, please let 
+me know!
+
+```{r, question-02}
+
+```
+
+The following code constructs a histogram of the duration of
+each of the keys across all of the students for the first task.
+Take a moment to understand what the output is telling us.
 
 ```{r}
 kl |>
@@ -30,118 +136,181 @@ kl |>
     geom_histogram(color = "black", fill = "white", bins = 30)
 ```
 
-```{r}
-kl |>
-  filter(task == 1) |>
-  ggplot(aes(x = gap1)) +
-    geom_histogram(color = "black", fill = "white", bins = 30)
+Copy the code above into the code below and then change it to
+show a histogram of the variable `gap1`. You should notice that
+this is quite different.
+
+```{r, warning=FALSE, question-03}
+
 ```
 
-```{r}
-kl |>
-  filter(task == 1) |>
-  filter(gap1 < 1000) |>
-  ggplot(aes(x = gap1)) +
-    geom_histogram(color = "black", fill = "white", bins = 30)
+The issue with the histogram is that there are a few gaps that
+are very long. These are probably someone taking a break, 
+checking their work, or making changes somewhere. In the code
+below, add an extra filter to only include those data where 
+**gap1** is less than 1 second (that is, 1000 milliseconds).
+
+```{r, warning=FALSE, question-03}
+
 ```
 
-```{r}
-kl |>
-  filter(task == 1) |>
-  filter(gap2 < 1000) |>
-  ggplot(aes(x = gap1)) +
-    geom_histogram(color = "black", fill = "white", bins = 30)
+Finally, do the same for the second gap:
+
+```{r, warning=FALSE, question-04}
+
 ```
+
+Do you think these are normal enough to apply the T-based 
+confidence intervals? Hopefully so!
 
 ## Confidence Interval for Duration
 
-```{r}
-mean(kl$duration)
+Let's compute the sample mean of the duration of all the key
+presses across the dataset. There is the function `mean` in R
+to compute a sample mean. In order to get the data from one
+column of the dataset, we can use the format: DATANAME$VARNAME.
+In other words, write the name of the dataset, a dollar sign,
+and then a variable name. In the code below, compute the sample
+mean of the duration of the key presses:
+
+```{r, question-05}
+
 ```
+
+Make sure that you understand what this means in terms of
+seconds.
+
+Now, let's try to build a 99% confidence interval for the
+duration. We can get the critical values (the t sub alpha in the
+notes) for the test with the following code, which uses the 
+quantile function `qt` for the T distribution and the `nrow`
+function to get the sample size of our data (very large, about
+20k).
 
 ```{r}
 tval <- qt(1 - 0.01/2, df = nrow(kl))
 tval
 ```
 
-```{r}
-mean(kl$duration) - tval * sqrt(var(kl$duration) / (nrow(kl) - 1))
+Using our formula for the T-based confidence interval, use R
+to compute the lower-bound of the confidence interval. You can
+use the function `var` to compute the sample variance.
+
+```{r, question-05}
+
 ```
 
-```{r}
-mean(kl$duration) + tval * sqrt(var(kl$duration) / (nrow(kl) - 1))
+And then, below use a similar approach to get the upper bound. 
+
+```{r, question-06}
+
 ```
+
+We can get R to do all of this work for us using the function
+`t.test`. Here is an example of how to use the function to 
+measure the duration of the key presses using a 99% confidence
+level.
 
 ```{r}
 t.test(kl$duration, conf.level = 0.99)
 ```
 
-```{r}
-t.test(kl$gap1, conf.level = 0.99)
+There is a lot of information in the output. We'll learn about
+the parts at the top next week. For now, just see the confidence
+interval and mean at the bottom. Do they match what you had 
+manually above?
+
+## Confidence Interval for Gap
+
+Use the `t.test` function to get a 99% percent confidence
+interval for **gap2** the time between hitting subsequent keys.
+
+```{r, question-07}
+
 ```
 
-```{r}
-t.test(kl$gap1[kl$gap1 < 1000], conf.level = 0.99)
+There is a problem with this data, however. We saw above that the
+gap data are heavily skewed. This makes it inappropriate for the
+T distribution as-is. We can fix this by filter the data to
+include only those gaps that are under 1 second (the cut-off is
+a bit arbitrary, but 1s works well). We can do this in R by
+adding `[kl$gap1 < 1000]` to the end of the variable name. In 
+the code below, compute the confidence interval for **gap1** 
+using only those values that are under 1s.
+
+```{r, question-08}
+
 ```
+
+Compare this to the first output. Does it seem reasonable to 
+filter the data like this?
 
 ## Confidence Interval for the Variance
 
-```{r}
-var(kl$duration)
+We also have a formula for computing a confidence interval for
+the sample variance. Below, compute the sample variance of the
+duration?
+
+```{r, question-09}
+
 ```
+
+Here is the code to get the critical value for the lower bound
+of the chi-squared distribution:
 
 ```{r}
 tval1 <- qchisq(1 - 0.01/2, df = nrow(kl))
 tval1
 ```
 
+And here is the code for the upper bound:
+
 ```{r}
 tval2 <- qchisq(0.01/2, df = nrow(kl))
 tval2
 ```
 
-```{r}
-var(kl$duration) * (nrow(kl) - 1) / tval1
+Below, compute the lower-bound of the 99% confidence interval 
+for the variance of the duration:
+
+```{r, question-10}
+
 ```
 
-```{r}
-var(kl$duration) * (nrow(kl) - 1) / tval2
+And then, the upper bound:
+
+```{r, question-11}
+
 ```
+
+Notice that the variance is in squared milliseconds. Typically,
+in an applied problem, it makes more sense to convert these
+estimates into a confidence interval for the square root of the
+variance (called the standard deviation). Compute the bounds on
+the standard deviation below:
 
 ```{r}
 sqrt(c(var(kl$duration) * (nrow(kl) - 1) / tval1,
        var(kl$duration) * (nrow(kl) - 1) / tval2))
 ```
 
-## Confidence Interval for Two Tasks
+Go back and look at the histogram of the duration. Do these
+bounds seem reasonable for the standard deviation? A good
+rule of thumb is that about 95% of the data should be within
++/- two standard deviations of the mean.
 
-```{r}
-df <- kl |>
-  group_by(id, task) |>
-  summarize(y = mean(gap2, na.rm = TRUE)) |>
-  ungroup() |>
-  pivot_wider(names_from = task, values_from = y, names_prefix = "task") |>
-  mutate(diff = task2 - task1)
-df
-```
+## A Look Ahead
 
-```{r}
-t.test(df$diff, conf.level = 0.99)
-```
-
-```{r}
-df <- kl |>
-  group_by(id, task) |>
-  filter(gap2 < 1000) |>
-  summarize(y = mean(gap2, na.rm = TRUE)) |>
-  ungroup() |>
-  pivot_wider(names_from = task, values_from = y, names_prefix = "task") |>
-  mutate(diff = task2 - task1)
-df
-```
-
-```{r}
-t.test(df$diff, conf.level = 0.99)
-```
+Hopefully you found it insightful to work with some real data.
+Unfortunately, it is rarely interesting to consider means on
+their own (at least unless you have a lot of prior knowledge
+about a the data you are working with). What will be much easier
+to motivate is studying differences between duration. For
+example, do you take more time (or less) to type when you are
+copying versus writing your own text? Are there differences 
+between the people in the class in the speed at which they type?
+Are there letter pairs that are harder/easier to type? We will
+build all of the tools to do these things over the next few
+weeks.
 
 
