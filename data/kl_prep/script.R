@@ -58,10 +58,28 @@ write_csv(df, "../keylog.csv")
 
 df_word <- df |>
   group_by(id, task) |>
-  mutate(iwd = lead(time) - lag(time + duration)) |>
-  filter(key == " ") |>
-  ungroup() |>
-  filter(!is.na(iwd))
+  mutate(word_id = cumsum(key == " ")) |>
+  group_by(id, task, word_id) |>
+  summarize(
+    word = stri_trim(paste(key, collapse = "")),
+    nchar = stri_length(word),
+    start = nth(time, n = 2),
+    end = last(time)
+  ) |>
+  mutate(
+    duration = end - start,
+    gap_before = start - lag(end),
+    gap_after = lead(start) - end
+  ) |>
+  filter(!is.na(gap_before), !is.na(gap_after)) |>
+  mutate(
+    type = stri_sub(word, -1, -1),
+    type = if_else(type %in% c(",", "."), type, "word"),
+    type = if_else(type == ",", "comma", type),
+    type = if_else(type == ".", "fullstop", type)
+  )
 
+
+write_csv(df_word, "../keylog_word.csv")
 
 

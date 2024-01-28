@@ -80,32 +80,48 @@ have a sample mean of $12.1$ centimeters and a sample variance of $6$
 centimeters squared. Given that $t_{0.01/2}(24)$ is approximately equal
 to $2.797$, derive the confidence interval for the mean.
 
-% qt(1 - 0.01/2, df = 24)
-% 2.797 * sqrt(6/24)
-
 \textit{Solution:} We have:
 \begin{align*}
 12.1 &\pm \left[ 2.797 \cdot \sqrt{\frac{6}{24}} \right] \\
 12.1 &\pm 1.3985
 \end{align*}
 
-\textbf{5}. Let $C_k \sim \chi^2(k)$ for every integer $k$. Use Chebychev's Inequality to show
-that for any $\epsilon > 0$, we have:
+\textbf{5}. Now, let's build a confidence interval for the variance. The chi-squared 
+distribution is not symmetric, so we need to start with a more general
+form of the equation with the pivot statistic (the last equation on the
+handout). Namely, we have:
 \begin{align*}
-\lim_{k \rightarrow \infty} \mathbb{P} \left[ |C_k/k - 1| \geq \epsilon \right] = 0
+\mathbb{P}\left[ \chi_{1 - \alpha/2}(n-1) \leq \frac{(n-1)S^2_X}{\sigma_X^2} \leq \chi_{\alpha/2}(n-1) \right]
 \end{align*}
-In this case we say that $C_k$ limits in probability to 1, written as
-$C_k \rightarrow_P 1$.
+To manipulate this into a confidence interval, first take the (multiplicative)
+inverse of all three terms. Note that for positive numbers, taking the inverse
+of both sides of an inequality reverses the sign of the inequality. Then,
+simplify to get a confidence interval of $\sigma_X^2$.
 
-\textit{Solution:} TODO
+\textit{Solution:} Starting with the pivot statistic, we have:
+\begin{align*}
+\mathbb{P}\left[ \frac{1}{\chi_{1 - \alpha/2}(n-1)} \geq \frac{\sigma_X^2}{(n-1)S^2_X} \geq \frac{1}{\chi_{\alpha/2}(n-1)} \right] \\
+\mathbb{P}\left[ \frac{(n-1)S^2_X}{\chi_{1 - \alpha/2}(n-1)} \geq \sigma_X^2 \geq \frac{(n-1)S^2_X}{\chi_{\alpha/2}(n-1)} \right] \\
+\end{align*}
+And we now have a confidence interval for the variance. Not too bad, right?
 
-\textbf{6}. Let $Y_n \rightarrow_P y$ for a constant $y$, $f$ is a real-valued function that
-is invertable around the neighborhood of $y$, and $X$ is another random variable.
-Then, Slutsky's Theorem says that $g(Y_n) \cdot X$ limits in probability to
-$g(y) \cdot X$. Use this to show that the $T$ distribution limits to the standard
-normal as the degrees of freedom limit to infinity.
+\textbf{6}. Given that $\chi^2_{0.01/2}(24) \approx 45.56$ and $\chi^2_{1-0.01/2}(24) \approx 9.88$,
+what is the 99\% confidence interval for the variance of the lengths of the
+fish from our example data?
 
-\textit{Solution:} TODO
+% qchisq(1 - 0.01/2, df = 24)
+% 24 * 6 / 45.56
+% 24 * 6 / 9.88
+
+\textit{Solution:} The lower bound is:
+\begin{align*}
+\frac{(n-1)S^2_X}{\chi_{\alpha/2}(n-1)} &= \frac{24 \cdot 6}{9.88} = 3.16
+\end{align*}
+And the upper bound is:
+\begin{align*}
+\frac{(n-1)S^2_X}{\chi_{\alpha/2}(n-1)} &= \frac{24 \cdot 6}{45.56} = 14.57
+\end{align*}
+So the confidence interval is $[3.16, 14.57]$.
 
 
 \end{document}
