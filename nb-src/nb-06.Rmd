@@ -11,8 +11,9 @@ output:
 source("../funs/funs.R")
 ```
 
+# Key Logs (Individual Keys)
 
-Let's read the keylogging data into R again. 
+Let's read the keylog data into R again. 
 
 ```{r}
 kl <- read_csv("../data/keylog.csv")
@@ -21,36 +22,89 @@ kl <- filter(kl, !is.na(gap1), !is.na(gap2))
 kl
 ```
 
+We start with the same task we looked at last time, the gap
+between keys when one is the space bar and the when the key 
+is not the space bar. Basically, do we pause more between
+words than we do between letters?
+
 ```{r}
 x <- kl$gap2[kl$task == 1 & kl$key == " " & kl$gap2 < 1000]
-y <- kl$gap2[kl$task == 2 & kl$key == " " & kl$gap2 < 1000]
+y <- kl$gap2[kl$task == 1 & kl$key != "." & kl$gap2 < 1000]
 ```
+
+Run a T-test using the function `t.test`. You can set the 
+variances to be equal (the confidence level is not important)
+
+```{r, question-01}
+t.test(x, y, var.equal = TRUE)
+```
+
+We've already done this before, but now we should understand
+all of the output. Would we reject the null hypothesis that
+the means of these two gaps are the same?
+
+# User Differences
+
+The code below grabs the duration of key presses of the space
+bar for two different students. Here, student "A" and student
+"B":
 
 ```{r}
-t.test(x, y)
+x <- kl$gap2[kl$id == "A" & kl$key == " " & kl$gap2 < 1000]
+y <- kl$gap2[kl$id == "B" & kl$key == " " & kl$gap2 < 1000]
 ```
+
+Starting by copying my code above, create two samples of the 
+time that it takes to press the space bar for you and the id of
+one of your neighbors (ask them their id):
+
+```{r, question-02}
+x <- kl$gap2[kl$id == "A" & kl$key == " " & kl$gap2 < 1000]
+y <- kl$gap2[kl$id == "B" & kl$key == " " & kl$gap2 < 1000]
+```
+
+Now, run a T-test for the differences in the time that each of
+you have after hitting the space bar. Who takes longer? Is the
+result significant at the 0.01 level? What is the p-value?
 
 ```{r}
-kl <- read_csv("../data/keylog_word.csv")
-kl
+t.test(x, y, var.equal = TRUE)
 ```
 
+Now, using the same data, compute a test of whether each of your
+gaps after hitting the space bar have the same variance.
+
+```{r, question-03}
+var.test(x, y)
+```
+
+Who has more variability? Is this ratio between the variances
+significant?
+
+## Words
+
+Below, we will read in a different version of the dataset that 
+has keylog information about individual words.
 
 ```{r}
-x <- kl$gap_after[kl$task == 2 & stri_detect(kl$word, fixed = ".")  & kl$gap_after < 2000]
-y <- kl$gap_after[kl$task == 2 & !stri_detect(kl$word, fixed = ".") & kl$gap_after < 2000]
+word <- read_csv("../data/keylog_word.csv")
+word
 ```
+
+Below, we create new sets of data that correspond to the gap
+in milliseconds between words when one word ends a sentence
+and when it does not. 
 
 ```{r}
-x <- kl$gap_after[kl$task == 1 & kl$gap_after < 2000]
-y <- kl$gap_after[kl$task == 2 & kl$gap_after < 2000]
+x <- word$gap_after[word$task == 1 & stri_detect(word$word, fixed = ".")  & word$gap_after < 2000]
+y <- word$gap_after[word$task == 1 & !stri_detect(word$word, fixed = ".") & word$gap_after < 2000]
 ```
 
+Run a T-test to see whether there is a difference in the pause 
+at the end of a sentence and the gap between words.
 
 ```{r}
-x <- kl$gap_after[kl$task == 1 & kl$id == "A"]
-y <- kl$gap_after[kl$task == 1 & kl$id == "B"]
+t.test(x, y, var.equal = TRUE)
 ```
 
-
-
+We can look at the words data more next time.

@@ -1,0 +1,50 @@
+ ---
+title: "Notebook 06"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+# Key Logs (Individual Keys)
+
+Let's read the keylog data into R again. 
+
+```{r}
+kl <- read_csv("../data/keylog.csv")
+kl$key[is.na(kl$key)] <- " "
+kl <- filter(kl, !is.na(gap1), !is.na(gap2))
+kl
+```
+
+## Multiple Means
+
+Run the following code to get a plot that shows the 
+
+```{r}
+kl |>
+  filter(gap2 < 1000) |>
+  group_by(id) |>
+  summarize(
+    mu = mean(gap2),
+    s2 = var(gap2),
+    n = n(),
+    l = mu - qt(1 - 0.05/2, df = n - 1) * sqrt(s2 / n),
+    u = mu + qt(1 - 0.05/2, df = n - 1) * sqrt(s2 / n)
+  ) |>
+  arrange(desc(mu)) |>
+  mutate(id = fct_inorder(id)) |>
+  ggplot(aes(id, mu)) +
+    geom_point() +
+    geom_errorbar(aes(
+      xmin = id,
+      xmax = id,
+      ymin = l,
+      ymax = u
+    ))
+```
