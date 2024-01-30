@@ -1,0 +1,117 @@
+ ---
+title: "Notebook 05"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+Let's read the keylogging data into R again. We will continue
+to use this over the next weeks as it has a surprisingly large
+number of different statistical applications.
+
+```{r}
+kl <- read_csv("../data/keylog.csv")
+kl$key[is.na(kl$key)] <- " "
+kl <- filter(kl, !is.na(gap1), !is.na(gap2))
+kl
+```
+
+Today, we will look at two different samples, the amount of
+time after typing a space bar until another key is typed, and
+the amount of time after any non-space key and the next key 
+is typed. We will pull these out as two variables called x and
+y to match the notes; we also remove long gaps as per the 
+discussion last time, and restrict ourselves to only looking
+at the first copy task.
+
+```{r}
+x <- kl$gap2[kl$task == 1 & kl$key == " " & kl$gap2 < 1000]
+y <- kl$gap2[kl$task == 1 & kl$key != " " & kl$gap2 < 1000]
+```
+
+We will also save the variable `n` and `m` to match those
+from the notes:
+
+```{r}
+n <- length(x)
+m <- length(y)
+```
+
+In the code below, compute the best guess point estimator for
+the difference in the means of these two gaps:
+
+```{r, question-01}
+
+```
+
+Now, let's build a two-sample confidence interval for the 
+difference in means. To start, get the value t sub alpha,
+which we call `tval` in R, for the appropriate degrees of
+freedom derived on the worksheet for a 95% confidence interval:
+
+```{r, question-02}
+
+```
+
+Next, compute the pooled variance in the code below, saving the
+output as a variable called `sp`. 
+
+```{r, question-03}
+
+```
+
+Finally, compute the confidence interval in the code below by 
+applying the formula you constructed:
+
+```{r, question-04}
+
+```
+
+Now, the easy part. Run the following code to apply the result
+you have above with the built-in function in R: 
+
+```{r}
+t.test(x, y, conf.level = 0.95, var.equal = TRUE)
+```
+
+Note that the R function has an option that we set to indicate
+that we want to assume that the variances are equal. Repeat
+the procedure below but set `var.equal` to `FALSE`. This runs
+a more complex algorithm that is (approximately) valid in the
+case that the samples have different variances. Note how it
+affects the results.
+
+```{r, question-05}
+
+```
+
+You should see that the confidence interval gets a bit larger.
+
+Finally, let's apply the confidence interval for the ratio of
+the variances. In the interest of time, I have typed out the
+code below to generate the formula using the equation you should
+have found on the worksheet:
+
+```{r}
+fval1 <- qf(1 - 0.05/2, df1 = n - 1, df2 = m - 1)
+fval2 <- qf(0.05/2, df1 = n - 1, df2 = m - 1)
+
+c(var(x) / var(y) * fval2, var(x) / var(y) * fval1)
+```
+
+Below, apply the function `var.test` to the two samples (no other
+inputs required) in order to generate a 95%-confidence interval.
+There are a number of different outputs; find the confidence
+interval and verify that it matchs the code above.
+
+```{r, question-06}
+
+```
+
+

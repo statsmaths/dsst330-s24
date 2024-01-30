@@ -1,0 +1,70 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 05}
+
+\vspace*{18pt}
+
+
+\textbf{1}. We will start with the easier, though much less commonly used, task of
+comparing the variances between the samples before moving onto the confidence
+interval of the mean. Using what we know about the distributions of $S_X^2$ and
+$S_Y^2$, build a pivot based on the scaled ratio of these two quantities that
+has an F-distribution.
+
+\textbf{2}. Rearrange your previous result to get a confidence interval for the ratio
+$\sigma_Y^2 / \sigma_X^2$. Note that the F distribution is not symmetric.
+
+\textbf{3}. What is $\mathbb{E}[\bar{X} - \bar{Y}]$? Make use of the properties that we
+already know to make this relatively easy. You should see that this is an
+unbiased estimator of the difference in the means.
+
+\textbf{4}. What is $\text{Var}[\bar{X} - \bar{Y}]$? Make use of the properties that we
+already know to make this relatively easy. The result should imply that the
+difference is a consistent estimator of the difference in sample means.
+
+\textbf{5}. If $\mathcal{G}_X$ and $\mathcal{G}_Y$ are both normally distributed, then
+$\bar{X} - \bar{Y}$ also has a normal distribution. As we did in the one-sample
+case, construct a pivot $Z$ that scales this difference to have a standard 
+normal distribution.
+
+\textbf{6}. Assume that $\sigma_X^2 = \sigma_Y^2$, which we can write as just $\sigma^2$.
+Take the definition of the pooled sample variance and multiply both sides by
+$(n + m - 2)$ and divide by $\sigma^2$. If we assume that $\mathcal{G}_X$ and
+$\mathcal{G}_Y$ are both normally distributed, show that $S_p^2$ is a scaled
+version of a chi-squared distribution. What are its degrees of freedom?
+
+\textbf{7}. Put together the previous results to generate a pivot $T$ that has a T-distribution.
+Rearrange the terms to get a confidence interval for the difference in means.
+
+
+\end{document}
