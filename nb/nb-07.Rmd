@@ -58,8 +58,7 @@ you derived on today's worksheet. Save the result as an object
 named `fstat`:
 
 ```{r, question-01}
-fstat <- (sum(n*(xbar - xbar_all)^2) / (K - 1)) / (sum((n - 1) * s2) / (N - K))
-fstat
+
 ```
 
 Use the following code to compute the p-value of the F-statistic.

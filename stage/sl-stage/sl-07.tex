@@ -1,7 +1,41 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION
+\documentclass{tufte-handout}
 
-Our goal is, broadly, to produce two independent random variabels that will have
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 07 (Solutions)}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Our goal is, broadly, to produce two independent random variabels that will have
 chi-squared distributions under the null hypothesis. One will depend only on
 the sample means and the other only on the sample variances. The latter is the
 easier of the two, so let's start there. Consider the following quantity:
@@ -11,45 +45,29 @@ easier of the two, so let's start there. Consider the following quantity:
 What is its distribution? Note that this result does not depend on the null
 hypothesis
 
-% SOLUTION
-
-The $j$th term is, from our previous results, a $\chi^2(n_j - 1)$. Since all
+\textit{Solution:} The $j$th term is, from our previous results, a $\chi^2(n_j - 1)$. Since all
 of the terms are independent, the sum is just a $\chi^2(N - K)$, a chi-squared
 with the sum of the degrees of freedom. This will be $N$ (the total number of
 observations) minus $K$ (the number of blocks).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION
-
-Now, let's work out another chi-squared distribution based only on the means.
+\textbf{2}. Now, let's work out another chi-squared distribution based only on the means.
 What is the distribution of the following quantity, where $\mu$ is the
 hypothesized mean of all the blocks?
 \begin{align*}
 \left[\frac{\bar{X}_j - \mu}{\sqrt{\sigma^2 / n_j}}\right]^2
 \end{align*} 
 
-% SOLUTION
-
-The part inside of the square is just a standardized sample mean. Squaring
+\textit{Solution:} The part inside of the square is just a standardized sample mean. Squaring
 in results in a $\chi^2(1)$.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION
-
-Next, what is this quantity?
+\textbf{3}. Next, what is this quantity?
 \begin{align*}
 \left[\frac{\bar{X} - \mu}{\sqrt{\sigma^2 / N}}\right]^2
 \end{align*} 
 
-% SOLUTION
+\textit{Solution:} By the same logic, this is also a $\chi^2(1)$.
 
-By the same logic, this is also a $\chi^2(1)$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION
-
-Using a similar derivation from worksheet 2, we can show that the following
+\textbf{4}. Using a similar derivation from worksheet 2, we can show that the following
 is true:
 \begin{align*}
 \sum_{j=1}^K \left[\frac{\bar{X}_j - \mu}{\sqrt{\sigma^2 / n_j}}\right]^2 &=
@@ -59,25 +77,18 @@ is true:
 Based on this and your previous results, what is the distribution of the 
 second sum in the equation above?
 
-% SOLUTION
-
-The left-hand side is a sum of $K$ independent $\chi^2(1)$'s, which is a
+\textit{Solution:} The left-hand side is a sum of $K$ independent $\chi^2(1)$'s, which is a
 $\chi^2(K)$. The last term is a single independent $\chi^2(1)$. So, because
 chi-squared add together, the middle term must be a $\chi^2(K - 1)$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION
-
-Put all of the previous results together to construct an F-statistic for the
+\textbf{5}. Put all of the previous results together to construct an F-statistic for the
 hypothesis. Simplify the cancel the unknown value $\sigma^2$. While technically
 either way is valid, put the chi-squared based on the means in the numerator and
 the chi-squared based on the variances in the denominator. This will follow the
 typical convention. Make sure to write down the distribution of the test statistic
 under $H_0$.
 
-% SOLUTION
-
-We have the following:
+\textit{Solution:} We have the following:
 \begin{align*}
 F &= \frac{
   \frac{1}{K} \sum_{j=1}^K \left[\frac{\bar{X}_j - \bar{X}}{\sqrt{\sigma^2 / n_j}}\right]^2
@@ -90,3 +101,5 @@ F &= \frac{
 } \sim F(K, N-K)
 \end{align*}
 
+
+\end{document}

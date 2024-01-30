@@ -8,7 +8,7 @@
 
 \newtheorem{mydef}{Definition}[section]
 \newtheorem{thm}{Theorem}[section]
-\setcounter{section}{5}
+\setcounter{section}{4}
 
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
@@ -27,55 +27,38 @@
 
 \justify
 
-{\LARGE Handout 05: Resampling Techniques}
+{\LARGE Handout 07: Multiple Means}
 
 \vspace*{18pt}
 
 \noindent
-Let $\hat{\theta}$ be an unbiased point estimator for an unknown parameter
-$\theta$. We have seen that if we can construct a pivot with a known
-distribution based on this estimator and parameter, we can manipulate
-these to derive confidence intervals and run hypothesis tests. Today, we
-will see an important computational technique to apply this technique
-when we do not know the full distribution of $\hat{\theta}$. A common
-example, for instance, would be in the case where we have a sample mean
-but are not confident in assuming that the central limit theorem can be
-accurately applied to our data.
+Today we build an hypothesis test to test the null hypothesis that the
+means of multiple groups (more than two) are all the same. The alternative
+hypothesis is simply that at least one of the means is different from the
+others. The key difficulty of this task is notational. 
 
-In a world where we could run an experiment a large number of times, we
-could reliably estimate the distribution of $\hat{\theta}$ by looking at
-the distribution of outcomes from each experiment. Usually, this is not
-feasible (and when it is, there is no need to do it anyway). An approximate
-way to simulation this, though, is possible. We can create a \textbf{bootstrap
-sample} of $n$ observations taken from sampling with replacement from the
-original data. If we do this many times, we will get a full approximation
-of the distribution of the point estimator. We will not get into the theoretical
-proofs of the bootstrap, but know that they have good convergence properties
-under weak regularity conditions. 
+Consider a set of $N$ independent random variables that are split into $K$ 
+pre-defined \textbf{blocks} of sizes $n_1, \ldots, n_k$. We have the 
+following assumption about the distribution of block $j$:
+\begin{align*}
+X_{1, j}, \ldots, X_{n_j, j} &\iid N(\mu_j, \sigma^2)
+\end{align*}
+Notice that the variances are all assumed to be the same and we assume from
+the outset that the variables have normal distributions. The summary
+statistics $\bar{X}_j$ and $S^2_j$ correspond to the sample mean and sample
+variance of the $j$th block by itself. The value $\bar{X}$ is the sample
+average across all observations.
 
-There are a few different ways to produce confidence intervals and hypothesis
-tests from bootstrap samples. We will find the \textbf{percentile bootstrap}
-to be the best for our current applications. To create a percentile bootstrap
-let $\hat{\theta}_{\alpha/2}$ and $\hat{\theta}_{1-\alpha/2}$ be the corresponding
-estimated percentiles of the point estimator. Then, the confidence interval 
-is constructed by using these as the lower and upper estimates. A simple approach
-to hypothesis testing can be done by testing whether the null hypothesis value
-falls within the confidence interval. 
-
-\vspace*{24pt}
-
-\noindent
-The bootstrap is just one example of a broad set of approaches called
-resampling methods. Another example are \textbf{permutation tests}, which
-are specifically designed to facilitate hypothesis testing. While there is
-one generic approach to the bootstrap that can be applied to any estimator,
-permutation tests need a bit more customization. Let's consider a permutation
-test alternative to the two-sample T-test, which can be explained fairly
-clear in prose. First, compute the standard T-statistic. Then, randomly
-reassign each of the observations to each of the two groups and recalculate
-the test statistic. Repeat a large number of times. A p-value is computed by
-measuring how often the statistic from the randomly assigned
-labels is larger in absolute value than the observed set. 
+As mentioned above goal is to produce a pivot for the hypothesis:
+\begin{align*}
+H_0:& \mu_1 = \cdots = \mu_j \\
+H_A:& \exists j \exists k (\mu_j \neq \mu_k)
+\end{align*}
+The pivot will have an F distribution. We will derive the form on today's
+worksheet. Note that unlike the previous tests we have derived, this one
+does not have a direct corresponding confidence interval because they 
+hypothesis is not a simple, univariate statement. The resulting test is
+called a \textbf{one-way analysis of variance} or \textbf{one-way ANOVA}.
 
 \end{document}
 
