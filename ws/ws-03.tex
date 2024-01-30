@@ -56,12 +56,14 @@ have a sample mean of $12.1$ centimeters and a sample variance of $6$
 centimeters squared. Given that $t_{0.01/2}(24)$ is approximately equal
 to $2.797$, derive the confidence interval for the mean.
 
+% 12.1 + c(-1, 1) * 2.797 * sqrt(6/25)
+
 \textbf{5}. Now, let's build a confidence interval for the variance. The chi-squared 
 distribution is not symmetric, so we need to start with a more general
 form of the equation with the pivot statistic (the last equation on the
 handout). Namely, we have:
 \begin{align*}
-\mathbb{P}\left[ \chi_{1 - \alpha/2}(n-1) \leq \frac{(n-1)S^2_X}{\sigma_X^2} \leq \chi_{\alpha/2}(n-1) \right]
+\mathbb{P}\left[ \chi^2_{1 - \alpha/2}(n-1) \leq \frac{(n-1)S^2_X}{\sigma_X^2} \leq \chi^2_{\alpha/2}(n-1) \right]
 \end{align*}
 To manipulate this into a confidence interval, first take the (multiplicative)
 inverse of all three terms. Note that for positive numbers, taking the inverse
