@@ -65,14 +65,14 @@ as $\bar{X} \pm \Delta$ for some $\Delta$.
 
 \textit{Solution:} Starting with the pivot statistic, we have:
 \begin{align*}
-\Prob\left[ -t_\alpha(n-1) \leq T \leq t_\alpha(n-1) \right] &= 1 - \alpha \\
-\Prob\left[ -t_\alpha(n-1) \leq \frac{\mu_X - \bar{X}}{\sqrt{S^2_X / n}} \leq t_\alpha(n-1) \right] &= 1 - \alpha \\
-\Prob\left[ -t_\alpha(n-1) \cdot \sqrt{S^2_X / n} \leq (\mu_X - \bar{X}) \leq t_\alpha(n-1) \cdot \sqrt{S^2_X / n} \right] &= 1 - \alpha \\
-\Prob\left[ \bar{X} - t_\alpha(n-1) \cdot \sqrt{S^2_X / n} \leq \mu_X \leq \bar{X} + t_\alpha(n-1) \cdot \sqrt{S^2_X / n} \right] &= 1 - \alpha \\
+\Prob\left[ -t_{\alpha/2}(n-1) \leq T \leq t_{\alpha/2}(n-1) \right] &= 1 - \alpha \\
+\Prob\left[ -t_{\alpha/2}(n-1) \leq \frac{\mu_X - \bar{X}}{\sqrt{S^2_X / n}} \leq t_{\alpha/2}(n-1) \right] &= 1 - \alpha \\
+\Prob\left[ -t_{\alpha/2}(n-1) \cdot \sqrt{S^2_X / n} \leq (\mu_X - \bar{X}) \leq t_{\alpha/2}(n-1) \cdot \sqrt{S^2_X / n} \right] &= 1 - \alpha \\
+\Prob\left[ \bar{X} - t_{\alpha/2}(n-1) \cdot \sqrt{S^2_X / n} \leq \mu_X \leq \bar{X} + t_{\alpha/2}(n-1) \cdot \sqrt{S^2_X / n} \right] &= 1 - \alpha \\
 \end{align*}
 Which we can write as the following:
 \begin{align*}
-\bar{X} &\pm t_\alpha(n-1) \cdot \sqrt{\frac{S^2_X}{n}}
+\bar{X} &\pm t_{\alpha/2}(n-1) \cdot \sqrt{\frac{S^2_X}{n}}
 \end{align*}
 
 \textbf{4}. We will go back to the story about the fish. Say we sample $25$ fish and
