@@ -150,13 +150,13 @@ checking their work, or making changes somewhere. In the code
 below, add an extra filter to only include those data where 
 **gap1** is less than 1 second (that is, 1000 milliseconds).
 
-```{r, warning=FALSE, question-03}
+```{r, warning=FALSE, question-04}
 
 ```
 
 Finally, do the same for the second gap:
 
-```{r, warning=FALSE, question-04}
+```{r, warning=FALSE, question-05}
 
 ```
 
@@ -173,7 +173,7 @@ In other words, write the name of the dataset, a dollar sign,
 and then a variable name. In the code below, compute the sample
 mean of the duration of the key presses:
 
-```{r, question-05}
+```{r, question-06}
 
 ```
 
@@ -196,13 +196,13 @@ Using our formula for the T-based confidence interval, use R
 to compute the lower-bound of the confidence interval. You can
 use the function `var` to compute the sample variance.
 
-```{r, question-05}
+```{r, question-07}
 
 ```
 
 And then, below use a similar approach to get the upper bound. 
 
-```{r, question-06}
+```{r, question-08}
 
 ```
 
@@ -225,7 +225,7 @@ manually above?
 Use the `t.test` function to get a 99% percent confidence
 interval for **gap2** the time between hitting subsequent keys.
 
-```{r, question-07}
+```{r, question-09}
 
 ```
 
@@ -238,7 +238,7 @@ adding `[kl$gap1 < 1000]` to the end of the variable name. In
 the code below, compute the confidence interval for **gap1** 
 using only those values that are under 1s.
 
-```{r, question-08}
+```{r, question-10}
 
 ```
 
@@ -251,7 +251,7 @@ We also have a formula for computing a confidence interval for
 the sample variance. Below, compute the sample variance of the
 duration?
 
-```{r, question-09}
+```{r, question-11}
 
 ```
 
@@ -273,13 +273,13 @@ tval2
 Below, compute the lower-bound of the 99% confidence interval 
 for the variance of the duration:
 
-```{r, question-10}
+```{r, question-12}
 
 ```
 
 And then, the upper bound:
 
-```{r, question-11}
+```{r, question-13}
 
 ```
 
