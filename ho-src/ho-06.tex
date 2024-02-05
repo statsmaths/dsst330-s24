@@ -73,11 +73,11 @@ The rejection region $R$ is given by the following event:
 R &= \left\{ t_{1 - \alpha/2} \leq T \leq t_{\alpha/2} \right\}^{c}.
 \end{align*}
 Due to the way it is defined, this will have the desired property that
-$\Prob[R|H_0] \leq 1 - \alpha$. A common shorthand for the rejection
-region is to call the quantity $t_{1 - \alpha/2}$ a \textbf{critical value},
-and then simply reject the null hypothesis if the (absolue value) of the
+$\Prob[R|H_0] \leq \alpha$. A common shorthand for the rejection
+region is to call the quantity $t_{\alpha/2}$ a \textbf{critical value},
+and then simply reject the null hypothesis if the (absolute value) of the
 test statistic exceeds the critical value. Hypothesis test procedures
-are oftened named based on the distribution of the test statistic.\footnote{
+are oftene named based on the distribution of the test statistic.\footnote{
   This is not an ideal convention because many different tests can have
   the same test statistic distribution. The naming convention causes constant
   confusion. We can talk more about ways to mitigate these issues in your own
@@ -93,6 +93,11 @@ initially, forgoes the language about rejecting or retaining the null
 hypothesis. Instead of having a fixed critical value, we could ask the
 question: what is the smallest value of $\alpha$ such that corresponding
 test statistic would be equal to (or greater than) the critical value? 
+For example, if we observe a positive value of $t$ from a T-test, we could
+define $p$ such that: 
+\begin{align*}
+\Prob[t \leq T] &= p. 
+\end{align*}
 This quantity is called a \textbf{p-value}. A p-value is usually the 
 form that statsitical software will report the results of an hypothesis
 test and is increasingly the way that results are communicated through.
