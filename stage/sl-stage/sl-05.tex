@@ -41,31 +41,77 @@ interval of the mean. Using what we know about the distributions of $S_X^2$ and
 $S_Y^2$, build a pivot based on the scaled ratio of these two quantities that
 has an F-distribution.
 
-\textit{Solution:} TODO
+\textit{Solution:} We know that the following hold:
+\begin{align*}
+\frac{(n-1) S_X^2}{\sigma_X^2} &\sim \chi^2(n-1) \\
+\frac{(m-1) S_Y^2}{\sigma_X^2} &\sim \chi^2(m-1) \\
+\end{align*}
+Given the definition of the F-statistic, then, we have:
+\begin{align*}
+\frac{
+  \frac{(n-1) S_X^2}{\sigma_X^2} \cdot \frac{1}{n-1}
+}{
+  \frac{(m-1) S_Y^2}{\sigma_Y^2} \cdot \frac{1}{m-1}  
+} &= \frac{
+  S_X^2 / \sigma_X^2
+}{
+  S_Y^2 / \sigma_Y^2
+} \sim F(n-1, m-1)
+\end{align*}
 
 \textbf{2}. Rearrange your previous result to get a confidence interval for the ratio
 $\sigma_Y^2 / \sigma_X^2$. Note that the F distribution is not symmetric.
 
-\textit{Solution:} TODO
+\textit{Solution:} Starting with the previous, we have (I will avoid writing the degrees of
+freedom for the F-values as it's more confusing than helpful):
+\begin{align*}
+\mathbb{P}\left[ f_{1-\alpha/2} \leq \frac{
+  S_X^2 / \sigma_X^2
+}{
+  S_Y^2 / \sigma_Y^2
+} \leq f_{\alpha/2} \right] = 1 - \alpha \\
+\mathbb{P}\left[
+  \frac{S_Y^2}{S_X^2} \cdot f_{1-\alpha/2} \leq 
+\frac{\sigma_Y^2}{\sigma_X^2} \leq
+\frac{S_Y^2}{S_X^2} \cdot f_{\alpha/2} \right] = 1- \alpha \\
+\end{align*}
+And that's it! Those are the upper and lower bounds of the confidence interval.
 
 \textbf{3}. What is $\mathbb{E}[\bar{X} - \bar{Y}]$? Make use of the properties that we
 already know to make this relatively easy. You should see that this is an
 unbiased estimator of the difference in the means.
 
-\textit{Solution:} TODO
+\textit{Solution:} This should be easy based on the rules for expected values and the 
+fact that we know $\mathbb{E}\bar{X} = \mu_X$ and $\mathbb{E}\bar{Y} = \mu_Y$.
+Namely:
+\begin{align*}
+\mathbb{E}[\bar{X} - \bar{Y}] &= \mathbb{E}\bar{X} - \mathbb{E}\bar{Y} \\
+&= \mu_X - \mu_Y.
+\end{align*}
 
 \textbf{4}. What is $\text{Var}[\bar{X} - \bar{Y}]$? Make use of the properties that we
 already know to make this relatively easy. The result should imply that the
 difference is a consistent estimator of the difference in sample means.
 
-\textit{Solution:} TODO
+\textit{Solution:} Same idea. We know that $\text{Var}\bar{X} = \sigma^2_X/n$ and therefore that
+$\text{Var}\bar{Y} = \sigma^2_Y/m$. So:
+\begin{align*}
+\text{Var}[\bar{X} - \bar{Y}] &= \text{Var}\bar{X} + \text{Var}[-1 \cdot \bar{Y}] \\
+&= \text{Var}\bar{X} + \text{Var}[\bar{Y}] \\
+&= \frac{\sigma^2_X}{n} + \frac{\sigma^2_Y}{m}
+\end{align*}
 
 \textbf{5}. If $\mathcal{G}_X$ and $\mathcal{G}_Y$ are both normally distributed, then
 $\bar{X} - \bar{Y}$ also has a normal distribution. As we did in the one-sample
 case, construct a pivot $Z$ that scales this difference to have a standard 
 normal distribution.
 
-\textit{Solution:} TODO
+\textit{Solution:} You should know that if we subtract off the mean and divide by the standard
+deviation of a normal distribution we get a standard normal. So, from the
+previous results:
+\begin{align*}
+Z &= \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_y)}{\sqrt{\frac{\sigma^2_X}{n} + \frac{\sigma^2_Y}{m}}} \sim N(0, 1)
+\end{align*}
 
 \textbf{6}. Assume that $\sigma_X^2 = \sigma_Y^2$, which we can write as just $\sigma^2$.
 Take the definition of the pooled sample variance and multiply both sides by
@@ -73,12 +119,39 @@ $(n + m - 2)$ and divide by $\sigma^2$. If we assume that $\mathcal{G}_X$ and
 $\mathcal{G}_Y$ are both normally distributed, show that $S_p^2$ is a scaled
 version of a chi-squared distribution. What are its degrees of freedom?
 
-\textit{Solution:} TODO
+\textit{Solution:} Multiplying the definition throughout by $(n + m - 2)$ and dividing by $\sigma^2$
+we have:
+\begin{align*}
+\frac{(n + m - 2) S_P^2}{\sigma^2} &= \frac{(n - 1) S_X^2}{\sigma^2} + \frac{(m - 1) S_Y^2}{\sigma^2}
+\end{align*}
+The second term has a $\chi^2(n-1)$ distribution and the third term has a 
+$\chi^2(m-1)$ distribution. They are based on independent samples and are
+therefore independent. The sum independent chi-squared random variables is
+another chi-squared with the sum of the degrees of freedom. So:
+\begin{align*}
+\frac{(n + m - 2) S_P^2}{\sigma^2} \sim \chi^2(n + m - 2).
+\end{align*}
 
 \textbf{7}. Put together the previous results to generate a pivot $T$ that has a T-distribution.
 Rearrange the terms to get a confidence interval for the difference in means.
 
-\textit{Solution:} TODO
+\textit{Solution:} Now, we just divide the $Z$ statistic above with the scaled version of $S_P$ 
+divided by its degrees of freedom:
+\begin{align*}
+T &= \frac{
+  \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_y)}{\sqrt{\frac{\sigma^2}{n} + \frac{\sigma^2}{m}}}
+}{
+  \frac{(n + m - 2) S_P^2}{\sigma^2} \times \frac{1}{(n + m - 2)}
+} \\
+&= \frac{
+  \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_y)}{\sqrt{\frac{1}{n} + \frac{1}{m}}}
+}{
+  S_P^2
+} \\
+&= \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_y)}{\sqrt{S_P^2 \left[\frac{1}{n} + \frac{1}{m}\right]}}
+\end{align*}
+The statisic $T$ abnove has a $T$ distribution with $n + m - 2$ degrees of freedom
+by its construction.
 
 
 \end{document}

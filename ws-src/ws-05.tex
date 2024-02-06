@@ -9,7 +9,23 @@ has an F-distribution.
 
 % SOLUTION
 
-TODO
+We know that the following hold:
+\begin{align*}
+\frac{(n-1) S_X^2}{\sigma_X^2} &\sim \chi^2(n-1) \\
+\frac{(m-1) S_Y^2}{\sigma_X^2} &\sim \chi^2(m-1) \\
+\end{align*}
+Given the definition of the F-statistic, then, we have:
+\begin{align*}
+\frac{
+  \frac{(n-1) S_X^2}{\sigma_X^2} \cdot \frac{1}{n-1}
+}{
+  \frac{(m-1) S_Y^2}{\sigma_Y^2} \cdot \frac{1}{m-1}  
+} &= \frac{
+  S_X^2 / \sigma_X^2
+}{
+  S_Y^2 / \sigma_Y^2
+} \sim F(n-1, m-1)
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -19,8 +35,20 @@ $\sigma_Y^2 / \sigma_X^2$. Note that the F distribution is not symmetric.
 
 % SOLUTION
 
-TODO
-
+Starting with the previous, we have (I will avoid writing the degrees of
+freedom for the F-values as it's more confusing than helpful):
+\begin{align*}
+\mathbb{P}\left[ f_{1-\alpha/2} \leq \frac{
+  S_X^2 / \sigma_X^2
+}{
+  S_Y^2 / \sigma_Y^2
+} \leq f_{\alpha/2} \right] = 1 - \alpha \\
+\mathbb{P}\left[
+  \frac{S_Y^2}{S_X^2} \cdot f_{1-\alpha/2} \leq 
+\frac{\sigma_Y^2}{\sigma_X^2} \leq
+\frac{S_Y^2}{S_X^2} \cdot f_{\alpha/2} \right] = 1- \alpha \\
+\end{align*}
+And that's it! Those are the upper and lower bounds of the confidence interval.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -31,7 +59,13 @@ unbiased estimator of the difference in the means.
 
 % SOLUTION
 
-TODO
+This should be easy based on the rules for expected values and the 
+fact that we know $\mathbb{E}\bar{X} = \mu_X$ and $\mathbb{E}\bar{Y} = \mu_Y$.
+Namely:
+\begin{align*}
+\mathbb{E}[\bar{X} - \bar{Y}] &= \mathbb{E}\bar{X} - \mathbb{E}\bar{Y} \\
+&= \mu_X - \mu_Y.
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -42,7 +76,13 @@ difference is a consistent estimator of the difference in sample means.
 
 % SOLUTION
 
-TODO
+Same idea. We know that $\text{Var}\bar{X} = \sigma^2_X/n$ and therefore that
+$\text{Var}\bar{Y} = \sigma^2_Y/m$. So:
+\begin{align*}
+\text{Var}[\bar{X} - \bar{Y}] &= \text{Var}\bar{X} + \text{Var}[-1 \cdot \bar{Y}] \\
+&= \text{Var}\bar{X} + \text{Var}[\bar{Y}] \\
+&= \frac{\sigma^2_X}{n} + \frac{\sigma^2_Y}{m}
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -54,7 +94,12 @@ normal distribution.
 
 % SOLUTION
 
-TODO
+You should know that if we subtract off the mean and divide by the standard
+deviation of a normal distribution we get a standard normal. So, from the
+previous results:
+\begin{align*}
+Z &= \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_y)}{\sqrt{\frac{\sigma^2_X}{n} + \frac{\sigma^2_Y}{m}}} \sim N(0, 1)
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -67,7 +112,18 @@ version of a chi-squared distribution. What are its degrees of freedom?
 
 % SOLUTION
 
-TODO
+Multiplying the definition throughout by $(n + m - 2)$ and dividing by $\sigma^2$
+we have:
+\begin{align*}
+\frac{(n + m - 2) S_P^2}{\sigma^2} &= \frac{(n - 1) S_X^2}{\sigma^2} + \frac{(m - 1) S_Y^2}{\sigma^2}
+\end{align*}
+The second term has a $\chi^2(n-1)$ distribution and the third term has a 
+$\chi^2(m-1)$ distribution. They are based on independent samples and are
+therefore independent. The sum independent chi-squared random variables is
+another chi-squared with the sum of the degrees of freedom. So:
+\begin{align*}
+\frac{(n + m - 2) S_P^2}{\sigma^2} \sim \chi^2(n + m - 2).
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -77,4 +133,20 @@ Rearrange the terms to get a confidence interval for the difference in means.
 
 % SOLUTION
 
-TODO
+Now, we just divide the $Z$ statistic above with the scaled version of $S_P$ 
+divided by its degrees of freedom:
+\begin{align*}
+T &= \frac{
+  \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_y)}{\sqrt{\frac{\sigma^2}{n} + \frac{\sigma^2}{m}}}
+}{
+  \frac{(n + m - 2) S_P^2}{\sigma^2} \times \frac{1}{(n + m - 2)}
+} \\
+&= \frac{
+  \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_y)}{\sqrt{\frac{1}{n} + \frac{1}{m}}}
+}{
+  S_P^2
+} \\
+&= \frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_y)}{\sqrt{S_P^2 \left[\frac{1}{n} + \frac{1}{m}\right]}}
+\end{align*}
+The statisic $T$ abnove has a $T$ distribution with $n + m - 2$ degrees of freedom
+by its construction.
