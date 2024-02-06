@@ -35,14 +35,14 @@
 An hypothesis test is a way of establishing whether a random sample
 offers support for a particular conclusion about the population 
 distribution $\mathcal{G}$. The mechanics of hypothesis testing are
-similar to those confidence intervals, but the interpretation and
+similar to those of confidence intervals, but the interpretation and
 terminology differs. For an hypothesis test, we start with a
 \textbf{null hypothesis} $H_0$ and see if the data support rejecting
 this baseline assumption in favor of an \textbf{alternative hypothesis}
 $H_A$. 
 
 In its formal specification, to do an hypothesis test we first select
-a \textbf{significant level} $(1-\alpha)$ and construct an event $R$,
+a \textbf{significance level} $(1-\alpha)$ and construct an event $R$,
 called a \textbf{rejection region}, such that $\Prob[R | H_0] \leq \alpha$.
 If we then observe some data and $R$ occurs, we \textbf{reject} the
 null hypothesis in favor of the alternative. Otherwise, we \textbf{retain}
@@ -58,8 +58,8 @@ statistic and use the complement of that as the rejection region. Let's
 see an example! Assume that you have a random sample from a normal 
 distribution with unknown mean and unknown variance. We will do an 
 hypothesis test with $H_0: \mu = 1$ and $H_A: \mu \neq 1$. We form a
-test statistic $T$ using the pivot quantity that we saw last time, but
-with $\mu$ replaced with the null hypothesis of $1$:\footnote{
+test statistic $T$ using the pivot quantity that we saw last week, but
+with $\mu_X$ replaced with the null hypothesis value of $1$:\footnote{
   I have reversed the numerator from the previous notes to follow
   the standard convention that a positive $T$ corresponds to a mean
   higher than the null hypothesis. Due to the symmetry of the
@@ -68,9 +68,10 @@ with $\mu$ replaced with the null hypothesis of $1$:\footnote{
 \begin{align*}
 T &= \frac{\bar{X} - 1}{\sqrt{S_X^2 / n}} 
 \end{align*}
-The rejection region $R$ is given by the following event:
+Under $H_0$, $T \sim t(n-1)$. A rejection region $R$ can be given by
+the following event:
 \begin{align*}
-R &= \left\{ t_{1 - \alpha/2} \leq T \leq t_{\alpha/2} \right\}^{c}.
+R &= \left\{ -t_{\alpha/2} \leq T \leq t_{\alpha/2} \right\}^{c}.
 \end{align*}
 Due to the way it is defined, this will have the desired property that
 $\Prob[R|H_0] \leq \alpha$. A common shorthand for the rejection
@@ -99,12 +100,17 @@ define $p$ such that:
 \Prob[t \leq T] &= p. 
 \end{align*}
 This quantity is called a \textbf{p-value}. A p-value is usually the 
-form that statsitical software will report the results of an hypothesis
+form that statistical software will report the results of an hypothesis
 test and is increasingly the way that results are communicated through.
 Note that we can recover the concept of statistical significance by 
 simply checking the p-value is less than the significant level. If it
 is, we have a statistically significant result and would reject the null
 hypothesis in favor of the alternative hypothesis.
+
+One can always use the p-value as a number that we use to compare to
+our specific values of $\alpha$ and then determine whether to reject
+or retain $H_0$. There is a lot of discussion in statistics about how
+the p-value itself should be interpreted beyond this, if at all. 
 
 \end{document}
 

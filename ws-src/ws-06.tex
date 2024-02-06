@@ -2,34 +2,59 @@
 % QUESTION
 
 Consider a random sample $X_1, \ldots, X_n \sim N(\mu_X, \sigma^2_X)$. 
-Write a test statistic to test the null hypothesis that $H_0: \sigma^2 = 4$.
-Write down the exact form of the rejection region for a confidence level 
-$(1 - \alpha)$.
+Write a test statistic to test the null hypothesis that $H_0: \mu_X = 4$.
+Write down the rejection region for a confidence level 
+$(1 - \alpha)$. 
 
 % SOLUTION
 
-TODO
+The test statistic will be:
+\begin{align*}
+T &= \frac{\bar{X} - 4}{\sqrt{S^2_X / n}}
+\end{align*}
+It will have a T-distribution with $n-1$ degrees of freedom. This gives
+a rejection region of:
+\begin{align*}
+R &= \{ |T| > t_{\alpha/2} \}
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
 Consider a two-sample design with the notation in Handout 5, with the assumption
 of normality and equal variances. Write a test statistic to test the null
-hypothesis that $H_0: \mu_X - \mu_Y = 0$. Write down the exact form of the
+hypothesis that $H_0: \mu_X - \mu_Y = 0$. Write down the
 rejection region for a confidence level  $(1 - \alpha)$.
 
 % SOLUTION
 
-TODO
+The test statistic will be:
+\begin{align*}
+T &= \frac{\bar{X} - \bar{Y}}{\sqrt{S^2_p \cdot \left[ \frac{1}{n} + \frac{1}{m} \right]}}
+\end{align*}
+It will have a T-distribution with $n + m - 2$ degrees of freedom. This gives
+a rejection region of:
+\begin{align*}
+R &= \{ |T| > t_{\alpha/2} \}
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
 Consider a two-sample design with the notation in Handout 5, with the assumption
 of normality. Write a test statistic to test the null
-hypothesis that $H_0: \sigma_X^2 = \sigma_Y^2$. Write down the exact form of the
+hypothesis that $H_0: \sigma_X^2 = \sigma_Y^2$. Write down the
 rejection region for a confidence level  $(1 - \alpha)$.
 
 % SOLUTION
 
-TODO
+The test statistic will be (you can transpose the $\sigma_Y^2$
+and $\sigma_X^2$ as long as you swap the degrees of freedom as
+well).
+\begin{align*}
+F &= \frac{\sigma_Y^2}{\sigma_X^2} \sim F(n-1, m-1)
+\end{align*}
+The rejection region will be:
+\begin{align*}
+R &= \{ F < f_{1-alpha/2} \} \cup \{ F > f_{\alpha/2} \}.
+\end{align*}
