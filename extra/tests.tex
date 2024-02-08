@@ -1,0 +1,110 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\newtheorem{mydef}{Definition}[section]
+\newtheorem{thm}{Theorem}[section]
+\setcounter{section}{6}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\justify
+
+{\LARGE Standard Statistical Tests}
+
+\vspace*{18pt}
+
+\noindent
+\underline{One Unknown Mean (One-Sample T-Test)} \\
+Consider a random sample $X_1, \ldots, X_n \iid G$ where we want to
+estimate the expected value $\mu_X$ of the distribution $G$. The 
+sample mean $\bar{X}$ is an unbiased and consistent estimator of
+$\mu_X$ with variance $\frac{\sigma^2_X}{n}$. Under the assumption 
+that $G$ is normal (or asymptotically in the limit of large $n$), we
+have the following confidence interval:
+\begin{align*}
+\bar{X} \pm t_{\alpha/2}(n-1) \times \sqrt{S_X^2 / n}
+\end{align*}
+For a null hypothesis $H_0: \mu_X = \mu_0$ for some fixed $\mu_0$, the
+corresponding $T$ test statistic is:
+\begin{align*}
+T &= \frac{\bar{X} - \mu_0}{\sqrt{S_X^2 / n}}
+\end{align*}
+With a rejection region of signficance $\alpha$ given by:
+\begin{align*}
+R &= \{ T < t_{1-\alpha/2}(n-1) \} \cup \{ T > t_{\alpha/2}(n-1) \}. 
+\end{align*}
+
+\vspace*{24pt}
+
+\noindent
+\underline{One Unknown Variance (Chi-squared Test for Variance)} \\
+Consider a random sample $X_1, \ldots, X_n \iid G$ where we want to
+estimate the variance $\sigma^2_X$ of the distribution $G$. The 
+sample variance $S_X^2$ is an unbiased and consistent estimator of
+the variance. Under the assumption that $G$ is normal, we
+have the following upper and lower bounds on the confidence interval:
+\begin{align*}
+L &= \frac{(n-1)S^2_X}{\chi^2_{\alpha/2}(n-1)} \\
+U &= \frac{(n-1)S^2_X}{\chi^2_{1 - \alpha/2}(n-1)}
+\end{align*}
+For a null hypothesis $H_0: \sigma^2_X = \sigma^2_0$ for some
+fixed $\sigma^2_0$, the corresponding chi-squared test statistic $C$ is:
+\begin{align*}
+C &= \frac{(n-1)S^2_X}{\sigma^2_0 \cdot \chi_{\alpha/2}(n-1)}
+\end{align*}
+With a rejection region of signficance $\alpha$ given by:
+\begin{align*}
+R &= \{ C < \chi^2_{1-\alpha/2}(n-1) \} \cup \{ T > \chi^2_{\alpha/2}(n-1) \}. 
+\end{align*}
+
+\newpage
+
+\noindent
+\underline{Difference of Means (Two-Sample T-Test)} \\
+Consider a random sample $X_1, \ldots, X_n \iid G_X$ with expected
+value $\mu_X$ and an independent second sample
+$Y_1, \ldots, Y_n \iid G_Y$ with expected value $\mu_Y$. We
+want to estimate the difference $\mu_X - \mu_Y$. The estimator
+$\bar{X} - \bar{Y}$ is an unbiased and consistent estimator of
+the mean difference. Under the assumption that $G$ is normal (or
+asymptotically in the limit of large $n$ and $m$) and $\sigma_X^2 = \sigma_Y^2$,
+we have the following confidence interval:
+\begin{align*}
+(\bar{X} - \bar{Y}) \pm t_{\alpha/2}(n+m-2) \times \sqrt{S_p^2 \cdot \left[ \frac{1}{n} + \frac{1}{m} \right]}
+\end{align*}
+For a null hypothesis $H_0: \mu_X - \mu_Y = d_0$  for some fixed $d_0$
+the corresponding $T$ test statistic is:
+\begin{align*}
+T &= \frac{(\bar{X} - \bar{Y}) - d_0}{\sqrt{S_X^2 / n}}
+\end{align*}
+With a rejection region of signficance $\alpha$ given by:
+\begin{align*}
+R &= \{ T < t_{1-\alpha/2}(n+m-2) \} \cup \{ T > t_{\alpha/2}(n+m-2) \}. 
+\end{align*}
+
+\vspace*{24pt}
+
+\noindent
+\underline{Difference in Variances (F-Test)} \\
+
+
+\end{document}
+
