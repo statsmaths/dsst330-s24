@@ -1,0 +1,118 @@
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\geometry{landscape, margin=1cm}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{multirow}
+
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancyplain}
+\fancyhf{}
+\lfoot{}
+\rfoot{}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\begin{document}
+
+\noindent
+{\LARGE Statistical Tests}
+
+\vspace*{18pt}
+
+\noindent
+The following table provides a summary of the key results from the five tests
+we have to estimate the mean or variance of one, two, or many samples. All of
+the results assume normality. The two-sample and multiple-sample tests for the
+mean assume that all groups have the same variance. The distribution column
+provides the distribution of the pivot (in general) and the distribution of the
+test statistic (conditional on $H_0$). See the handouts for the details of the
+notation.
+
+\vspace*{0pt}
+
+\begin{center}
+ \renewcommand{\arraystretch}{2}
+\begin{tabular}{c|c|c|c|c|c|c|c}
+\textbf{Type} &
+\textbf{Parameter} &
+\textbf{P. Estimator} &
+\textbf{Pivot} &
+\textbf{Confidence Interval} &
+\textbf{H\textsubscript{0}} &
+\textbf{Test Statistic} &
+\textbf{Distribution}
+\\
+\hline \hline
+\multirow{2}*{One-Sample} &
+$\mu_X$ &
+$\hat{\mu} = \bar{X}$ &
+$\frac{\bar{X} - \mu_X}{\sqrt{S^2_X / n}}$ & 
+$\bar{X} \pm t_{\alpha/2} \times \sqrt{S_X^2 / n}$ &
+$\mu_X = \mu_0$ &
+$\frac{\bar{X} - \mu_0}{\sqrt{S_X^2 / n}}$ &
+$T \sim t(n-1)$ \\ \cline{2-8}
+
+& $\sigma_X^2$ &
+$\hat{\sigma}^2 = S_X^2$ &
+$\frac{(n-1) S_X^2}{\sigma_X^2}$ & 
+$\left[\frac{(n-1)S^2_X}{\chi^2_{1-\alpha/2}}, \quad \frac{(n-1)S^2_X}{\chi^2_{\alpha/2}} \right]$ &
+$\sigma^2_X = \sigma^2_0$ &
+$\frac{(n-1)S^2_X}{\sigma^2_0 \cdot \chi_{\alpha/2}}$ &
+$C \sim \chi^2(n-1)$ \\
+
+\hline 
+\multirow{2}*{Two-Sample} &
+$\delta = \mu_X - \mu_Y$ &
+$\hat{\delta} = \bar{X} - \bar{Y}$ &
+$\frac{(\bar{X} - \bar{Y}) - (\mu_X - \mu_Y)}{\sqrt{S^p_2 \cdot \left[ \frac{1}{n} + \frac{1}{m} \right]}}$ & 
+$(\bar{X} - \bar{Y}) \pm t_{\alpha/2} \times \sqrt{S_p^2 \cdot \left[ \frac{1}{n} + \frac{1}{m} \right]}$ &
+$\delta = \delta_0$ &
+$\frac{(\bar{X} - \bar{Y}) - (\delta_0)}{\sqrt{S^p_2 \cdot \left[ \frac{1}{n} + \frac{1}{m} \right]}}$ &
+$T \sim t(n + m - 2)$ \\ \cline{2-8}
+
+& $\Delta = \frac{\sigma_Y^2}{\sigma_X^2}$ &
+$\hat{\Delta} = \frac{S_Y^2}{S_X^2}$ &
+$\frac{S_X^2}{S_Y^2} \times \frac{\sigma_Y^2}{\sigma_X^2}$ & 
+$\left[\frac{S_Y^2}{S_X^2} \cdot f_{1 - \alpha/2}, \frac{S_Y^2}{S_X^2} \cdot f_{\alpha/2}\right]$ &
+$\Delta = \Delta_0$ &
+$\frac{S_X^2}{S_Y^2} \times \Delta_0$ &
+$F \sim F(n-1, m-1)$ \\
+
+\hline
+Many-Sample &
+$\cdot$ &
+$\cdot$ &
+$\cdot$ & 
+$\cdot$ &
+$\forall k, \mu_k = \mu_0$ &
+$\frac{
+  \frac{1}{K} \sum_{j=1}^K n_j \cdot \left[\bar{X}_j - \bar{X}\right]^2
+}{
+  \frac{1}{N-K} \sum_{j=1}^k (n_j - 1) S_j^2
+}$ &
+$F \sim F(K, N-K)$ \\ \hline
+
+
+\end{tabular}
+\end{center}
+
+
+
+
+\end{document}
+
