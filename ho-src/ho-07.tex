@@ -60,7 +60,10 @@ To form either, we typically start by constructing a pivot quantity
 $G_\theta$ that is (1) a function of the random sample and the unknown
 parameter $\theta$, and (2) has a fixed distribution $\mathcal{G}$
 that does not depend on $\theta$. If we let $g_{\alpha}$ be the
-critical values of $\mathcal{G}$, we can write the following:
+critical values of $\mathcal{G}$,\footnote{
+  In other words, $\mathbb{P}[G > g_{\alpha}] = \alpha$.
+}
+we can write the following:
 \begin{align*}
 \mathbb{P} \left[ g_{1 - \alpha/2} \leq G_\theta \leq g_{\alpha/2} \right] = 1 - \alpha.
 \end{align*}
@@ -79,11 +82,13 @@ R &= \left\{ G_{\theta_0} \leq g_{1-\alpha/2} \right\} \cup \left\{ G_{\theta_0}
 \end{align*}
 If $G_{\theta_0}$ is in the rejection region, we reject $H_0$; otherwise
 we retain the null hypothesis. The $p$-value is defined as the
-largest value of $\alpha$ such that $G_{\theta_0}$ is in the rejection
+smallest value of $\alpha$ such that $G_{\theta_0}$ is in the rejection
 region.\footnote{
-  Therefore, for any confidence level where the p-value is less than
-  $\alpha$ would result in $G_{\theta_0}$ being within the rejection
-  region. 
+  Therefore, any confidence level where the p-value is less than
+  $\alpha$ will result in $G_{\theta_0}$ being within the rejection
+  region. Why? Because we would reject if $\alpha$ was equal to
+  $p$, and larger values of $\alpha$ have a lower confidence level
+  and will reject more liberally than small values.
 }
 We can compare the $p$-value to our desired $\alpha$ to determine
 whether to retain or reject $H_0$.
