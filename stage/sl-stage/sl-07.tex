@@ -35,71 +35,36 @@
 \vspace*{18pt}
 
 
-\textbf{1}. Our goal is, broadly, to produce two independent random variabels that will have
-chi-squared distributions under the null hypothesis. One will depend only on
-the sample means and the other only on the sample variances. The latter is the
-easier of the two, so let's start there. Consider the following quantity:
-\begin{align*}
-\sum_{j=1}^k \frac{(n_j - 1) S_j^2}{\sigma^2} &= \frac{(n_1 - 1) S_1^2}{\sigma^2} + \cdots + \frac{(n_j - 1) S_j^2}{\sigma^2}
-\end{align*}
-What is its distribution? Note that this result does not depend on the null
-hypothesis
+\textbf{1}. Consider a sample of size $6$ with the following values: $0$, $1$, $5$, $7$, $12$.
+What are the sample mean and sample variance $\bar{X}$ and $S^2_X$?
 
-\textit{Solution:} The $j$th term is, from our previous results, a $\chi^2(n_j - 1)$. Since all
-of the terms are independent, the sum is just a $\chi^2(N - K)$, a chi-squared
-with the sum of the degrees of freedom. This will be $N$ (the total number of
-observations) minus $K$ (the number of blocks).
+% x <- c(0, 1, 5, 7, 12)
+% var(x)
 
-\textbf{2}. Now, let's work out another chi-squared distribution based only on the means.
-What is the distribution of the following quantity, where $\mu$ is the
-hypothesized mean of all the blocks?
-\begin{align*}
-\left[\frac{\bar{X}_j - \mu}{\sqrt{\sigma^2 / n_j}}\right]^2
-\end{align*} 
+\textit{Solution:} The sample mean is $5$ and the sample variance is $23.5$.
 
-\textit{Solution:} The part inside of the square is just a standardized sample mean. Squaring
-in results in a $\chi^2(1)$.
+\textbf{2}. Consider collecting data from two populations. We collect $n=25$ observations
+from the first group, with sample mean $7$ and sample variance $9$. From the 
+second group, we have $m=30$ samples and a mean of $4$ with a sample variance
+of $4$. What is the pooled variance $S^2_p$?
 
-\textbf{3}. Next, what is this quantity?
-\begin{align*}
-\left[\frac{\bar{X} - \mu}{\sqrt{\sigma^2 / N}}\right]^2
-\end{align*} 
+\textit{Solution:} The sample mean is $5$ and the sample variance is $23.5$.
 
-\textit{Solution:} By the same logic, this is also a $\chi^2(1)$.
+\textbf{3}. Using the data from above, construct a $99$\% confidence interval for the 
+difference in the means. You can use the fact that $t_{0.99/2}(54) = 2.67$. 
 
-\textbf{4}. Using a similar derivation from worksheet 2, we can show that the following
-is true:
-\begin{align*}
-\sum_{j=1}^K \left[\frac{\bar{X}_j - \mu}{\sqrt{\sigma^2 / n_j}}\right]^2 &=
-\sum_{j=1}^K \left[\frac{\bar{X}_j - \bar{X}}{\sqrt{\sigma^2 / n_j}}\right]^2 +
-\left[\frac{\bar{X} - \mu}{\sqrt{\sigma^2 / N}}\right]^2
-\end{align*} 
-Based on this and your previous results, what is the distribution of the 
-second sum in the equation above?
+% qt(1 - 0.01/2, df = 54)
 
-\textit{Solution:} The left-hand side is a sum of $K$ independent $\chi^2(1)$'s, which is a
-$\chi^2(K)$. The last term is a single independent $\chi^2(1)$. So, because
-chi-squared add together, the middle term must be a $\chi^2(K - 1)$.
+\textit{Solution:} NA
 
-\textbf{5}. Put all of the previous results together to construct an F-statistic for the
-hypothesis. Simplify the cancel the unknown value $\sigma^2$. While technically
-either way is valid, put the chi-squared based on the means in the numerator and
-the chi-squared based on the variances in the denominator. This will follow the
-typical convention. Make sure to write down the distribution of the test statistic
-under $H_0$.
+\textbf{4}. Using the data from above, run a hypothesis test to see if the samples have the
+same variance with a $99$\% confidence level. Use the fact that
+$f_{0.99/2}(24, 29) = 2.76$ and $f_{1-0.99/2}(24, 29) = 0.347$. 
 
-\textit{Solution:} We have the following:
-\begin{align*}
-F &= \frac{
-  \frac{1}{K} \sum_{j=1}^K \left[\frac{\bar{X}_j - \bar{X}}{\sqrt{\sigma^2 / n_j}}\right]^2
-}{
-  \frac{1}{N-K} \sum_{j=1}^k \frac{(n_j - 1) S_1^j}{\sigma^2}
-} = \frac{
-  \frac{1}{K} \sum_{j=1}^K n_j \cdot \left[\bar{X}_j - \bar{X}\right]^2
-}{
-  \frac{1}{N-K} \sum_{j=1}^k (n_j - 1) S_1^j
-} \sim F(K, N-K)
-\end{align*}
+% qf(1 - 0.01/2, df1 = 24, df2 = 29)
+% qf(0.01/2, df1 = 24, df2 = 29)
+
+\textit{Solution:} NA
 
 
 \end{document}
