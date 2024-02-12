@@ -35,36 +35,62 @@
 \vspace*{18pt}
 
 
-\textbf{1}. Consider a sample of size $6$ with the following values: $0$, $1$, $5$, $7$, $12$.
+\textbf{1}. Consider a sample of size $5$ with the following values: $0$, $1$, $5$, $7$, $12$.
 What are the sample mean and sample variance $\bar{X}$ and $S^2_X$?
 
 % x <- c(0, 1, 5, 7, 12)
 % var(x)
 
-\textit{Solution:} The sample mean is $5$ and the sample variance is $23.5$.
+\textit{Solution:} The sample mean is:
+\begin{align*}
+\bar{X} &= \frac{0 + 1 + 5 + 7 + 12}{5} = 5
+\end{align*}
+And the sample variance is:
+\begin{align*}
+S^2_X &= \frac{(0-5)^2 + (1-5)^2 + (5-5)^2 + (7-5)^2 + (12-5)^2}{5 - 1} &= 23.5
+\end{align*}
 
 \textbf{2}. Consider collecting data from two populations. We collect $n=25$ observations
 from the first group, with sample mean $7$ and sample variance $9$. From the 
 second group, we have $m=30$ samples and a mean of $4$ with a sample variance
 of $4$. What is the pooled variance $S^2_p$?
 
-\textit{Solution:} The sample mean is $5$ and the sample variance is $23.5$.
+\textit{Solution:} The pooled variance is just the weighted averages of the sample variances.
+That is:
+\begin{align*}
+S_p^2 &= \frac{(n-1) S_X^2 + (m-1) S_Y^2}{n + m - 2} \\
+&= \frac{(24) \cdot 9 + (29) \cdot 4}{53} = 6.264 \\
+\end{align*}
 
 \textbf{3}. Using the data from above, construct a $99$\% confidence interval for the 
-difference in the means. You can use the fact that $t_{0.99/2}(54) = 2.67$. 
+difference in the means. You can use the fact that $t_{0.01/2}(53) = 2.671$. 
 
-% qt(1 - 0.01/2, df = 54)
+% qt(1 - 0.01/2, df = 53)
 
-\textit{Solution:} NA
+\textit{Solution:} Using the formula from the table, we have:
+\begin{align*}
+(\bar{X} - \bar{Y}) \pm t_{\alpha/2} \cdot \sqrt{S_p^2 \times \left[\frac{1}{n} + \frac{1}{m}\right]} \\
+(7-4) \pm 2.671 \cdot \sqrt{6.264 \times \left[\frac{1}{25} + \frac{1}{30}\right]} \\
+(3) \pm 1.8103 \\
+\end{align*}
+Which we could also write as: $[1.19, 4.81]$.
 
-\textbf{4}. Using the data from above, run a hypothesis test to see if the samples have the
-same variance with a $99$\% confidence level. Use the fact that
-$f_{0.99/2}(24, 29) = 2.76$ and $f_{1-0.99/2}(24, 29) = 0.347$. 
+\textbf{4}. Using the data from above, run a hypothesis test to see if the samples come from
+distributions with the same variance using a $99$\% confidence level. Use the fact
+that $f_{0.01/2}(24, 29) = 2.76$ and $f_{1-0.01/2}(24, 29) = 0.347$. 
 
 % qf(1 - 0.01/2, df1 = 24, df2 = 29)
 % qf(0.01/2, df1 = 24, df2 = 29)
 
-\textit{Solution:} NA
+\textit{Solution:} The test statistic for the ratio of the variances is $\frac{S_X^2}{S_Y^2} \cdot \Delta_0$
+where $\Delta_0$ is the ratio of the variances. Here $\Delta_0 = 0$, so the test statistic
+is $F = \frac{9}{4}=2.25$. The rejection region is:
+\begin{align*}
+\left\{F \leq f_{0.01/2} \right\} \cup \left\{F \leq f_{0.01/2} \right\} \\
+\left\{F \leq 0.347 \right\} \cup \left\{F \leq 2.76 \right\} \\
+\end{align*}
+Our $F$ is equal to $2.25$, so neither in the left part nor the right part of the 
+rejection region. Therefore, we \textbf{fail to reject the null hypothesis}.
 
 
 \end{document}
