@@ -83,3 +83,56 @@ degrees of freedom, the F-statistic, and the p-value. [While
 very close, you'll probably notice some numerical instability
 of the p-value computation; it is a little different from the
 computation (at least on my machine).]
+
+## Multiple Means
+
+Let's visualize the analysis we did above. Run the following
+code to get a plot that shows the confidence intervals for the
+means of each student's gap after each word. You can see why
+the previous result is so quickly determined to be significant.
+
+```{r}
+word |>
+  filter(gap_after < 2000) |>
+  filter(task == 1) |>
+  group_by(id) |>
+  summarize(
+    mu = mean(gap_after),
+    s2 = var(gap_after),
+    n = n(),
+    l = mu - qt(1 - 0.05/2, df = n - 1) * sqrt(s2 / n),
+    u = mu + qt(1 - 0.05/2, df = n - 1) * sqrt(s2 / n)
+  ) |>
+  arrange(desc(mu)) |>
+  mutate(id = fct_inorder(id)) |>
+  ggplot(aes(id, mu)) +
+    geom_point() +
+    geom_errorbar(aes(
+      xmin = id,
+      xmax = id,
+      ymin = l,
+      ymax = u
+    ))
+```
+
+Take a look and see where you fall on this scale.
+
+## On your own
+
+Think of another hypothesis test that you could run measuring a
+difference across the students. This could be using either the
+word-level or the key-level data. Then, compute the F-statistic
+in the code below after grabbing the data. You may use the
+`aov` function to simplify the analysis. Try to be a bit creative
+and ask for help if you need assistance with the code.
+
+```{r, question-02}
+
+```
+
+Try to also create a similar plot as we did above for your
+hypothesis.
+
+```{r, question-03}
+
+```
