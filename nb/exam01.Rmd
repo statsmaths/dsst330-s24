@@ -1,0 +1,64 @@
+---
+title: "Exam 01"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+This is just some space to use to compute the results for the
+take-home exam. You can see the solutions to notebook 7 for 
+some helpful hints. Please do not hand this file in. I need the
+handwritten results on the page I handed out in class (or 
+printed copy if you lost the one I gave you)
+
+```{r}
+x <- c()
+y <- c()
+```
+
+In case it's helpful, you could organize your code by the 
+questions on the sheet. But again, entirely up to you.
+
+```{r, question-01}
+
+```
+
+```{r, question-02}
+
+```
+
+```{r, question-03}
+
+```
+
+```{r, question-04}
+
+```
+
+```{r, question-05}
+
+```
+
+```{r, question-06}
+
+```
+
+```{r, question-07}
+
+```
+
+```{r, question-08}
+
+```
+
+```{r, question-09}
+
+```
+
+
