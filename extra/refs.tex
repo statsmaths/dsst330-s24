@@ -65,7 +65,7 @@ Poisson & $Poisson(\lambda)$ & $x \in \{0, 1, \ldots\}$ & $\frac{\lambda^x e^{-\
 Exponential & $Exp(\lambda)$ & $x \in [0, \infty)$ & $\lambda e^{-\lambda x}$ & $\lambda^{-1}$ & $\lambda^{-2}$ & $\frac{\lambda}{\lambda - t}$ & \texttt{rexp(, rate = lambda)} \\ \hline
 Gamma & $Gamma(\alpha, \beta)$ & $x \in [0, \infty)$ & $\frac{1}{\Gamma(\alpha) \beta^\alpha}\cdot x^{\alpha - 1} e^{-x/\beta}$ & $\alpha \beta$ & $\alpha \beta^2$ & $\left( 1 - \beta t \right)^{-\alpha}$ & \texttt{rgamma(, shape = a, scale = b)} \\ \hline
 Beta & $Beta(\alpha, \beta)$ & $x \in [0, 1]$ & $\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \cdot x^{\alpha -1} (1-x)^{\beta - 1}$ & $\frac{\alpha}{\alpha + \beta}$ & $\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ & $\cdot$ & \texttt{rbeta(, shape1 = a, shape2 = b)} \\ \hline
-Uniform & $U(a, b)$ & $x \in [a, b]$ & $(b - a)^{-1}$ & $\frac{1}{2}(b-a)$ & $\frac{1}{12}(b-a)^{2}$ & $\cdot$ & \texttt{runif(, min = a, max = b)} \\ \hline
+Uniform & $U(a, b)$ & $x \in [a, b]$ & $(b - a)^{-1}$ & $\frac{1}{2}(a+b)$ & $\frac{1}{12}(b-a)^{2}$ & $\cdot$ & \texttt{runif(, min = a, max = b)} \\ \hline
 Normal & $N(\mu, \sigma^2)$ & $x \in \mathbb{R}$ & $\frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{1}{2\sigma^2}(x - \mu)^2}$ & $\mu$ & $\sigma^2$ & $\exp\{\mu t + \frac{1}{2} \sigma^2 t^2 \}$ & \texttt{rnorm(, mean = mu, sd = sqrt(s2))} \\ \hline
 Chi-squared & $\chi^2(k)$ & $x \in [0, \infty)$ & $\frac{1}{2^{k/2}\Gamma(k/2)}$ $x^{k/2 - 1} e^{-x/2}$ & $k$ & $2k$ & $(1- 2t)^{-k/2}$ & \texttt{rchisq(, df = k)} \\ \hline
 Student-T & $t(k)$ & $x \in \mathbb{R}$ & $\cdot$  & 0 & k / (k - 2) & $\cdot$ & \texttt{rt(, df = k)} \\ \hline

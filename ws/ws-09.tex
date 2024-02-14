@@ -1,0 +1,52 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 09}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Find the MLE estimator for the estimation of the parameter $\lambda$ from
+i.i.d. observations of an exponentialy distributed random variable.
+
+\textbf{2}. Find the MLE estimator for the estimation of the parameter $p$ from
+i.i.d. observations of a Bernoulli distributed random variable.
+
+\textbf{3}. Find the MLE estimator for the estimation of the parameters $\mu$ and $\sigma^2$
+from i.i.d. observations of a normally distributed random variable.
+
+\textbf{4}. Find the MLE estimator for the estimation of the parameters $a$ and $b$
+from i.i.d. observations from a continuous uniform distribution. Note:
+You cannot do this using the derivative. Just think about it!
+
+
+\end{document}
