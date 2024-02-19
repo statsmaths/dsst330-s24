@@ -58,7 +58,7 @@ Which we could also write as: $[1.19, 4.81]$.
 
 Using the data from above, run a hypothesis test to see if the samples come from
 distributions with the same variance using a $99$\% confidence level. Use the fact
-that $f_{0.01/2}(24, 29) = 2.76$ and $f_{1-0.01/2}(24, 29) = 0.347$. 
+that $f_{1-0.01/2}(24, 29) = 2.76$ and $f_{1-0.01/2}(24, 29) = 0.347$. 
 
 % qf(1 - 0.01/2, df1 = 24, df2 = 29)
 % qf(0.01/2, df1 = 24, df2 = 29)
@@ -66,7 +66,7 @@ that $f_{0.01/2}(24, 29) = 2.76$ and $f_{1-0.01/2}(24, 29) = 0.347$.
 % SOLUTION
 
 The test statistic for the ratio of the variances is $\frac{S_X^2}{S_Y^2} \cdot \Delta_0$
-where $\Delta_0$ is the ratio of the variances. Here $\Delta_0 = 0$, so the test statistic
+where $\Delta_0$ is the ratio of the variances. Here $\Delta_0 = 1$, so the test statistic
 is $F = \frac{9}{4}=2.25$. The rejection region is:
 \begin{align*}
 \left\{F \leq f_{0.01/2} \right\} \cup \left\{F \leq f_{0.01/2} \right\} \\

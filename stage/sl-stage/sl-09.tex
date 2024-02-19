@@ -38,21 +38,91 @@
 \textbf{1}. Find the MLE estimator for the estimation of the parameter $\lambda$ from
 i.i.d. observations of an exponentialy distributed random variable.
 
-\textit{Solution:} TODO
+\textit{Solution:} We have the following log-likelihood:
+\begin{align*}
+l(\lambda; x_1, \ldots, x_n) &= \sum_{i=1}^n \log\left[ \lambda \cdot e^{-\lambda x_i} \right] \\
+&= \sum_{i=1}^n \left[\log(\lambda) - \lambda x_i \right]
+\end{align*}
+The derivative with respect to $\lambda$ is:
+\begin{align*}
+\frac{\partial}{\partial \lambda} l(\lambda; x_1, \ldots, x_n)
+&= \sum_{i=1}^n \left[ \frac{1}{\lambda} - x_i \right] 
+\end{align*}
+Setting this equal to zero (and putting a hat on the parameter), gives:
+\begin{align*}
+\sum_{i=1}^n \frac{1}{\hat{\lambda}} &= \sum_{i=1}^n x_i \\
+\frac{n}{\hat{\lambda}} &= \sum_{i=1}^n x_i \\
+\frac{n}{\sum_{i=1}^n x_i} &= \hat{\lambda} \\
+\frac{1}{\frac{1}{n} \cdot \sum_{i=1}^n x_i} &= \hat{\lambda} 
+\end{align*}
+In other words, the MLE is just one divided by the sample mean. That makes
+a lot of sense (but, again, not maybe very interesting) given that $\lambda$
+is the inverse of the mean for the exponential distribution.
 
-\textbf{2}. Find the MLE estimator for the estimation of the parameter $p$ from
-i.i.d. observations of a Bernoulli distributed random variable.
+\textbf{2}. Find the MLE estimator for the estimation of the variance from
+i.i.d. observations of an exponentialy distributed random variable.
+Hint: This is easily derived from the previous result. Should not 
+require any new derivatives.
 
-\textit{Solution:} TODO
+\textit{Solution:} We know that the variance of an exponentially distributed random variable
+is $\lambda^{-2}$. We already have the MLE for $\lambda$, so the MLE of the
+variance is just this value to the $-2$ power:
+\begin{align*}
+\text{MLE} &= \left[ \frac{1}{n} \cdot \sum_{i=1}^n x_i \right]^2 \\
+&= \bar{X}^2.
+\end{align*}
+Notice that this \textbf{is} quite different than the typical estimator that
+we use for estimating the variance of a sample ($S_X^2$), taking into account
+the special structure of the exponential distribution.
 
-\textbf{3}. Find the MLE estimator for the estimation of the parameters $\mu$ and $\sigma^2$
-from i.i.d. observations of a normally distributed random variable.
+\textbf{3}. Find the MLE estimator for the estimation of the parameter $p$ from
+i.i.d. observations of a Bernoulli distributed random variable. Hint:
+When you set the derivative equal to zero, multiple by $\frac{1}{n}$ to
+write the equation in terms of just $\bar{X}$ and $\hat{p}$. 
 
-\textit{Solution:} TODO
+\textit{Solution:} We have the following log-likelihood:
+\begin{align*}
+l(p; x_1, \ldots, x_n) &= \sum_{i=1}^n \log\left[ p^{x_i} \cdot (1 - p)^{1-x_i} \right]  \\
+&= \sum_{i=1}^n \left[x_i \cdot \log(p) + (1-x_i) \cdot \log(1 - p) \right]  \\
+\end{align*}
+The derivative with respect to $p$ is:
+\begin{align*}
+\frac{\partial}{\partial p} l(p; x_1, \ldots, x_n)
+&= \sum_{i=1}^n \left[ \frac{x_i}{p} + \frac{(-1) \cdot (1-x_i)}{1-p}  \right] 
+\end{align*}
+Setting this equal to zero (and putting a hat on the parameter), gives the following
+\begin{align*}
+\frac{1}{\hat{p}} \cdot \sum_{i=1}^n x_i &= \frac{1}{1-\hat{p}} \cdot \sum_i (1-x_i)
+\end{align*}
+Dividing both side by $n$ as in the hint gives:
+\begin{align*}
+\frac{1}{\hat{p}} \cdot \bar{x} &= \frac{1}{1-\hat{p}} \cdot (1-\bar{x})
+\end{align*}
+And then, solving gives:
+\begin{align*}
+\bar{x} (1 - \hat{p}) &= \hat{p} (1 - \bar{x}) \\
+\bar{x} - \bar{x} \cdot \hat{p} &= \hat{p} - \bar{x} \cdot \hat{p} \\
+\bar{x} &= \hat{p}
+\end{align*}
+And again, we see that the MLE is just the sample mean.
 
-\textbf{4}. Find the MLE estimator for the estimation of the parameters $a$ and $b$
-from i.i.d. observations from a continuous uniform distribution. Note:
-You cannot do this using the derivative. Just think about it!
+\textbf{4}. Find the MLE estimator for the estimation of the parameters $\mu$ and $\sigma^2$
+from i.i.d. observations of a normally distributed random variable. Hint: We
+want to think of $\sigma^2$ as a single parameter (not the square of a parameter).
+I recommend using $v = \sigma^2$ to keep this clear. Also, find $\hat{\mu}$ first.
+You can find the MLE for the mean without knowing the MLE of the variance.
+
+\textit{Solution:} This is where things get a bit more interesting. We have the following
+log-likelihood:
+\begin{align*}
+l(p; x_1, \ldots, x_n) &= \sum_{i=1}^n \log\left[ \frac{1}{\sqrt{2\pi v}} \cdot e^{-\frac{1}{2v} [x_i - \mu]^2} \right]  \\
+&= \sum_{i=1}^n \left[x_i \cdot \log(p) + (1-x_i) \cdot \log(1 - p) \right] 
+\end{align*}
+ 
+
+\textbf{5}. What is the bias of the MLE estimator for the variance from a normal distribution
+with unknown mean and variance? Hint: Use what we know about $S_X^2$ to make this
+relatively easy.
 
 \textit{Solution:} TODO
 
