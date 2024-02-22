@@ -62,7 +62,7 @@ Binomial & $Bin(n, p)$ & $x \in \{0, \ldots, n\}$ & $\binom{n}{x} p^x (1 - p)^{n
 Geometric & $Geom(p)$ & $x \in \{1, 2, \ldots\}$ & $(1-p)^{x-1}p$ & $1/p$ & $(1 - p) / p^2$ & $\frac{pe^t}{1 - (1-p)e^t}$ & \texttt{rgeom(, prob = p) - 1} \\ \hline
 N. Binomial & $NB(k, p)$ & $x \in \{k, k + 1, \ldots\}$ & $\binom{x - 1}{k - 1} (1-p)^{x-k} p^{k}$ & $k/p$  & $k (1 - p) / p^2$ & $\left(\frac{pe^t}{1 - (1-p)e^t} \right)^{k}$ & \texttt{rnbinom(, size = n, prob = p) - n} \\ \hline
 Poisson & $Poisson(\lambda)$ & $x \in \{0, 1, \ldots\}$ & $\frac{\lambda^x e^{-\lambda}}{x!}$ & $\lambda$ & $\lambda$ & $e^{\lambda(e^t - 1)}$ & \texttt{rpois(, lambda = lambda)} \\ \hline \hline
-Exponential & $Exp(\lambda)$ & $x \in [0, \infty)$ & $\lambda e^{-\lambda x}$ & $\lambda^{-1}$ & $\lambda^{-2}$ & $\frac{\lambda}{\lambda - t}$ & \texttt{rexp(, rate = lambda)} \\ \hline
+Exponential & $Exp(\lambda)$ & $x \in [0, \infty)$ & $\lambda e^{-\lambda x}$ & $\lambda^{-1}$ & $\lambda^{-2}$ & $\frac{\lambda}{\lambda - t}$ & \texttt{rexp(, rate = 1/lambda)} \\ \hline
 Gamma & $Gamma(\alpha, \beta)$ & $x \in [0, \infty)$ & $\frac{1}{\Gamma(\alpha) \beta^\alpha}\cdot x^{\alpha - 1} e^{-x/\beta}$ & $\alpha \beta$ & $\alpha \beta^2$ & $\left( 1 - \beta t \right)^{-\alpha}$ & \texttt{rgamma(, shape = a, scale = b)} \\ \hline
 Beta & $Beta(\alpha, \beta)$ & $x \in [0, 1]$ & $\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \cdot x^{\alpha -1} (1-x)^{\beta - 1}$ & $\frac{\alpha}{\alpha + \beta}$ & $\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$ & $\cdot$ & \texttt{rbeta(, shape1 = a, shape2 = b)} \\ \hline
 Uniform & $U(a, b)$ & $x \in [a, b]$ & $(b - a)^{-1}$ & $\frac{1}{2}(a+b)$ & $\frac{1}{12}(b-a)^{2}$ & $\cdot$ & \texttt{runif(, min = a, max = b)} \\ \hline
