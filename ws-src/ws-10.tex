@@ -2,7 +2,7 @@
 % QUESTION
 
 \textbf{(Ratio Test)} Let $X_1, \ldots, X_n \iid Poisson(\lambda)$.
-What is the test statistic $G$ for the corresponding likelihood 
+What is the test statistic $\Lambda$ for the corresponding likelihood 
 ratio test for the null hypothesis $H_0: \lambda = 1$.
 
 % SOLUTION
@@ -12,8 +12,8 @@ TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
-\textbf{(Ratio Test)} Let $X_1, \ldots, X_n \iid Poisson(\lambda)$.
-What is the test statistic $G$ for the corresponding likelihood 
+\textbf{(Ratio Test)} Let $X_1, \ldots, X_n \iid Exp(\lambda)$.
+What is the test statistic $\Lambda$ for the corresponding likelihood 
 ratio test for the null hypothesis $H_0: \lambda = 1$.
 
 % SOLUTION
@@ -23,26 +23,14 @@ TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
-\textbf{(Regression I)} Consider a completely different task, where we start
-with a set of fixed real values $x_1, \ldots, x_n$. We observe a random
-sample of independent observations $Y_1, \ldots, Y_n$, where
-$Y_i \sim N(b \cdot x_i, \sigma^2)$.\footnote{
-  In these questions, $y_i$ will be play the role that we have previously
-  been calling $x_i$. This is the unquestioned standard notation for regression,
-  so I wanted to use it even though it requires a bit of translation work.
-} So, the observations are independent but not identically distributed (they
-have different means). What is the log-likelihood of the sample?
-
-% SOLUTION
-
-TODO
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION
-
-\textbf{(Regression II)} Continuing from the previous question, what are
-$\hat{sigma}_{MLE}^2$ and $\hat{a}_{MLE}$ for the regression problem?
+\textbf{(Ratio Test)} Let $X \sim Bin(n, p_1)$ and $Y \sim Bin(n, p_2)$ be
+independent random variables. We want to test the hypothesis that
+$H_0: p_1 = p_2$. What are the corresponding $\Theta$ and $\Theta_0$ in
+our updated formulation of hypothesis testing?\footnote{
+  We will derive the actual test itself in a more general form next
+  class.
+} If we use a Likelihood Ratio Test for this hypothesis, how many degrees of
+freedom should $\Lambda$ have?
 
 % SOLUTION
 
@@ -51,9 +39,11 @@ TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
-\textbf{(Regression III)} Consider an hypothesis test with $H_0: a = 0$. 
-Using the results we established the first few weeks (that is, without using the
-log-likelyhood test), find a pivot statistic to test this hypothesis. 
+\textbf{(Ratio Test)} Recall that we used the one-sample ANOVA test with the
+null-hypothesis that the means of $K$ samples are all the same. Write down and
+describe the values of $\Theta$ and $\Theta_0$ that correspond to this test. 
+If we use a Likelihood Ratio Test for this hypothesis, how many degrees of
+freedom should $\Lambda$ have?
 
 % SOLUTION
 
@@ -62,8 +52,8 @@ TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
-\textbf{(MLE)} Let $X_1, \ldots, X_n \iid Uniform(0, a)$. Find the MLE estimator
-for $a$. Note: You cannot do this using the derivative. Just think about it!
+\textbf{(MLE Practice)} Let $X_1, \ldots, X_n \iid Uniform(0, a)$. Find the MLE
+estimator for $a$. Note: You cannot do this using the derivative. Just think about it!
 
 % SOLUTION
 

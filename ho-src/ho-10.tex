@@ -36,42 +36,42 @@ In addition to the nice point-estimator properties of MLE estimators,
 they also come along with a built-in general procedure for building 
 hypothesis tests. This process is called the \textbf{likelihood-ratio test};
 while it only generates asymptotically correct tests in the limit of large
-data, it often performs very well even for small datasets. It will be
-helpful for us to a start with a slightly more theoretical description
-of the test than we needed for the introductory methods we covered in the
-first weeks.
+data, it often performs very well even for small datasets.
 
-Assume that we are working with a distribution that has $k$ unknown
-parameters. We are going to define a null-hypothesis as a subset of
-all possible configurations of the unknown parameters, which is in
+It will be helpful for us to a start with a slightly more general description
+of the test than we needed for the introductory methods we covered in the
+first weeks. Namely, we will extend the idea of a simple hypothesis,
+where $H_0$ is a single value of the parameters, to complex hypotheses 
+where $H_0$ is a general subset of all possibilities. Note that all of the
+elements we have already described, such p-values and rejection regions,
+still apply. Those concepts just need to hold for any value in the null
+hypothesis. Assume that we are working with a distribution that has $k$
+unknown parameters. We are going to define a null-hypothesis as a subset
+of all possible configurations of the unknown parameters, which is in
 turn a subset of $\mathbb{R}^k$. Symbolically, we have 
-$\Theta_0 \subset \Theta \subseteq \mathbb{R}^k$. We can define the
-G-score as the following:
+$\Theta_0 \subset \Theta \subseteq \mathbb{R}^k$.
+
+Given a null hypothesis that $\theta \in \Theta_0$, we can define the
+quantity $\Lambda$ as the following:
 \begin{align*}
-G &= -2 \cdot \log \left[ \frac{
+\Lambda &= -2 \cdot \log \left[ \frac{
   \sup_{\theta \in \Theta_0} \mathcal{L}(\theta)
 }{
   \sup_{\theta \in \Theta} \mathcal{L}(\theta)
 } \right].
 \end{align*}
-The quantity inside of the brackets must be between zero and one, and
-therefore $G$ will always be positive. If we define $\theta_0$ as the
+The value inside of the brackets must be between zero and one, and
+therefore $\Lambda$ will always be positive. If we define $\theta_0$ as the
 argmax of the numerator and $\hat{\theta}$ as the argmax of the numerator,
 this can be simplified in terms of the log-likelihood $l(\cdot)$:
 \begin{align*}
-G &= 2 \cdot \left[ l(\hat{\theta}) - l(\theta_0) \right].
+\Lambda &= 2 \cdot \left[ l(\hat{\theta}) - l(\theta_0) \right].
 \end{align*}
 There is an important (but not easy to prove) result called
-\textbf{Wilks' Theorem} that establishes that $G$ will be 
+\textbf{Wilks' Theorem} that establishes that $\Lambda$ will be 
 approximately distributed as a $\chi^2$. The degrees of freedom
 will be the difference in dimensionality between $\Theta$ and
-$\Theta_0$. 
-
-A common case that the null hypothesis $\Theta_0$ is just a
-single, fixed value. In this case, the distribution of $G$ will
-be a chi-squared with degrees of freedom equal to the number of
-unknown parameters. The case of a larger null-hypothesis is
-often needed. We will see an example of this on today's worksheet.
+$\Theta_0$. It is therefore an asymptotic pivot quantity. 
 
 \end{document}
 
