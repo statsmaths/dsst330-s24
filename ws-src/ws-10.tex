@@ -7,7 +7,15 @@ ratio test for the null hypothesis $H_0: \lambda = 1$.
 
 % SOLUTION
 
-TODO
+From last time, we know that the MLE will be $\bar{x}^{-1}$. So, the likelihood
+ratio test will be:
+\begin{align*}
+\Lambda &= -2 \cdot \sum_i \left[ l(1, x_i) - l(\bar{x}^{-1}, x_i) \right] \\
+&= -2 \cdot \sum_i \left[ log(1) + (-1 \cdot x_i) - \log(x^{-1}) - (-1 x^{-1} \cdot x_i) \right] \\
+&= 2 \cdot \sum_i \left[ x_i + \log(\bar{x}^{-1}) - \bar{x}^{-1} \cdot x_i) \right] \\
+&= 2 \cdot \left[ n \bar{x} + n \log(\bar{x}^{-1}) - n \right] \\
+&= 2n \cdot \left[ \bar{x} + \log(\bar{x}^{-1}) - 1 \right].
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION

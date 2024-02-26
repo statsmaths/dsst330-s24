@@ -100,31 +100,3 @@ sprintf(
 
 So, we see that using these metrics the MLE has a better risk at
 the expense of being unbiased.
-
-## Likelihood Ratio Test
-
-Let's do another simulation with the exponential distribution,
-calculating the value of Lambda for each sample:
-
-```{r}
-N <- 1e5
-lstat <- rep(NA, N)
-for (j in seq_len(N))
-{
-  lambda <- 4
-  x <- rexp(50, rate = 1/lambda)
-  lstat[j] <- -2 * (sum(x * log(lambda) - lambda) - sum(x*log(mean(x)) - mean(x)))
-}
-```
-
-What does the distribution of the test statistic look like?
-
-```{r}
-hist(lstat[lstat < 20], breaks = 50, probability = TRUE, col = "white")
-curve(dexp(x, rate = 1/lambda),
-      from = min(lstat), to = 20, add = TRUE, col = "red")
-```
-
-No, it's not a perfect chi-squared, but you can see that it is
-approximately one, and would likely work relatively well for 
-constructing a rejection region.
