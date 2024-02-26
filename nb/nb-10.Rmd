@@ -1,0 +1,130 @@
+---
+title: "Notebook 10"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+set.seed(1)
+```
+
+## MLE
+
+Let's simulate some data from an exponential distribution with 
+lambda equal to 4. Here's a single sample of 50 observations:
+
+```{r}
+x <- rexp(50, rate = 1/4)
+x
+```
+
+Estimating the mean is not particularly interesting, as it is
+the same whether we use the sample mean of the MLE. The variance
+is a different story. We have two options: the MLE (squared mean)
+and the sample variance (Sx^2). Note that the theoretical
+variance should be 16.
+
+```{r}
+sprintf("MLE Variance: %02.02f, Sample Variance: %02.02f", mean(x)^2, var(x))
+```
+
+The specific values will change each time we run the code, but
+you should see that there is (usually) a noticeable difference
+between the two estimators. Let's run a simulation to see what
+happens in the long-run:
+
+```{r}
+N <- 1e5
+mle <- rep(NA, N)
+svar <- rep(NA, N)
+for (j in seq_len(N))
+{
+  x <- rexp(50, rate = 1/4)
+  mle[j] <- mean(x)^2
+  svar[j] <- var(x) 
+}
+```
+
+Here is the empirical bias of the sample variance (recall that
+it has theoretical value of zero):
+
+```{r}
+mean(svar - 16)
+```
+
+Not so bad. What about the empirical bias of the MLE? Recall that
+this might not be theoretically equal to zero for non infinite
+sample size:
+
+```{r}
+mean(mle - 16)
+```
+
+Okay, so the bias is not huge but it is many times larger than
+the sample variance. Is the MLE a terrible choice here? Well,
+not really. Let's look at the variance of the two estimators
+(note that these are the variances of the estimators of the 
+variance):
+
+```{r}
+sprintf("Var of MLE: %02.02f, Var of S_X^2: %02.02f", var(mle), var(svar))
+```
+
+So, the sample mean has a much larger variance. It is on average
+unbiased, but wobbles a lot more around the correct value. How
+can we balance these? One way is to look at the average distance
+to the variance (this is called the **risk** of the estimator).
+We can do this using any distance metric, such as the absolute
+value:
+
+```{r}
+sprintf(
+  "Avg. Dist MLE: %02.02f, Avg. Dist S_X^2: %02.02f",
+  mean(abs(mle - 16)), mean(abs(svar - 16))
+)
+```
+
+A related metric is called the root mean squared error, or RMSE,
+which we can describe as follows:
+
+```{r}
+sprintf(
+  "RMSE MLE: %02.02f, RMSE S_X^2: %02.02f",
+  sqrt(mean((mle - 16)**2)), sqrt(mean(abs(svar - 16)**2))
+)
+```
+
+So, we see that using these metrics the MLE has a better risk at
+the expense of being unbiased.
+
+## Likelihood Ratio Test
+
+Let's do another simulation with the exponential distribution,
+calculating the value of Lambda for each sample:
+
+```{r}
+N <- 1e5
+lstat <- rep(NA, N)
+for (j in seq_len(N))
+{
+  lambda <- 4
+  x <- rexp(50, rate = 1/lambda)
+  lstat[j] <- -2 * (sum(x * log(lambda) - lambda) - sum(x*log(mean(x)) - mean(x)))
+}
+```
+
+What does the distribution of the test statistic look like?
+
+```{r}
+hist(lstat[lstat < 20], breaks = 50, probability = TRUE, col = "white")
+curve(dexp(x, rate = 1/lambda),
+      from = min(lstat), to = 20, add = TRUE, col = "red")
+```
+
+No, it's not a perfect chi-squared, but you can see that it is
+approximately one, and would likely work relatively well for 
+constructing a rejection region.
