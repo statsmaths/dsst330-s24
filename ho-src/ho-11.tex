@@ -45,7 +45,7 @@ $1$). Using the counting theorems from probability theory, we can
 see that the likelihood function will have the following form:
 \begin{align*}
 \mathcal{L}(p_1, \ldots, p_k; x_1, \ldots, x_k)
-&= \frac{n!}{x_1! \cdots x_k} \times p_1^{x_1} \cdots p_k^{x_k}
+&= \frac{n!}{x_1! \cdots x_k!} \times p_1^{x_1} \cdots p_k^{x_k}
 = \frac{n!}{\prod_j x_j} \times \prod_j p_j^{x_j}.
 \end{align*}
 The multinomial is very useful in statistics because we can use it to
@@ -72,7 +72,7 @@ that the true probabilities are $\tilde{p}_1, \ldots, \tilde{p}_k$.\footnote{
 }
 This gives, since we already know the MLE, the following value for $G$:
 \begin{align*}
-G &= -2 \cdot \log \left[ \frac{
+\Lambda &= -2 \cdot \log \left[ \frac{
   \frac{n!}{\prod_j x_j} \times \prod_j \tilde{p}_j^{x_j}
 }{
   \frac{n!}{\prod_j x_j} \times \prod_j \hat{p}_j^{x_j}
@@ -82,11 +82,11 @@ Now, let's convert the null-hypothesis from probabilities into expected
 counts: $e_i = \tilde{p} \cdot n$. Also plugging in the form of the MLE,
 we then have:
 \begin{align*}
-G &= -2 \cdot \sum_j x_j \cdot \log(e_j / x_j).
+\Lambda &= -2 \cdot \sum_j x_j \cdot \log(e_j / x_j).
 \end{align*}
 This specific application of the log-likelihood ratio test is often called
-the \textbf{G-test}, hence the reason I have used this letter throughout
-to refer to this test statistic.
+the \textbf{G-test}; we will often use the letter $G$ in place of $\Lambda$
+for this specific version of the test.
 
 \newpage
 
