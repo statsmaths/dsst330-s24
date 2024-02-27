@@ -1,0 +1,340 @@
+---
+title: "Notebook 10"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+set.seed(1)
+```
+
+# 1. Simulating One Fair Die
+
+Let's do in R what we did manually, roll a die 160 times:
+
+```{r}
+n <- 16 * 10
+y <- sample(seq_len(6), size = n, replace = TRUE)
+y
+```
+
+We can turn this into a set of counts, following the multinomial
+distribution:
+
+```{r}
+x <- as.numeric(table(y))
+x
+```
+
+What are the expected counts under the null-hypothesis that all
+of the sides are equally likely? That's just 1/6 times the number
+of samples.
+
+```{r}
+e <- rep(1/6, 6) * n
+e
+```
+
+And the G-Score is given by the formula that we derived on the
+the notes:
+
+```{r}
+G <- -2 * sum( x * log(e / x) )
+G
+```
+
+This should have a chi-squared distribution with 6-1 degrees of
+freedom (the number of sides of the die, minus one because the
+last probability depends on all of the others). So, what is the
+critical value for rejecting the null hypothesis, that's given
+here for a 95% confidence level (we always use a one-sided test
+with the log-likelihood):
+
+```{r}
+qchisq(1 - 0.05, df = 6 - 1)
+```
+
+We see that we would not reject the null hypothesis since the
+critical value is larger than our test statistic. We could also
+convert the test statistic into a p-value as follows:
+
+```{r}
+1 - pchisq(G, df = 6 - 1)
+```
+
+And again, we see that it is not significant.
+
+# 2. Simulating Many Fair Die
+
+Since it is easy in R, let's simulate a large number of trials
+like the one we did manually, recording the  G score for each
+trial.
+
+```{r}
+N <- 10000
+n <- 16 * 10
+G <- rep(NA, N)
+e <- rep(1/6, 6) * n
+
+for (j in seq_along(G))
+{
+  y <- sample(seq_len(6), size = n, replace = TRUE)
+  x <- as.numeric(table(y))
+  G[j] <- -2 * sum( x * log(e / x) )
+}
+```
+
+We can look at the distribution and see that it does in fact 
+closely following a chi-squared distribution with 6-1 degrees
+of freedom:
+
+```{r}
+hist(G, breaks = 50, probability = TRUE, col = "white")
+curve(dchisq(x, df = 6 - 1),
+      from = min(G), to = max(G), add = TRUE, col = "red")
+```
+
+How often would be (incorrectly) reject the null hypothesis?
+
+```{r}
+mean((1 - pchisq(G, df = 6 - 1)) < 0.05)
+```
+
+This is almost exactly what we would want (0.05 is ideal), with
+the differences being due a bit to the approximation of the 
+chi-squared and a bit due to the noise of the simulation.
+
+# 3. Simulating One Unfair Die
+
+Now, we will simulate the unfair die that we also did. Let's 
+start with a single die:
+
+```{r}
+y <- sample(seq_len(6), size = n, replace = TRUE)
+y[y >= 4] <- sample(seq_len(6), size = sum(y >= 4), replace = TRUE)
+table(y)
+```
+
+The bias towards the small values is fairly noticeable. Let's
+compute the G-score:
+
+```{r}
+x <- as.numeric(table(y))
+G <- -2 * sum( x * log(e / x) )
+G
+```
+
+This has the same null-distribution as above, so we can see that
+it will be rejected. What's the p-value?
+
+```{r}
+1 - pchisq(G, df = 6 - 1)
+```
+
+So, we see that the reject the null hypothesis since the p-value
+is much smaller than the cut-off value of 0.05 (or even 0.001).
+
+# 4. Simulating Many Unfair Die
+
+Just as above, we can simulate this for a large number of trials.
+
+```{r}
+N <- 10000
+n <- 16 * 10
+G <- rep(NA, N)
+e <- rep(1/6, 6) * n
+
+for (j in seq_along(G))
+{
+  y <- sample(seq_len(6), size = n, replace = TRUE)
+  y[y >= 4] <- sample(seq_len(6), size = sum(y >= 4), replace = TRUE)
+  x <- as.numeric(table(y))
+  G[j] <- -2 * sum( x * log(e / x) )
+}
+```
+
+How often do we actually reject the null hypothesis here:
+
+```{r}
+table(G > qchisq(1 - 0.05, df = 6 - 1))
+```
+
+Always! That's why I felt confident making you do this in class
+that we would get a significant result manually as well. Let's
+see how this compares the chi-squared:
+
+```{r}
+hist(G, breaks = 50, probability = TRUE, col = "white")
+curve(dchisq(x, df = 6 - 1),
+      from = min(G), to = max(G), add = TRUE, col = "red")
+```
+
+As hoped, we see that the distribution is very different than
+the chi-squared, allowing the test to have sufficient power to
+detect deviations from the null hypothesis.
+
+# 5. Goodness of Fit: One Simulation
+
+No more die-rolling. But, let's see in R a final extension for
+today of this technique. We will generate some data from a 
+Poisson distribution with lambda equal to 2.
+
+```{r}
+n <- 200
+y <- rpois(n, lambda = 2)
+```
+
+We will ignore that we know how the data were generated. Let's
+look at a table of the values:
+
+```{r}
+table(y)
+```
+
+Let's say we wanted to do an hypothesis test with the null
+hypothesis that the data in fact came from a Poisson
+distribution. If we also knew lambda, that would be easy with
+the approach above, but we don't. So, instead, we estimate the
+value of lambda using the MLE:
+
+```{r}
+lhat <- mean(y)
+lhat
+```
+
+Another difficulty is that we have a few high counts that are
+fairly rare. We will use a standard technique of collapsing all
+of the large values into a collective category (here, I chose
+the value of 4 and above). The expected probabilities would then
+be:
+
+```{r}
+ptilde <- dpois(seq(0, 4), lambda = lhat)
+ptilde[length(ptilde)] <- 1 - sum(ptilde[-length(ptilde)])
+ptilde
+```
+
+And the expected counts:
+
+```{r}
+e <- ptilde * n
+e
+```
+
+The observed counts are as follows, collapsing the largest values
+in a catch-all finaly category:
+
+```{r}
+x <- as.numeric(table(y))
+x[5] <- sum(x[seq(5, length(x))])
+x <- x[seq(1, 5)]
+x
+```
+
+Now, we just compute G as before:
+
+```{r}
+G <- -2 * sum( x * log(e / x) )
+G
+```
+
+How many degrees of freedom are there? Well, we have 5 categories,
+so our parameter space (big Theta) has 5-1 degrees of freedom.
+This time, however, the null hypothesis has 1 degree of freedom
+(corresponding to estimating the value of lambda). So, the degrees
+of freedom of the chi-squared should be (5 - 1) - 1, or 3. Here
+is the correct computation of the p-value:
+
+```{r}
+1 - pchisq(G, df = length(x) - 1 - 1)
+```
+
+So, as desired since we did generate this from a Poisson 
+distribution, we would fail to reject the null hypothesis.
+
+# 6. Goodness of Fit: Many Simulations
+
+Let's do what we did above again: simulate this many times.
+
+```{r}
+N <- 10000
+n <- 200
+G <- rep(NA, N)
+
+temp <- rep(NA, N)
+for (j in seq_along(G))
+{
+  y <- rpois(n, lambda = 2)
+  lhat <- mean(y)
+  ptilde <- dpois(seq(0, 4), lambda = lhat)
+  ptilde[length(ptilde)] <- 1 - sum(ptilde[-length(ptilde)])
+  e <- ptilde * n
+  x <- as.numeric(table(y))
+  x[5] <- sum(x[seq(5, length(x))])
+  x <- x[seq(1, 5)]
+  G[j] <- -2 * sum( x * log(e / x) )
+}
+```
+
+The histogram does generally follow the chi-squared distribution
+with 6 degrees of freedom:
+
+```{r}
+hist(G, breaks = 50, probability = TRUE, col = "white")
+curve(dchisq(x, df = 5 - 1 - 1),
+      from = min(G), to = max(G), add = TRUE, col = "red")
+```
+
+And the probability of falsely rejecting the null hypothesis,
+again, is as expected.
+
+```{r}
+mean((1 - pchisq(G, df = 3)) < 0.05)
+```
+
+# 7. Goodness of Fit: Zero-Inflated Poisson
+
+Let's do one last simulation, this time jumping right to the
+larger version. Here, we will generate data from the zero-inflated
+Poisson distribution (or ZIP): it's like a Poisson, but some 
+percentage of the time (we will use 10%) we artificially convert
+the value to zero. Let's see if we can detect this in the 
+simulation:
+
+```{r}
+N <- 10000
+n <- 200
+G <- rep(NA, N)
+
+temp <- rep(NA, N)
+for (j in seq_along(G))
+{
+  y <- rpois(n, lambda = 2)
+  y[runif(length(y)) < 0.1] <- 0
+  lhat <- mean(y)
+  ptilde <- dpois(seq(0, 4), lambda = lhat)
+  ptilde[length(ptilde)] <- 1 - sum(ptilde[-length(ptilde)])
+  e <- ptilde * n
+  x <- as.numeric(table(y))
+  x[5] <- sum(x[seq(5, length(x))])
+  x <- x[seq(1, 5)]
+  G[j] <- -2 * sum( x * log(e / x) )
+}
+```
+
+How often do we (correctly, in this case) reject the null hypothesis
+that this is a proper Poisson distribution:
+
+```{r}
+mean((1 - pchisq(G, df = 3)) < 0.05)
+```
+
+A little more than half of the time. Not nearly are powerful as
+in the die-roll case, but the ZIP with 10% converted to zero is
+not nearly as different as the Poisson in this case. If we increased
+the percentage or increased lambda, the difference would be 
+easier to detect.
