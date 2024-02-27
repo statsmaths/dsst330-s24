@@ -1,0 +1,411 @@
+---
+title: "Notebook 12"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+## 1. British National Corpus (BNC)
+
+The British National Corpus, or BNC, is a very well-known collection
+of texts used in linguistics research. The full set contains a set
+of texts that amount to 100 million words from a variety of different
+sources. In order to balance our ability to get some interesting
+results while running on most machines, I have taken a smaller sample
+of the dataset and provided it here for us to use. We can load the
+data as follows:
+
+```{r}
+bnc <- read_csv("../data/bnc_written_sample.csv.bz2")
+bnc
+```
+
+You can see that the dataset consists of one row per word or punctuation
+mark, with the text running one word after another down the rows. There
+are a few metadata columns providing information about the corresponding
+parts of speech of the text.
+
+## 2. Testing One Table
+
+Let's start by creating a contingency table that looks at each 
+occurrence of the word "boy" or "girl" in the dataset, and tabulates
+whether the word right before is "good" or something else. The
+following code produces such a table.
+
+```{r}
+x11 <- sum(bnc$hw == "good" & lead(bnc$hw) == "boy", na.rm=TRUE)
+x12 <- sum(bnc$hw == "good" & lead(bnc$hw) == "girl", na.rm=TRUE)
+x21 <- sum(bnc$hw != "good" & lead(bnc$hw) == "boy", na.rm=TRUE)
+x22 <- sum(bnc$hw != "good" & lead(bnc$hw) == "girl", na.rm=TRUE)
+
+xtab <- matrix(c(x11, x12, x21, x22), ncol = 2, byrow = TRUE)
+colnames(xtab) <- c("boy", "girl")
+rownames(xtab) <- c("good", "!good")
+xtab
+```
+
+Make sure that the output, if not perhaps the entire code, makes
+sense to you. For example, there are 4 occurrences of the phrase
+"good boy" but 18 of the phrase "good girl".
+
+We can compute the expected counts under the null hypothesis that
+the usage of "good" is independent of whether the next word is
+"boy" or "girl".
+
+```{r}
+rsum <- apply(xtab, 1, sum)
+csum <- apply(xtab, 2, sum)
+ecount <- rsum[row(xtab)] * csum[col(xtab)] / sum(xtab)
+ecount <- matrix(ecount, ncol = 2)
+dimnames(ecount) <- dimnames(xtab)
+ecount
+```
+
+Now, computing the G score is straightforward:
+
+```{r}
+G <- -2 * sum( xtab * log(ecount / xtab))
+G
+```
+
+This is a 2x2 table and therefore should have 1 degree of freedom
+under the null hypothesis. Here is the p-value:
+
+```{r}
+1 - pchisq(G, df = 1)
+```
+
+Which indicates that there is strong evidence that the rows and
+columns are not independent.
+
+## 3. Testing Many Tables
+
+One of the most interesting things that we can do with linguistic
+contingency tables is to compute the G-scores for many combinations
+and then look at which scores are the largest. Let's start by 
+continuing the previous example, but this time we will find all
+of the words that are most commonly followed by "boy" or "girl".
+
+```{r}
+temp <- bnc |>
+  mutate(hw_next = lead(hw)) |>
+  filter(hw_next %in% c("boy", "girl")) |>
+  filter(pos == "ADJ") |>
+  group_by(hw, hw_next) |>
+  summarize(n = n()) |>
+  ungroup() |>
+  pivot_wider(names_from = "hw_next", values_from = "n", values_fill = 0) |>
+  mutate(total = girl + boy) |>
+  arrange(desc(total))
+temp
+```
+
+Now, we will just do the same thing we did about with "good" 
+using each of the most frequent words in the above table. This
+might take a minute or two to run.
+
+```{r}
+df <- tibble(
+  word = temp$hw[1:50],
+  category = NA,
+  gscore = NA,
+  pvalue = NA
+)
+
+for (j in seq_along(df$word))
+{
+  w <- temp$hw[j]
+  
+  # create the observed counts
+  x11 <- sum(bnc$hw == w & lead(bnc$hw) == "boy", na.rm=TRUE)
+  x12 <- sum(bnc$hw == w & lead(bnc$hw) == "girl", na.rm=TRUE)
+  x21 <- sum(bnc$hw != w & lead(bnc$hw) == "boy", na.rm=TRUE)
+  x22 <- sum(bnc$hw != w & lead(bnc$hw) == "girl", na.rm=TRUE)
+  xtab <- matrix(c(x11, x12, x21, x22), ncol = 2, byrow = TRUE)
+
+  # create expected counts
+  rsum <- apply(xtab, 1, sum)
+  csum <- apply(xtab, 2, sum)
+  ecount <- rsum[row(xtab)] * csum[col(xtab)] / sum(xtab)
+  ecount <- matrix(ecount, ncol = 2)
+
+  # find dom. category, g-score, p-value
+  df$category[j] <- if_else(xtab[1] > ecount[1], "boy", "girl")
+  df$gscore[j] <- -2 * sum( xtab * log(ecount / xtab))
+  df$pvalue[j] <- 1 - pchisq(df$gscore[j], df = 1)
+}
+df <- filter(df, !is.na(pvalue))
+```
+
+Okay, now let's look at the terms with the high G-scores that
+are associated with being more likely to be paired with "girl"
+than "boy":
+
+```{r}
+df |>
+  filter(category == "girl") |>
+  arrange(desc(gscore))
+```
+
+Likewise, here are the terms most strongly associted with "boy":
+
+```{r}
+df |>
+  filter(category == "boy") |>
+  arrange(desc(gscore))
+```
+
+Do you see any interesting examples or patterns here? Really take
+a moment to think about this!
+
+## 4. Near Synonyms
+
+We are going to more-or-less repeat the idea from the previous
+section a few different times. First, let's look at two words
+that have similar meanings: "big" and "large". What words 
+commonly come right after them (usually these will be the nouns
+they modify):
+
+```{r}
+wset <- c("big", "large")
+
+temp <- bnc |>
+  filter(!is.na(hw)) |>
+  mutate(hw_prev = lag(hw)) |>
+  filter(pos == "SUBST") |>     # only look at nouns
+  filter(hw_prev %in% wset) |>
+  group_by(hw, hw_prev) |>
+  summarize(n = n()) |>
+  ungroup() |>
+  pivot_wider(names_from = "hw_prev", values_from = "n", values_fill = 0)
+
+temp$total <- temp[[2]] + temp[[3]]
+temp <- temp[(temp[[2]] > 0) & (temp[[3]] > 0),]
+temp <- arrange(temp, desc(total))
+temp
+```
+
+We will run the same type of contingency tables on the 50 most
+frequently associated word with each of these:
+
+```{r}
+df <- tibble(
+  word = temp$hw[seq(1, min(50, nrow(temp)))],
+  category = NA,
+  gscore = NA,
+  pvalue = NA
+)
+
+for (j in seq_along(df$word))
+{
+  w <- temp$hw[j]
+
+  # create the observed counts
+  x11 <- sum(bnc$hw == w & lag(bnc$hw) == wset[1], na.rm=TRUE)
+  x12 <- sum(bnc$hw == w & lag(bnc$hw) == wset[2], na.rm=TRUE)
+  x21 <- sum(bnc$hw != w & lag(bnc$hw) == wset[1], na.rm=TRUE)
+  x22 <- sum(bnc$hw != w & lag(bnc$hw) == wset[2], na.rm=TRUE)
+  xtab <- matrix(c(x11, x12, x21, x22), ncol = 2, byrow = TRUE)
+
+  # create expected counts
+  rsum <- apply(xtab, 1, sum)
+  csum <- apply(xtab, 2, sum)
+  ecount <- rsum[row(xtab)] * csum[col(xtab)] / sum(xtab)
+  ecount <- matrix(ecount, ncol = 2)
+
+  # find dom. category, g-score, p-value
+  df$category[j] <- if_else(xtab[1] > ecount[1], wset[1], wset[2])
+  df$gscore[j] <- -2 * sum( xtab * log(ecount / xtab))
+  df$pvalue[j] <- 1 - pchisq(df$gscore[j], df = 1)
+}
+df <- filter(df, !is.na(pvalue))
+```
+
+Here are the words most highly associated with "big" vs. "large":
+
+```{r}
+df |>
+  filter(category == wset[1]) |>
+  arrange(desc(gscore))
+```
+
+And those most associated with "large":
+
+```{r}
+df |>
+  filter(category == wset[2]) |>
+  arrange(desc(gscore))
+```
+
+Again, really take a few minutes to study the output. Think to
+yourself: would you use the "other" word to modify the words with
+the highest G-scores? And if so, in what situations? Can
+you come up with a general rule that describes the top terms?
+
+## 5. Gendered Verbs
+
+Let's move to a similar example of something I have studied 
+quite a bit in different contexts: What verbs are associated 
+with the pronouns "she" and "he"? Here are the terms to study:
+
+```{r}
+wset <- c("she", "he")
+
+temp <- bnc |>
+  filter(!is.na(hw)) |>
+  mutate(hw_prev = lag(hw)) |>
+  filter(pos == "VERB") |>
+  filter(hw_prev %in% wset) |>
+  group_by(hw, hw_prev) |>
+  summarize(n = n()) |>
+  ungroup() |>
+  pivot_wider(names_from = "hw_prev", values_from = "n", values_fill = 0)
+
+temp$total <- temp[[2]] + temp[[3]]
+temp <- temp[(temp[[2]] > 0) & (temp[[3]] > 0),]
+temp <- arrange(temp, desc(total))
+temp
+```
+
+And now we compute the G-scores:
+
+```{r}
+df <- tibble(
+  word = temp$hw[seq(1, min(200, nrow(temp)))],
+  category = NA,
+  gscore = NA,
+  pvalue = NA
+)
+
+for (j in seq_along(df$word))
+{
+  w <- temp$hw[j]
+
+  # create the observed counts
+  x11 <- sum(bnc$hw == w & lag(bnc$hw) == wset[1], na.rm=TRUE)
+  x12 <- sum(bnc$hw == w & lag(bnc$hw) == wset[2], na.rm=TRUE)
+  x21 <- sum(bnc$hw != w & lag(bnc$hw) == wset[1], na.rm=TRUE)
+  x22 <- sum(bnc$hw != w & lag(bnc$hw) == wset[2], na.rm=TRUE)
+  xtab <- matrix(c(x11, x12, x21, x22), ncol = 2, byrow = TRUE)
+
+  # create expected counts
+  rsum <- apply(xtab, 1, sum)
+  csum <- apply(xtab, 2, sum)
+  ecount <- rsum[row(xtab)] * (csum[col(xtab)] / sum(xtab))
+  ecount <- matrix(ecount, ncol = 2)
+
+  # find dom. category, g-score, p-value
+  df$category[j] <- if_else(xtab[1] > ecount[1], wset[1], wset[2])
+  df$gscore[j] <- -2 * sum( xtab * log(ecount / xtab))
+  df$pvalue[j] <- 1 - pchisq(df$gscore[j], df = 1)
+}
+df <- filter(df, !is.na(pvalue))
+```
+
+Here are the terms associated with "she":
+
+```{r}
+df |>
+  filter(category == wset[1]) |>
+  arrange(desc(gscore))
+```
+
+And now the terms associated with "he":
+
+```{r}
+df |>
+  filter(category == wset[2]) |>
+  arrange(desc(gscore))
+```
+
+Do you see any general patterns? Do these map onto or cut 
+against any gender (mis)perceptions that you might know in
+modern society? Can you summarize the patterns in any way?
+
+## 6. Near Synonyms: Your Turn
+
+I've copied the "Near Synonyms" code again below. Modify the
+word sets by picking two near synonym adjectives of your own
+choosing (try to think of some relatively common words so that
+there is enough data). Run all of the code and see whether the
+results turn up anything interesting.
+
+```{r}
+wset <- c("big", "large")
+
+temp <- bnc |>
+  filter(!is.na(hw)) |>
+  mutate(hw_prev = lag(hw)) |>
+  filter(pos == "SUBST") |>     # only look at nouns
+  filter(hw_prev %in% wset) |>
+  group_by(hw, hw_prev) |>
+  summarize(n = n()) |>
+  ungroup() |>
+  pivot_wider(names_from = "hw_prev", values_from = "n", values_fill = 0)
+
+temp$total <- temp[[2]] + temp[[3]]
+temp <- temp[(temp[[2]] > 0) & (temp[[3]] > 0),]
+temp <- arrange(temp, desc(total))
+temp
+```
+
+The G-scores (should not have to change anything here):
+
+```{r}
+df <- tibble(
+  word = temp$hw[seq(1, min(50, nrow(temp)))],
+  category = NA,
+  gscore = NA,
+  pvalue = NA
+)
+
+for (j in seq_along(df$word))
+{
+  w <- temp$hw[j]
+
+  # create the observed counts
+  x11 <- sum(bnc$hw == w & lag(bnc$hw) == wset[1], na.rm=TRUE)
+  x12 <- sum(bnc$hw == w & lag(bnc$hw) == wset[2], na.rm=TRUE)
+  x21 <- sum(bnc$hw != w & lag(bnc$hw) == wset[1], na.rm=TRUE)
+  x22 <- sum(bnc$hw != w & lag(bnc$hw) == wset[2], na.rm=TRUE)
+  xtab <- matrix(c(x11, x12, x21, x22), ncol = 2, byrow = TRUE)
+
+  # create expected counts
+  rsum <- apply(xtab, 1, sum)
+  csum <- apply(xtab, 2, sum)
+  ecount <- rsum[row(xtab)] * csum[col(xtab)] / sum(xtab)
+  ecount <- matrix(ecount, ncol = 2)
+
+  # find dom. category, g-score, p-value
+  df$category[j] <- if_else(xtab[1] > ecount[1], wset[1], wset[2])
+  df$gscore[j] <- -2 * sum( xtab * log(ecount / xtab))
+  df$pvalue[j] <- 1 - pchisq(df$gscore[j], df = 1)
+}
+df <- filter(df, !is.na(pvalue))
+```
+
+Here are the words most highly associated with your first term:
+
+```{r}
+df |>
+  filter(category == wset[1]) |>
+  arrange(desc(gscore))
+```
+
+And those most associated with your second term:
+
+```{r}
+df |>
+  filter(category == wset[2]) |>
+  arrange(desc(gscore))
+```
+
+If you have time and the counts are small or the results are 
+not very interesting, try to think of some different pairs of
+words.

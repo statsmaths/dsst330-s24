@@ -1,0 +1,296 @@
+---
+title: "Notebook 13"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+## 1. Adding the Chi-squared test
+
+We will load BNC again today:
+
+```{r}
+bnc <- read_csv("../data/bnc_written_sample.csv.bz2")
+bnc
+```
+
+Let's start with the same table we had last time looking at
+the relationship between "good" and "boy"/"girl". Here is the
+table of counts:
+
+```{r}
+x11 <- sum(bnc$hw == "good" & lead(bnc$hw) == "boy", na.rm=TRUE)
+x12 <- sum(bnc$hw == "good" & lead(bnc$hw) == "girl", na.rm=TRUE)
+x21 <- sum(bnc$hw != "good" & lead(bnc$hw) == "boy", na.rm=TRUE)
+x22 <- sum(bnc$hw != "good" & lead(bnc$hw) == "girl", na.rm=TRUE)
+
+xtab <- matrix(c(x11, x12, x21, x22), ncol = 2, byrow = TRUE)
+colnames(xtab) <- c("boy", "girl")
+rownames(xtab) <- c("good", "!good")
+xtab
+```
+
+And here are the table of expected counts under the null-hypothesis
+of independent:
+
+```{r}
+rsum <- apply(xtab, 1, sum)
+csum <- apply(xtab, 2, sum)
+ecount <- rsum[row(xtab)] * csum[col(xtab)] / sum(xtab)
+ecount <- matrix(ecount, ncol = 2)
+dimnames(ecount) <- dimnames(xtab)
+ecount
+```
+
+As before, here is the G-score:
+
+```{r}
+G <- -2 * sum( xtab * log(ecount / xtab))
+G
+```
+
+The chi-squared score can also be computed using the same 
+values:
+
+```{r}
+CS <- sum( (xtab - ecount)^2 / ecount)
+CS
+```
+
+Notice that they are actually quite similar! They should both
+have the same chi-squared distribution under H0 with one degree
+of freedom. 
+
+## 2. Gendered Verbs
+
+Now, how similar are these scores in general? Let's check with
+the gender verbs test. First, we grab the terms:
+
+```{r}
+wset <- c("she", "he")
+
+temp <- bnc |>
+  filter(!is.na(hw)) |>
+  mutate(hw_prev = lag(hw)) |>
+  filter(pos == "VERB") |>
+  filter(hw_prev %in% wset) |>
+  group_by(hw, hw_prev) |>
+  summarize(n = n()) |>
+  ungroup() |>
+  pivot_wider(names_from = "hw_prev", values_from = "n", values_fill = 0)
+
+temp$total <- temp[[2]] + temp[[3]]
+temp <- temp[(temp[[2]] > 0) & (temp[[3]] > 0),]
+temp <- arrange(temp, desc(total))
+temp
+```
+
+And now we compute the G-scores and chi-squared scores:
+
+```{r}
+df <- tibble(
+  word = temp$hw[seq(1, min(200, nrow(temp)))],
+  category = NA,
+  gscore = NA,
+  pval_g = NA,
+  chisq = NA,
+  pval_c = NA
+)
+
+for (j in seq_along(df$word))
+{
+  w <- temp$hw[j]
+
+  # create the observed counts
+  x11 <- sum(bnc$hw == w & lag(bnc$hw) == wset[1], na.rm=TRUE)
+  x12 <- sum(bnc$hw == w & lag(bnc$hw) == wset[2], na.rm=TRUE)
+  x21 <- sum(bnc$hw != w & lag(bnc$hw) == wset[1], na.rm=TRUE)
+  x22 <- sum(bnc$hw != w & lag(bnc$hw) == wset[2], na.rm=TRUE)
+  xtab <- matrix(c(x11, x12, x21, x22), ncol = 2, byrow = TRUE)
+
+  # create expected counts
+  rsum <- apply(xtab, 1, sum)
+  csum <- apply(xtab, 2, sum)
+  ecount <- rsum[row(xtab)] * (csum[col(xtab)] / sum(xtab))
+  ecount <- matrix(ecount, ncol = 2)
+
+  # find dom. category, g-score, p-value
+  df$category[j] <- if_else(xtab[1] > ecount[1], wset[1], wset[2])
+  df$gscore[j] <- -2 * sum( xtab * log(ecount / xtab))
+  df$pval_g[j] <- 1 - pchisq(df$gscore[j], df = 1)
+  df$chisq[j] <- sum( (xtab - ecount)^2 / ecount )
+  df$pval_c[j] <- 1 - pchisq(df$chisq[j], df = 1)
+}
+df <- filter(df, !is.na(pval_g))
+```
+
+Here are the terms associated with "she". Notice that the chi-squared
+values are also mostly ordered as well.
+
+```{r}
+df |>
+  filter(category == wset[1]) |>
+  arrange(desc(gscore))
+```
+
+And, similarly, for the "he" case:
+
+```{r}
+df |>
+  filter(category == wset[2]) |>
+  arrange(desc(gscore))
+```
+
+And, in fact, looking at a plot of the two scores, we see that
+(despite having somewhat different forms), the two scores are
+highly correlated:
+
+```{r}
+df |>
+  ggplot(aes(gscore, chisq)) +
+    geom_point() +
+    scale_x_log10() +
+    scale_y_log10()
+```
+
+So, in fact, there really isn't a huge different based on which
+test we use. I still prefer the G-test because it makes more 
+intuitive sense, particularly when the null hypothesis is not
+true and we are using it a measurement of signal strength.
+
+## 3. Multiple Hypothesis Testing
+
+There is one issue with all of our analyses so far. I hope we 
+can discuss this more later in the semester, but may run out 
+of time, so let's quickly see the issue here. The chi-squared
+scores and G-scores are all fine to use as measurements of 
+effect sizes across many different combinations of words. However,
+the definitions of the p-values (that they have a certain distribution
+under H0) is only valid when we are looking at a single p-value.
+If we do a lot of tests and cherry-pick the best p-values, the
+results are no longer valid. Think about it this way: we know
+that under H0 we will get a p-value less than 0.05 about 1 in
+20 times that we run an experiment. So, if we test 20 things,
+even if none are in fact significant, we would expected about one
+of these on average to have a "significant" result. Thankfully,
+there is a way to correct for this by adjusting the p-values by
+a factor. The simple, but overly conservative approach, is just
+to multiple the p-values by the number of tests. A better technique
+is called the Holm-Bonferroni method. We can apply this in R 
+using the function `p.adjust`, as follows:
+
+```{r}
+df |>
+  mutate(
+    pval_g = p.adjust(pval_g),
+    pval_c = p.adjust(pval_c)
+  ) |>
+  arrange(pval_g)
+```
+
+Now, all the p-values are valid, even if we cherry-pick the
+strongest relationships. Are some of the tests still significant
+even after the adjustment?
+
+## 4. Zipf's Law
+
+There is a well-known result in linguistics research called 
+Zipf's Law, or in the more general case, the Zipf–Mandelbrot law.
+This roughly says that the frequency of the most common words
+in a corpus should be proportional to the rank of the words in
+the corpus. So, in other words, the most common word is about
+twice as frequent as the second most common word, three times as
+common as the third most common word, four times as common as 
+the fourth most common word, and so forth. Let's see if we can
+test if the BNC follows this law. We start with grabing the 100
+most common terms:
+
+```{r}
+temp <- bnc |>
+  mutate(text = tolower(text)) |>
+  filter(!is.na(hw)) |>
+  group_by(text) |>
+  summarize(x = n()) |>
+  arrange(desc(x)) |>
+  slice_head(n = 100)
+
+temp 
+```
+
+To determine the expected probabilities, we need to determine 
+the two unknown parameters in the Zipf–Mandelbrot law. I used
+another R package that I did not have you install to determine
+that the values of these parameters are about 0.7 and 1.0. So,
+here are the p-tilde values that define the best model under 
+the null-hypothesis that the data follow this law:
+
+```{r}
+ptilde <- 1 / (seq_len(100) + 0.7)^1
+ptilde <- ptilde / sum(ptilde)
+ptilde
+```
+
+Now, we get the expected counts:
+
+```{r}
+ecount <- ptilde * sum(temp$x)
+ecount
+```
+
+And compute the G-score:
+
+```{r}
+G <- -2 * sum( temp$x * log(ecount / temp$x))
+G
+```
+
+And the chi-squared score:
+
+```{r}
+C <- sum((temp$x - ecount)^2 / ecount)
+C
+```
+
+These distributions should be a chi-squared with 100 - 3 
+degrees of freedom (one lost by the final probability and the
+others lost by the two parameters estimated in the
+Zipf–Mandelbrot law).
+
+```{r}
+1 - pchisq(G, df = 100 - 2)
+```
+
+So, the p-value is very small and the G-score/chi-squared value
+are both very large. Does this mean the Zipf–Mandelbrot law is
+false? Well, sort-of. Let's plot the expected counts against the
+observed counts:
+
+```{r}
+temp$ecount <- ecount
+temp |>
+  ggplot(aes(x, ecount)) +
+    geom_point(color = "grey50") +
+    geom_abline(color = "olivedrab", linewidth = 1) +
+    geom_text_repel(aes(label = text), data = temp[c(1:25, 100),]) +
+    labs(x = "Observed Count", y = "Expected Count (Zipfs Law)") +
+    scale_x_log10() +
+    scale_y_log10()
+```
+
+You can see that the "law" is not perfect, but is far from
+completely invalid. In fact, as a two-parameter model for 
+describing 100 word counts, it actually works really well!
+
+Generally with real data, if we have enough observations we will
+reject almost any null-hypothesis (remember the common phrase
+that "all models are wrong"?). We should really look closer
+though to figure out if the effect sizes are meaningful. We will
+talk more about these issues in the third and final part of the
+course as we think about the philosophical and methodological
+implications of the techniques we have been developing.
