@@ -1,0 +1,62 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 16}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Consider a prior distribution $P \sim Beta(\alpha, \beta)$ for some fixed
+$\alpha$ and $\beta$ for a likelihood function $X|P \sim Bin(n, P)$. Derive
+the (a) prior distribution and (b) the Bayesian point estimator.
+
+\textbf{2}. Consider observing $X \sim Bin(n, p)$. We know that the MLE estimator of $p$ is
+given by $\hat{p}_{MLE} = X / n$. The Binomial comes from doing $n$ Bernoulli
+trials and adding the number of 1s. Consider creating a new $Y$ in which we 
+artificially augment the data $X$ by adding (in effect) an extra 0 and an extra
+1. In other words, we create a $Y = X + 1$ with the assumption that
+$Y \sim Bin(n+2, p)$. What is the MLE of $p$ using the data from the augmented
+data $Y$? Where have you seen this before?
+
+\textbf{3}. Consider your solution to the previous two questions. If $\alpha$ and $\beta$
+are non-negative integers, how could you describe the Bayesian estimator based
+on adding data to $X$? 
+
+\textbf{4}. The standard uniform distribution is equivalent to $Beta(1,1)$. In the notes
+I started by implicitly assuming that this was a fairly neutral starting
+assumption for indicating that we do not have any strong prior knowledge of
+$P$. Based on your results above, what would actually seem to be the best
+netural position if we do not want the prior to have a strong influence on 
+the posterior mean?
+
+
+\end{document}

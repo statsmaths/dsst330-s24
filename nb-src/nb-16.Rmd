@@ -1,0 +1,68 @@
+---
+title: "Notebook 13"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+## 1. Bayesian Estimator for Binomial Probability
+
+Following the class notes, here is a visualization of the 
+posterior probability for the estimation of the proportion
+p from a binomial sample. You can play around with the values
+of the sample size (N) and the count of 1s (X), watching how
+the posterior changes.
+
+```{r}
+N <- 5
+X <- N * (0.25)
+curve(dbeta(x, shape1 = X + 1, shape2 = N - X + 1),
+      from = 0, to = 1, cex = 2, n = 1000)
+abline(v = X / N, col = "red")
+```
+
+You should see that as N grows, the probability distribution
+begins to move from a uniform distribution (the prior) to a
+distribution concentrated on the mean.
+
+## 2. Credible Region
+
+Let's create an actual sample of data from a hypothetical
+binomial distribution, where 25% of data are equal to 1 and
+75% of the data are equal to 0.
+
+```{r}
+N <- 100
+x <- rep(c(0, 1), c(N * (1-0.25), N * (0.25)))
+x
+```
+
+The T-test function, as we know, can give a confidence interval
+based on the T pivot statistic:
+
+```{r}
+t.test(x)
+```
+
+We can, alternatively, use our Bayesian approach to find a 
+credible region for the value p:
+
+```{r}
+X <- sum(x)
+cint <- c(
+  qbeta(0.05/2, shape1 = X + 1, shape2 = N - X + 1),
+  qbeta(1 - 0.05/2, shape1 = X + 1, shape2 = N - X + 1)
+)
+sprintf("95%% Confidence Interval: p ∈ [%.03f, %.03f]", cint[1], cint[2])
+```
+
+Notice that the value is very similar to the one based on the
+T-test. The biggest advantage is that we have a much less 
+complex way of describing the interpretation of the credible
+interval. 
