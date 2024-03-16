@@ -1,0 +1,68 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 14 (Solutions)}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Consider a simple linear regression where we know that $b_0 = 0$. You can write
+$b_1 \rightarrow b$ to simplify the notation. Write down the likelihood function
+for the sample. Do not yet simplify.
+
+\textit{Solution:} TODO
+
+\textbf{2}. Now, (a) compute the log-likelihood function and simplify. (b) Without doing any
+calculus (that is, just looking at the function), maximizing the log-likelihood
+with respect to $b$ is equivalent to minimizing what quantity in terms of $y_i$,
+$x_i$, and $b$? Note: Ask me about the correct solution before proceeding. 
+
+\textit{Solution:} TODO
+
+\textbf{3}. Take the derivative of the quantity that you had in part (b) from the previous
+question with respect to the parameter $b$. Set this equal to zero to get the 
+MLE.
+
+\textit{Solution:} TODO
+
+\textbf{4}. What is the distribution of the MLE of $b$?
+
+\textit{Solution:} TODO
+
+\textbf{5}. Go back to the full log-likelihood function. Take the derivative with respect
+to $\sigma^2$ (remember, this is a single parameter, not the square of a parameter).
+Set this to zero and solve to get the MLE of $\sigma^2$.
+
+\textit{Solution:} TODO
+
+
+\end{document}
