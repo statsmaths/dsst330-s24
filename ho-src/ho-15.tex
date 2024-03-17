@@ -41,12 +41,12 @@ sample of size $n$ denoted by $Y_1, \ldots, Y_n$ where
 \begin{align*}
 Y_i \sim N(\sum_{j} x_{i, j} \cdot b_j, \, \sigma^2)
 \end{align*}
-For some unknown constants $b_1, \ldots, b_j$, and $\sigma^2$. We can
+For some unknown constants $b_1, \ldots, b_p$, and $\sigma^2$. We can
 write the expected values of all of the observations as a single equation
 as follows:
 \begin{align*}
 \mathbb{E} \left(\begin{array}{c}Y_1\\ Y_2\\ \vdots\\ Y_n\end{array}\right) &=
-  \left(\begin{array}{cccc}x_{1,1}&x_{2,1}&\cdots&x_{1,p}\\
+  \left(\begin{array}{cccc}x_{1,1}&x_{1,2}&\cdots&x_{1,p}\\
                            x_{2,1}&\ddots&&x_{2,p}\\
                            \vdots&&\ddots&\vdots\\
                            x_{n,1}&x_{n,2}&\cdots&x_{n,p}\\\end{array}\right)

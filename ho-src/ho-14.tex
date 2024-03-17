@@ -34,20 +34,22 @@
 \noindent
 \underline{Setup}
 Let $x_1, \ldots, x_n$ be a set of fixed real numbers.
-Consider observing a independent random sample of size $n$ denoted
+Consider observing an independent random sample of size $n$ denoted
 by $Y_1, \ldots, Y_n$ where
 \begin{align*}
 Y_i \sim N(b_0 + b_1 \cdot x_i, \, \sigma^2)
 \end{align*}
 For some unknown constants $b_0$, $b_1$, and $\sigma^2$. So, while
-the observations are independent, they are not identically distributed.
+the observations are independent, they are not identically distributed
+because they have different means.
 This model is called a \textbf{(simple) linear regression}.\footnote{
   We will see the more general case of a linear regression in the next
   set of notes.
 }
 One can visualize the model as trying to fit a line with intercept $b_0$
 and slope $b_1$ to a plot with the $x_i$'s on the x-axis and the $Y_i$'s on
-the y-axis. 
+the y-axis. It is often called a \textit{best-fit line} in a non-technical
+context.
 
 \vspace*{12pt}
 
@@ -73,7 +75,12 @@ be computed as
 \widehat{b}_0 &= \bar{Y} -  \widehat{b}_1 \cdot \bar{x}
 \end{align*}
 If we define $\widehat{Y}_i$ to be $\widehat{b}_0 + \widehat{b}_1 \cdot x_i$,
-the \textbf{fitted value} of $Y$, then the MLE of the variance is
+the \textbf{fitted value} of $Y$, then we can write an unbiased 
+variation of the MLE of the variance as:\footnote{
+  The actual MLE will have a denominator of $n$, but this will be
+  biased, which we can fix by multiplying by $n/(n-2)$, which is
+  usually done.
+}
 \begin{align*}
 \widehat{\sigma^2} &= \frac{1}{n-2} \sum_i (Y_i - \widehat{Y}_i)^2.
 \end{align*}

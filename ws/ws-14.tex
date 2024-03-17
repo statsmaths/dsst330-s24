@@ -42,17 +42,30 @@ for the sample. Do not yet simplify.
 \textbf{2}. Now, (a) compute the log-likelihood function and simplify. (b) Without doing any
 calculus (that is, just looking at the function), maximizing the log-likelihood
 with respect to $b$ is equivalent to minimizing what quantity in terms of $y_i$,
-$x_i$, and $b$? Note: Ask me about the correct solution before proceeding. 
+$x_i$, and $b$? (c) Why might it make sense to minimize this quantity?
+Note: Ask me about the correct solution before proceeding. 
 
 \textbf{3}. Take the derivative of the quantity that you had in part (b) from the previous
 question with respect to the parameter $b$. Set this equal to zero to get the 
 MLE.
 
-\textbf{4}. What is the distribution of the MLE of $b$?
+\textbf{4}. What obsevations will have the most influence on the estimate of the slope?
+Does this make sense?
 
-\textbf{5}. Go back to the full log-likelihood function. Take the derivative with respect
+\textbf{5}. What is the distribution of the MLE of $b$? Is the estimator unbiased? Under
+what conditions will it be consistent? Note: This will take several steps.
+
+\textbf{6}. Go back to the full log-likelihood function. Take the derivative with respect
 to $\sigma^2$ (remember, this is a single parameter, not the square of a parameter).
-Set this to zero and solve to get the MLE of $\sigma^2$.
+Set this to zero and solve to get the MLE of $\sigma^2$. Does this equation make
+sense to you?
+
+\textbf{7}. The MLE estimator for $\sigma^2$ is biased, but we can fix this by dividing by
+$n-1$ instead of $n$, just as we did with the one-sample mean. This unbiased
+version is independent of $\widehat{b}$. If we take this unbiased estimator and
+divide by $\sigma^2$, we will have a chi-squared distribution with $n-1$ degrees
+of freedom. Using this, create a pivot statistic that depends only on $b$ and not
+$\sigma^2$.
 
 
 \end{document}
