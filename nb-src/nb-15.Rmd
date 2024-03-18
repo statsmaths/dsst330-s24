@@ -1,0 +1,77 @@
+---
+title: "Notebook 14"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+Let's briefly look at a well-known, built-in dataset in R that
+records the fuel efficiency of a number of different types of 
+cars. The data has the average miles per gallon driving in both
+the city (lots of stops and slower speeds) and on the highway.
+
+```{r}
+mpg <- select(ggplot2::mpg, manufacturer, model, year, city = cty, highway = hwy)
+mpg
+```
+
+What is the relationship between the city and highway fuel
+efficiency? If we plot it, we see that the pattern closely 
+follows a roughly linear relationship between the two:
+
+```{r}
+mpg |>
+  ggplot(aes(city, highway)) +
+    geom_point()
+```
+
+We can visually add a linear regression line with the following:
+
+```{r}
+mpg |>
+  ggplot(aes(city, highway)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, formula = 'y ~ x')
+```
+
+If we want to learn the actual parameters of the regression model,
+the slope and intercept, we need to run the `lm` function 
+directly and summarize the output. Here is what that looks like:
+
+```{r}
+model <- lm(highway ~ city, data = mpg)
+summary(model)
+```
+
+The table gives the point estimate, the standard error (that's
+the part of the confidence interval without the t-critical value),
+the T-statistic testing the null hypothesis that the value is
+zero, and the corresponding p-value. To directly get confidence
+intervals, we can use the `confint` function as follows:
+
+```{r}
+confint(model, level = 0.02)
+```
+
+If you want to run a regression without an intercept, as on the
+worksheet, we can do this by adding a negative one to the 
+argument of the `lm` function:
+
+```{r}
+model <- lm(highway ~ city - 1, data = mpg)
+summary(model)
+```
+
+This is not as common as running one with an intercept. We will
+see more ways of extending this technique next time, as well as
+seeing how to interpret the bottom of the summary table.
+
+
+
+

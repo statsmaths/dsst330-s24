@@ -49,11 +49,11 @@ MLE.
 
 The derivative of the sum of squares is:
 \begin{align*}
-\frac{\partial}{\partial b} \sum_i (y_i - x_i b)^2 &= 2 \sum_i x_i \cdot (y_i - x_i b)
+\frac{\partial}{\partial b} \sum_i (y_i - x_i b)^2 &= -2 \sum_i x_i \cdot (y_i - x_i b)
 \end{align*}
 And solving for zero gives:
 \begin{align*}
-2 \sum_i x_i \cdot (y_i - x_i b) &= 0\\
+-2 \sum_i x_i \cdot (y_i - x_i b) &= 0\\
 \sum_i x_i \cdot y_i - x_i &= \sum_i x_i^2 \widehat{b} \\
 \frac{\sum_i x_i \cdot y_i}{\sum_i x_i^2} &= \widehat{b}.
 \end{align*}
@@ -146,7 +146,7 @@ T &= \frac{\frac{\widehat{b} - b}{\sqrt{\sigma^2 / \sum_i x_i^2}}}{
   \sqrt{ \frac{n-2}{n-2} \cdot \frac{1}{\sigma^2} \sum_i \widehat{y}_i^2 }
 } \\
 &=
-\frac{\widehat{b} - b}{\frac{\sum_i \widehat{y}_i^2}{\sum_i x_i^2}}.
+\frac{\widehat{b} - b}{\sqrt{\frac{\sum_i \widehat{y}_i^2}{\sum_i x_i^2}}}.
 \end{align*}
 
 
