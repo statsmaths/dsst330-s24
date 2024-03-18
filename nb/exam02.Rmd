@@ -1,0 +1,37 @@
+---
+title: "Exam 02"
+output:
+  html_document:
+    theme: simplex
+    highlight: pygments
+    css: "../css/note-style.css"
+---
+
+```{r, include=FALSE}
+source("../funs/funs.R")
+```
+
+This is just some space to use to compute the results for the
+take-home exam. Please do not hand this file in. I need the
+handwritten results on the page I handed out in class (or 
+printed copy if you lost the one I gave you)
+
+For the first set of questions, you could input it by filling
+in the four values here that I have set all to zero:
+
+```{r}
+tab <- matrix(c(0,0,0,0), ncol = 2)
+tab
+```
+
+And for the linear regression, here is a dataset that you could
+use by filling in the corresponding values of x and y.
+
+```{r}
+df <- tibble(
+  x = c(),
+  y = c()
+)
+df
+```
+
