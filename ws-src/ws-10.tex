@@ -46,8 +46,9 @@ We know that $\hat{\lambda} = \bar{x}$ for a Poisson MLE and have $\lambda_0 = 1
 from the null-hypothesis, so:
 \begin{align*}
 \Lambda
-&= 2 \cdot n \sum_i \left[ \bar{x} \log(\bar{x}) - \bar{x} - \bar{x} \log(1) + \lambda_0 \right] \\ 
-&= 2 \cdot n \sum_i \left[ \bar{x} \log(\bar{x}) - \bar{x} + \lambda_0 \right] \\ 
+&= 2 \cdot n \left[ \bar{x} \log(\bar{x}) - \bar{x} - \bar{x} \log(1) + \lambda_0 \right] \\ 
+&= 2 \cdot n \left[ \bar{x} \log(\bar{x}) - \bar{x} + \lambda_0 \right] \\ 
+&= 2 \cdot n \left[ \bar{x} \log(\bar{x}) - \bar{x} + 1 \right] \\ 
 \end{align*}
 And that's about all that we can do. 
 
