@@ -32,41 +32,85 @@
 \vspace*{18pt}
 
 \noindent
-Today, we will once again consider the task of estimating the 
-parameter $p$ from a random variable $X$ taken from a $Bin(n, p)$
-distribution with a known value of $n$. The approach, though,
-will be quite different than our previous attempts. 
+\textbf{Interpretation of Probability}
+Both the mathematical framework for probability that you learned in
+329 as well as most of the theoretical results in 330 are founded on
+a framework developed in a series of works by Andrey Kolmogorov
+(1925; 1931; 1933). While the mathematical framework is almost 
+universally accepted, there are several different interpretations
+of how the probability of an event should be understood as a model
+or reality. Many sources suggest that there are roughly four different
+families of interpretation:\footnote{
+  The philosophy of probability is a huge field. If you are interested
+  in learning more, I suggest starting with the excellent article on the
+  subject published by the \textit{Stanford Encyclopedia of Philosophy}.
+  I have included a few names and dates to help give some 
+  context, though note that these are just a few key works that fit into
+  longer histories and conversations that continue into the present day.
+}
+\begin{itemize}
+  \setlength\itemsep{0em}
+\item \textbf{na\"{i}ve}: also known as the classical interpretation;
+the probability of an event as the proportion of total outcomes in which
+this event occurs (Laplace 1799)
+\item \textbf{frequentist}: the probability of an event is the proportion
+of times it will occur in an infinite number of independent repetitions
+of an experiment (Poisson 1837; Bernoulli, 1713)
+\item \textbf{subjective}: the probability is a measurment of certainty;
+an extention of Boolean (true/false) logic (Bayes 1763; Laplace 1812)
+\item \textbf{propensity}: a physical definition based on causes
+(Pierce 1878; Popper 1954)
+\end{itemize}
+We started with the na\"{i}ve interpretation in 329, before largely
+using the frequentist interpretation throughout the remainder of the
+semester and up until now in 330. As I tried to explain in class last
+week, however, there are some challenges with the frequentist
+interpretation. Today, we will see how the subjective interpretation
+of probability leads to some novel approaches to statistical inference.
 
-The core novel idea behind Bayesian statistics can be summarized
-as this: use probability distributions to model our uncertainty in
-the unknown parameters of a distribution. So, say that before 
-observing any data, we think that any value of $p$ is equally
-likely. We could write this by defining our unknown parameter $P$
-to be a random variable with a uniform distribution:
+\vspace*{12pt}
+
+\noindent
+\textbf{Bayesian Estimation for Binomial}
+Using the frequentist interpretation of probability, we have treated
+our data ($X$) as a random variable defined by a distribution that has
+one or more fixed but unknown parameters. Our goal is to estimate
+features of the parameters through point estimators, confidence intervals,
+and/or hypothesis tests. The probabilistic properties of these tasks
+(for example, the bias of a point estimator or confidence level of a
+hypothesis test) are in terms of repeating an experiment many times;
+they do not say anything concrete about a particular run of an experiment.
+
+Subjective probabilities open the door to a very different approach:
+we can treat the unknown parameters as random variables as well, where
+probabilities indicate uncertainty rather than long-term frequencies.
+Today, we will see how this works with a specific case, before moving
+to a more general framework next time.
+
+Consider the task of estimating the parameter $p$ from a random variable
+$X$ taken from a $Bin(n, p)$ distribution with a known value of $n$.
+Let's assume that before observing any data, we think that any value
+of $p$ is equally likely. We could write this by defining our unknown
+parameter $p$ to be a random variable with a uniform distribution:
 \begin{align*}
-P \sim Unif(0, 1).
+p \sim Unif(0, 1).
 \end{align*}
 This is called the \textbf{prior distribution}, because it reflects
-our knowledge of $P$ prior to observing any data.\footnote{
-  As I have with some other cases, I am going to introduce the
-  terminology and notation of Bayesian estimation using a specific
-  example. How to extend this to other cases should be clear after
-  noting that the variables called $P$ and $X$ here may have different
-  names in other cases.
+our knowledge of $p$ prior to observing any data.
+Now, when describing the random variable $X$, we have to give its
+distribution conditioned on a specific value of the random variable $p$.
+That is, we need to write this:\footnote{
+  The distribution of $X|p$ is called the \textbf{likelihood}
+  following the notation from the MLE.
 }
-Now, when describing
-the random variable $X$, we have to give its distribution conditioned
-on a specific value of the random variable $p$. That is, we need to
-write this (which we call the \textbf{likelihood}, following the notation
-from the MLE):
 \begin{align*}
-X|P \sim Bin(n, P).
+X|p \sim Bin(n, p).
 \end{align*}
-Now, the important thing is describing our knowledge about $P$ \textit{after}
-observing the data. That is, we want to know the distribution of $P | X$.
+Now, the important thing is describing our knowledge about $p$ \textit{after}
+observing the data. That is, we want to know the distribution of $p | X$.
 Bayes rule tells us that we can calculate this as:
 \begin{align*}
-f_{P|X}(p|x) &= \frac{f_{X|P}(x|p) \times f_{P}(p)}{f_{X}(x)}.
+f_{p|X}(p|x) &= \frac{f_{X|p}(x|p) \times f_{p}(p)}{f_{X}(x)}.
 \end{align*}
 This quantity is called the \textbf{posterior distribution}. Determining
 the form of the posterior distribution is the key task in generating
@@ -74,64 +118,34 @@ Bayesian estimators. One simplifying step is to notice that the denominator
 does not depend on $p$, so we can replace it with a constant, adding it
 back later (if needed) by whatever number makes the posterior a proper
 distribution (in other words, it integrates to $1$). This gives the following
-standard form:
+standard form:\footnote{
+  I will try to keep the subscripts on the density functions $f$
+  for clarity in the notes. However, on the board I will almost always drop
+  them. Feel free to do the same in your work.
+}
 \begin{align*}
-f_{P|X}(p|x) &\propto \frac{f_{X|P}(x|p) \times f_{P}(p)}{f_{X}(x)}.
+f_{p|X}(p|x) &\propto f_{X|p}(x|p) \times f_{p}(p).
 \end{align*}
-I will try to keep the subscripts on the density functions $f$
-for clarity in the notes. However, on the board I will almost always drop
-them. Feel free to do the same in your work.
+When doing computations, you can always drop any additive or multiplicative
+factor that depends only on $X$ and not $p$.
 
 Now let's actually find the posterior distribution for this specific example.
 We have the following form of the density function (keep in mind that this
 is a function of p; we can remove any constants that depend only on $x$ and 
 $n$):
 \begin{align*}
-f_{P|X}(p|X) &\propto \binom{n}{x} \cdot p^{x} \cdot (1 - p)^{n-x} \\
-&\propto p^{x} \cdot (1 - p)^{1-x} \\
-&=p^{(x+1) - 1} \cdot (1 - p)^{(n-x+1) - 1}
+f_{p|X}(p|X) &\propto \binom{n}{x} \cdot p^{x} \cdot (1 - p)^{n-x} \cdot (1) \\
+&\propto p^{x} \cdot (1 - p)^{1-x} =p^{(x+1) - 1} \cdot (1 - p)^{(n-x+1) - 1}.
 \end{align*}
 The last step may seem unusual, but if you look at the distribution table 
 it becomes more clear. This is a Beta distribution, with $\alpha = (x+1)$
 and $\beta = (n-x+1)$. So, the posterior is given by:
 \begin{align*}
-P|X \sim Beta(x+1, n-x+1).
+p|X \sim Beta(x+1, n-x+1).
 \end{align*}
 This new distribution represents our knowledge and uncertainty about the
-parameter $P$.\footnote{
-  I have used a capital $P$ to stress that the parameter is now a
-  random variable. While I think this is more clear, and I will use 
-  it in the Binomial case in the worksheet, note that this is not a 
-  standard notation. Usually we just use the same letter we have used
-  throughout, with the change from constant to random variable being
-  implicit (and sometimes confusing before you get the hang of it).
-}
-
-While the entire distribution is the clearest picture of our knowledge of
-$P$, sometimes we need to convert our knowledge into a single best guess
-point estimator. The \textbf{Bayesian point estimator} is the expected value
-of the posterior distribution. So, using the table, here we have:
-\begin{align*}
-\hat{p}_{Bayes} &= \mathbb{E} [P|X] = \frac{x+1}{(x+1)+(n-x+1)} = \frac{x+1}{n + 2}.
-\end{align*}
-Notice that this limits the MLE in the limit of large $n$. Similarly, we
-can represent a version of a confidence interval for Bayesian statistics.
-A \textbf{credible interval} with credibility $1-\alpha$ for the parameter 
-$P$ can be constructed by finding fixed values $l$ and $u$ such that:
-\begin{align*}
-\mathbb{P}[l \leq P \leq u] &= 1 - \alpha.
-\end{align*}
-We can compute these values using R, as demonstrated in the notebook for 
-today. 
-
-\vspace*{24pt}
-
-\noindent
-There are many methodological and philosophical implications of using
-Bayesian methods in place of the frequentist techniques that we have
-so far used. I hope that we can discuss these more in the classes to
-come after we have some more experience with the mechanics of how to
-work with them computationally.
+parameter $P$. We will talk more next time about how we can use the posterior
+distribution to generate Bayesian point estimates and confidence intervals.
 
 \end{document}
 

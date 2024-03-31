@@ -35,13 +35,20 @@
 \vspace*{18pt}
 
 
-\textbf{1}. Consider a prior distribution $P \sim Beta(\alpha, \beta)$ for some fixed
-$\alpha$ and $\beta$ for a likelihood function $X|P \sim Bin(n, P)$. Derive
-the (a) prior distribution and (b) the Bayesian point estimator.
+\textbf{1}. Consider a prior distribution $p \sim Beta(\alpha, \beta)$ for some fixed
+$\alpha$ and $\beta$ for a likelihood given by $X|p \sim Bin(n, p)$. Derive
+the posterior distribution $p|X$.
 
 \textit{Solution:} TODO
 
-\textbf{2}. Consider observing $X \sim Bin(n, p)$. We know that the MLE estimator of $p$ is
+\textbf{2}. For reasons that we will explore in more next time, the Bayesian point estimator
+(the best single-number estimator) is the expected value of the posterior
+distribution. Under the set up from the previous question, what the Bayesian
+point estimator $\widehat{p}$ in terms of $X$, $\alpha$, and $\beta$?
+
+\textit{Solution:} TODO
+
+\textbf{3}. Consider observing $X \sim Bin(n, p)$. We know that the MLE estimator of $p$ is
 given by $\hat{p}_{MLE} = X / n$. The Binomial comes from doing $n$ Bernoulli
 trials and adding the number of 1s. Consider creating a new $Y$ in which we 
 artificially augment the data $X$ by adding (in effect) an extra 0 and an extra
@@ -51,16 +58,16 @@ data $Y$? Where have you seen this before?
 
 \textit{Solution:} TODO
 
-\textbf{3}. Consider your solution to the previous two questions. If $\alpha$ and $\beta$
+\textbf{4}. Consider your solution to the previous set of questions. If $\alpha$ and $\beta$
 are non-negative integers, how could you describe the Bayesian estimator based
 on adding data to $X$? 
 
 \textit{Solution:} TODO
 
-\textbf{4}. The standard uniform distribution is equivalent to $Beta(1,1)$. In the notes
+\textbf{5}. The standard uniform distribution is equivalent to $Beta(1,1)$. In the notes
 I started by implicitly assuming that this was a fairly neutral starting
 assumption for indicating that we do not have any strong prior knowledge of
-$P$. Based on your results above, what would actually seem to be the best
+$p$. Based on your results above, what would actually seem to be the best
 netural position if we do not want the prior to have a strong influence on 
 the posterior mean?
 
