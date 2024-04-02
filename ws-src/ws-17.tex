@@ -7,7 +7,18 @@ the posterior distribution $p|X$.
 
 % SOLUTION
 
-TODO
+The posterior comes from the formula in the notes, with the one change that
+we now have a different density of the prior distribution $f_{p}(p)$:
+\begin{align*}
+f_{p|X}(p|x) &\propto f_{X|p}(x|p) \times f_{p}(p) \\
+&\propto \binom{n}{x} \cdot p^{x} \cdot (1 - p)^{n-x} \cdot p^{\alpha - 1} \cdot (1 - p)^{\beta - 1} \\
+&\propto p^{x + \alpha - 1} \cdot (1 - p)^{n - x + \beta - 1}
+\end{align*}
+And so, therefore, we have:
+\begin{align*}
+p|x \sim Beta(x + \alpha, n - x + \beta).
+\end{align*}
+And that's it!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -19,7 +30,10 @@ point estimator $\widehat{p}$ in terms of $X$, $\alpha$, and $\beta$?
 
 % SOLUTION
 
-TODO
+From the distributions table, we see that the expected value is given by:
+\begin{align*}
+\frac{x + \alpha}{x + \alpha + n - x + \beta} &= \frac{x + \alpha}{n + \alpha + \beta}.
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -34,7 +48,9 @@ data $Y$? Where have you seen this before?
 
 % SOLUTION
 
-TODO
+The MLE will be given by $Y$ divided by $n+2$ (the analog of the case for $X$),
+which becomes: $(X+1)/(n+2)$. This is just the previous solution with
+$\alpha = \beta = 1$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -45,12 +61,13 @@ on adding data to $X$?
 
 % SOLUTION
 
-TODO
+In general, if we add $\alpha$ 1s and $\beta$ 0s to the data, we would get the
+MLE equal to the Bayesian estimator.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
-The standard uniform distribution is equivalent to $Beta(1,1)$. In the notes
+The standard uniform distribution is equivalent to $Beta(1, 1)$. In the notes
 I started by implicitly assuming that this was a fairly neutral starting
 assumption for indicating that we do not have any strong prior knowledge of
 $p$. Based on your results above, what would actually seem to be the best
@@ -59,4 +76,6 @@ the posterior mean?
 
 % SOLUTION
 
-TODO
+In order to have an estimator where the Bayesian estimator is equal to the MLE,
+we would need to have $\alpha = \beta = 0$. However, this is not a proper
+distribution (the Beta requires both parameters to be positive).

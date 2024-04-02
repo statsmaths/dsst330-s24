@@ -32,108 +32,58 @@
 \vspace*{18pt}
 
 \noindent
-Today, we will once again consider the task of estimating the 
-parameter $p$ from a random variable $X$ taken from a $Bin(n, p)$
-distribution with a known value of $n$. The approach, though,
-will be quite different than our previous attempts. 
+\textbf{Bayesian Statistics} Let's start by defining the setup
+from last in a formal, generic way. Bayesian statistics first
+considers a random variable $\vec{\theta}$, called the \textbf{prior},
+with a pdf/pmf equal to $f_{\vec{\theta}}$. Then, we have another 
+random variable $\vec{X}$, the \textbf{likelihood}, defined through
+the conditional pdf/pmf given by $f_{\vec{X}|\vec{\theta}}$. Finally,
+we can compute the \textbf{posterior} distribution of
+$\vec{\theta} | \vec{X}$ by using a form of Bayes rule. 
 
-The core novel idea behind Bayesian statistics can be summarized
-as this: use probability distributions to model our uncertainty in
-the unknown parameters of a distribution. So, say that before 
-observing any data, we think that any value of $p$ is equally
-likely. We could write this by defining our unknown parameter $P$
-to be a random variable with a uniform distribution:
-\begin{align*}
-P \sim Unif(0, 1).
-\end{align*}
-This is called the \textbf{prior distribution}, because it reflects
-our knowledge of $P$ prior to observing any data.\footnote{
-  As I have with some other cases, I am going to introduce the
-  terminology and notation of Bayesian estimation using a specific
-  example. How to extend this to other cases should be clear after
-  noting that the variables called $P$ and $X$ here may have different
-  names in other cases.
-}
-Now, when describing
-the random variable $X$, we have to give its distribution conditioned
-on a specific value of the random variable $p$. That is, we need to
-write this (which we call the \textbf{likelihood}, following the notation
-from the MLE):
-\begin{align*}
-X|P \sim Bin(n, P).
-\end{align*}
-Now, the important thing is describing our knowledge about $P$ \textit{after}
-observing the data. That is, we want to know the distribution of $P | X$.
-Bayes rule tells us that we can calculate this as:
-\begin{align*}
-f_{P|X}(p|x) &= \frac{f_{X|P}(x|p) \times f_{P}(p)}{f_{X}(x)}.
-\end{align*}
-This quantity is called the \textbf{posterior distribution}. Determining
-the form of the posterior distribution is the key task in generating
-Bayesian estimators. One simplifying step is to notice that the denominator
-does not depend on $p$, so we can replace it with a constant, adding it
-back later (if needed) by whatever number makes the posterior a proper
-distribution (in other words, it integrates to $1$). This gives the following
-standard form:
-\begin{align*}
-f_{P|X}(p|x) &\propto \frac{f_{X|P}(x|p) \times f_{P}(p)}{f_{X}(x)}.
-\end{align*}
-I will try to keep the subscripts on the density functions $f$
-for clarity in the notes. However, on the board I will almost always drop
-them. Feel free to do the same in your work.
-
-Now let's actually find the posterior distribution for this specific example.
-We have the following form of the density function (keep in mind that this
-is a function of p; we can remove any constants that depend only on $x$ and 
-$n$):
-\begin{align*}
-f_{P|X}(p|X) &\propto \binom{n}{x} \cdot p^{x} \cdot (1 - p)^{n-x} \\
-&\propto p^{x} \cdot (1 - p)^{1-x} \\
-&=p^{(x+1) - 1} \cdot (1 - p)^{(n-x+1) - 1}
-\end{align*}
-The last step may seem unusual, but if you look at the distribution table 
-it becomes more clear. This is a Beta distribution, with $\alpha = (x+1)$
-and $\beta = (n-x+1)$. So, the posterior is given by:
-\begin{align*}
-P|X \sim Beta(x+1, n-x+1).
-\end{align*}
-This new distribution represents our knowledge and uncertainty about the
-parameter $P$.\footnote{
-  I have used a capital $P$ to stress that the parameter is now a
-  random variable. While I think this is more clear, and I will use 
-  it in the Binomial case in the worksheet, note that this is not a 
-  standard notation. Usually we just use the same letter we have used
-  throughout, with the change from constant to random variable being
-  implicit (and sometimes confusing before you get the hang of it).
-}
-
-While the entire distribution is the clearest picture of our knowledge of
-$P$, sometimes we need to convert our knowledge into a single best guess
-point estimator. The \textbf{Bayesian point estimator} is the expected value
-of the posterior distribution. So, using the table, here we have:
-\begin{align*}
-\hat{p}_{Bayes} &= \mathbb{E} [P|X] = \frac{x+1}{(x+1)+(n-x+1)} = \frac{x+1}{n + 2}.
-\end{align*}
-Notice that this limits the MLE in the limit of large $n$. Similarly, we
-can represent a version of a confidence interval for Bayesian statistics.
-A \textbf{credible interval} with credibility $1-\alpha$ for the parameter 
-$P$ can be constructed by finding fixed values $l$ and $u$ such that:
-\begin{align*}
-\mathbb{P}[l \leq P \leq u] &= 1 - \alpha.
-\end{align*}
-We can compute these values using R, as demonstrated in the notebook for 
-today. 
-
-\vspace*{24pt}
+\vspace*{18pt}
 
 \noindent
-There are many methodological and philosophical implications of using
-Bayesian methods in place of the frequentist techniques that we have
-so far used. I hope that we can discuss these more in the classes to
-come after we have some more experience with the mechanics of how to
-work with them computationally.
+\textbf{Point Estimation}  
+While the entire posterior distribution is the clearest picture of our
+knowledge of the parameter $\vec{\theta}$, sometimes we need to convert our
+knowledge into a single best guess point estimator. The
+Bayesian point estimator is the expected value of the posterior distribution.
+In general, this will be somewhere between the expected value of the prior
+distribution and the mean of the data $\vec{X}$.
+
+\vspace*{18pt}
+
+\noindent
+\textbf{Credible Intervals}  
+We can represent a version of a confidence interval for Bayesian statistics.
+For a univariate $\theta$, a \textbf{credible interval} with credibility
+$1-\alpha$ is simply a set of bounds $l$ and $u$ such that: 
+\begin{align*}
+\mathbb{P}[l \leq \theta \leq u | \vec{X}] &\geq 1 - \alpha.
+\end{align*}
+A similar interval can also be constructed for any component of a multivariate
+parameter $\vec{\theta}$. We can compute these values using R.
+
+\vspace*{18pt}
+
+\noindent
+\textbf{Conjugate Priors}
+In many cases, as we will see on today's worksheet, we can choose a prior
+distribution that aligns with the likelihood function such that the prior
+and the posterior come from the same family. For example, the Beta and the
+Binomial, as we saw on the last worksheet. The prior for a likelihood is 
+called the \textbf{conjugate prior}.
+
+\vspace*{18pt}
+
+\noindent
+\textbf{Random Sample} The most common case, as we have seen throughout the
+semester, is where $\vec{X}$ is a sequence of $n$ i.i.d. observations. An
+easy way to get the posterior distribution is to first consider the 
+distribution $\vec{theta} | X_1$, then condition this on $X_2$, then on
+$X_3$, and so forth. When we have conjugate priors, each of these 
+distributions will be from the same family, thus making it easy to determine
+the distribution of each sub-step.
 
 \end{document}
-
-
-
