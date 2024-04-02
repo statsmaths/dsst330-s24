@@ -35,11 +35,20 @@
 \textbf{Bayesian Statistics} Let's start by defining the setup
 from last in a formal, generic way. Bayesian statistics first
 considers a random variable $\vec{\theta}$, called the \textbf{prior},
-with a pdf/pmf equal to $f_{\vec{\theta}}$. Then, we have another 
-random variable $\vec{X}$, the \textbf{likelihood}, defined through
-the conditional pdf/pmf given by $f_{\vec{X}|\vec{\theta}}$. Finally,
-we can compute the \textbf{posterior} distribution of
-$\vec{\theta} | \vec{X}$ by using a form of Bayes rule. 
+with a pdf/pmf equal to $f_{\vec{\theta}}$. Then, we have a sequence
+$X_1, \ldots, X_n$ of i.i.d. random variables, each of which is defined
+through the conditional pdf/pmf $f_{x_j|\vec{\theta}}(x_j|\vec{\theta})$.
+Finally, we can compute the \textbf{posterior} distribution of
+$\vec{\theta} | \vec{x}$ by using a form of Bayes rule:\footnote{
+  I am using the notation that $\vec{X} = (X_1, \ldots, X_n)$, and
+  likewise for $\vec{x}$.
+}
+\begin{align*}
+f_{\vec{\theta} | \vec{x}}(\vec{\theta} | \vec{x}) &\propto
+\left[ \prod_j f_{x_j|\vec{\theta}}(x_j) \right] \times f_{\vec{\theta}}.
+\end{align*}
+Generally, the main task in Bayesian statistics is to determine the
+shape of the posterior when given a prior and likelihood.
 
 \vspace*{18pt}
 
@@ -47,10 +56,10 @@ $\vec{\theta} | \vec{X}$ by using a form of Bayes rule.
 \textbf{Point Estimation}  
 While the entire posterior distribution is the clearest picture of our
 knowledge of the parameter $\vec{\theta}$, sometimes we need to convert our
-knowledge into a single best guess point estimator. The
-Bayesian point estimator is the expected value of the posterior distribution.
-In general, this will be somewhere between the expected value of the prior
-distribution and the mean of the data $\vec{X}$.
+knowledge into a single best guess point estimator. The Bayesian point
+estimator is the expected value of the posterior distribution. In general,
+this will be somewhere between the expected value of the prior distribution
+and the mean of the data $\bar{X}$.
 
 \vspace*{18pt}
 
@@ -63,7 +72,9 @@ $1-\alpha$ is simply a set of bounds $l$ and $u$ such that:
 \mathbb{P}[l \leq \theta \leq u | \vec{X}] &\geq 1 - \alpha.
 \end{align*}
 A similar interval can also be constructed for any component of a multivariate
-parameter $\vec{\theta}$. We can compute these values using R.
+parameter $\vec{\theta}$. We can compute these values using R. A key difference
+from the frequentist confidence intervals is that the probabilistic interpretation
+of the interval is not lost even after we collect data.
 
 \vspace*{18pt}
 
@@ -74,16 +85,5 @@ distribution that aligns with the likelihood function such that the prior
 and the posterior come from the same family. For example, the Beta and the
 Binomial, as we saw on the last worksheet. The prior for a likelihood is 
 called the \textbf{conjugate prior}.
-
-\vspace*{18pt}
-
-\noindent
-\textbf{Random Sample} The most common case, as we have seen throughout the
-semester, is where $\vec{X}$ is a sequence of $n$ i.i.d. observations. An
-easy way to get the posterior distribution is to first consider the 
-distribution $\vec{theta} | X_1$, then condition this on $X_2$, then on
-$X_3$, and so forth. When we have conjugate priors, each of these 
-distributions will be from the same family, thus making it easy to determine
-the distribution of each sub-step.
 
 \end{document}
