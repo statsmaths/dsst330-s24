@@ -33,21 +33,18 @@
 
 \noindent
 Today we derive the most theoretical result of the semester: the
-\textbf{Cramér-Rao} lower bound called the on the variance of an
+\textbf{Cramér-Rao} lower bound on the variance of an
 unbiased estimator. Since the variance of an unbiased estimator
-gives the expected error of the estimator, this bound provides a
-best-case scenario on how well we can estimate a parameter. We
-will see on today's worksheet that many of the MLE estimators we
+gives the expected distance of the estimator from its true value,
+this bound provides a best-case scenario on how well we can estimate
+a parameter. We will see on today's worksheet that the estimators we
 have so far derived achieve this lower bound.
 
 Consider a random variable $X$ with a probability density function 
 $f(\theta; x)$, which has a one univariate parameter $\theta$. We
 can define a random variable $V$, called the \textbf{score function},
-as the derivative of the logarithm of the density of $X$. \footnote{
-  The score function is a bit unusual because we are evaluating the
-  density of the random variable at the value of the random variable.
-  In other words, we have $f(\theta; X)$ rather than the usual $f(\theta; x)$. 
-} We see that this has a nice form by applying the chain rule:
+as the derivative of the logarithm of the density of $X$.
+We see that this has a nice form by applying the chain rule:
 \begin{align*}
 V &= \frac{\partial}{\partial \theta} \left[ \log(f(\theta; X)) \right] \\
 &= \frac{1}{f(\theta; X)} \cdot \frac{\partial}{\partial \theta} \left[ f(\theta; X) \right].
@@ -62,7 +59,9 @@ expected value of zero:
 The variance of the score is called the \textbf{Fisher information}
 and serves as a measurment of how much information about $\theta$ is
 provided by the data $X$. This is often written as $\mathcal{I}(\theta)$.
-Note that the variance is just the expected value of $V^2$.
+The Fisher information can change for different values of $\theta$, but
+does not depend on the data $X$, which has been integrated out. Note
+that the variance is just the expected value of $V^2$. 
 
 Now, let $T = t(X)$ be a point estimator for the parameter $\theta$ with
 expectation $\mathbb{E}T = \psi(\theta)$. In other words, if $T$ is
@@ -107,7 +106,7 @@ Under some regularity conditions---in particular, that the logarithm of the
 density function $f$ is twice-differentiable---the Fisher information can be
 written in a somewhat simplified form:
 \begin{align*}
-\mathcal{I}(\theta) &= \mathbb{E} \left[ \frac{\partial^2}{\partial \theta^2} \log f(\theta; x) \right].
+\mathcal{I}(\theta) &= -1 \mathbb{E} \left[ \frac{\partial^2}{\partial \theta^2} \log f(\theta; x) \right].
 \end{align*}
 Typically, squaring the log density requires having a number of cross terms,
 whereas the second derivative removes a number of terms, simplifying the 
@@ -123,7 +122,6 @@ single integrals above with $n$-dimensional integrals over $\mathbb{R}^n$.
 Generalizing to a vector value for $\theta$ is a bit more work, requiring 
 some vector calculus that goes beyond the prerequisites for this course. 
 The general idea, however, is very similar.
-
 
 \end{document}
 
