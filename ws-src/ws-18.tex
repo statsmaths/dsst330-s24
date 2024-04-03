@@ -3,12 +3,30 @@
 
 Consider a prior distribution where $\lambda \sim Gamma(\alpha, \beta)$ and a 
 likelihood $X_j|\lambda \sim Poisson(\lambda)$ for an i.i.d. sample of size $n$.
-Find (a) the prior distribution, (b) the Bayesian point estimator, and (c) the
+Find (a) the posterior distribution, (b) the Bayesian point estimator, and (c) the
 limit of the point estimator when the data dominates the prior.
 
 % SOLUTION
 
-TODO
+For (a), we have:
+\begin{align*}
+f_{\lambda | \vec{x}}(\lambda | \vec{x}) 
+&\propto \left[ \prod_j f_{x_j|\lambda}(x_j) \right] \times f_{\lambda} \\
+&\propto \left[ \prod_j \frac{\lambda^{x_i} e^{-\lambda}}{x_i!} \right] \times \left[ \frac{1}{\Gamma(\alpha) \beta^{\alpha}} \cdot \lambda^{\alpha - 1} e^{-\lambda/\beta} \right] \\
+&\propto \lambda^{\sum_i x_i} \cdot e^{-n\lambda} \cdot \lambda^{\alpha - 1} \cdot e^{-\lambda/\beta} \\
+&\propto \lambda^{\alpha + \sum_i x_i - 1} \cdot e^{-\lambda [\beta^{-1} + n]} \\
+&\sim Gamma(\alpha + \sum_i x_i, [\beta^{-1} + n]^{-1}).
+\end{align*}
+Now that we know the posterior distribution, the answer to (b) comes from the
+reference table:
+\begin{align*}
+\hat{\lambda}_{Bayes} &= \mathbb{E}[ \lambda | \vec{X} ] = \frac{\alpha + \sum_i x_i}{\beta^{-1} + n}.
+\end{align*}
+Finally, in the limit of large data, we see that (c) we have:
+\begin{align*}
+\hat{\lambda}_{Bayes} &\rightarrow \frac{\sum_i x_i}{n} = \bar{x}.
+\end{align*}
+So, in the limit of large data, the Bayes estimator limits to the MLE.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -23,19 +41,47 @@ Bayesian estimator of $\lambda$ with a $Gamma(10, 1)$?\footnote{
 
 % SOLUTION
 
-TODO
+(a) The MLE is:
+\begin{align*}
+\hat{\lambda}_{MLE} &= \bar{x} = 3.
+\end{align*}
+(b) The Bayes estimator with this prior is:
+\begin{align*}
+\hat{\lambda}_{Bayes} &= \frac{\alpha + \sum_i x_i}{\beta^{-1} + n} = \frac{1 + 30}{1 + 10} = \frac{31}{11} = 2.818
+\end{align*}
+(c) The Bayes estimator with this prior is:
+\begin{align*}
+\hat{\lambda}_{Bayes} &= \frac{\alpha + \sum_i x_i}{\beta^{-1} + n} = \frac{10 + 30}{1 + 10} = \frac{41}{11} = 3.727
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
 Consider a prior distribution where $\lambda \sim Gamma(\alpha, \beta)$ and a 
 likelihood $X|\lambda \sim Exp(\lambda)$ for an i.i.d. sample of size $n$..
-Find (a) the prior distribution, (b) the Bayesian point estimator, and (c) the
+Find (a) the posterior distribution, (b) the Bayesian point estimator, and (c) the
 limit of the point estimator when the data dominates the prior.
 
 % SOLUTION
 
-TODO
+For (a), we have:
+\begin{align*}
+f_{\lambda | \vec{x}}(\lambda | \vec{x}) 
+&\propto \left[ \prod_j f_{x_j|\lambda}(x_j) \right] \times f_{\lambda} \\
+&\propto \left[ \prod_j \lambda e^{-\lambda x_i} \right] \times \left[ \frac{1}{\Gamma(\alpha) \beta^{\alpha}} \cdot \lambda^{\alpha - 1} e^{-\lambda/\beta} \right] \\
+&\propto \lambda^n e^{-\lambda \sum_i x_i} \lambda^{\alpha - 1} e^{-\lambda/\beta} \\
+&\propto \lambda^{\alpha + n - 1} e^{-\lambda [\sum_i x_i + \beta^{-1}]} \\
+&\sim Gamma(\alpha + n, [\sum_i x_i + \beta^{-1}]^{-1}).
+\end{align*}
+The point estimator (b) comes from the table, just as in the first question:
+\begin{align*}
+\hat{\lambda}_{Bayes} &= \mathbb{E}[ \lambda | \vec{X} ] = \frac{\alpha + n}{\sum_i x_i + \beta^{-1}}.
+\end{align*}
+Finally, in the limit of large data, we see that (c) we have:
+\begin{align*}
+\hat{\lambda}_{Bayes} &\rightarrow \frac{n}{\sum_i x_i} = \bar{x}^{-1}.
+\end{align*}
+So, in the limit of large data, once again the Bayes estimator limits to the MLE.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
@@ -47,30 +93,77 @@ Bayesian estimator of $\lambda$ with a $Gamma(1, 4)$?
 
 % SOLUTION
 
-TODO
+(a) The MLE is:
+\begin{align*}
+\hat{\lambda}_{MLE} &= \frac{1}{\bar{x}} = \frac{1}{0.5} = 2.
+\end{align*}
+(b) The Bayes estimator with this prior is:
+\begin{align*}
+\hat{\lambda}_{Bayes} &= \frac{\alpha + n}{\sum_i x_i + \beta^{-1}} = \frac{1 + 30}{15 + 1} = \frac{31}{16} = 1.938
+\end{align*}
+(c) The Bayes estimator with this prior is:
+\begin{align*}
+\hat{\lambda}_{Bayes} &= \frac{\alpha + n}{\sum_i x_i + \beta^{-1}} = \frac{1 + 30}{15 + 0.25} = \frac{31}{15.25} = 2.032
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
 Consider a prior distribution where $p \sim Beta(a, b)$ and a 
 likelihood $X|p \sim Geometric(1, \beta)$for an i.i.d. sample of size $n$.
-Find (a) the prior distribution, (b) the Bayesian point estimator, and (c) the
+Find (a) the posterior distribution, (b) the Bayesian point estimator, and (c) the
 limit of the point estimator when the data dominates the prior.
 
 % SOLUTION
 
-TODO
 
+For (a), we have:
+\begin{align*}
+f_{p | \vec{x}}(p | \vec{x}) 
+&\propto \left[ \prod_j f_{x_j| p }(x_j) \right] \times f_{p} \\
+&\propto \left[ \prod_j (1 - p)^{x_i - 1} \cdot p \right] \times \left[ \frac{\Gamma(a + b)}{\Gamma(a)\Gamma(b)} \cdot p^{a -1} (1-p)^{b - 1} \right] \\
+&\propto (1 - p)^{\sum_i x_i - n} \cdot p^{n} \cdot p^{a -1} \cdot (1-p)^{b - 1} \\
+&\propto (1 - p)^{b + \sum_i x_i - n - 1} \cdot p^{a + n - 1} \\
+&\sim Beta(a + n, b + \sum_i x_i - n)
+\end{align*}
+The point estimator (b) comes from the table, just as in the first question:
+\begin{align*}
+\hat{p}_{Bayes} &= \mathbb{E}[ p | \vec{X} ] = \frac{a + n}{a + n + b + \sum_i x_i - n} = \frac{a + n}{a + b + \sum_i x_i}
+\end{align*}
+Finally, in the limit of large data, we see that (c) we have:
+\begin{align*}
+\hat{p}_{Bayes} &\rightarrow \frac{n}{\sum_i x_i} = \frac{1}{\bar{x}}.
+\end{align*}
+So, in the limit of large data, the Bayes estimator limits to the MLE.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QUESTION
 
 Assume you have a sample of size $n = 12$ from a Geometric distribution. The 
-average of the data is $\bar{x} = 1$. What are the (a) MLE estimator of $p$,
+average of the data is $\bar{x} = 2$. What are the (a) MLE estimator of $p$,
 (b) the Bayesian estimator of $\lambda$ with a $Beta(1, 10)$, and (c) the
 Bayesian estimator of $\lambda$ with a $Beta(10, 1)$? What are the means of
-the two priors?
+the two priors?\footnote{
+  I changed the mean from 1 to 2 when making the solutions. I realized that
+  a mean of 1 doesn't make any sense (it could only happen if every single
+  trial was 1). The results are easier 
+}
 
 % SOLUTION
 
-TODO
+(a) The MLE is:
+\begin{align*}
+\hat{p}_{MLE} &= \frac{1}{\bar{x}} = \frac{1}{2} = 0.5
+\end{align*}
+(b) The Bayes estimator with this prior is:
+\begin{align*}
+\hat{p}_{Bayes} &= \frac{a + n}{a + b + \sum_i x_i} = \frac{1 + 12}{1 + 10 + 24} = \frac{13}{35} = 0.371
+\end{align*}
+(c) The Bayes estimator with this prior is:
+\begin{align*}
+\hat{p}_{Bayes} &= \frac{a + n}{a + b + \sum_i x_i} = \frac{10 + 12}{10 + 1 + 24} = \frac{22}{35} = 0.629
+\end{align*}
+
+
+
+
