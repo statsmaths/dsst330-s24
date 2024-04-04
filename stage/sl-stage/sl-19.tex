@@ -1,0 +1,149 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 19 (Solutions)}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Let $X \sim N(\mu, \sigma^2)$, with $\sigma^2 > 0$ a fixed and known constant.
+(a) Compute the Fisher Information $\mathcal{I}(\mu)$. (b) The MLE for $\mu$
+is equal to $X$ (generally it's the mean, but in the one-observation case the
+mean is equal to $X$). Find the efficency of the MLE.
+
+\textit{Solution:} (a) We have the following for the first derivative the of the log likelihood:
+\begin{align*}
+\frac{\partial}{\partial \mu} \log(f(\mu; x))
+&= \frac{\partial}{\partial \mu} \left[ \frac{-1}{2\sigma^2} (x - \mu)^2 \right] \\
+&= \frac{+2}{2\sigma^2} (x - \mu) \\
+&= \frac{1}{\sigma^2} (x - \mu)
+\end{align*}
+And for the second derivative:
+\begin{align*}
+\frac{\partial^2}{\partial^2 \mu} \log(f(\mu; x))
+&= \frac{\partial}{\partial \mu} \left[ \frac{1}{\sigma^2} (x - \mu) \right] \\
+&= \frac{-1}{\sigma^2}.
+\end{align*}
+Then, the Fisher information is:
+\begin{align*}
+\mathcal{I}(\mu) &= - \mathbb{E} \left[ \frac{\partial^2}{\partial \mu^2} \log f(\mu; x) \right] \\
+&= \mathbb{E} \left[ \frac{1}{\sigma^2} \right] \\
+&= \frac{1}{\sigma^2}.
+\end{align*}
+(b) The variance of the MLE is equal to:
+\begin{align*}
+Var(\hat{\mu}) &= Var(X) = \sigma^2.
+\end{align*}
+And therefore the efficency is:
+\begin{align*}
+e(\hat{\mu}) &= \frac{\mathcal{I}(\theta)^{-1}}{Var(\widehat{\theta})} = \frac{\sigma^2}{\sigma^2} = 1.
+\end{align*}
+So, the MLE is optimally efficent. It does as well as any unbiased estimator can do in
+terms of predicting the value of $\mu$ from the data.
+
+\textbf{2}. Let $X \sim Poisson(\lambda)$. (a) Compute the Fisher Information $\mathcal{I}(\lambda)$.
+(b) The MLE for $\lambda$ is equal to $X$ (generally it's the mean, but in the one-observation
+case the mean is equal to $X$). Find the efficency of the MLE.
+
+\textit{Solution:} (a) We have the following for the first derivative the of the log likelihood:
+\begin{align*}
+\frac{\partial}{\partial \lambda} \log(f(\lambda; x))
+&= \frac{\partial}{\partial \lambda} \left[ x \log(\lambda) - \lambda + \log(x!) \right] \\
+&= \frac{x}{\lambda} - 1.
+\end{align*}
+And for the second derivative:
+\begin{align*}
+\frac{\partial^2}{\partial^2 \lambda} \log(f(\lambda; x))
+&= \frac{\partial}{\partial \lambda} \left[ \frac{x}{\lambda} - 1 \right] \\
+&= \frac{-x}{\lambda^2}.
+\end{align*}
+Then, the Fisher information is:
+\begin{align*}
+\mathcal{I}(\lambda) &= - \mathbb{E} \left[ \frac{\partial^2}{\partial \lambda^2} \log f(\lambda; x) \right] \\
+&= \mathbb{E} \left[ \frac{x}{\lambda^2} \right] \\
+&= \frac{\lambda}{\lambda^2} = \frac{1}{\lambda}.
+\end{align*}
+(b) The variance of the MLE is equal to:
+\begin{align*}
+Var(\hat{\lambda}) &= Var(X) = \lambda.
+\end{align*}
+And therefore the efficency is:
+\begin{align*}
+e(\hat{\lambda}) &= \frac{\mathcal{I}(\theta)^{-1}}{Var(\widehat{\theta})} = \frac{\lambda}{\lambda} = 1.
+\end{align*}
+So, the MLE is optimally efficent. It does as well as any unbiased estimator can do in
+terms of predicting the value of $\lambda$ from the data.
+
+\textbf{3}. Let $X \sim Binomial(n, p)$ with $n>0$ a fixed and known constant.
+(a) Compute the Fisher Information $\mathcal{I}(p)$.\footnote{
+  Try to simplify this as much as possible. You should be able to
+  get something that has a denominator equal to $p(1-p)$.
+} (b) The MLE for $p$ is
+equal to $X/n$. Find the efficency of the MLE.
+
+\textit{Solution:} (a) We have the following for the first derivative the of the log likelihood:
+\begin{align*}
+\frac{\partial}{\partial p} \log(f(p; x))
+&= \frac{\partial}{\partial p} \left[ \log(\binom{n}{x}) +  x \cdot \log(p) + (n-x) \cdot \log(1-p) \right] \\
+&= \frac{x}{p} - \frac{n-x}{1-p}.
+\end{align*}
+And for the second derivative:
+\begin{align*}
+\frac{\partial^2}{\partial^2 p} \log(f(p; x))
+&= \frac{\partial}{\partial p} \left[ \frac{x}{p} - \frac{n-x}{1-p} \right] \\
+&= \frac{-x}{p^2} + \frac{n-x}{(1-p)^2}
+\end{align*}
+Then, the Fisher information is:
+\begin{align*}
+\mathcal{I}(p) &= - \mathbb{E} \left[ \frac{\partial^2}{\partial p^2} \log f(p; x) \right] \\
+&= \mathbb{E} \left[ \frac{x}{p^2} - \frac{n-x}{(1-p)^2} \right] \\
+&= \frac{np}{p^2} - \frac{n-np}{(1-p)^2} \\
+&= \frac{n}{p} - \frac{n(1-p)}{(1-p)^2} \\
+&= \frac{n}{p} - \frac{n}{(1-p)} \\
+&= n \cdot \left[ \frac{1}{p} - \frac{1}{1-p} \right] \\
+&= n \cdot \left[ \frac{(1 - p) + p}{p (1 - p)} \right] \\
+&= n \cdot \left[ \frac{1}{p (1 - p)} \right] \\
+&= \frac{n}{p (1 - p)}
+\end{align*}
+(b) The variance of the MLE is equal to:
+\begin{align*}
+Var(\hat{p}) &= Var(X/n) = \frac{np(1-p)}{n^2} = \frac{p(1-p)}{n}.
+\end{align*}
+And therefore the efficency is:
+\begin{align*}
+e(\hat{p}) &= \frac{\mathcal{I}(\theta)^{-1}}{Var(\widehat{\theta})} = \frac{\frac{p (1 - p)}{n}}{\frac{p(1-p)}{n}} = 1.
+\end{align*}
+So, the MLE is optimally efficent. It does as well as any unbiased estimator can do in
+terms of predicting the value of $p$ from the data.
+
+
+\end{document}

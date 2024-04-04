@@ -38,7 +38,7 @@ unbiased estimator. Since the variance of an unbiased estimator
 gives the expected distance of the estimator from its true value,
 this bound provides a best-case scenario on how well we can estimate
 a parameter. We will see on today's worksheet that the estimators we
-have so far derived achieve this lower bound.
+have so far derived asymptotically achieve this lower bound.
 
 Consider a random variable $X$ with a probability density function 
 $f(\theta; x)$, which has a one univariate parameter $\theta$. We
@@ -71,7 +71,7 @@ is equal to just $\mathbb{E}[VT]$ since the expected value of $V$ is zero.\footn
   Recall that the covariance in general would be $\mathbb{E}[(V - \mathbb{E}V)(T - \mathbb{E}T)]$.
 } This has, by construction, a nice form:
 \begin{align*}
-Cov(V, T) &= \int \left[ t(x) \times \frac{1}{f(\theta; x)} \times \frac{\partial}{\partial \theta} \left[ f(\theta; x) \right] \right] dx \\
+Cov(V, T) &= \int \left[ f(\theta; x) \times t(x) \times \frac{1}{f(\theta; x)} \times \frac{\partial}{\partial \theta} \left[ f(\theta; x) \right] \right] dx \\
 &= \frac{\partial}{\partial \theta} \left[ \int t(x) f(\theta, x) dx \right] = \frac{\partial}{\partial \theta} \mathbb{E}T = \psi'(\theta).
 \end{align*}
 Next, we need to use the \textbf{Cauchy-Schwartz Inequality}, which for
@@ -106,7 +106,7 @@ Under some regularity conditions---in particular, that the logarithm of the
 density function $f$ is twice-differentiable---the Fisher information can be
 written in a somewhat simplified form:
 \begin{align*}
-\mathcal{I}(\theta) &= -1 \mathbb{E} \left[ \frac{\partial^2}{\partial \theta^2} \log f(\theta; x) \right].
+\mathcal{I}(\theta) &= - \mathbb{E} \left[ \frac{\partial^2}{\partial \theta^2} \log f(\theta; x) \right].
 \end{align*}
 Typically, squaring the log density requires having a number of cross terms,
 whereas the second derivative removes a number of terms, simplifying the 

@@ -1,0 +1,55 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 19}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Let $X \sim N(\mu, \sigma^2)$, with $\sigma^2 > 0$ a fixed and known constant.
+(a) Compute the Fisher Information $\mathcal{I}(\mu)$. (b) The MLE for $\mu$
+is equal to $X$ (generally it's the mean, but in the one-observation case the
+mean is equal to $X$). Find the efficency of the MLE.
+
+\textbf{2}. Let $X \sim Poisson(\lambda)$. (a) Compute the Fisher Information $\mathcal{I}(\lambda)$.
+(b) The MLE for $\lambda$ is equal to $X$ (generally it's the mean, but in the one-observation
+case the mean is equal to $X$). Find the efficency of the MLE.
+
+\textbf{3}. Let $X \sim Binomial(n, p)$ with $n>0$ a fixed and known constant.
+(a) Compute the Fisher Information $\mathcal{I}(p)$.\footnote{
+  Try to simplify this as much as possible. You should be able to
+  get something that has a denominator equal to $p(1-p)$.
+} (b) The MLE for $p$ is
+equal to $X/n$. Find the efficency of the MLE.
+
+
+\end{document}
