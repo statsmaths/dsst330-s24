@@ -1,0 +1,62 @@
+\documentclass{tufte-handout}
+
+\usepackage{amssymb,amsmath}
+% \usepackage{mathspec}
+\usepackage{graphicx,grffile}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{thm}{Theorem}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\V}{\text{Var}}
+\newcommand{\iid}{\stackrel{iid}{\sim}}
+\newcommand{\cblack}{\color{Black}}
+\newcommand{\cblue}{\color{MidnightBlue}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{12pt}
+
+\begin{document}
+
+\justify
+
+{\LARGE Worksheet 20}
+
+\vspace*{18pt}
+
+
+\textbf{1}. Find the Jeffreys prior for estimating the estimating the mean of a normal
+distribution with a known variance $\sigma^2$. You can assume we have only one
+observation $X$. What is the corresponding
+Bayesian point estimator and how does it compare to the MLE?
+
+\textbf{2}. Find the Jeffreys prior for estimating the estimating the parameter $p$ from a
+Binomial with a known value $n$. What is the corresponding Bayesian point estimator?
+What does this mean in the case when $n=1$ and $X=0$ and in the case when $n=1$ and $X=1$?
+
+\textbf{3}. Find the Jeffreys prior for estimating the estimating the parameter $\lambda$ from
+a Poisson. Write down a formula that gives, up to a constant,
+the posterior distribution. Note that you will not be able to relate this to a 
+known distribution on our chart.
+
+\textbf{4}. The Fisher information for the geometric distribution is $\mathcal{I}(p) = \frac{(1-p)}{p^2}$.
+Find the Jeffreys prior for estimating the estimating the parameter $p$ from
+a geometric distribution. What is, more-or-less, this distribution?\footnote{
+  It should line up with one of the results on the table, but the hyperparameter
+  is out of bounds. That's okay though. It just means we have an improper prior.
+  All of the results still hold. 
+} What is the corresponding Bayesian point estimator? Using previous results,
+you should be able to do this for a sample of size $n$.
+
+
+\end{document}

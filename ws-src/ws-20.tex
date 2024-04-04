@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION
+
+Find the Jeffreys prior for estimating the estimating the mean of a normal
+distribution with a known variance $\sigma^2$. You can assume we have only one
+observation $X$. What is the corresponding
+Bayesian point estimator and how does it compare to the MLE?
+
+% SOLUTION
+
+We have, from the results last time, the following:
+\begin{align*}
+\sqrt{\mathcal{I}(p)} &= \sqrt{\sigma^{-2}} \propto 1.
+\end{align*}
+So, this is the improper distribution of a uniform distribution over the entire
+real line. Therefore, the Bayesian estimator is just equal to the MLE.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION
+
+Find the Jeffreys prior for estimating the estimating the parameter $p$ from a
+Binomial with a known value $n$. What is the corresponding Bayesian point estimator?
+What does this mean in the case when $n=1$ and $X=0$ and in the case when $n=1$ and $X=1$?
+
+% SOLUTION
+
+We have, from the results last time, the following:
+\begin{align*}
+\sqrt{\mathcal{I}(p)} &= \sqrt{p(1-p)} = p^{1/2} (1 - p)^{1/2} = p^{1-1/2} (1-p)^{1-1/2}.
+\end{align*}
+This is proportional to a $Beta(1/2,1/2)$. Therefore, from our previous notes, the 
+point estimator is:
+\begin{align*}
+\widehat{p}_{Bayes} &= \frac{X + 1/2}{1/2 + 1/2 + n} = \frac{X + 1/2}{1 + n}.
+\end{align*}
+So, when $n=1$ and $X=0$ we guess $p=0.25$, and when $X=1$ we guess $p=0.75$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION
+
+Find the Jeffreys prior for estimating the estimating the parameter $\lambda$ from
+a Poisson. Write down a formula that gives, up to a constant,
+the posterior distribution. Note that you will not be able to relate this to a 
+known distribution on our chart.
+
+% SOLUTION
+
+We have, from the results last time, the following:
+\begin{align*}
+\sqrt{\mathcal{I}(\lambda)} &= \sqrt{\lambda^{-1}} = \lambda^{-1/2}.
+\end{align*}
+This implies that the posterior distribution is:
+\begin{align*}
+f(\lambda | x) &\propto \frac{\lambda^{x-1/2} e^{-\lambda}}{x!}
+\end{align*}
+This should be a proper distribution, but I am not aware of a way to analytically
+find the normalizing constant. I believe that numerical techniques such as Gibbs
+sampling are needed to find the Bayes point estimator.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION
+
+The Fisher information for the geometric distribution is $\mathcal{I}(p) = \frac{(1-p)}{p^2}$.
+Find the Jeffreys prior for estimating the estimating the parameter $p$ from
+a geometric distribution. What is, more-or-less, this distribution?\footnote{
+  It should line up with one of the results on the table, but the hyperparameter
+  is out of bounds. That's okay though. It just means we have an improper prior.
+  All of the results still hold. 
+} What is the corresponding Bayesian point estimator? Using previous results,
+you should be able to do this for a sample of size $n$.
+
+% SOLUTION
+
+We have, from the results last time, the following:
+\begin{align*}
+\sqrt{\mathcal{I}(p)} &= \sqrt{\frac{(1-p)}{p^2}} = p^{-1} (1 - p)^{-1/2}.
+\end{align*}
+This is mathematically equivalent to the distribution of a $Beta(0, 1/2)$,
+however this is not a proper distribution when $\alpha = 0$. Not a problem
+though! We can still use our formula for the posterior that 
+$p | X \sim Beta(a + n, b + \sum_i x_i - n)$. In this case, we have
+$p | X \sim Beta(n, 1/2 + \sum_i x_i - n)$, which gives a Bayesian point
+estimator of:
+\begin{align*}
+\widehat{p} &= \frac{n}{1/2 + \sum_i x_i}.
+\end{align*}
