@@ -32,42 +32,51 @@
 \vspace*{18pt}
 
 \noindent
-Today we derive the most theoretical result of the semester: the
-\textbf{Cramér-Rao} lower bound on the variance of an
-unbiased estimator. Since the variance of an unbiased estimator
-gives the expected distance of the estimator from its true value,
-this bound provides a best-case scenario on how well we can estimate
-a parameter. We will see on today's worksheet that the estimators we
-have so far derived asymptotically achieve this lower bound.
-
 Consider a random variable $X$ with a probability density function 
-$f(\theta; x)$, which has a one univariate parameter $\theta$. We
-can define a random variable $V$, called the \textbf{score function},
-as the derivative of the logarithm of the density of $X$.
+$f(\theta; x)$ with one univariate parameter $\theta$. We
+can define a random variable $V$, called the \textbf{score},
+as the derivative of the logarithm of the density of $X$.\footnote{
+  The important point is that the score tells us how much the density
+  $f$ changes at a point $x$ with respect to $\theta$. The logarithm
+  is there to make the score measure the relative change rather than
+  the absolute change, which can also be seen through the the application
+  of the chain-rule.
+}
 We see that this has a nice form by applying the chain rule:
 \begin{align*}
 V &= \frac{\partial}{\partial \theta} \left[ \log(f(\theta; X)) \right] \\
 &= \frac{1}{f(\theta; X)} \cdot \frac{\partial}{\partial \theta} \left[ f(\theta; X) \right].
 \end{align*}
-The score, under some fairly general regularity conditions, will have an
-expected value of zero:
+The score measures the sensitivity of the data to the parameter $\theta$.
+However, because it can be positive or negative, on average it turns out
+that the score will have an expected value of zero:
 \begin{align*}
 \mathbb{E} V &= \int f(\theta; x) \cdot \frac{1}{f(\theta; x)} \cdot \frac{\partial}{\partial \theta} \left[ f(\theta; x) \right] dx \\
 &= \int \frac{\partial}{\partial \theta} f(\theta; x) dx =
 \frac{\partial}{\partial \theta} \int f(\theta; x) dx = \frac{\partial}{\partial \theta} \left[1\right] = 0.
 \end{align*}
-The variance of the score is called the \textbf{Fisher information}
-and serves as a measurment of how much information about $\theta$ is
-provided by the data $X$. This is often written as $\mathcal{I}(\theta)$.
-The Fisher information can change for different values of $\theta$, but
-does not depend on the data $X$, which has been integrated out. Note
-that the variance is just the expected value of $V^2$. 
+This holds for any value of $\theta$. 
+
+Because the positive and negative scores cancel each other out,
+in order to use the score as a measurement of the relationship
+between the paramter $\theta$ and a value of the data $X$, we
+need to look at the square of the score. The expected value of
+this is called the \textbf{Fisher information}, commonly denoted
+by $\mathcal{I}(\theta)$:
+\begin{align*}
+\mathcal{I}(\theta) &= \mathbb{E}[V^2|\theta] = Var(V^2 | \theta).
+\end{align*}
+The Fisher information serves as a measurment of how much information
+about $\theta$ is provided by the data $X$. The Fisher information can
+change for different values of $\theta$, but does not depend on the
+data $X$, which has been integrated out.
 
 Now, let $T = t(X)$ be a point estimator for the parameter $\theta$ with
 expectation $\mathbb{E}T = \psi(\theta)$. In other words, if $T$ is
 unbiased, we would have $\psi(\theta) = \theta$ for all values of 
-$\theta$. If we look at the covariance of $T$ and $V$, note that this
-is equal to just $\mathbb{E}[VT]$ since the expected value of $V$ is zero.\footnote{
+$\theta$. Let's look at the covariance of $T$ and $V$, note that this
+is equal to just $\mathbb{E}[VT]$ since the expected value of $V$ is
+zero.\footnote{
   Recall that the covariance in general would be $\mathbb{E}[(V - \mathbb{E}V)(T - \mathbb{E}T)]$.
 } This has, by construction, a nice form:
 \begin{align*}
@@ -90,7 +99,7 @@ Var(T) \geq \frac{| \psi'(\theta) |^2}{\mathcal{I}(\theta)}.
 Which implies, in the unbiased case, that the variance of $T$ can never be
 less than the inverse of the Fisher information. So, this provides a bound
 on the best that we can hope to do in terms of estimating the parameter 
-$\theta$ from the data $X$.
+$\theta$ from the data $X$. This result is called the \textbf{Cramér-Rao} lower bound.
 
 The \textbf{efficency} of an unbiased estimator, written $e(\widehat{\theta})$, 
 provides a measurement of how far away the variance of the estimator is 
