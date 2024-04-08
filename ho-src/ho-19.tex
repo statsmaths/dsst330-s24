@@ -102,10 +102,14 @@ data $X$, which has been integrated out.
 % $\theta$ from the data $X$. This result is called the \textbf{Cramér-Rao} lower bound.
 
 Now, let $T = t(X)$ be an unbiased point estimator for the parameter $\theta$.
-Let's look at the covariance of $T$ and $V$, note that this
-is equal to just $\mathbb{E}[VT]$ since the expected value of $V$ is
-zero.\footnote{
-  Recall that the covariance in general would be $\mathbb{E}[(V - \mathbb{E}V)(T - \mathbb{E}T)]$.
+The \textbf{risk} of an estimator of $\theta$ is defined as:
+\begin{align*}
+\mathcal{R}(\hat{\theta}; \theta) &= \mathbb{E}\left[ (\hat{\theta} - \theta)^2 \right].
+\end{align*}
+Let's see if we can offer a bound on the best possible risk of any
+unbiased estimator. First, take the covariance of $T$ and $V$\footnote{
+  Recall that the covariance in general would be $\mathbb{E}[(V - \mathbb{E}V)(T - \mathbb{E}T)]$,
+  but is $\mathbb{E}TV$ because $V$ has an expected value of $0$.
 } This has, by construction, a nice form:
 \begin{align*}
 Cov(V, T) &= \int \left[ f(\theta; x) \times t(x) \times \frac{1}{f(\theta; x)} \times \frac{\partial}{\partial \theta} \left[ f(\theta; x) \right] \right] dx \\
