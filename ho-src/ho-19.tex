@@ -71,18 +71,47 @@ about $\theta$ is provided by the data $X$. The Fisher information can
 change for different values of $\theta$, but does not depend on the
 data $X$, which has been integrated out.
 
-Now, let $T = t(X)$ be a point estimator for the parameter $\theta$ with
-expectation $\mathbb{E}T = \psi(\theta)$. In other words, if $T$ is
-unbiased, we would have $\psi(\theta) = \theta$ for all values of 
-$\theta$. Let's look at the covariance of $T$ and $V$, note that this
+% Now, let $T = t(X)$ be a point estimator for the parameter $\theta$ with
+% expectation $\mathbb{E}T = \psi(\theta)$. In other words, if $T$ is
+% unbiased, we would have $\psi(\theta) = \theta$ for all values of 
+% $\theta$. Let's look at the covariance of $T$ and $V$, note that this
+% is equal to just $\mathbb{E}[VT]$ since the expected value of $V$ is
+% zero.\footnote{
+%   Recall that the covariance in general would be $\mathbb{E}[(V - \mathbb{E}V)(T - \mathbb{E}T)]$.
+% } This has, by construction, a nice form:
+% \begin{align*}
+% Cov(V, T) &= \int \left[ f(\theta; x) \times t(x) \times \frac{1}{f(\theta; x)} \times \frac{\partial}{\partial \theta} \left[ f(\theta; x) \right] \right] dx \\
+% &= \frac{\partial}{\partial \theta} \left[ \int t(x) f(\theta, x) dx \right] = \frac{\partial}{\partial \theta} \mathbb{E}T = \psi'(\theta).
+% \end{align*}
+% Next, we need to use the \textbf{Cauchy-Schwartz Inequality}, which for
+% probability spaces says that covariance of two random variables is always
+% less in absolute value than the square-root of the product of their
+% variances.\footnote{
+%   The more general form says that the squared inner product $| \langle u, v\rangle |^2$.
+%   is less than $\langle u, u\rangle \cdot \langle v, v\rangle$. Applying this to
+%   the integration with density $f$ yields the probabilistic version.
+% } Applying this to $T$ and $V$ shows that:
+% \begin{align*}
+% Var(T) \cdot Var(V) \geq | Cov(V, T) |^2  \\
+% Var(T) \cdot \mathcal{I}(\theta) \geq | \psi'(\theta) |^2  \\
+% Var(T) \geq \frac{| \psi'(\theta) |^2}{\mathcal{I}(\theta)}.
+% \end{align*}
+% Which implies, in the unbiased case, that the variance of $T$ can never be
+% less than the inverse of the Fisher information. So, this provides a bound
+% on the best that we can hope to do in terms of estimating the parameter 
+% $\theta$ from the data $X$. This result is called the \textbf{Cramér-Rao} lower bound.
+
+Now, let $T = t(X)$ be an unbiased point estimator for the parameter $\theta$.
+Let's look at the covariance of $T$ and $V$, note that this
 is equal to just $\mathbb{E}[VT]$ since the expected value of $V$ is
 zero.\footnote{
   Recall that the covariance in general would be $\mathbb{E}[(V - \mathbb{E}V)(T - \mathbb{E}T)]$.
 } This has, by construction, a nice form:
 \begin{align*}
 Cov(V, T) &= \int \left[ f(\theta; x) \times t(x) \times \frac{1}{f(\theta; x)} \times \frac{\partial}{\partial \theta} \left[ f(\theta; x) \right] \right] dx \\
-&= \frac{\partial}{\partial \theta} \left[ \int t(x) f(\theta, x) dx \right] = \frac{\partial}{\partial \theta} \mathbb{E}T = \psi'(\theta).
+&= \frac{\partial}{\partial \theta} \left[ \int t(x) f(\theta, x) dx \right] = \frac{\partial}{\partial \theta} \mathbb{E}T = 1.
 \end{align*}
+Where the last step comes from the fact that $T$ is unbiased.
 Next, we need to use the \textbf{Cauchy-Schwartz Inequality}, which for
 probability spaces says that covariance of two random variables is always
 less in absolute value than the square-root of the product of their
@@ -93,13 +122,13 @@ variances.\footnote{
 } Applying this to $T$ and $V$ shows that:
 \begin{align*}
 Var(T) \cdot Var(V) \geq | Cov(V, T) |^2  \\
-Var(T) \cdot \mathcal{I}(\theta) \geq | \psi'(\theta) |^2  \\
-Var(T) \geq \frac{| \psi'(\theta) |^2}{\mathcal{I}(\theta)}.
+Var(T) \cdot \mathcal{I}(\theta) \geq | 1 |^2  \\
+Var(T) \geq \frac{1}{\mathcal{I}(\theta)}.
 \end{align*}
-Which implies, in the unbiased case, that the variance of $T$ can never be
-less than the inverse of the Fisher information. So, this provides a bound
-on the best that we can hope to do in terms of estimating the parameter 
-$\theta$ from the data $X$. This result is called the \textbf{Cramér-Rao} lower bound.
+So, the variance of $T$ can never be less than the inverse of the Fisher
+information. This provides a bound on the best that we can hope to do in terms
+of estimating the parameter $\theta$ from the data $X$. This result is called the
+\textbf{Cramér-Rao} lower bound.
 
 The \textbf{efficency} of an unbiased estimator, written $e(\widehat{\theta})$, 
 provides a measurement of how far away the variance of the estimator is 
