@@ -97,6 +97,31 @@ words, it is not something that can be normalized to be a proper probability.
 This is generally okay, though, and we can compute the posterior in the 
 normal way.
 
+\newpage
+
+\noindent
+\textbf{Proof of Invariance}
+To see why the Jeffreys Prior relates the Fisher information, consider a
+re-parameterization $\varphi = g(\theta)$. If we have a prior $p_\theta(\theta)$,
+an equivalent prior in terms of $\varphi$ is given by the normal change of
+variables formula:
+\begin{align*}
+p_\varphi(\varphi) &= p_\theta(\theta) \cdot \left| \frac{\partial \varphi}{\partial \theta} \right|
+\end{align*}
+Now, look at how the value of $I(\varphi)$ related to $I(\theta)$:
+\begin{align*}
+I(\varphi) &= \mathbb{E} \left[ \frac{\partial}{\partial \varphi} \log(f) \right]^2 \\
+&= \mathbb{E} \left[ \frac{\partial \theta}{\partial \varphi} \frac{\partial}{\partial \theta}  \log(f) \right]^2 \\
+&= \mathbb{E} \left[ \frac{\partial}{\partial \theta}  \log(f) \right]^2 \times \left[ \frac{\partial \theta}{\partial \varphi}\right]^2 \\
+&= I(\theta) \times \left[ \frac{\partial \theta}{\partial \varphi}\right]^2
+\end{align*}
+Taking the square-root of both sides yields:
+\begin{align*}
+\sqrt{I(\varphi)} &= \sqrt{I(\theta)} \times \left| \frac{\partial \theta}{\partial \varphi}\right|
+\end{align*}
+And we see that making the prior proportional to the square-root of the Fisher
+information produces an equivalent prior regardless of the parameterization.
+
 \end{document}
 
 

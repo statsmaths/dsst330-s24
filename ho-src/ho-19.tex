@@ -64,7 +64,7 @@ need to look at the square of the score. The expected value of
 this is called the \textbf{Fisher information}, commonly denoted
 by $\mathcal{I}(\theta)$:
 \begin{align*}
-\mathcal{I}(\theta) &= \mathbb{E}[V^2|\theta] = Var(V^2 | \theta).
+\mathcal{I}(\theta) &= \mathbb{E}[V^2|\theta] = Var(V | \theta).
 \end{align*}
 The Fisher information serves as a measurment of how much information
 about $\theta$ is provided by the data $X$. The Fisher information can
@@ -107,7 +107,7 @@ The \textbf{risk} of an estimator of $\theta$ is defined as:
 \mathcal{R}(\hat{\theta}; \theta) &= \mathbb{E}\left[ (\hat{\theta} - \theta)^2 \right].
 \end{align*}
 Let's see if we can offer a bound on the best possible risk of any
-unbiased estimator. First, take the covariance of $T$ and $V$\footnote{
+unbiased estimator. First, take the covariance of $T$ and $V$.\footnote{
   Recall that the covariance in general would be $\mathbb{E}[(V - \mathbb{E}V)(T - \mathbb{E}T)]$,
   but is $\mathbb{E}TV$ because $V$ has an expected value of $0$.
 } This has, by construction, a nice form:

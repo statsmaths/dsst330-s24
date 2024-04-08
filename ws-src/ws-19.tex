@@ -98,16 +98,16 @@ And for the second derivative:
 \begin{align*}
 \frac{\partial^2}{\partial^2 p} \log(f(p; x))
 &= \frac{\partial}{\partial p} \left[ \frac{x}{p} - \frac{n-x}{1-p} \right] \\
-&= \frac{-x}{p^2} + \frac{n-x}{(1-p)^2}
+&= \frac{-x}{p^2} - \frac{n-x}{(1-p)^2}
 \end{align*}
 Then, the Fisher information is:
 \begin{align*}
 \mathcal{I}(p) &= - \mathbb{E} \left[ \frac{\partial^2}{\partial p^2} \log f(p; x) \right] \\
-&= \mathbb{E} \left[ \frac{x}{p^2} - \frac{n-x}{(1-p)^2} \right] \\
-&= \frac{np}{p^2} - \frac{n-np}{(1-p)^2} \\
-&= \frac{n}{p} - \frac{n(1-p)}{(1-p)^2} \\
-&= \frac{n}{p} - \frac{n}{(1-p)} \\
-&= n \cdot \left[ \frac{1}{p} - \frac{1}{1-p} \right] \\
+&= \mathbb{E} \left[ \frac{x}{p^2} + \frac{n-x}{(1-p)^2} \right] \\
+&= \frac{np}{p^2} + \frac{n-np}{(1-p)^2} \\
+&= \frac{n}{p} + \frac{n(1-p)}{(1-p)^2} \\
+&= \frac{n}{p} + \frac{n}{(1-p)} \\
+&= n \cdot \left[ \frac{1}{p} + \frac{1}{1-p} \right] \\
 &= n \cdot \left[ \frac{(1 - p) + p}{p (1 - p)} \right] \\
 &= n \cdot \left[ \frac{1}{p (1 - p)} \right] \\
 &= \frac{n}{p (1 - p)}
