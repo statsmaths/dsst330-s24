@@ -75,12 +75,12 @@ We have, from the results last time, the following:
 \begin{align*}
 \sqrt{\mathcal{I}(p)} &= \sqrt{\frac{(1-p)}{p^2}} = p^{-1} (1 - p)^{-1/2}.
 \end{align*}
-This is mathematically equivalent to the distribution of a $Beta(0, 1/2)$,
+This is mathematically equivalent to the distribution of a $Beta(0, 3/2)$,
 however this is not a proper distribution when $\alpha = 0$. Not a problem
-though! We can still use our formula for the posterior that 
-$p | X \sim Beta(a + n, b + \sum_i x_i - n)$. In this case, we have
-$p | X \sim Beta(n, 1/2 + \sum_i x_i - n)$, which gives a Bayesian point
+though! We can still use the formula we had on Worksheet 18 for the posterior
+that  $p | X \sim Beta(a + n, b + \sum_i x_i - n)$. In this case, we have
+$p | X \sim Beta(n, 3/2 + \sum_i x_i - n)$, which gives a Bayesian point
 estimator of:
 \begin{align*}
-\widehat{p} &= \frac{n}{1/2 + \sum_i x_i}.
+\widehat{p} &= \frac{n}{3/2 + \sum_i x_i}.
 \end{align*}
